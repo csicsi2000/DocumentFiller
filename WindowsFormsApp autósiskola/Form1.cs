@@ -1230,30 +1230,6 @@ namespace WindowsFormsApp_autósiskola
 
         //private void megjMentes_Click(object sender, EventArgs e)
         //{
-
-        //    string fajlhely = Properties.Settings.Default.ExcelFajlHelye;
-        //    if (Path.GetExtension(fajlhely) == ".csv")
-        //    {
-        //        if (fileMethods.IsFileLocked(fajlhely) == false)
-        //        {
-        //            StreamReader olvas = new StreamReader(fajlhely, Encoding.GetEncoding("iso-8859-1"));
-        //            string sor = olvas.ReadLine();
-        //            string[] sorelemek = sor.Split(';');
-        //            olvas.Close();
-        //            string sorszam = dataGridView1.Rows[0].Cells[1].Value.ToString();
-        //            int szam = 0;
-        //            try
-        //            {
-        //                szam = Convert.ToInt32(sorszam);
-        //            }
-        //            catch
-        //            {
-        //                MessageBox.Show("Hiba a sorszám olvasásnál!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        //                return;
-        //            }
-        //            fileMethods.InsertLineInFile(fajlhely, megjegyzesek.Text, szam);
-        //        }
-        //    }
         //    else if (Path.GetExtension(fajlhely) == ".xlsx")
         //    {
         //        if (fileMethods.IsFileLocked(fajlhely) == false)
