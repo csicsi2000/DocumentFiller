@@ -30,6 +30,7 @@ namespace WindowsFormsApp_autósiskola
             this.DragEnter += new DragEventHandler(Form1_DragEnter);
             this.DragDrop += new DragEventHandler(Form1_DragDrop);
 
+            dataGridView1.Columns[0].Width = 120;
             setDefault();
         }
         

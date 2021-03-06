@@ -68,14 +68,14 @@ namespace WindowsFormsApp_autósiskola
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Adatok = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tanulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.mehet = new System.Windows.Forms.Label();
+            this.Adatok = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tanulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -347,6 +347,7 @@ namespace WindowsFormsApp_autósiskola
             // 
             resources.ApplyResources(this.panel3, "panel3");
             this.panel3.BackColor = System.Drawing.Color.Black;
+            this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.button3);
             this.panel3.Controls.Add(this.frissites);
             this.panel3.Controls.Add(this.beallitasok);
@@ -370,7 +371,6 @@ namespace WindowsFormsApp_autósiskola
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.dokumentumKeszites);
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Controls.Add(this.panel6);
             this.panel3.Name = "panel3";
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -410,22 +410,6 @@ namespace WindowsFormsApp_autósiskola
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // Adatok
-            // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.Adatok.DefaultCellStyle = dataGridViewCellStyle2;
-            resources.ApplyResources(this.Adatok, "Adatok");
-            this.Adatok.Name = "Adatok";
-            this.Adatok.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Tanulo
-            // 
-            resources.ApplyResources(this.Tanulo, "Tanulo");
-            this.Tanulo.Name = "Tanulo";
-            this.Tanulo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // button4
             // 
@@ -468,6 +452,24 @@ namespace WindowsFormsApp_autósiskola
             this.mehet.ForeColor = System.Drawing.Color.Silver;
             this.mehet.Name = "mehet";
             this.mehet.Click += new System.EventHandler(this.mehet_Click);
+            // 
+            // Adatok
+            // 
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.Adatok.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Adatok.FillWeight = 121.8274F;
+            resources.ApplyResources(this.Adatok, "Adatok");
+            this.Adatok.Name = "Adatok";
+            this.Adatok.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Tanulo
+            // 
+            this.Tanulo.FillWeight = 78.1726F;
+            resources.ApplyResources(this.Tanulo, "Tanulo");
+            this.Tanulo.Name = "Tanulo";
+            this.Tanulo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Form1
             // 
