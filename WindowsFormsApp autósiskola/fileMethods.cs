@@ -16,7 +16,6 @@ namespace WindowsFormsApp_autósiskola
     {
         public static void InsertLineInFile(string path, string line, int position)
         {
-
             string[] lines = File.ReadAllLines(path, Encoding.GetEncoding(path));
 
             using (StreamWriter writer = new StreamWriter(path))

@@ -347,7 +347,6 @@ namespace WindowsFormsApp_autósiskola
             // 
             resources.ApplyResources(this.panel3, "panel3");
             this.panel3.BackColor = System.Drawing.Color.Black;
-            this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.button3);
             this.panel3.Controls.Add(this.frissites);
             this.panel3.Controls.Add(this.beallitasok);
@@ -371,6 +370,7 @@ namespace WindowsFormsApp_autósiskola
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.dokumentumKeszites);
             this.panel3.Controls.Add(this.panel4);
+            this.panel3.Controls.Add(this.panel6);
             this.panel3.Name = "panel3";
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
