@@ -119,20 +119,20 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 517</value>
+    <value>49, 410</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>487, 23</value>
+    <value>381, 19</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Choose the student with his line number or name
 </value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>161, 101</value>
+    <value>121, 76</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>306, 23</value>
+    <value>234, 19</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Excel file's path (.csv , or .xlsx)</value>
@@ -146,9 +146,6 @@
   <data name="mentesHelyeKereses.Text" xml:space="preserve">
     <value>Search</value>
   </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>255, 23</value>
-  </data>
   <data name="label3.Text" xml:space="preserve">
     <value>The new word file's name</value>
   </data>
@@ -159,7 +156,7 @@
     <value>764, 693</value>
   </data>
   <data name="nyissaEMeg.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 27</value>
+    <value>185, 22</value>
   </data>
   <data name="nyissaEMeg.Text" xml:space="preserve">
     <value>Open the created file</value>
@@ -168,7 +165,7 @@
     <value>187, 693</value>
   </data>
   <data name="ekezetek.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 27</value>
+    <value>146, 22</value>
   </data>
   <data name="ekezetek.Text" xml:space="preserve">
     <value>Accent sensitive</value>
@@ -177,7 +174,7 @@
     <value>187, 730</value>
   </data>
   <data name="szokoz.Size" type="System.Drawing.Size, System.Drawing">
-    <value>280, 27</value>
+    <value>224, 22</value>
   </data>
   <data name="szokoz.Text" xml:space="preserve">
     <value>Space and hypen sensitive</value>
@@ -186,28 +183,28 @@
     <value>Refresh file</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>743, 101</value>
+    <value>561, 76</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>278, 23</value>
+    <value>218, 19</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>File path for saved word file</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>179, 234</value>
+    <value>134, 190</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 23</value>
+    <value>83, 18</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
     <value>Language</value>
   </data>
   <data name="honapBetu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>118, 138</value>
+    <value>87, 113</value>
   </data>
   <data name="honapBetu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 23</value>
+    <value>175, 20</value>
   </data>
   <data name="honapBetu.Text" xml:space="preserve">
     <value>Show month with name
@@ -217,10 +214,10 @@
     <value>Close</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>62, 44</value>
+    <value>39, 40</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>337, 23</value>
+    <value>269, 18</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Place where the document is made
@@ -243,41 +240,59 @@
     <value>764, 730</value>
   </data>
   <data name="helyIdo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>275, 27</value>
+    <value>219, 22</value>
   </data>
   <data name="helyIdo.Text" xml:space="preserve">
     <value>Fill the place and the date
 </value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 22</value>
+    <value>119, 20</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Document filler</value>
   </data>
-  <data name="button3.Text" xml:space="preserve">
-    <value>Check data</value>
-  </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 18</value>
+    <value>64, 16</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Loading...</value>
   </data>
+  <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 55</value>
+  </data>
   <data name="mehet.Location" type="System.Drawing.Point, System.Drawing">
-    <value>58, 22</value>
+    <value>43, 17</value>
   </data>
   <data name="mehet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 22</value>
+    <value>80, 20</value>
   </data>
   <data name="mehet.Text" xml:space="preserve">
     <value>Loading...</value>
   </data>
-  <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 73</value>
+  <data name="button3.Text" xml:space="preserve">
+    <value>Check data</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 20</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="panel6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>882, 607</value>
+  </data>
+  <data name="button4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>740, 517</value>
   </data>
   <data name="button4.Text" xml:space="preserve">
     <value>Close</value>
+  </data>
+  <data name="Adatok.HeaderText" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="Tanulo.HeaderText" xml:space="preserve">
+    <value>Student</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

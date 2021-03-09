@@ -66,23 +66,26 @@ namespace WindowsFormsApp_autósiskola
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.mehet = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.mehet = new System.Windows.Forms.Label();
             this.Adatok = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tanulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -347,8 +350,6 @@ namespace WindowsFormsApp_autósiskola
             // 
             resources.ApplyResources(this.panel3, "panel3");
             this.panel3.BackColor = System.Drawing.Color.Black;
-            this.panel3.Controls.Add(this.panel6);
-            this.panel3.Controls.Add(this.button3);
             this.panel3.Controls.Add(this.frissites);
             this.panel3.Controls.Add(this.beallitasok);
             this.panel3.Controls.Add(this.panel2);
@@ -368,23 +369,45 @@ namespace WindowsFormsApp_autósiskola
             this.panel3.Controls.Add(this.ExcelOldalNevek);
             this.panel3.Controls.Add(this.sorSzamValasztas);
             this.panel3.Controls.Add(this.nyissaEMeg);
-            this.panel3.Controls.Add(this.panel5);
-            this.panel3.Controls.Add(this.dokumentumKeszites);
+            this.panel3.Controls.Add(this.panel7);
+            this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.panel4);
+            this.panel3.Controls.Add(this.dokumentumKeszites);
+            this.panel3.Controls.Add(this.button3);
+            this.panel3.Controls.Add(this.panel5);
             this.panel3.Name = "panel3";
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
+            // panel7
+            // 
+            resources.ApplyResources(this.panel7, "panel7");
+            this.panel7.Controls.Add(this.label9);
+            this.panel7.Name = "panel7";
+            // 
+            // label9
+            // 
+            resources.ApplyResources(this.label9, "label9");
+            this.label9.ForeColor = System.Drawing.Color.Silver;
+            this.label9.Name = "label9";
+            // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.dataGridView1);
             this.panel6.Controls.Add(this.button4);
+            this.panel6.Controls.Add(this.dataGridView1);
             resources.ApplyResources(this.panel6, "panel6");
             this.panel6.Name = "panel6";
+            // 
+            // button4
+            // 
+            resources.ApplyResources(this.button4, "button4");
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Name = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -411,13 +434,18 @@ namespace WindowsFormsApp_autósiskola
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // button4
+            // panel4
             // 
-            resources.ApplyResources(this.button4, "button4");
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Name = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            resources.ApplyResources(this.panel4, "panel4");
+            this.panel4.Controls.Add(this.mehet);
+            this.panel4.Name = "panel4";
+            // 
+            // mehet
+            // 
+            resources.ApplyResources(this.mehet, "mehet");
+            this.mehet.ForeColor = System.Drawing.Color.Silver;
+            this.mehet.Name = "mehet";
+            this.mehet.Click += new System.EventHandler(this.mehet_Click);
             // 
             // button3
             // 
@@ -440,19 +468,6 @@ namespace WindowsFormsApp_autósiskola
             this.label7.Name = "label7";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // panel4
-            // 
-            resources.ApplyResources(this.panel4, "panel4");
-            this.panel4.Controls.Add(this.mehet);
-            this.panel4.Name = "panel4";
-            // 
-            // mehet
-            // 
-            resources.ApplyResources(this.mehet, "mehet");
-            this.mehet.ForeColor = System.Drawing.Color.Silver;
-            this.mehet.Name = "mehet";
-            this.mehet.Click += new System.EventHandler(this.mehet_Click);
-            // 
             // Adatok
             // 
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -466,6 +481,7 @@ namespace WindowsFormsApp_autósiskola
             // 
             // Tanulo
             // 
+            this.Tanulo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Tanulo.FillWeight = 78.1726F;
             resources.ApplyResources(this.Tanulo, "Tanulo");
             this.Tanulo.Name = "Tanulo";
@@ -491,12 +507,14 @@ namespace WindowsFormsApp_autósiskola
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -544,6 +562,8 @@ namespace WindowsFormsApp_autósiskola
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Adatok;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tanulo;
     }

@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Dokumentum nyomtatás.exe" size="209832">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Dokumentum nyomtatás.exe" size="213416">
       <assemblyIdentity name="Dokumentum nyomtatás" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>IDjouaNgTBZjFRnX3f/H1dVdgdeVnfVLjQMpeRsXFvM=</dsig:DigestValue>
+        <dsig:DigestValue>Zzg1qCF0zkyySwwOk8VqrGdj39ebspc6LFhyPt/1WmQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -62,19 +62,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>LZnTlzKem9830TQYcEDedV3RjF/sjcrV7NY+rYjRYzQ=</dsig:DigestValue>
+        <dsig:DigestValue>0nqN2jYhtqAlgG13BkyKAxVXqnWUjkpxNvlTxtk9/nA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="en\Dokumentum nyomtatás.resources.dll" size="52224">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="en\Dokumentum nyomtatás.resources.dll" size="52736">
       <assemblyIdentity name="Dokumentum nyomtatás.resources" version="1.0.0.0" language="en" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>LSRrcqflXglcnr+eL8JCQo6LTi5SInOHd2x/CeCgqvs=</dsig:DigestValue>
+        <dsig:DigestValue>dT82WZ+Oa7cXR10pkHV/Rtvsci2B6BsbP+Eavr53Gfs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,7 +86,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>2QtgmhFLYR59VneOhmqZ/IzqVkJfP0uih5bA2PONR3M=</dsig:DigestValue>
+        <dsig:DigestValue>BC+a5pzIb/TaEEcdURKQaIRBfmbl/zSzJ37/cmAUdxg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -98,7 +98,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>D5woQFFj+aZWYLcaRUZ7TKH6UaJSYsz50MhsrIEEOAc=</dsig:DigestValue>
+        <dsig:DigestValue>3CQ9m8wg1lWt5b/5m/CELClFaJEEILxBROPVU3/gXNA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -110,7 +110,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>vwz0UMQXeMBm6MoS6pm4wNilC8HM3OUf+nVXSPh6lws=</dsig:DigestValue>
+        <dsig:DigestValue>3bkXQUqE3/INDIXdvrVlV7Upc2QxCl8le3wma4C/smA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

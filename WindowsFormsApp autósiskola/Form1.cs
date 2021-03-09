@@ -30,7 +30,6 @@ namespace WindowsFormsApp_autósiskola
             this.DragEnter += new DragEventHandler(Form1_DragEnter);
             this.DragDrop += new DragEventHandler(Form1_DragDrop);
 
-            dataGridView1.Columns[0].Width = 120;
             setDefault();
         }
         
@@ -229,7 +228,6 @@ namespace WindowsFormsApp_autósiskola
                 MessageBox.Show("Válaszd ki a mentés helyét!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            fileMethods.FajlOlvasas();
             string kivalasztott = "";
             if (Properties.Settings.Default.ExcelFajlHelye != null && SorSzam.Text != null)
             {
@@ -962,6 +960,9 @@ namespace WindowsFormsApp_autósiskola
                 MessageBox.Show("Válaszd ki a mentés helyét!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            button3.Enabled = false;
+            panel7.BringToFront();
+            panel7.Visible = true;
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
             bool elso = true;
@@ -1222,6 +1223,8 @@ namespace WindowsFormsApp_autósiskola
             }
             panel6.BringToFront();
             panel6.Visible = true;
+            panel7.Visible = false;
+            button3.Enabled = true;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
