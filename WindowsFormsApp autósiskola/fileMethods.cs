@@ -61,10 +61,12 @@ namespace WindowsFormsApp_autósiskola
                 using (var from = File.Open(Properties.Settings.Default.ExcelFajlHelye, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                 using (var to = File.OpenWrite(Properties.Settings.Default.ExcelFajlMasolata))
                 {
+
                     from.CopyTo(to);
                     to.Dispose();
                     from.Dispose();
                 }
+                GC.Collect();
             }
         }
         public static void DisposeExcelInstance(Excel.Application app, Excel.Workbooks workBooks, Excel._Worksheet workSheet)

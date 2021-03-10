@@ -27,6 +27,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_AA28E7705E964DBEA487BD9CB09CBD3F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_67B53714D2B34D96AA14E1C4F4314DBA"
         "MsmSig" = "8:_UNDEFINED"
@@ -166,6 +172,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AA28E7705E964DBEA487BD9CB09CBD3F"
+            {
+            "SourcePath" = "8:C:\\Users\\csics\\Downloads\\SablonFajl.xlsx"
+            "TargetName" = "8:SablonFajl.xlsx"
+            "Tag" = "8:"
+            "Folder" = "8:_42C9FFC60C4D49BCA884788EEC5D55E5"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -223,11 +249,11 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Dokumentum_Kitöltő_setup"
         "ProductCode" = "8:{C6E22520-8A28-4BF4-A31D-9AA797540A87}"
-        "PackageCode" = "8:{DD69F528-4E35-423C-A2BC-40330C5FB218}"
+        "PackageCode" = "8:{4050E2EA-237E-4E6F-AA60-8DF7F78A5D7D}"
         "UpgradeCode" = "8:{1F381163-7F52-49FA-BA8E-10C9B4BE51C7}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
-        "RemovePreviousVersions" = "11:FALSE"
+        "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
