@@ -885,7 +885,6 @@ namespace WindowsFormsApp_autósiskola
                 ExcelOldalNevek.Visible = true;
                 frissites.Visible = true;
                 ListaJelenites();
-                ExcelOldalNevek.SelectedIndex = Properties.Settings.Default.oldalszam;
             }
             else
             {
@@ -1172,8 +1171,8 @@ namespace WindowsFormsApp_autósiskola
                             panel7.Visible = false;
                             return;
                         }
-                        mentes.Visible = true;
                     }
+                    mentes.Visible = true;
                     fileMethods.DisposeExcelInstance(xlApp, xlWorkbooks, xlWorksheet);
                 }
 
@@ -1246,6 +1245,7 @@ namespace WindowsFormsApp_autósiskola
                         return;
                     }
                     int count = 0;
+                    szam = kivSor;
                     while (count < dataGridView1.RowCount-1)
                     {
                         string data;
@@ -1292,8 +1292,15 @@ namespace WindowsFormsApp_autósiskola
             if (Path.GetExtension(Properties.Settings.Default.ExcelFajlHelye) == ".xlsx")
             {
                 fileMethods.FajlOlvasas();
+
                 Properties.Settings.Default.oldalszam = ExcelOldalNevek.SelectedIndex;
 
+                bool szabadE = fileMethods.IsFileLocked(Properties.Settings.Default.ExcelFajlHelye);
+                if (szabadE == true)
+                {
+                    MessageBox.Show("Nincs bezárva a másolat fájl!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 Excel.Application xlApp = StartExcel();
                 var xlWorkbooks = xlApp.Workbooks;
                 var xlWorkbook = xlWorkbooks.Open(Properties.Settings.Default.ExcelFajlMasolata);
@@ -1301,7 +1308,7 @@ namespace WindowsFormsApp_autósiskola
                 Excel.Range xlRange = xlWorksheet.UsedRange;
                 totalRows = xlRange.Rows.Count;
                 int totalColumns = xlRange.Columns.Count;
-
+                kivSor = totalRows + 1;
                 int szam = 1;
                 var sb = new StringBuilder();
                 for (int ColumnNum = 1; ColumnNum <= totalColumns + 1; ColumnNum++)

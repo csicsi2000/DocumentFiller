@@ -15,19 +15,19 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_43123861EB1046199491E5B4135386CE"
+        "MsmKey" = "8:_E4961FAFDB5943D5A4BAC8B76CA01908"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_755ED0ABDD4E4C949C73B1803CB3984F"
+        "MsmKey" = "8:_F34D2382EEBF4ECEA721272343D936E1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_AA28E7705E964DBEA487BD9CB09CBD3F"
+        "MsmKey" = "8:_F87FDBAF41C8400782C8CCFD11B4DF63"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -132,9 +132,9 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_43123861EB1046199491E5B4135386CE"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E4961FAFDB5943D5A4BAC8B76CA01908"
             {
-            "SourcePath" = "8:..\\WindowsFormsApp autósiskola\\bin\\Debug\\ExcelMasolat.xlsx"
+            "SourcePath" = "8:..\\WindowsFormsApp autósiskola\\ExcelMasolat.xlsx"
             "TargetName" = "8:ExcelMasolat.xlsx"
             "Tag" = "8:"
             "Folder" = "8:_42C9FFC60C4D49BCA884788EEC5D55E5"
@@ -152,10 +152,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_755ED0ABDD4E4C949C73B1803CB3984F"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F34D2382EEBF4ECEA721272343D936E1"
             {
-            "SourcePath" = "8:..\\WindowsFormsApp autósiskola\\bin\\Debug\\kepzesi igazolas sablon a programhoz.docx"
-            "TargetName" = "8:kepzesi igazolas sablon a programhoz.docx"
+            "SourcePath" = "8:..\\WindowsFormsApp autósiskola\\SablonFajl.xlsx"
+            "TargetName" = "8:SablonFajl.xlsx"
             "Tag" = "8:"
             "Folder" = "8:_42C9FFC60C4D49BCA884788EEC5D55E5"
             "Condition" = "8:"
@@ -172,10 +172,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AA28E7705E964DBEA487BD9CB09CBD3F"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F87FDBAF41C8400782C8CCFD11B4DF63"
             {
-            "SourcePath" = "8:C:\\Users\\csics\\Downloads\\SablonFajl.xlsx"
-            "TargetName" = "8:SablonFajl.xlsx"
+            "SourcePath" = "8:..\\WindowsFormsApp autósiskola\\kepzesi igazolas sablon a programhoz.docx"
+            "TargetName" = "8:kepzesi igazolas sablon a programhoz.docx"
             "Tag" = "8:"
             "Folder" = "8:_42C9FFC60C4D49BCA884788EEC5D55E5"
             "Condition" = "8:"
@@ -248,15 +248,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Dokumentum_Kitöltő_setup"
-        "ProductCode" = "8:{C6E22520-8A28-4BF4-A31D-9AA797540A87}"
-        "PackageCode" = "8:{4050E2EA-237E-4E6F-AA60-8DF7F78A5D7D}"
+        "ProductCode" = "8:{E0F92544-DEF0-48D6-9835-D7FB70A030B2}"
+        "PackageCode" = "8:{3EECC154-5727-4F32-9F68-5F2B8CE4C832}"
         "UpgradeCode" = "8:{1F381163-7F52-49FA-BA8E-10C9B4BE51C7}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
-        "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.0"
+        "InstallAllUsers" = "11:TRUE"
+        "ProductVersion" = "8:1.1.2"
         "Manufacturer" = "8:Default Company Name"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"

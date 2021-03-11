@@ -40,7 +40,7 @@ namespace WindowsFormsApp_autósiskola
         {
             try
             {
-                using (Stream stream = new FileStream(file, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                using (Stream stream = new FileStream(file, FileMode.Open))
                 {
                     stream.Close();
                 }
