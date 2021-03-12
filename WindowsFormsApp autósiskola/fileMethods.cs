@@ -36,6 +36,15 @@ namespace WindowsFormsApp_autósiskola
                 }
             }
         }
+        public static bool isExcelComptaible(string fajlnev)
+        {
+            bool isIt = false;
+            if (Path.GetExtension(fajlnev) == ".xlsx"  || Path.GetExtension(fajlnev) == ".xlsm")
+            {
+                isIt = true;
+            }
+            return isIt;
+        }
         public static bool IsFileLocked(string file)
         {
             try
@@ -54,17 +63,29 @@ namespace WindowsFormsApp_autósiskola
         }
         public static void FajlOlvasas()
         {
-            if (Path.GetExtension(Properties.Settings.Default.ExcelFajlHelye) == ".xlsx")
+            if (isExcelComptaible(Properties.Settings.Default.ExcelFajlHelye))
             {
-                Properties.Settings.Default.ExcelFajlMasolata = System.AppDomain.CurrentDomain.BaseDirectory + "\\ExcelMasolat.xlsx";
+                if (File.Exists(Properties.Settings.Default.ExcelFajlMasolata)) 
+                { 
+                    File.Delete(Properties.Settings.Default.ExcelFajlMasolata);
+                }
+                
+                Properties.Settings.Default.ExcelFajlMasolata = System.AppDomain.CurrentDomain.BaseDirectory + "ExcelMasolat" + Path.GetExtension(Properties.Settings.Default.ExcelFajlHelye);
+                string hely = Properties.Settings.Default.ExcelFajlMasolata;
 
-                using (var from = File.Open(Properties.Settings.Default.ExcelFajlHelye, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-                using (var to = File.OpenWrite(Properties.Settings.Default.ExcelFajlMasolata))
+                using (var from = new FileStream(Properties.Settings.Default.ExcelFajlHelye, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                using (var to = new FileStream(Properties.Settings.Default.ExcelFajlMasolata, FileMode.OpenOrCreate))
                 {
+                    var buffer = new byte[0x10000];
+                    int bytes;
 
-                    from.CopyTo(to);
-                    to.Dispose();
-                    from.Dispose();
+                    while((bytes = from.Read(buffer,0,buffer.Length)) > 0)
+                    {
+                        to.Write(buffer, 0, bytes);
+                    }
+                    //from.CopyTo(to);
+                    //to.Dispose();
+                    //from.Dispose();
                 }
                 GC.Collect();
             }

@@ -97,7 +97,6 @@ namespace WindowsFormsApp_autósiskola
             SikeresElmeletVizsga = adatok[19];
             SikertelenSzama = adatok[30];
             Korlatozasok = adatok[11];
-
         }
     }
 }
