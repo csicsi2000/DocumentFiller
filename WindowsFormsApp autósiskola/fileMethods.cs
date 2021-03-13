@@ -14,28 +14,6 @@ namespace WindowsFormsApp_autósiskola
 {
     public class fileMethods
     {
-        public static void InsertLineInFile(string path, string line, int position)
-        {
-            string[] lines = File.ReadAllLines(path, Encoding.GetEncoding(path));
-
-            using (StreamWriter writer = new StreamWriter(path))
-            {
-                for (int i = 0; i < position; i++)
-                {
-                    writer.WriteLine(lines[i]);
-                }
-                string[] sorelemek = lines[position].Split(';');
-                for (int i = 0; i < lines.Length -1; i++)
-                {
-                    writer.Write(sorelemek[i]);
-                }
-                writer.WriteLine(line);
-                for (int i = position; i < lines.Length; i++)
-                {
-                    writer.WriteLine(lines[i]);
-                }
-            }
-        }
         public static bool isExcelComptaible(string fajlnev)
         {
             bool isIt = false;
@@ -72,6 +50,7 @@ namespace WindowsFormsApp_autósiskola
                 
                 Properties.Settings.Default.ExcelFajlMasolata = System.AppDomain.CurrentDomain.BaseDirectory + "ExcelMasolat" + Path.GetExtension(Properties.Settings.Default.ExcelFajlHelye);
                 string hely = Properties.Settings.Default.ExcelFajlMasolata;
+                Properties.Settings.Default.Save();
 
                 using (var from = new FileStream(Properties.Settings.Default.ExcelFajlHelye, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                 using (var to = new FileStream(Properties.Settings.Default.ExcelFajlMasolata, FileMode.OpenOrCreate))

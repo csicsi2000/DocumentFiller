@@ -30,6 +30,16 @@ namespace WindowsFormsApp_autósiskola
 
         public tanulo(string Adatsor)
         {
+            int index = Properties.Settings.Default.comboIndex;
+            string[] sablonok = Properties.Settings.Default.tablaSync.Split('Ł');
+            string[] szamString =sablonok[index].Split(';');
+            int[] szamok = new int[szamString.Length];
+            for(int i = 0; i < (szamString.Length-1); i++)
+            {
+                szamok[i] = Convert.ToInt32(szamString[i]);
+            }
+            
+
             int count = 0;
             foreach (char c in Adatsor)
                 if (c == ';') count++;
@@ -48,7 +58,7 @@ namespace WindowsFormsApp_autósiskola
 
             for (int i = 0; i < adatok.Length; i++)
             {
-                if (adatok[i] == "x" || adatok[i] == null)
+                if (adatok[i] == "x" || adatok[i] == null || adatok[i] == "")
                 {
                     adatok[i] = "-";
                 }
@@ -57,46 +67,80 @@ namespace WindowsFormsApp_autósiskola
                     adatok[i] = adatok[i].Replace(" 0:00:00", "");
                 }
             }
+            adatok[0] = "";
 
-            Nev = adatok[1];
-            if (adatok[2] == "U.A." || adatok[2] == "U.A")
+
+
+            Nev = adatok[szamok[0]];
+            if (sablonok[index].Contains("abc"))
             {
-                SzuleteskoriNev = adatok[1];
+                if (adatok[szamok[0]].Contains("("))
+                {
+                    string[] szed = adatok[szamok[0]].Split('(');
+                    SzuleteskoriNev = szed[1].Replace(")", "");
+                }
+                else
+                {
+                    SzuleteskoriNev = Nev;
+                }
             }
             else
             {
-                SzuleteskoriNev = adatok[2];
+                if (adatok[szamok[1]] == "U.A." || adatok[szamok[1]] == "U.A" || adatok[szamok[1]] == "u.a." || adatok[szamok[1]] == "u.a")
+                {
+                    SzuleteskoriNev = adatok[szamok[0]];
+                }
+                else
+                {
+                    SzuleteskoriNev = adatok[szamok[1]];
+                }
             }
-            SzuletesiHely = adatok[3];
-            SzuletesiIdo = adatok[4];
-            Anyja = adatok[5];
-            Lakcim = adatok[7];
-            if (adatok[8] == "U.A." || adatok[8] == "U.A")
+            SzuletesiHely = adatok[szamok[2]];
+            SzuletesiIdo = adatok[szamok[3]];
+            Anyja = adatok[szamok[4]];
+            Lakcim = adatok[szamok[5]];
+            if (adatok[szamok[6]] == "U.A." || adatok[szamok[6]] == "U.A" || adatok[szamok[6]] == "u.a." || adatok[szamok[6]] == "u.a.")
             {
-                ErtesitesCim = adatok[7];
+                ErtesitesCim = adatok[szamok[5]];
             }
             else
             {
-                ErtesitesCim = adatok[8];
+                ErtesitesCim = adatok[szamok[6]];
             }
-            TanuloAzonositoja = adatok[16];
+            TanuloAzonositoja = adatok[szamok[7]];
             if (TanuloAzonositoja.Length < 10)
             {
                 TAzonosito = "0";
             }
             else
             {
-                TAzonosito = adatok[16].Substring(0, 12);
+                TAzonosito = adatok[szamok[7]].Substring(0, 12);
             }
-            TKezdete = adatok[14];
-            TanuloIktatoszama = adatok[17];
-            VezetesiKarton = adatok[20];
-            ElsoElmelet = adatok[14];
-            ElmeletTargy = adatok[15];
-            ElsoElmeletVizsga = adatok[18];
-            SikeresElmeletVizsga = adatok[19];
-            SikertelenSzama = adatok[30];
-            Korlatozasok = adatok[11];
+            TKezdete = adatok[szamok[8]];
+            TanuloIktatoszama = adatok[szamok[9]];
+            VezetesiKarton = adatok[szamok[10]];
+            ElsoElmelet = adatok[szamok[11]];
+            ElmeletTargy = adatok[szamok[12]];
+            ElsoElmeletVizsga = adatok[szamok[13]];
+            if (sablonok[index].Contains("abc"))
+            {
+                SikertelenSzama = "\t";
+                if (adatok[15].Contains("M"))
+                {
+                    SikeresElmeletVizsga = adatok[15].Replace("M", "");
+                }
+                else
+                {
+                    SikeresElmeletVizsga = adatok[16].Replace("M", "");
+                }
+            }
+            else
+            {
+                SikeresElmeletVizsga = adatok[szamok[14]];
+                SikertelenSzama = adatok[szamok[15]];
+
+            }
+            Korlatozasok = adatok[szamok[16]];
         }
     }
 }

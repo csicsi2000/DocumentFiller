@@ -178,5 +178,30 @@ namespace WindowsFormsApp_autósiskola.Properties {
                 this["nyelv"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1;2;3;4;5;7;8;16;14;17;20;14;15;18;19;30;11;foutŁ1;0;3;2;4;5;6;11;12;14;18;12;13;" +
+            "15;0;0;10;abc")]
+        public string tablaSync {
+            get {
+                return ((string)(this["tablaSync"]));
+            }
+            set {
+                this["tablaSync"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int comboIndex {
+            get {
+                return ((int)(this["comboIndex"]));
+            }
+            set {
+                this["comboIndex"] = value;
+            }
+        }
     }
 }

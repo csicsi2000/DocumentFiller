@@ -272,6 +272,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Content Include="bin\Debug\kepzesi igazolas sablon a programhoz.docx" />
+    <None Include="app.config" />
     <None Include="bin\Debug\SablonFajl.xlsx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -96,9 +96,12 @@ namespace WindowsFormsApp_autósiskola
             }
             string fajlHely = excelHelye.Text;
 
+            Properties.Settings.Default.ExcelFajlHelye = fajlHely;
+
             if (fileMethods.isExcelComptaible(fajlHely))
             {
                 fileMethods.FajlOlvasas();
+                ListaJelenites();
             }
             else if (Path.GetExtension(fajlHely) == ".csv")
             { 
@@ -112,9 +115,7 @@ namespace WindowsFormsApp_autósiskola
                 frissites.Visible = false;
                 MessageBox.Show("Nem megfelelő a megadott fájlformátum. (.csv , .xlsx, .xlsm)", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            Properties.Settings.Default.ExcelFajlHelye = fajlHely;
             Properties.Settings.Default.Save();
-            ListaJelenites();
         }
 
         private void SorSzam_TextChanged(object sender, EventArgs e)
@@ -192,6 +193,7 @@ namespace WindowsFormsApp_autósiskola
 
         private void valaszt_Click_1(object sender, EventArgs e)
         {
+            fileMethods.FajlOlvasas();
             if (SorSzam.Text == "" || SorSzam.Text == null)
             {
                 MessageBox.Show("Írj be nevet vagy sorszámot", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -472,7 +474,7 @@ namespace WindowsFormsApp_autósiskola
 
                     Excel.Application xlApp = StartExcel();
                     var xlWorkbooks = xlApp.Workbooks;
-                    var xlWorkbook = xlWorkbooks.Open(Properties.Settings.Default.ExcelFajlMasolata, CorruptLoad: true);
+                    var xlWorkbook = xlWorkbooks.Open(Properties.Settings.Default.ExcelFajlMasolata);
                     Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[ExcelOldalNevek.SelectedIndex + 1];
                     Excel.Range xlRange = xlWorksheet.UsedRange;
                     int totalRows = xlRange.Rows.Count;
@@ -673,7 +675,7 @@ namespace WindowsFormsApp_autósiskola
                 frissites.Visible = true;
                 //try
                 //{
-                    var excelBooks = workbooks.Open(excelHelye.Text);
+                    var excelBooks = workbooks.Open(Properties.Settings.Default.ExcelFajlMasolata);
 
                     String[] excelSheets = new String[excelBooks.Worksheets.Count];
                     int i = 0;
@@ -696,16 +698,16 @@ namespace WindowsFormsApp_autósiskola
                 //}
                 //catch (Exception)
                 //{
-                    
-                        //File.Delete(Properties.Settings.Default.ExcelFajlMasolata);
-                        //ExcelOldalNevek.Visible = false;
-                        //frissites.Visible = false;
-                    
+
+                //    File.Delete(Properties.Settings.Default.ExcelFajlMasolata);
+                //    ExcelOldalNevek.Visible = false;
+                //    frissites.Visible = false;
+
                 //}
                 //finally
                 //{
-                fileMethods.DisposeExcelInstance(xlApp, workbooks);
-                GC.Collect();
+                    fileMethods.DisposeExcelInstance(xlApp, workbooks);
+                    GC.Collect();
                 //}
             }
             else
@@ -842,6 +844,7 @@ namespace WindowsFormsApp_autósiskola
             honapBetu.Checked = Properties.Settings.Default.honapBetu;
             kiallitasiHely.Text = Properties.Settings.Default.kiallitasiHely;
             frissites.Visible = ExcelOldalNevek.Visible;
+            comboBox1.SelectedIndex = Properties.Settings.Default.comboIndex;
             mentesFolyamatban.Visible = false;
             panel1.Visible = false;
             panel4.Visible = false;
@@ -1345,7 +1348,11 @@ namespace WindowsFormsApp_autósiskola
                 panel7.Visible = false;
                 return;
             }
-            megjegyzesek.Text = "";
+            string ido = DateTime.Now.ToString("MM/dd/yyyy");
+            string ev = ido.Substring(8, 4) + ".";
+            string honap = ido.Substring(0, 2) + ".";
+            string nap = ido.Substring(4, 2) + ".";
+            megjegyzesek.Text = ("Hozzáadás dátuma: " + ev + honap + nap);
 
             dataGridView1.Rows[0].ReadOnly = true;
             dataGridView1.Columns[0].ReadOnly = true;
@@ -1404,6 +1411,75 @@ namespace WindowsFormsApp_autósiskola
                 MessageBox.Show("Nem található meg a sablon fájl!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 GC.Collect();
             }
+        }
+
+        private void torles_Click(object sender, EventArgs e)
+        {
+            string fajlhely = Properties.Settings.Default.ExcelFajlHelye;
+            if (fileMethods.isExcelComptaible(fajlhely))
+            {
+                if (fileMethods.IsFileLocked(fajlhely) == false)
+                {
+                    DialogResult dialogResult = MessageBox.Show("Biztosan kitörli a választott tanulót? Nem lehet visszavonni a törlés után.", "Figyelmeztetés", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (dialogResult == DialogResult.No)
+                    {
+                        return;
+                    }
+                    
+                    Excel.Application xlAppMain = new Excel.Application();
+                    var xlWorkbooks = xlAppMain.Workbooks;
+                    var xlWorkbook = xlWorkbooks.Open(fajlhely);
+                    Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[ExcelOldalNevek.SelectedIndex + 1];
+                    Excel.Range xlRange = xlWorksheet.UsedRange;
+                    int totalRows = xlRange.Rows.Count;
+                    int totalColumns = xlRange.Columns.Count;
+
+
+                    string sorszam = dataGridView1.Rows[0].Cells[1].Value.ToString();
+                    int szam = 0;
+                    try
+                    {
+                        szam = Convert.ToInt32(sorszam) + 1;
+                    }
+                    catch (Exception)
+                    {
+                        fileMethods.DisposeExcelInstance(xlAppMain, xlWorkbooks, xlWorksheet);
+                        MessageBox.Show("Hiba a sorszám olvasásnál!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    szam = kivSor;
+
+                    Excel.Range row = xlWorksheet.Rows[szam];
+                    row.Delete();
+
+                    for(int i = szam; i < totalColumns; i++)
+                    {
+                        int ujSzam = szam - 1;
+                        xlWorksheet.Cells[szam, 1].Value = ujSzam;
+                    }
+                    try
+                    {
+                        xlWorkbook.Save();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Nem sikerült a mentés! Ellenőrizze hogy be van-e zárva a fájl.", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    fileMethods.DisposeExcelInstance(xlAppMain, xlWorkbooks, xlWorksheet);
+                    megjegyzesek.Text = "";
+                    dataGridView1.Rows.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Nem sikerült a hozzáférés! Ellenőrizze hogy be van-e zárva a fájl.", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.comboIndex = comboBox1.SelectedIndex;
+            Properties.Settings.Default.Save();
         }
     }
 }
