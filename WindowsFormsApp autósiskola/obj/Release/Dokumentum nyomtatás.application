@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Dokumentum nyomtatás.exe.manifest" size="12108">
+    <dependentAssembly dependencyType="install" codebase="Dokumentum nyomtatás.exe.manifest" size="12109">
       <assemblyIdentity name="Dokumentum nyomtatás.exe" version="1.0.0.4" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>BKl0xULUoi4X0HnFomGiDZ5E0IVees34gnE8/jZ1Pl8=</dsig:DigestValue>
+        <dsig:DigestValue>pDvglWgvc9ZWUDTr68d+vNN7hFx6Gfc5SC9lN9iEnZs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

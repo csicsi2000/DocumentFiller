@@ -34,7 +34,6 @@ namespace WindowsFormsApp_autósiskola
             }
             catch (IOException)
             {
-                MessageBox.Show("Nem elérhető a fájl. Zárja be a szerkesztés miatt!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return true;
             }
             return false;
