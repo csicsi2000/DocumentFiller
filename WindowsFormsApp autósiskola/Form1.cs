@@ -563,6 +563,10 @@ namespace WindowsFormsApp_autósiskola
                                                         ref missing, ref isVisible, ref missing, ref missing,
                                                         ref missing, ref missing);
                         aDoc.Activate();
+                        this.FindAndReplace(wordApp, "<iskolaAzonosito>", Properties.Settings.Default.iskolaAzonosito);
+                        this.FindAndReplace(wordApp, "<iskolaNev>", Properties.Settings.Default.iskolaNev);
+                        this.FindAndReplace(wordApp, "<iskolaCim>", Properties.Settings.Default.iskolaCim);
+
 
                         this.FindAndReplace(wordApp, "<Nev>", kivalasztott[0].Nev);
                         this.FindAndReplace(wordApp, "<SzuleteskoriNev>", kivalasztott[0].SzuleteskoriNev);
@@ -848,6 +852,9 @@ namespace WindowsFormsApp_autósiskola
             kiallitasiHely.Text = Properties.Settings.Default.kiallitasiHely;
             frissites.Visible = ExcelOldalNevek.Visible;
             comboBox1.SelectedIndex = Properties.Settings.Default.comboIndex;
+            iskolaAzonosito.Text = Properties.Settings.Default.iskolaAzonosito;
+            iskolaNev.Text = Properties.Settings.Default.iskolaNev;
+            iskolaCim.Text = Properties.Settings.Default.iskolaCim;
             mentesFolyamatban.Visible = false;
             panel1.Visible = false;
             panel4.Visible = false;
@@ -1282,13 +1289,13 @@ namespace WindowsFormsApp_autósiskola
 
         private void ujTanulo_Click(object sender, EventArgs e)
         {
-
             if (excelHelye.Text == "" || excelHelye.Text == null)
             {
                 MessageBox.Show("Válaszd ki az olvasni kívánt excel fájlt!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             int totalRows = 1;
+            megjegyzesek.Text = "";
             List<string> adatTipusok = new List<string>();
             if (fileMethods.isExcelComptaible(Properties.Settings.Default.ExcelFajlHelye))
             {
@@ -1504,6 +1511,24 @@ namespace WindowsFormsApp_autósiskola
         private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
         {
             Properties.Settings.Default.ujTanuloIdo = checkBox1.Checked;
+            Properties.Settings.Default.Save();
+        }
+
+        private void iskolaAzonosito_TextChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.iskolaAzonosito = iskolaAzonosito.Text;
+            Properties.Settings.Default.Save();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.iskolaNev = iskolaNev.Text;
+            Properties.Settings.Default.Save();
+        }
+
+        private void iskolaCim_TextChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.iskolaCim = iskolaCim.Text;
             Properties.Settings.Default.Save();
         }
     }

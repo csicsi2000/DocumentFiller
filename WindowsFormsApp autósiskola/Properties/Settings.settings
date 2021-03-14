@@ -50,5 +50,14 @@
     <Setting Name="ujTanuloIdo" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="iskolaAzonosito" Type="System.String" Scope="User">
+      <Value Profile="(Default)">2030</Value>
+    </Setting>
+    <Setting Name="iskolaNev" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Főút Autósiskola</Value>
+    </Setting>
+    <Setting Name="iskolaCim" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Érd, Fő Utca 52.</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

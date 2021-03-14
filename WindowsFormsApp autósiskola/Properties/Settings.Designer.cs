@@ -215,5 +215,41 @@ namespace WindowsFormsApp_autósiskola.Properties {
                 this["ujTanuloIdo"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2030")]
+        public string iskolaAzonosito {
+            get {
+                return ((string)(this["iskolaAzonosito"]));
+            }
+            set {
+                this["iskolaAzonosito"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Főút Autósiskola")]
+        public string iskolaNev {
+            get {
+                return ((string)(this["iskolaNev"]));
+            }
+            set {
+                this["iskolaNev"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Érd, Fő Utca 52.")]
+        public string iskolaCim {
+            get {
+                return ((string)(this["iskolaCim"]));
+            }
+            set {
+                this["iskolaCim"] = value;
+            }
+        }
     }
 }

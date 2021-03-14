@@ -30,9 +30,9 @@ namespace WindowsFormsApp_autósiskola
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.SorSzam = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,6 +53,7 @@ namespace WindowsFormsApp_autósiskola
             this.frissites = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.honapBetu = new System.Windows.Forms.CheckBox();
@@ -66,14 +67,6 @@ namespace WindowsFormsApp_autósiskola
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.ujTanulo = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.mehet = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.torles = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -85,22 +78,36 @@ namespace WindowsFormsApp_autósiskola
             this.Tanulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mentesFolyamatban = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button5 = new System.Windows.Forms.Button();
             this.torlesFolyamatban = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.ujTanulo = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.mehet = new System.Windows.Forms.Label();
             this.valasztFolyamatban = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.iskolaAzonosito = new System.Windows.Forms.TextBox();
+            this.iskolaNev = new System.Windows.Forms.TextBox();
+            this.iskolaCim = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.mentesFolyamatban.SuspendLayout();
             this.torlesFolyamatban.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.valasztFolyamatban.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -372,6 +379,13 @@ namespace WindowsFormsApp_autósiskola
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label17);
+            this.panel1.Controls.Add(this.iskolaCim);
+            this.panel1.Controls.Add(this.label16);
+            this.panel1.Controls.Add(this.iskolaNev);
+            this.panel1.Controls.Add(this.iskolaAzonosito);
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.comboBox1);
@@ -383,16 +397,30 @@ namespace WindowsFormsApp_autósiskola
             this.panel1.Location = new System.Drawing.Point(22, 30);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(344, 337);
+            this.panel1.Size = new System.Drawing.Size(659, 385);
             this.panel1.TabIndex = 20;
             this.panel1.Visible = false;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
+            this.checkBox1.Location = new System.Drawing.Point(78, 261);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(193, 20);
+            this.checkBox1.TabIndex = 6;
+            this.checkBox1.Text = "Új tanuló bekerülési ideje";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged_1);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold);
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
-            this.label11.Location = new System.Drawing.Point(98, 176);
+            this.label11.Location = new System.Drawing.Point(98, 191);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(148, 18);
@@ -405,9 +433,9 @@ namespace WindowsFormsApp_autósiskola
             this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Főút autósiskola",
-            "ABC autósiskola"});
-            this.comboBox1.Location = new System.Drawing.Point(89, 205);
+            "Főút Autósiskola",
+            "ABC Autósiskola"});
+            this.comboBox1.Location = new System.Drawing.Point(89, 220);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(169, 25);
             this.comboBox1.TabIndex = 4;
@@ -432,10 +460,10 @@ namespace WindowsFormsApp_autósiskola
             this.bezaras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bezaras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bezaras.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.bezaras.Location = new System.Drawing.Point(227, 278);
+            this.bezaras.Location = new System.Drawing.Point(555, 336);
             this.bezaras.Margin = new System.Windows.Forms.Padding(4);
             this.bezaras.Name = "bezaras";
-            this.bezaras.Size = new System.Drawing.Size(94, 35);
+            this.bezaras.Size = new System.Drawing.Size(98, 39);
             this.bezaras.TabIndex = 2;
             this.bezaras.Text = "Bezárás";
             this.bezaras.UseVisualStyleBackColor = true;
@@ -559,7 +587,6 @@ namespace WindowsFormsApp_autósiskola
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Black;
-            this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.button5);
             this.panel3.Controls.Add(this.ujTanulo);
             this.panel3.Controls.Add(this.frissites);
@@ -587,6 +614,7 @@ namespace WindowsFormsApp_autósiskola
             this.panel3.Controls.Add(this.panel7);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.valasztFolyamatban);
+            this.panel3.Controls.Add(this.panel6);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
@@ -594,6 +622,212 @@ namespace WindowsFormsApp_autósiskola
             this.panel3.Size = new System.Drawing.Size(882, 662);
             this.panel3.TabIndex = 24;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.torles);
+            this.panel6.Controls.Add(this.label8);
+            this.panel6.Controls.Add(this.mentes);
+            this.panel6.Controls.Add(this.megjegyzesek);
+            this.panel6.Controls.Add(this.button4);
+            this.panel6.Controls.Add(this.dataGridView1);
+            this.panel6.Controls.Add(this.mentesFolyamatban);
+            this.panel6.Controls.Add(this.torlesFolyamatban);
+            this.panel6.Location = new System.Drawing.Point(0, 61);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(880, 599);
+            this.panel6.TabIndex = 27;
+            // 
+            // torles
+            // 
+            this.torles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.torles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.torles.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.torles.ForeColor = System.Drawing.Color.White;
+            this.torles.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.torles.Location = new System.Drawing.Point(731, 457);
+            this.torles.Margin = new System.Windows.Forms.Padding(4);
+            this.torles.Name = "torles";
+            this.torles.Size = new System.Drawing.Size(117, 49);
+            this.torles.TabIndex = 26;
+            this.torles.Text = "Törlés";
+            this.torles.UseVisualStyleBackColor = true;
+            this.torles.Click += new System.EventHandler(this.torles_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
+            this.label8.Location = new System.Drawing.Point(543, 9);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(115, 20);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Megjegyzések";
+            // 
+            // mentes
+            // 
+            this.mentes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.mentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.mentes.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.mentes.ForeColor = System.Drawing.Color.White;
+            this.mentes.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.mentes.Location = new System.Drawing.Point(542, 520);
+            this.mentes.Margin = new System.Windows.Forms.Padding(4);
+            this.mentes.Name = "mentes";
+            this.mentes.Size = new System.Drawing.Size(109, 49);
+            this.mentes.TabIndex = 5;
+            this.mentes.Text = "Mentés";
+            this.mentes.UseVisualStyleBackColor = true;
+            this.mentes.Click += new System.EventHandler(this.szerkesztes_Click);
+            // 
+            // megjegyzesek
+            // 
+            this.megjegyzesek.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.megjegyzesek.Location = new System.Drawing.Point(542, 31);
+            this.megjegyzesek.Multiline = true;
+            this.megjegyzesek.Name = "megjegyzesek";
+            this.megjegyzesek.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.megjegyzesek.Size = new System.Drawing.Size(306, 412);
+            this.megjegyzesek.TabIndex = 6;
+            this.megjegyzesek.TextChanged += new System.EventHandler(this.megjegyzesek_TextChanged);
+            // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.button4.Location = new System.Drawing.Point(731, 520);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(117, 49);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Bezárás";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Adatok,
+            this.Tanulo});
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGridView1.Location = new System.Drawing.Point(38, 7);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(474, 562);
+            this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseUp);
+            // 
+            // Adatok
+            // 
+            this.Adatok.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            this.Adatok.DefaultCellStyle = dataGridViewCellStyle8;
+            this.Adatok.FillWeight = 120F;
+            this.Adatok.HeaderText = "Adatok";
+            this.Adatok.MinimumWidth = 6;
+            this.Adatok.Name = "Adatok";
+            this.Adatok.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Adatok.Width = 160;
+            // 
+            // Tanulo
+            // 
+            this.Tanulo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Tanulo.FillWeight = 80F;
+            this.Tanulo.HeaderText = "Tanuló";
+            this.Tanulo.MinimumWidth = 6;
+            this.Tanulo.Name = "Tanulo";
+            this.Tanulo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Tanulo.Width = 400;
+            // 
+            // mentesFolyamatban
+            // 
+            this.mentesFolyamatban.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.mentesFolyamatban.Controls.Add(this.label10);
+            this.mentesFolyamatban.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.mentesFolyamatban.Location = new System.Drawing.Point(536, 520);
+            this.mentesFolyamatban.Margin = new System.Windows.Forms.Padding(4);
+            this.mentesFolyamatban.Name = "mentesFolyamatban";
+            this.mentesFolyamatban.Size = new System.Drawing.Size(122, 49);
+            this.mentesFolyamatban.TabIndex = 25;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.label10.ForeColor = System.Drawing.Color.Silver;
+            this.label10.Location = new System.Drawing.Point(4, 14);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(116, 20);
+            this.label10.TabIndex = 23;
+            this.label10.Text = "Folyamatban...";
+            // 
+            // torlesFolyamatban
+            // 
+            this.torlesFolyamatban.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.torlesFolyamatban.Controls.Add(this.label12);
+            this.torlesFolyamatban.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.torlesFolyamatban.Location = new System.Drawing.Point(728, 457);
+            this.torlesFolyamatban.Margin = new System.Windows.Forms.Padding(4);
+            this.torlesFolyamatban.Name = "torlesFolyamatban";
+            this.torlesFolyamatban.Size = new System.Drawing.Size(122, 49);
+            this.torlesFolyamatban.TabIndex = 27;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.label12.ForeColor = System.Drawing.Color.Silver;
+            this.label12.Location = new System.Drawing.Point(4, 14);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(116, 20);
+            this.label12.TabIndex = 23;
+            this.label12.Text = "Folyamatban...";
+            // 
+            // button5
+            // 
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
+            this.button5.Location = new System.Drawing.Point(171, 31);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(142, 29);
+            this.button5.TabIndex = 29;
+            this.button5.Text = "Excel sablon fájl";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // ujTanulo
             // 
@@ -692,226 +926,6 @@ namespace WindowsFormsApp_autósiskola
             this.mehet.Text = "Folyamatban...";
             this.mehet.Click += new System.EventHandler(this.mehet_Click);
             // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.torles);
-            this.panel6.Controls.Add(this.label8);
-            this.panel6.Controls.Add(this.mentes);
-            this.panel6.Controls.Add(this.megjegyzesek);
-            this.panel6.Controls.Add(this.button4);
-            this.panel6.Controls.Add(this.dataGridView1);
-            this.panel6.Controls.Add(this.mentesFolyamatban);
-            this.panel6.Controls.Add(this.torlesFolyamatban);
-            this.panel6.Location = new System.Drawing.Point(0, 61);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(880, 599);
-            this.panel6.TabIndex = 27;
-            // 
-            // torles
-            // 
-            this.torles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.torles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.torles.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.torles.ForeColor = System.Drawing.Color.White;
-            this.torles.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.torles.Location = new System.Drawing.Point(731, 457);
-            this.torles.Margin = new System.Windows.Forms.Padding(4);
-            this.torles.Name = "torles";
-            this.torles.Size = new System.Drawing.Size(117, 49);
-            this.torles.TabIndex = 26;
-            this.torles.Text = "Törlés";
-            this.torles.UseVisualStyleBackColor = true;
-            this.torles.Click += new System.EventHandler(this.torles_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
-            this.label8.Location = new System.Drawing.Point(543, 9);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(115, 20);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Megjegyzések";
-            // 
-            // mentes
-            // 
-            this.mentes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.mentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.mentes.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.mentes.ForeColor = System.Drawing.Color.White;
-            this.mentes.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.mentes.Location = new System.Drawing.Point(542, 520);
-            this.mentes.Margin = new System.Windows.Forms.Padding(4);
-            this.mentes.Name = "mentes";
-            this.mentes.Size = new System.Drawing.Size(109, 49);
-            this.mentes.TabIndex = 5;
-            this.mentes.Text = "Mentés";
-            this.mentes.UseVisualStyleBackColor = true;
-            this.mentes.Click += new System.EventHandler(this.szerkesztes_Click);
-            // 
-            // megjegyzesek
-            // 
-            this.megjegyzesek.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.megjegyzesek.Location = new System.Drawing.Point(542, 31);
-            this.megjegyzesek.Multiline = true;
-            this.megjegyzesek.Name = "megjegyzesek";
-            this.megjegyzesek.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.megjegyzesek.Size = new System.Drawing.Size(306, 412);
-            this.megjegyzesek.TabIndex = 6;
-            this.megjegyzesek.TextChanged += new System.EventHandler(this.megjegyzesek_TextChanged);
-            // 
-            // button4
-            // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button4.Location = new System.Drawing.Point(731, 520);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(117, 49);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Bezárás";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Adatok,
-            this.Tanulo});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle12;
-            this.dataGridView1.Location = new System.Drawing.Point(38, 7);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(474, 562);
-            this.dataGridView1.TabIndex = 4;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            this.dataGridView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseUp);
-            // 
-            // Adatok
-            // 
-            this.Adatok.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
-            this.Adatok.DefaultCellStyle = dataGridViewCellStyle11;
-            this.Adatok.FillWeight = 120F;
-            this.Adatok.HeaderText = "Adatok";
-            this.Adatok.MinimumWidth = 6;
-            this.Adatok.Name = "Adatok";
-            this.Adatok.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Adatok.Width = 160;
-            // 
-            // Tanulo
-            // 
-            this.Tanulo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Tanulo.FillWeight = 80F;
-            this.Tanulo.HeaderText = "Tanuló";
-            this.Tanulo.MinimumWidth = 6;
-            this.Tanulo.Name = "Tanulo";
-            this.Tanulo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Tanulo.Width = 400;
-            // 
-            // mentesFolyamatban
-            // 
-            this.mentesFolyamatban.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.mentesFolyamatban.Controls.Add(this.label10);
-            this.mentesFolyamatban.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.mentesFolyamatban.Location = new System.Drawing.Point(536, 520);
-            this.mentesFolyamatban.Margin = new System.Windows.Forms.Padding(4);
-            this.mentesFolyamatban.Name = "mentesFolyamatban";
-            this.mentesFolyamatban.Size = new System.Drawing.Size(122, 49);
-            this.mentesFolyamatban.TabIndex = 25;
-            // 
-            // label10
-            // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.label10.ForeColor = System.Drawing.Color.Silver;
-            this.label10.Location = new System.Drawing.Point(4, 14);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(116, 20);
-            this.label10.TabIndex = 23;
-            this.label10.Text = "Folyamatban...";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
-            this.checkBox1.Location = new System.Drawing.Point(78, 246);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(193, 20);
-            this.checkBox1.TabIndex = 6;
-            this.checkBox1.Text = "Új tanuló bekerülési ideje";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged_1);
-            // 
-            // button5
-            // 
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
-            this.button5.Location = new System.Drawing.Point(171, 31);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(142, 29);
-            this.button5.TabIndex = 29;
-            this.button5.Text = "Excel sablon fájl";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // torlesFolyamatban
-            // 
-            this.torlesFolyamatban.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.torlesFolyamatban.Controls.Add(this.label12);
-            this.torlesFolyamatban.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.torlesFolyamatban.Location = new System.Drawing.Point(728, 457);
-            this.torlesFolyamatban.Margin = new System.Windows.Forms.Padding(4);
-            this.torlesFolyamatban.Name = "torlesFolyamatban";
-            this.torlesFolyamatban.Size = new System.Drawing.Size(122, 49);
-            this.torlesFolyamatban.TabIndex = 27;
-            // 
-            // label12
-            // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.label12.ForeColor = System.Drawing.Color.Silver;
-            this.label12.Location = new System.Drawing.Point(4, 14);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(116, 20);
-            this.label12.TabIndex = 23;
-            this.label12.Text = "Folyamatban...";
-            // 
             // valasztFolyamatban
             // 
             this.valasztFolyamatban.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -936,6 +950,100 @@ namespace WindowsFormsApp_autósiskola
             this.label13.Size = new System.Drawing.Size(116, 20);
             this.label13.TabIndex = 23;
             this.label13.Text = "Folyamatban...";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
+            this.label14.Location = new System.Drawing.Point(446, 68);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(79, 18);
+            this.label14.TabIndex = 7;
+            this.label14.Text = "Azonosító";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
+            this.label15.Location = new System.Drawing.Point(467, 158);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(37, 18);
+            this.label15.TabIndex = 8;
+            this.label15.Text = "Név\r\n";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // iskolaAzonosito
+            // 
+            this.iskolaAzonosito.BackColor = System.Drawing.Color.Black;
+            this.iskolaAzonosito.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.iskolaAzonosito.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.iskolaAzonosito.ForeColor = System.Drawing.Color.White;
+            this.iskolaAzonosito.Location = new System.Drawing.Point(367, 105);
+            this.iskolaAzonosito.Margin = new System.Windows.Forms.Padding(4);
+            this.iskolaAzonosito.Name = "iskolaAzonosito";
+            this.iskolaAzonosito.Size = new System.Drawing.Size(241, 22);
+            this.iskolaAzonosito.TabIndex = 10;
+            this.iskolaAzonosito.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.iskolaAzonosito.TextChanged += new System.EventHandler(this.iskolaAzonosito_TextChanged);
+            // 
+            // iskolaNev
+            // 
+            this.iskolaNev.BackColor = System.Drawing.Color.Black;
+            this.iskolaNev.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.iskolaNev.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.iskolaNev.ForeColor = System.Drawing.Color.White;
+            this.iskolaNev.Location = new System.Drawing.Point(367, 191);
+            this.iskolaNev.Margin = new System.Windows.Forms.Padding(4);
+            this.iskolaNev.Name = "iskolaNev";
+            this.iskolaNev.Size = new System.Drawing.Size(241, 22);
+            this.iskolaNev.TabIndex = 11;
+            this.iskolaNev.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.iskolaNev.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // iskolaCim
+            // 
+            this.iskolaCim.BackColor = System.Drawing.Color.Black;
+            this.iskolaCim.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.iskolaCim.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.iskolaCim.ForeColor = System.Drawing.Color.White;
+            this.iskolaCim.Location = new System.Drawing.Point(367, 282);
+            this.iskolaCim.Margin = new System.Windows.Forms.Padding(4);
+            this.iskolaCim.Name = "iskolaCim";
+            this.iskolaCim.Size = new System.Drawing.Size(241, 22);
+            this.iskolaCim.TabIndex = 13;
+            this.iskolaCim.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.iskolaCim.TextChanged += new System.EventHandler(this.iskolaCim_TextChanged);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
+            this.label16.Location = new System.Drawing.Point(466, 246);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(38, 18);
+            this.label16.TabIndex = 12;
+            this.label16.Text = "Cím";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
+            this.label17.Location = new System.Drawing.Point(417, 27);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(132, 23);
+            this.label17.TabIndex = 14;
+            this.label17.Text = "Iskola adatai";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
@@ -964,12 +1072,6 @@ namespace WindowsFormsApp_autósiskola
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -977,6 +1079,12 @@ namespace WindowsFormsApp_autósiskola
             this.mentesFolyamatban.PerformLayout();
             this.torlesFolyamatban.ResumeLayout(false);
             this.torlesFolyamatban.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.valasztFolyamatban.ResumeLayout(false);
             this.valasztFolyamatban.PerformLayout();
             this.ResumeLayout(false);
@@ -1043,6 +1151,13 @@ namespace WindowsFormsApp_autósiskola
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel valasztFolyamatban;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox iskolaCim;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox iskolaNev;
+        private System.Windows.Forms.TextBox iskolaAzonosito;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
     }
 }
 
