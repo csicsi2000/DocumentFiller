@@ -26,19 +26,20 @@ namespace WindowsFormsApp_autósiskola
         public string SikeresElmeletVizsga;
         public string SikertelenSzama;
         public string Korlatozasok;
+        public string Kategoria;
 
 
         public tanulo(string Adatsor)
         {
             int index = Properties.Settings.Default.comboIndex;
             string[] sablonok = Properties.Settings.Default.tablaSync.Split('Ł');
-            string[] szamString =sablonok[index].Split(';');
+            string[] szamString = sablonok[index].Split(';');
             int[] szamok = new int[szamString.Length];
-            for(int i = 0; i < (szamString.Length-1); i++)
+            for (int i = 0; i < (szamString.Length - 1); i++)
             {
                 szamok[i] = Convert.ToInt32(szamString[i]);
             }
-            
+
 
             int count = 0;
             foreach (char c in Adatsor)
@@ -72,29 +73,7 @@ namespace WindowsFormsApp_autósiskola
 
 
             Nev = adatok[szamok[0]];
-            if (sablonok[index].Contains("abc"))
-            {
-                if (adatok[szamok[0]].Contains("("))
-                {
-                    string[] szed = adatok[szamok[0]].Split('(');
-                    SzuleteskoriNev = szed[1].Replace(")", "");
-                }
-                else
-                {
-                    SzuleteskoriNev = Nev;
-                }
-            }
-            else
-            {
-                if (adatok[szamok[1]] == "U.A." || adatok[szamok[1]] == "U.A" || adatok[szamok[1]] == "u.a." || adatok[szamok[1]] == "u.a")
-                {
-                    SzuleteskoriNev = adatok[szamok[0]];
-                }
-                else
-                {
-                    SzuleteskoriNev = adatok[szamok[1]];
-                }
-            }
+            SzuleteskoriNev = Nev;
             SzuletesiHely = adatok[szamok[2]];
             SzuletesiIdo = adatok[szamok[3]];
             Anyja = adatok[szamok[4]];
@@ -122,25 +101,48 @@ namespace WindowsFormsApp_autósiskola
             ElsoElmelet = adatok[szamok[11]];
             ElmeletTargy = adatok[szamok[12]];
             ElsoElmeletVizsga = adatok[szamok[13]];
+            SikeresElmeletVizsga = adatok[szamok[14]];
+            SikertelenSzama = adatok[szamok[15]];
+            Korlatozasok = adatok[szamok[16]];
+            Kategoria = "";
+
             if (sablonok[index].Contains("abc"))
             {
-                SikertelenSzama = "\t";
-                if (adatok[15].Contains("M"))
+                if (adatok[szamok[0]].Contains("("))
                 {
-                    SikeresElmeletVizsga = adatok[15].Replace("M", "");
+                    string[] szed = adatok[szamok[0]].Split('(');
+                    SzuleteskoriNev = szed[1].Replace(")", "");
                 }
                 else
                 {
-                    SikeresElmeletVizsga = adatok[16].Replace("M", "");
+                    SzuleteskoriNev = Nev;
                 }
+                if (sablonok[index].Contains("abc"))
+                {
+                    SikertelenSzama = "\t";
+                    if (adatok[15].Contains("M"))
+                    {
+                        SikeresElmeletVizsga = adatok[15].Replace("M", "");
+                    }
+                    else
+                    {
+                        SikeresElmeletVizsga = adatok[16].Replace("M", "");
+                    }
+                }
+                Kategoria = ", " + adatok[szamok[17]];
             }
             else
             {
-                SikeresElmeletVizsga = adatok[szamok[14]];
-                SikertelenSzama = adatok[szamok[15]];
+                if (adatok[szamok[1]] == "U.A." || adatok[szamok[1]] == "U.A" || adatok[szamok[1]] == "u.a." || adatok[szamok[1]] == "u.a")
+                {
+                    SzuleteskoriNev = adatok[szamok[0]];
+                }
+                else
+                {
+                    SzuleteskoriNev = adatok[szamok[1]];
+                }
 
             }
-            Korlatozasok = adatok[szamok[16]];
         }
     }
 }

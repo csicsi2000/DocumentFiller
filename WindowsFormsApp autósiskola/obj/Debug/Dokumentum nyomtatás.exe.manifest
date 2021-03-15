@@ -50,7 +50,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ZpIHW6qt1Nxj8hbqVL/D+xUJr/CjiABN41kWSUKwOuE=</dsig:DigestValue>
+        <dsig:DigestValue>WGttDaL3vgMkwaUSnhhfcCzcqnTiOcB+06lRTFjuZ4g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -62,7 +62,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>HLfWwuNSox+dM9yuWl2xNFEHL9VcBbeRB+bFXC0Kf6E=</dsig:DigestValue>
+        <dsig:DigestValue>lQZthwbroYbfu9igFXHRs30s8XvH/k/KL4cUUclCc2Q=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -74,7 +74,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>6eeSBfEiPhesqrMDaHdsV9m1ZcYMuCjYQw8p36B8Okw=</dsig:DigestValue>
+        <dsig:DigestValue>nXwM7G3+7OG1A5fvMba4t/mooquRoXe9la/rPN6JY+s=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,7 +86,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>fz3rQq5rOn2X2X9HKoctXwRadS03M2bCz2FXAAmwk+E=</dsig:DigestValue>
+        <dsig:DigestValue>tmzHyTswnPpXn7Tq22OYiUH82nu6k6nJriahb8jgvuk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -186,22 +186,22 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="bin\Debug\kepzesi igazolas sablon a programhoz.docx" size="20748">
+  <file name="bin\Debug\kepzesi igazolas sablon a programhoz.docx" size="20760">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>M8rMLmhNCWcmG3W0jWyDzPm4kCnyp8bdQu4c8G/teN4=</dsig:DigestValue>
+      <dsig:DigestValue>fidw0Gi8GlV8i0U2sucgpvJW9JOZvXOOvr0extCcnaA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Dokumentum nyomtatás.exe.config" size="3460">
+  <file name="Dokumentum nyomtatás.exe.config" size="3475">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>rz9mxyEX+A46CRyNmaLDg5DkwGZMg3ubU9QjnauvE64=</dsig:DigestValue>
+      <dsig:DigestValue>m/L5cSh/aWJgSMv6U3DsqedfkkFXAsd34/50UVWXask=</dsig:DigestValue>
     </hash>
   </file>
   <file name="favicon (3).ico" size="40654">

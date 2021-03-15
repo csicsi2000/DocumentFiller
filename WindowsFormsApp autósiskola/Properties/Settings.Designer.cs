@@ -133,7 +133,7 @@ namespace WindowsFormsApp_autósiskola.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Érd")]
         public string kiallitasiHely {
             get {
                 return ((string)(this["kiallitasiHely"]));
@@ -181,8 +181,8 @@ namespace WindowsFormsApp_autósiskola.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1;2;3;4;5;7;8;16;14;17;20;14;15;18;19;30;11;foutŁ1;0;3;2;4;5;6;11;12;14;18;12;13;" +
-            "15;0;0;9;abc")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1;2;3;4;5;7;8;16;14;17;20;14;15;18;19;30;11;0;foutŁ1;0;3;2;4;5;6;11;12;14;18;12;1" +
+            "3;15;0;0;9;10;abc")]
         public string tablaSync {
             get {
                 return ((string)(this["tablaSync"]));

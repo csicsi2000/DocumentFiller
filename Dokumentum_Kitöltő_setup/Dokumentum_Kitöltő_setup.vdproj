@@ -21,12 +21,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_E4961FAFDB5943D5A4BAC8B76CA01908"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_F34D2382EEBF4ECEA721272343D936E1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -136,26 +130,6 @@
             {
             "SourcePath" = "8:..\\WindowsFormsApp autósiskola\\bin\\Debug\\kepzesi igazolas sablon a programhoz.docx"
             "TargetName" = "8:kepzesi igazolas sablon a programhoz.docx"
-            "Tag" = "8:"
-            "Folder" = "8:_42C9FFC60C4D49BCA884788EEC5D55E5"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E4961FAFDB5943D5A4BAC8B76CA01908"
-            {
-            "SourcePath" = "8:..\\WindowsFormsApp autósiskola\\ExcelMasolat.xlsx"
-            "TargetName" = "8:ExcelMasolat.xlsx"
             "Tag" = "8:"
             "Folder" = "8:_42C9FFC60C4D49BCA884788EEC5D55E5"
             "Condition" = "8:"
