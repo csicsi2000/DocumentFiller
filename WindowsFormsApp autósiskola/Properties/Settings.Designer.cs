@@ -62,12 +62,12 @@ namespace WindowsFormsApp_autósiskola.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool Checkbox {
+        public bool wordMegnyitasa {
             get {
-                return ((bool)(this["Checkbox"]));
+                return ((bool)(this["wordMegnyitasa"]));
             }
             set {
-                this["Checkbox"] = value;
+                this["wordMegnyitasa"] = value;
             }
         }
         

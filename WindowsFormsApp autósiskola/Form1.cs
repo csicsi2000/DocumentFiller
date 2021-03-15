@@ -120,7 +120,7 @@ namespace WindowsFormsApp_autósiskola
 
         private void SorSzam_TextChanged(object sender, EventArgs e)
         {
-
+            mentettFajlNeve.Text = "";
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
@@ -258,6 +258,10 @@ namespace WindowsFormsApp_autósiskola
                                         nev = nev.Replace(" ", "").Replace("-", "");
                                         nev2 = nev2.Replace(" ", "").Replace("-", "");
                                     }
+                                    
+                                    nev = nev.Replace("dr.", "");
+                                    nev2 = nev2.Replace("dr.", "");
+                                    
                                     if (nev == nev2)
                                     {
                                         sorszamok.Add(Sorelemek[0]);
@@ -325,6 +329,9 @@ namespace WindowsFormsApp_autósiskola
                                 nev = nev.Replace(" ", "").Replace("-", "");
                                 nev2 = nev2.Replace(" ", "").Replace("-", "");
                             }
+                            nev = nev.Replace("dr.", "");
+                            nev2 = nev2.Replace("dr.", "");
+
                             if (nev == nev2)
                             {
                                 sorszamok.Add(Convert.ToString(xlWorksheet.Cells[Row, 1].Text));
@@ -360,7 +367,7 @@ namespace WindowsFormsApp_autósiskola
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            WindowsFormsApp_autósiskola.Properties.Settings.Default.Checkbox = nyissaEMeg.Checked;
+            WindowsFormsApp_autósiskola.Properties.Settings.Default.wordMegnyitasa = nyissaEMeg.Checked;
             Properties.Settings.Default.Save();
         }
 
@@ -368,6 +375,7 @@ namespace WindowsFormsApp_autósiskola
         {
             Properties.Settings.Default.oldalszam = ExcelOldalNevek.SelectedIndex;
             Properties.Settings.Default.Save();
+            mentettFajlNeve.Text = "";
         }
                 
         private void mentesHelye_TextChanged(object sender, EventArgs e)
@@ -456,6 +464,10 @@ namespace WindowsFormsApp_autósiskola
                                         nev = nev.Replace(" ", "").Replace("-", "");
                                         nev2 = nev2.Replace(" ", "").Replace("-", "");
                                     }
+
+                                    nev = nev.Replace("dr.", "");
+                                    nev2 = nev2.Replace("dr.", "");
+
                                     if (nev == nev2)
                                     {
                                         kivalasztott.Add(new tanulo(sor));
@@ -520,6 +532,10 @@ namespace WindowsFormsApp_autósiskola
                                 nev = nev.Replace(" ", "").Replace("-", "");
                                 nev2 = nev2.Replace(" ", "").Replace("-", "");
                             }
+
+                            nev = nev.Replace("dr.", "");
+                            nev2 = nev2.Replace("dr.", "");
+
                             if (nev == nev2)
                             {
                                 var sb = new StringBuilder();
@@ -844,7 +860,7 @@ namespace WindowsFormsApp_autósiskola
         {
             excelHelye.Text = Properties.Settings.Default.ExcelFajlHelye;
             mentesHelye.Text = Properties.Settings.Default.KeszWord;
-            nyissaEMeg.Checked = Properties.Settings.Default.Checkbox;
+            nyissaEMeg.Checked = Properties.Settings.Default.wordMegnyitasa;
             ekezetek.Checked = Properties.Settings.Default.ekezetek;
             szokoz.Checked = Properties.Settings.Default.szokoz;
             helyIdo.Checked = Properties.Settings.Default.helyIdo;
@@ -1004,6 +1020,10 @@ namespace WindowsFormsApp_autósiskola
                                         nev = nev.Replace(" ", "").Replace("-", "");
                                         nev2 = nev2.Replace(" ", "").Replace("-", "");
                                     }
+
+                                    nev = nev.Replace("dr.", "");
+                                    nev2 = nev2.Replace("dr.", "");
+
                                     if (nev == nev2)
                                     {
                                         sorszamok.Add(Sorelemek[0]);
@@ -1047,7 +1067,7 @@ namespace WindowsFormsApp_autósiskola
 
                     Excel.Application xlApp = StartExcel();
                     var xlWorkbooks = xlApp.Workbooks;
-                    var xlWorkbook = xlWorkbooks.Open(Properties.Settings.Default.ExcelFajlMasolata, CorruptLoad: true);
+                    var xlWorkbook = xlWorkbooks.Open(Properties.Settings.Default.ExcelFajlMasolata);
                     Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[ExcelOldalNevek.SelectedIndex + 1];
                     Excel.Range xlRange = xlWorksheet.UsedRange;
                     int totalRows = xlRange.Rows.Count;
@@ -1124,6 +1144,10 @@ namespace WindowsFormsApp_autósiskola
                                 nev = nev.Replace(" ", "").Replace("-", "");
                                 nev2 = nev2.Replace(" ", "").Replace("-", "");
                             }
+
+                            nev = nev.Replace("dr.", "");
+                            nev2 = nev2.Replace("dr.", "");
+
                             if (nev == nev2)
                             {
                                 kivSor = Row;

@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Dokumentum nyomtatás.exe" size="160680">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Dokumentum nyomtatás.exe" size="161192">
       <assemblyIdentity name="Dokumentum nyomtatás" version="1.1.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>WGttDaL3vgMkwaUSnhhfcCzcqnTiOcB+06lRTFjuZ4g=</dsig:DigestValue>
+        <dsig:DigestValue>LR0Cg/0+J71WvC/MXv/GOoxv0VqT7r3StH90eBchZsI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -62,7 +62,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>lQZthwbroYbfu9igFXHRs30s8XvH/k/KL4cUUclCc2Q=</dsig:DigestValue>
+        <dsig:DigestValue>E4ABu8tQ2orZx3uQWlWsotwmi9VsQC+JjqA0+I8847I=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -74,7 +74,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>nXwM7G3+7OG1A5fvMba4t/mooquRoXe9la/rPN6JY+s=</dsig:DigestValue>
+        <dsig:DigestValue>07IyrXoeSbKXdTwmoE7f08at1OMG50DO2v8cM8UhF1Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,7 +86,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>tmzHyTswnPpXn7Tq22OYiUH82nu6k6nJriahb8jgvuk=</dsig:DigestValue>
+        <dsig:DigestValue>fuo5Fz+LeHN3z6O3N5dBmtoXBRnCauJowMH69pJQ4WQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -195,13 +195,13 @@
       <dsig:DigestValue>fidw0Gi8GlV8i0U2sucgpvJW9JOZvXOOvr0extCcnaA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Dokumentum nyomtatás.exe.config" size="3475">
+  <file name="Dokumentum nyomtatás.exe.config" size="3481">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>m/L5cSh/aWJgSMv6U3DsqedfkkFXAsd34/50UVWXask=</dsig:DigestValue>
+      <dsig:DigestValue>WZkpP5kwyyDnPmijtR76Ngtn18nJhpG07BhL0SmnZpE=</dsig:DigestValue>
     </hash>
   </file>
   <file name="favicon (3).ico" size="40654">
