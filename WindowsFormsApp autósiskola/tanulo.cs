@@ -111,7 +111,9 @@ namespace WindowsFormsApp_autósiskola
                 if (adatok[szamok[0]].Contains("("))
                 {
                     string[] szed = adatok[szamok[0]].Split('(');
+                    Nev = szed[0].Trim();
                     SzuleteskoriNev = szed[1].Replace(")", "");
+
                 }
                 else
                 {
