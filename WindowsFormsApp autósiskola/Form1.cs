@@ -272,8 +272,9 @@ namespace WindowsFormsApp_autósiskola
                                 if (count > 1)
                                 {
                                     sorString = String.Join(", ", sorszamok.ToArray());
-                                    string uzenet = "Több ilyen nevű tanuló is van! Használd a sorszámát.(Azonos nevűek sorszáma: " + sorString + ")";
+                                    string uzenet = "Több ilyen nevű tanuló is van! Használd a sorszámát.\n(Azonos nevűek sorszáma: " + sorString + ")";
                                     MessageBox.Show(uzenet, "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    kivalasztott = "";
                                 }
                                 if (count == 0)
                                 {
@@ -342,8 +343,9 @@ namespace WindowsFormsApp_autósiskola
                         if (count > 1)
                         {
                             sorString = String.Join(", ", sorszamok.ToArray());
-                            string uzenet = "Több ilyen nevű tanuló is van! Használd a sorszámát.(Azonos nevűek sorszáma: " + sorString + ")";
+                            string uzenet = "Több ilyen nevű tanuló is van! Használd a sorszámát.\n(Azonos nevűek sorszáma: " + sorString + ")";
                             MessageBox.Show(uzenet, "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            kivalasztott = "";
                         }
                         if (count == 0)
                         {
