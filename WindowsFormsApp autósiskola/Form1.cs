@@ -631,7 +631,20 @@ namespace WindowsFormsApp_autósiskola
                 string fajl = mentesHelye.Text + "/" + mentettFajlNeve;
                 object missing = System.Reflection.Missing.Value;
 
-                Word.Application wordApp = new Word.Application();
+                Word.Application wordApp = null;
+                try
+                {
+                    wordApp = (Word.Application)System.Runtime.InteropServices.Marshal.GetActiveObject("Word.Application");
+                    if (wordApp.Visible == true)
+                    {
+                        wordApp = new Word.Application();
+                    }
+                }
+                catch (System.Runtime.InteropServices.COMException)
+                {
+                    wordApp = new Word.Application();
+                }
+                wordApp.Visible = false;
 
                 try
                 {
