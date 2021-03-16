@@ -948,7 +948,7 @@ namespace WindowsFormsApp_autósiskola
             szokoz.Checked = Properties.Settings.Default.szokoz;
             helyIdo.Checked = Properties.Settings.Default.helyIdo;
             honapBetu.Checked = Properties.Settings.Default.honapBetu;
-            checkBox1.Checked = Properties.Settings.Default.ujTanuloIdo;
+            ujTanuloIdo.Checked = Properties.Settings.Default.ujTanuloIdo;
             kiallitasiHely.Text = Properties.Settings.Default.kiallitasiHely;
             frissites.Visible = ExcelOldalNevek.Visible;
             comboBox1.SelectedIndex = Properties.Settings.Default.comboIndex;
@@ -963,6 +963,34 @@ namespace WindowsFormsApp_autósiskola
             this.AllowDrop = true;
             this.DragEnter += new DragEventHandler(Form1_DragEnter);
             this.DragDrop += new DragEventHandler(Form1_DragDrop);
+
+            DateTime temp;
+            string ido = DateTime.Now.ToString("MM/dd/yyyy"); 
+            if (!DateTime.TryParse(ido, out temp))
+            {
+                Properties.Settings.Default.ujTanuloIdo = false;
+                ujTanuloIdo.Checked = false;
+                ujTanuloIdo.Enabled = false;
+                ujTanuloIdo.Visible = false;
+
+                Properties.Settings.Default.helyIdo = false;
+                helyIdo.Checked = false;
+                helyIdo.Enabled = false;
+                helyIdo.Visible = false;
+            }
+            else
+            {
+                Properties.Settings.Default.ujTanuloIdo = false;
+                ujTanuloIdo.Checked = false;
+                ujTanuloIdo.Enabled = true;
+                ujTanuloIdo.Visible = true;
+
+                Properties.Settings.Default.helyIdo = false;
+                helyIdo.Checked = false;
+                helyIdo.Enabled = true;
+                helyIdo.Visible = true;
+            }
+            Properties.Settings.Default.Save();
 
             if (fileMethods.isExcelComptaible(Properties.Settings.Default.ExcelFajlHelye))
             {
@@ -1632,7 +1660,7 @@ namespace WindowsFormsApp_autósiskola
 
         private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
         {
-            Properties.Settings.Default.ujTanuloIdo = checkBox1.Checked;
+            Properties.Settings.Default.ujTanuloIdo = ujTanuloIdo.Checked;
             Properties.Settings.Default.Save();
         }
 
