@@ -980,13 +980,9 @@ namespace WindowsFormsApp_autósiskola
             }
             else
             {
-                Properties.Settings.Default.ujTanuloIdo = false;
-                ujTanuloIdo.Checked = false;
                 ujTanuloIdo.Enabled = true;
                 ujTanuloIdo.Visible = true;
 
-                Properties.Settings.Default.helyIdo = false;
-                helyIdo.Checked = false;
                 helyIdo.Enabled = true;
                 helyIdo.Visible = true;
             }
