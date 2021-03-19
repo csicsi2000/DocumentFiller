@@ -70,7 +70,6 @@ namespace WindowsFormsApp_autósiskola
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            setDefault();
             if (fileMethods.isExcelComptaible(Properties.Settings.Default.ExcelFajlHelye))
             {
                 ExcelOldalNevek.Visible = true;
@@ -394,6 +393,63 @@ namespace WindowsFormsApp_autósiskola
             Properties.Settings.Default.oldalszam = ExcelOldalNevek.SelectedIndex;
             Properties.Settings.Default.Save();
             mentettFajlNeve.Text = "";
+
+            autoSuggestTolt();
+        }
+        public void autoSuggestTolt()
+        {
+            if (fileMethods.isExcelComptaible(Properties.Settings.Default.ExcelFajlHelye))
+            {
+                panel5.Visible = true;
+                panel5.BringToFront();
+                Excel.Application xlApp = StartExcel();
+                var xlWorkbooks = xlApp.Workbooks;
+                string hely = Properties.Settings.Default.ExcelFajlMasolata;
+                var xlWorkbook = xlWorkbooks.Open(Properties.Settings.Default.ExcelFajlMasolata);
+                Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[ExcelOldalNevek.SelectedIndex + 1];
+                Excel.Range xlRange = xlWorksheet.UsedRange;
+                int totalRows = xlRange.Rows.Count;
+                int totalColumns = xlRange.Columns.Count;
+                AutoCompleteStringCollection nevek = new AutoCompleteStringCollection();
+                string nev = SorSzam.Text.ToLower().Trim();
+
+                for (int Row = 2; Row <= totalRows; Row++)
+                {
+                    string SzerkNev = Convert.ToString(xlWorksheet.Cells[Row, 2].Text);
+                    if (SzerkNev.Contains("("))
+                    {
+                        string[] ketNev = SzerkNev.Split('(');
+                        SzerkNev = ketNev[0].Trim();
+                    }
+                    string nev2 = SzerkNev;
+                    if (SzerkNev == null)
+                    {
+                        SzerkNev = "";
+                        continue;
+                    }
+                    SzerkNev = SzerkNev.ToLower();
+                    if (!ekezetek.Checked)
+                    {
+                        nev = generalMethods.RemoveDiacritics(nev);
+                        SzerkNev = generalMethods.RemoveDiacritics(SzerkNev);
+                    }
+                    if (!szokoz.Checked)
+                    {
+                        nev = nev.Replace(" ", "").Replace("-", "");
+                        SzerkNev = SzerkNev.Replace(" ", "").Replace("-", "");
+                    }
+                    nev = nev.Replace("dr.", "");
+                    SzerkNev = SzerkNev.Replace("dr.", "");
+
+                    if (SzerkNev.Contains(nev))
+                    {
+                        nevek.Add(nev2);
+                    }
+                }
+                SorSzam.AutoCompleteCustomSource = nevek;
+                fileMethods.DisposeExcelInstance(xlApp, xlWorkbooks, xlWorksheet);
+                panel5.Visible = false;
+            }
         }
                 
         private void mentesHelye_TextChanged(object sender, EventArgs e)
@@ -1001,6 +1057,7 @@ namespace WindowsFormsApp_autósiskola
                     return;
                 }
 
+                
                 ExcelOldalNevek.Visible = true;
                 frissites.Visible = true;
                 ListaJelenites();
