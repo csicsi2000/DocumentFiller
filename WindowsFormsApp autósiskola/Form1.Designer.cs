@@ -721,13 +721,14 @@ namespace WindowsFormsApp_autósiskola
             // 
             // button5
             // 
+            this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
             this.button5.Location = new System.Drawing.Point(160, 0);
             this.button5.Margin = new System.Windows.Forms.Padding(0);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(130, 29);
+            this.button5.Size = new System.Drawing.Size(130, 30);
             this.button5.TabIndex = 29;
             this.button5.Text = "Excel sablon fájl";
             this.button5.UseVisualStyleBackColor = true;
@@ -735,13 +736,14 @@ namespace WindowsFormsApp_autósiskola
             // 
             // ujTanulo
             // 
+            this.ujTanulo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ujTanulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ujTanulo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ujTanulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
             this.ujTanulo.Location = new System.Drawing.Point(30, 0);
             this.ujTanulo.Margin = new System.Windows.Forms.Padding(0);
             this.ujTanulo.Name = "ujTanulo";
-            this.ujTanulo.Size = new System.Drawing.Size(130, 29);
+            this.ujTanulo.Size = new System.Drawing.Size(130, 30);
             this.ujTanulo.TabIndex = 28;
             this.ujTanulo.Text = "Új tanuló";
             this.ujTanulo.UseVisualStyleBackColor = true;
