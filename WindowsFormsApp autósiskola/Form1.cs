@@ -21,6 +21,9 @@ namespace WindowsFormsApp_autósiskola
     public partial class Form1 : Form
     {
         public int kivSor;
+        List<string> listOnit = new List<string>();
+
+        List<string> listNew = new List<string>();
         public Form1()
         {
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Properties.Settings.Default.nyelv);
@@ -413,6 +416,8 @@ namespace WindowsFormsApp_autósiskola
                 AutoCompleteStringCollection nevek = new AutoCompleteStringCollection();
                 string nev = SorSzam.Text.ToLower().Trim();
 
+                SorSzam.Items.Clear();
+                listOnit.Clear();
                 for (int Row = 2; Row <= totalRows; Row++)
                 {
                     string SzerkNev = Convert.ToString(xlWorksheet.Cells[Row, 2].Text);
@@ -427,26 +432,9 @@ namespace WindowsFormsApp_autósiskola
                         SzerkNev = "";
                         continue;
                     }
-                    SzerkNev = SzerkNev.ToLower();
-                    if (!ekezetek.Checked)
-                    {
-                        nev = generalMethods.RemoveDiacritics(nev);
-                        SzerkNev = generalMethods.RemoveDiacritics(SzerkNev);
-                    }
-                    if (!szokoz.Checked)
-                    {
-                        nev = nev.Replace(" ", "").Replace("-", "");
-                        SzerkNev = SzerkNev.Replace(" ", "").Replace("-", "");
-                    }
-                    nev = nev.Replace("dr.", "");
-                    SzerkNev = SzerkNev.Replace("dr.", "");
-
-                    if (SzerkNev.Contains(nev))
-                    {
-                        nevek.Add(nev2);
-                    }
+                    listOnit.Add(nev2);
                 }
-                SorSzam.AutoCompleteCustomSource = nevek;
+                SorSzam.Items.AddRange(listOnit.ToArray());
                 fileMethods.DisposeExcelInstance(xlApp, xlWorkbooks, xlWorksheet);
                 panel5.Visible = false;
             }
@@ -1733,6 +1721,49 @@ namespace WindowsFormsApp_autósiskola
         {
             Properties.Settings.Default.iskolaCim = iskolaCim.Text;
             Properties.Settings.Default.Save();
+        }
+
+        private void SorSzam_TextUpdate(object sender, EventArgs e)
+        {
+            this.SorSzam.Items.Clear();
+            listNew.Clear();
+            string nev = SorSzam.Text.ToLower();
+            
+            foreach (var item in listOnit)
+            {
+                string nev2 = item.ToLower();
+                if (nev2 == null)
+                {
+                    nev2 = "";
+                }
+                if (!ekezetek.Checked)
+                {
+                    nev = generalMethods.RemoveDiacritics(nev);
+                    nev2 = generalMethods.RemoveDiacritics(nev2);
+                }
+                if (!szokoz.Checked)
+                {
+                    nev = nev.Replace(" ", "").Replace("-", "");
+                    nev2 = nev2.Replace(" ", "").Replace("-", "");
+                }
+                if (nev2.Contains(nev))
+                {
+                    listNew.Add(item);
+                }
+            }
+            this.SorSzam.Items.AddRange(listNew.ToArray());
+            this.SorSzam.SelectionStart = this.SorSzam.Text.Length;
+            Cursor = Cursors.Default;
+            this.SorSzam.DroppedDown = true;
+            this.SorSzam.AutoCompleteMode = AutoCompleteMode.None;
+        }
+
+        private void SorSzam_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (SorSzam.SelectedItem == null)
+            {
+                return;
+            }
         }
     }
 }

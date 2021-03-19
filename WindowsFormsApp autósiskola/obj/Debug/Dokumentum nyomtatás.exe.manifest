@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Dokumentum nyomtatás.exe" size="165800">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Dokumentum nyomtatás.exe" size="166824">
       <assemblyIdentity name="Dokumentum nyomtatás" version="1.1.1.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>sW0a3SF93c4JZgxWuoAeZlDzdap2ywJzsJwdM/5Db1c=</dsig:DigestValue>
+        <dsig:DigestValue>eQrHcEFyggcj09VWKeJ9emJAjgHV5NuzvlJrUK6doRg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -62,7 +62,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>EHs2cWD0Vv2JgoqUUvlaNRfj08Alc30TK61UjU7TnNQ=</dsig:DigestValue>
+        <dsig:DigestValue>M2TRM3g0XpvL5zClfVPt836lqUy4/GrZkN2q1ZWrHuk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -74,7 +74,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>lMHkU7Ea8aCimlo0FUuMTwb/FkFIiHH96Hy1/cxPTzY=</dsig:DigestValue>
+        <dsig:DigestValue>LQDvn4Ep+Ky245uuCvoWXcN/gGFsKz/C0ZVOxFw00zo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,7 +86,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>psmIZKqgX7hHCJzCu70qjhD8H6WuQ8YXR7tGBSEiO80=</dsig:DigestValue>
+        <dsig:DigestValue>5Tu6n0lJ0cvBuK9d0QuF18zF9w8V58xNY4Mzn78pkX8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

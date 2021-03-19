@@ -30,11 +30,10 @@ namespace WindowsFormsApp_autósiskola
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.SorSzam = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.kereses = new System.Windows.Forms.Button();
             this.openFD = new System.Windows.Forms.OpenFileDialog();
@@ -74,6 +73,7 @@ namespace WindowsFormsApp_autósiskola
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.SorSzam = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
@@ -134,23 +134,6 @@ namespace WindowsFormsApp_autósiskola
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // SorSzam
-            // 
-            this.SorSzam.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.SorSzam.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.SorSzam.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.SorSzam.BackColor = System.Drawing.Color.Black;
-            this.SorSzam.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SorSzam.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.SorSzam.ForeColor = System.Drawing.Color.White;
-            this.SorSzam.Location = new System.Drawing.Point(119, 407);
-            this.SorSzam.Margin = new System.Windows.Forms.Padding(2);
-            this.SorSzam.Name = "SorSzam";
-            this.SorSzam.Size = new System.Drawing.Size(231, 22);
-            this.SorSzam.TabIndex = 1;
-            this.SorSzam.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.SorSzam.TextChanged += new System.EventHandler(this.SorSzam_TextChanged);
-            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -190,13 +173,13 @@ namespace WindowsFormsApp_autósiskola
             this.excelHelye.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.excelHelye.BackColor = System.Drawing.Color.Black;
             this.excelHelye.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.excelHelye.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.excelHelye.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.excelHelye.ForeColor = System.Drawing.Color.White;
-            this.excelHelye.Location = new System.Drawing.Point(71, 84);
+            this.excelHelye.Location = new System.Drawing.Point(71, 80);
             this.excelHelye.Margin = new System.Windows.Forms.Padding(2);
             this.excelHelye.Name = "excelHelye";
             this.excelHelye.ReadOnly = true;
-            this.excelHelye.Size = new System.Drawing.Size(328, 22);
+            this.excelHelye.Size = new System.Drawing.Size(328, 24);
             this.excelHelye.TabIndex = 6;
             this.excelHelye.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -221,13 +204,13 @@ namespace WindowsFormsApp_autósiskola
             this.mentesHelye.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mentesHelye.BackColor = System.Drawing.Color.Black;
             this.mentesHelye.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mentesHelye.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.mentesHelye.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.mentesHelye.ForeColor = System.Drawing.Color.White;
-            this.mentesHelye.Location = new System.Drawing.Point(498, 84);
+            this.mentesHelye.Location = new System.Drawing.Point(498, 80);
             this.mentesHelye.Margin = new System.Windows.Forms.Padding(2);
             this.mentesHelye.Name = "mentesHelye";
             this.mentesHelye.ReadOnly = true;
-            this.mentesHelye.Size = new System.Drawing.Size(336, 22);
+            this.mentesHelye.Size = new System.Drawing.Size(336, 24);
             this.mentesHelye.TabIndex = 7;
             this.mentesHelye.TextChanged += new System.EventHandler(this.mentesHelye_TextChanged);
             // 
@@ -255,12 +238,12 @@ namespace WindowsFormsApp_autósiskola
             this.mentettFajlNeve.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mentettFajlNeve.BackColor = System.Drawing.Color.Black;
             this.mentettFajlNeve.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mentettFajlNeve.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.mentettFajlNeve.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.mentettFajlNeve.ForeColor = System.Drawing.Color.White;
-            this.mentettFajlNeve.Location = new System.Drawing.Point(548, 407);
+            this.mentettFajlNeve.Location = new System.Drawing.Point(548, 403);
             this.mentettFajlNeve.Margin = new System.Windows.Forms.Padding(2);
             this.mentettFajlNeve.Name = "mentettFajlNeve";
-            this.mentettFajlNeve.Size = new System.Drawing.Size(230, 22);
+            this.mentettFajlNeve.Size = new System.Drawing.Size(230, 24);
             this.mentettFajlNeve.TabIndex = 9;
             this.mentettFajlNeve.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -321,7 +304,7 @@ namespace WindowsFormsApp_autósiskola
             this.ExcelOldalNevek.Location = new System.Drawing.Point(122, 187);
             this.ExcelOldalNevek.Margin = new System.Windows.Forms.Padding(4);
             this.ExcelOldalNevek.Name = "ExcelOldalNevek";
-            this.ExcelOldalNevek.Size = new System.Drawing.Size(225, 120);
+            this.ExcelOldalNevek.Size = new System.Drawing.Size(225, 140);
             this.ExcelOldalNevek.TabIndex = 15;
             this.ExcelOldalNevek.SelectedIndexChanged += new System.EventHandler(this.ExcelOldal_SelectedIndexChanged);
             // 
@@ -691,11 +674,11 @@ namespace WindowsFormsApp_autósiskola
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Black;
+            this.panel3.Controls.Add(this.SorSzam);
             this.panel3.Controls.Add(this.frissites);
             this.panel3.Controls.Add(this.helyIdo);
             this.panel3.Controls.Add(this.ExcelOldalNevek);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.SorSzam);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.mentesHelye);
@@ -721,6 +704,22 @@ namespace WindowsFormsApp_autósiskola
             this.panel3.Size = new System.Drawing.Size(882, 602);
             this.panel3.TabIndex = 24;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // SorSzam
+            // 
+            this.SorSzam.BackColor = System.Drawing.Color.Black;
+            this.SorSzam.DropDownHeight = 100;
+            this.SorSzam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SorSzam.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.SorSzam.ForeColor = System.Drawing.Color.White;
+            this.SorSzam.FormattingEnabled = true;
+            this.SorSzam.IntegralHeight = false;
+            this.SorSzam.Location = new System.Drawing.Point(119, 402);
+            this.SorSzam.Name = "SorSzam";
+            this.SorSzam.Size = new System.Drawing.Size(230, 26);
+            this.SorSzam.TabIndex = 29;
+            this.SorSzam.SelectedIndexChanged += new System.EventHandler(this.SorSzam_SelectedIndexChanged);
+            this.SorSzam.TextUpdate += new System.EventHandler(this.SorSzam_TextUpdate);
             // 
             // button3
             // 
@@ -952,26 +951,26 @@ namespace WindowsFormsApp_autósiskola
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Adatok,
             this.Tanulo});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridView1.Location = new System.Drawing.Point(38, 7);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.MultiSelect = false;
@@ -987,10 +986,10 @@ namespace WindowsFormsApp_autósiskola
             // Adatok
             // 
             this.Adatok.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            this.Adatok.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            this.Adatok.DefaultCellStyle = dataGridViewCellStyle11;
             this.Adatok.FillWeight = 120F;
             this.Adatok.HeaderText = "Adatok";
             this.Adatok.MinimumWidth = 6;
@@ -1186,7 +1185,6 @@ namespace WindowsFormsApp_autósiskola
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button sorSzamValasztas;
         private System.Windows.Forms.Button frissites;
-        public System.Windows.Forms.TextBox SorSzam;
         public System.Windows.Forms.TextBox excelHelye;
         public System.Windows.Forms.TextBox mentesHelye;
         public System.Windows.Forms.TextBox mentettFajlNeve;
@@ -1245,6 +1243,7 @@ namespace WindowsFormsApp_autósiskola
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Panel MainPanel;
+        private System.Windows.Forms.ComboBox SorSzam;
     }
 }
 
