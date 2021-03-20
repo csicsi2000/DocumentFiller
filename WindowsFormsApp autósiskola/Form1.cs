@@ -409,7 +409,7 @@ namespace WindowsFormsApp_autósiskola
                 Excel.Application xlApp = StartExcel();
                 var xlWorkbooks = xlApp.Workbooks;
                 string hely = Properties.Settings.Default.ExcelFajlMasolata;
-                var xlWorkbook = xlWorkbooks.Open(Properties.Settings.Default.ExcelFajlMasolata);
+                var xlWorkbook = xlWorkbooks.Open(Properties.Settings.Default.ExcelFajlMasolata, ReadOnly: true);
                 Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[ExcelOldalNevek.SelectedIndex + 1];
                 Excel.Range xlRange = xlWorksheet.UsedRange;
                 int totalRows = xlRange.Rows.Count;
@@ -1475,6 +1475,7 @@ namespace WindowsFormsApp_autósiskola
                     MessageBox.Show("Nem elérhető a fájl. Zárja be a szerkesztés miatt!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
+            autoSuggestTolt();
             mentesFolyamatban.Visible = false;
         }
 
@@ -1683,6 +1684,7 @@ namespace WindowsFormsApp_autósiskola
                     fileMethods.DisposeExcelInstance(xlAppMain, xlWorkbooks, xlWorksheet);
                     megjegyzesek.Text = "";
                     dataGridView1.Rows.Clear();
+                    autoSuggestTolt();
                 }
                 else
                 {
@@ -1728,34 +1730,37 @@ namespace WindowsFormsApp_autósiskola
         {
             this.SorSzam.Items.Clear();
             listNew.Clear();
-            this.SorSzam.DroppedDown = true;
+            if (!generalMethods.isDigitOnly(SorSzam.Text)) 
+            { 
+                this.SorSzam.DroppedDown = true;
 
-            string nev = SorSzam.Text.ToLower();
-            string betu = SorSzam.Text;
+                string nev = SorSzam.Text.ToLower();
+                string betu = SorSzam.Text;
 
-            foreach (var item in listOnit)
-            {
-                string nev2 = item.ToLower();
-                if (nev2 == null)
+                foreach (var item in listOnit)
                 {
-                    nev2 = "";
+                    string nev2 = item.ToLower();
+                    if (nev2 == null)
+                    {
+                        nev2 = "";
+                    }
+                    if (!ekezetek.Checked)
+                    {
+                        nev = generalMethods.RemoveDiacritics(nev);
+                        nev2 = generalMethods.RemoveDiacritics(nev2);
+                    }
+                    if (!szokoz.Checked)
+                    {
+                        nev = nev.Replace(" ", "").Replace("-", "");
+                        nev2 = nev2.Replace(" ", "").Replace("-", "");
+                    }
+                    if (nev2.Contains(nev))
+                    {
+                        listNew.Add(item);
+                    }
                 }
-                if (!ekezetek.Checked)
-                {
-                    nev = generalMethods.RemoveDiacritics(nev);
-                    nev2 = generalMethods.RemoveDiacritics(nev2);
-                }
-                if (!szokoz.Checked)
-                {
-                    nev = nev.Replace(" ", "").Replace("-", "");
-                    nev2 = nev2.Replace(" ", "").Replace("-", "");
-                }
-                if (nev2.Contains(nev))
-                {
-                    listNew.Add(item);
-                }
+                this.SorSzam.Items.AddRange(listNew.ToArray());
             }
-            this.SorSzam.Items.AddRange(listNew.ToArray());
             this.SorSzam.SelectedItem = null;
             this.SorSzam.SelectionStart = this.SorSzam.Text.Length;
             Cursor = Cursors.Default;
