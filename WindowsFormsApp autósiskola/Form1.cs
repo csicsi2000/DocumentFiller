@@ -185,7 +185,8 @@ namespace WindowsFormsApp_autósiskola
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            SorSzam.Items.Clear();
+            listOnit.Clear();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -1727,8 +1728,11 @@ namespace WindowsFormsApp_autósiskola
         {
             this.SorSzam.Items.Clear();
             listNew.Clear();
+            this.SorSzam.DroppedDown = true;
+
             string nev = SorSzam.Text.ToLower();
-            
+            string betu = SorSzam.Text;
+
             foreach (var item in listOnit)
             {
                 string nev2 = item.ToLower();
@@ -1752,9 +1756,9 @@ namespace WindowsFormsApp_autósiskola
                 }
             }
             this.SorSzam.Items.AddRange(listNew.ToArray());
+            this.SorSzam.SelectedItem = null;
             this.SorSzam.SelectionStart = this.SorSzam.Text.Length;
             Cursor = Cursors.Default;
-            this.SorSzam.DroppedDown = true;
             this.SorSzam.AutoCompleteMode = AutoCompleteMode.None;
         }
 
