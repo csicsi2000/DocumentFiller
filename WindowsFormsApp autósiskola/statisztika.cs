@@ -129,5 +129,11 @@ namespace WindowsFormsApp_autósiskola
             this.Show();
             return;
         }
+
+        private void statList_Click(object sender, EventArgs e)
+        {
+            int index = dataGridView1.CurrentCell.RowIndex; 
+
+        }
     }
 }

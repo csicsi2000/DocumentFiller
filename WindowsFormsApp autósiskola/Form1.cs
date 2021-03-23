@@ -851,6 +851,11 @@ namespace WindowsFormsApp_autósiskola
             statisztika1.adatokListazas(text, hely);
             panel6.Hide();
         }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            fileMethods.DisposeExcelInstance(xlApp.xlApp, xlApp.xlWorkbooks);
+        }
     }
 }
 

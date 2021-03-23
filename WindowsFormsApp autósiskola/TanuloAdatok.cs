@@ -317,14 +317,12 @@ namespace WindowsFormsApp_autósiskola
                     }
                 }
                 megjegyzesek.Text = megjegyzes;
-                elso = true;
                 for (int i = 0; i < adatTipusok.Count - 2; i++)
                 {
                     var index = dataGridView1.Rows.Add();
                     dataGridView1.Rows[index].Cells[0].Value = adatTipusok[i];
                     dataGridView1.Rows[index].Cells[1].Value = kivalasztott[i];
                 }
-
                 try
                 {
                     dataGridView1.Rows[0].ReadOnly = true;
@@ -522,7 +520,7 @@ namespace WindowsFormsApp_autósiskola
                 hitTestInfo = dataGridView1.HitTest(e.X, e.Y);
                 if (hitTestInfo.Type == DataGridViewHitTestType.Cell)
                     dataGridView1.BeginEdit(true);
-                else
+                else 
                     dataGridView1.EndEdit();
             }
         }
@@ -530,7 +528,6 @@ namespace WindowsFormsApp_autósiskola
         private void bezaras_Click(object sender, EventArgs e)
         {
             Hide();
-
         }
     }
 }

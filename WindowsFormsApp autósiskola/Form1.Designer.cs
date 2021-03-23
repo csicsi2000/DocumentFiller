@@ -80,7 +80,6 @@ namespace WindowsFormsApp_autósiskola
             this.label13 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.labelFolyamatban = new System.Windows.Forms.Label();
-            this.statisztika1 = new WindowsFormsApp_autósiskola.statisztika();
             this.button5 = new System.Windows.Forms.Button();
             this.ujTanulo = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -89,9 +88,10 @@ namespace WindowsFormsApp_autósiskola
             this.fooldal = new System.Windows.Forms.Button();
             this.statNyit = new System.Windows.Forms.Button();
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.tanuloAdatok1 = new WindowsFormsApp_autósiskola.TanuloAdatok();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
+            this.statisztika1 = new WindowsFormsApp_autósiskola.statisztika();
+            this.tanuloAdatok1 = new WindowsFormsApp_autósiskola.TanuloAdatok();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -810,14 +810,6 @@ namespace WindowsFormsApp_autósiskola
             this.labelFolyamatban.TabIndex = 23;
             this.labelFolyamatban.Text = "Folyamatban...";
             // 
-            // statisztika1
-            // 
-            this.statisztika1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.statisztika1.Location = new System.Drawing.Point(0, 0);
-            this.statisztika1.Name = "statisztika1";
-            this.statisztika1.Size = new System.Drawing.Size(882, 602);
-            this.statisztika1.TabIndex = 30;
-            // 
             // button5
             // 
             this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -953,14 +945,6 @@ namespace WindowsFormsApp_autósiskola
             this.MainPanel.Size = new System.Drawing.Size(882, 602);
             this.MainPanel.TabIndex = 2;
             // 
-            // tanuloAdatok1
-            // 
-            this.tanuloAdatok1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tanuloAdatok1.Location = new System.Drawing.Point(0, 0);
-            this.tanuloAdatok1.Name = "tanuloAdatok1";
-            this.tanuloAdatok1.Size = new System.Drawing.Size(882, 602);
-            this.tanuloAdatok1.TabIndex = 30;
-            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
@@ -985,6 +969,22 @@ namespace WindowsFormsApp_autósiskola
             this.label8.Text = "Folyamatban...";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // statisztika1
+            // 
+            this.statisztika1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.statisztika1.Location = new System.Drawing.Point(0, 0);
+            this.statisztika1.Name = "statisztika1";
+            this.statisztika1.Size = new System.Drawing.Size(882, 602);
+            this.statisztika1.TabIndex = 30;
+            // 
+            // tanuloAdatok1
+            // 
+            this.tanuloAdatok1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tanuloAdatok1.Location = new System.Drawing.Point(0, 0);
+            this.tanuloAdatok1.Name = "tanuloAdatok1";
+            this.tanuloAdatok1.Size = new System.Drawing.Size(882, 602);
+            this.tanuloAdatok1.TabIndex = 30;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1004,6 +1004,7 @@ namespace WindowsFormsApp_autósiskola
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Képzési igazolás kitöltő";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

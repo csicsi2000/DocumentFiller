@@ -37,8 +37,8 @@ namespace WindowsFormsApp_autósiskola
             this.mentesFolyamatban = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Tanulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Adatok = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tanulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bezaras = new System.Windows.Forms.Button();
             this.megjegyzesek = new System.Windows.Forms.TextBox();
             this.mentes = new System.Windows.Forms.Button();
@@ -102,9 +102,12 @@ namespace WindowsFormsApp_autósiskola
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -128,19 +131,11 @@ namespace WindowsFormsApp_autósiskola
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(474, 562);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseUp);
-            // 
-            // Tanulo
-            // 
-            this.Tanulo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Tanulo.FillWeight = 80F;
-            this.Tanulo.HeaderText = "Tanuló";
-            this.Tanulo.MinimumWidth = 6;
-            this.Tanulo.Name = "Tanulo";
-            this.Tanulo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Adatok
             // 
@@ -155,6 +150,15 @@ namespace WindowsFormsApp_autósiskola
             this.Adatok.Name = "Adatok";
             this.Adatok.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Adatok.Width = 160;
+            // 
+            // Tanulo
+            // 
+            this.Tanulo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Tanulo.FillWeight = 80F;
+            this.Tanulo.HeaderText = "Tanuló";
+            this.Tanulo.MinimumWidth = 6;
+            this.Tanulo.Name = "Tanulo";
+            this.Tanulo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // bezaras
             // 
@@ -176,7 +180,7 @@ namespace WindowsFormsApp_autósiskola
             // 
             this.megjegyzesek.BackColor = System.Drawing.Color.WhiteSmoke;
             this.megjegyzesek.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.megjegyzesek.Location = new System.Drawing.Point(542, 31);
+            this.megjegyzesek.Location = new System.Drawing.Point(542, 33);
             this.megjegyzesek.Multiline = true;
             this.megjegyzesek.Name = "megjegyzesek";
             this.megjegyzesek.ScrollBars = System.Windows.Forms.ScrollBars.Both;
