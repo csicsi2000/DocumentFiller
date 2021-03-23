@@ -196,7 +196,6 @@ namespace WindowsFormsApp_autósiskola
             this.dokumentumKeszites.TabIndex = 7;
             this.dokumentumKeszites.Text = "Mehet";
             this.dokumentumKeszites.UseVisualStyleBackColor = true;
-            this.dokumentumKeszites.EnabledChanged += new System.EventHandler(this.dokumentumKeszites_EnabledChanged);
             this.dokumentumKeszites.Click += new System.EventHandler(this.button1_Click);
             // 
             // mentesHelye
@@ -261,7 +260,6 @@ namespace WindowsFormsApp_autósiskola
             this.label3.TabIndex = 10;
             this.label3.Text = "Létrehozni kívánt fájlneve";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // sorSzamValasztas
             // 
@@ -365,7 +363,6 @@ namespace WindowsFormsApp_autósiskola
             this.label4.Size = new System.Drawing.Size(132, 23);
             this.label4.TabIndex = 19;
             this.label4.Text = "Mentés helye";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // panel1
             // 
@@ -567,7 +564,6 @@ namespace WindowsFormsApp_autósiskola
             this.label5.TabIndex = 1;
             this.label5.Text = "Dokumentum kiállításának helye";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // kiallitasiHely
             // 
@@ -703,7 +699,6 @@ namespace WindowsFormsApp_autósiskola
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(882, 602);
             this.panel3.TabIndex = 24;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // SorSzam
             // 
@@ -755,7 +750,6 @@ namespace WindowsFormsApp_autósiskola
             this.label7.Size = new System.Drawing.Size(94, 16);
             this.label7.TabIndex = 0;
             this.label7.Text = "Folyamatban...";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // panel7
             // 
@@ -1113,9 +1107,9 @@ namespace WindowsFormsApp_autósiskola
             // MainPanel
             // 
             this.MainPanel.BackColor = System.Drawing.Color.Black;
-            this.MainPanel.Controls.Add(this.panel6);
             this.MainPanel.Controls.Add(this.panel1);
             this.MainPanel.Controls.Add(this.panel3);
+            this.MainPanel.Controls.Add(this.panel6);
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainPanel.Location = new System.Drawing.Point(0, 60);
             this.MainPanel.Margin = new System.Windows.Forms.Padding(0);
