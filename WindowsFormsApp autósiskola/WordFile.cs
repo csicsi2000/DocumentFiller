@@ -15,18 +15,6 @@ namespace WindowsFormsApp_autósiskola
     class WordFile
     {
         #region WordFileLetrehozas
-        public bool active = false;
-        public WordFile()
-        {
-            this.active = true;
-        }
-        public void IDispose ()
-        {
-            if (this.active)
-            {
-                this.IDispose();
-            }
-        }
         public void WordFileLetrehozas(string sorszam,object filename, object saveAs)
         {
             bool sikeres = true;

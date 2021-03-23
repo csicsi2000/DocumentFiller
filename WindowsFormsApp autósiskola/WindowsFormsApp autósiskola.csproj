@@ -247,7 +247,19 @@
     <Compile Include="generalMethods.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="statisztika.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="statisztika.Designer.cs">
+      <DependentUpon>statisztika.cs</DependentUpon>
+    </Compile>
     <Compile Include="tanulo.cs" />
+    <Compile Include="TanuloAdatok.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TanuloAdatok.Designer.cs">
+      <DependentUpon>TanuloAdatok.cs</DependentUpon>
+    </Compile>
     <Compile Include="WordFile.cs" />
     <Content Include="favicon %283%29.ico" />
     <EmbeddedResource Include="Form1.bin.resx">
@@ -267,6 +279,12 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Content Include="bin\Debug\kepzesi igazolas sablon a programhoz.docx" />
+    <EmbeddedResource Include="statisztika.resx">
+      <DependentUpon>statisztika.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TanuloAdatok.resx">
+      <DependentUpon>TanuloAdatok.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="bin\Debug\SablonFajl.xlsx" />
     <None Include="packages.config" />

@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Dokumentum nyomtatás.exe" size="171432">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Dokumentum nyomtatás.exe" size="165288">
       <assemblyIdentity name="Dokumentum nyomtatás" version="1.1.1.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ZjzL74+ro2ww/yDIW7gnMM+BVNU4n0HrfksjjfeoEn4=</dsig:DigestValue>
+        <dsig:DigestValue>dwIkp/9CPxnyiON9Ad4rSsykOE7GYyw42SYDODCdMNs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -62,7 +62,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>3ONwmLqo8GsaSO4TgK+/ze/v2jusvtfzR2mNpVu6nlQ=</dsig:DigestValue>
+        <dsig:DigestValue>jPhSaA92p2Yx2vdYvC7mygA3YGB/eb0O4GSfMbzbwFo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
