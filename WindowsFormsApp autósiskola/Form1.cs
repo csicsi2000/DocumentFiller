@@ -19,16 +19,107 @@ namespace WindowsFormsApp_autósiskola
         List<string> listOnit = new List<string>();
 
         List<string> listNew = new List<string>();
+        private excelApp xlApp;
+
 
         public Form1()
         {
-            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Properties.Settings.Default.nyelv);
-
             InitializeComponent();
-            this.MouseDown += label6_MouseDown;
+
+            xlApp = new excelApp();
+            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Properties.Settings.Default.nyelv);
+            statisztika1.books(xlApp.xlWorkbooks);
+            tanuloAdatok1.books(xlApp.xlWorkbooks);
+
+            MouseDown += label6_MouseDown;
             //Properties.Settings.Default.Reset();
             setDefault();
         }
+        public void setDefault()
+        {
+            excelHelye.Text = Properties.Settings.Default.ExcelFajlHelye;
+            mentesHelye.Text = Properties.Settings.Default.KeszWord;
+            nyissaEMeg.Checked = Properties.Settings.Default.wordMegnyitasa;
+            ekezetek.Checked = Properties.Settings.Default.ekezetek;
+            szokoz.Checked = Properties.Settings.Default.szokoz;
+            helyIdo.Checked = Properties.Settings.Default.helyIdo;
+            honapBetu.Checked = Properties.Settings.Default.honapBetu;
+            ujTanuloIdo.Checked = Properties.Settings.Default.ujTanuloIdo;
+            kiallitasiHely.Text = Properties.Settings.Default.kiallitasiHely;
+            frissites.Visible = ExcelOldalNevek.Visible;
+            comboBox1.SelectedIndex = Properties.Settings.Default.comboIndex;
+            iskolaAzonosito.Text = Properties.Settings.Default.iskolaAzonosito;
+            iskolaNev.Text = Properties.Settings.Default.iskolaNev;
+            iskolaCim.Text = Properties.Settings.Default.iskolaCim;
+            statisztika1.Hide();
+            tanuloAdatok1.Hide();
+            panel6.Hide();
+            panel1.Visible = false;
+            panel4.Visible = false;
+            panel5.Visible = false;
+            AllowDrop = true;
+            DragEnter += new DragEventHandler(Form1_DragEnter);
+            DragDrop += new DragEventHandler(Form1_DragDrop);
+
+            DateTime temp;
+            string ido = DateTime.Now.ToString("MM/dd/yyyy");
+            if (!DateTime.TryParse(ido, out temp))
+            {
+                Properties.Settings.Default.ujTanuloIdo = false;
+                ujTanuloIdo.Checked = false;
+                ujTanuloIdo.Enabled = false;
+                ujTanuloIdo.Visible = false;
+
+                Properties.Settings.Default.helyIdo = false;
+                helyIdo.Checked = false;
+                helyIdo.Enabled = false;
+                helyIdo.Visible = false;
+            }
+            else
+            {
+                ujTanuloIdo.Enabled = true;
+                ujTanuloIdo.Visible = true;
+
+                helyIdo.Enabled = true;
+                helyIdo.Visible = true;
+            }
+            Properties.Settings.Default.Save();
+
+            if (fileMethods.isExcelComptaible(Properties.Settings.Default.ExcelFajlHelye))
+            {
+                try
+                {
+                    fileMethods.FajlOlvasas();
+                }
+                catch (Exception)
+                {
+                    excelHelye.Text = "";
+                    Properties.Settings.Default.ExcelFajlHelye = "";
+                    return;
+                }
+
+
+                ExcelOldalNevek.Visible = true;
+                frissites.Visible = true;
+                ListaJelenites();
+            }
+            else
+            {
+                ExcelOldalNevek.Visible = false;
+                frissites.Visible = false;
+            }
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 35, 35));
+        }
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,     // x-coordinate of upper-left corner
+            int nTopRect,      // y-coordinate of upper-left corner
+            int nRightRect,    // x-coordinate of lower-right corner
+            int nBottomRect,   // y-coordinate of lower-right corner
+            int nWidthEllipse, // width of ellipse
+            int nHeightEllipse // height of ellipse
+        );
 
         void Form1_DragEnter(object sender, DragEventArgs e)
         {
@@ -158,7 +249,7 @@ namespace WindowsFormsApp_autósiskola
             }
             string sorszam = SorSzam.Text;
             WordFile csinál = new WordFile();
-            await (Task.Run(() => csinál.WordFileLetrehozas(sorszam, kepzesiIgazolas, ujfajl)));
+            await (Task.Run(() => csinál.WordFileLetrehozas(xlApp.xlWorkbooks, sorszam, kepzesiIgazolas, ujfajl)));
             dokumentumKeszites.Enabled = true;
             panel4.Visible = false;
         }
@@ -295,10 +386,8 @@ namespace WindowsFormsApp_autósiskola
                 }
                 if (fileMethods.isExcelComptaible(Properties.Settings.Default.ExcelFajlHelye))
                 {
-                    Excel.Application xlApp = StartExcel();
-                    var xlWorkbooks = xlApp.Workbooks;
                     string hely = Properties.Settings.Default.ExcelFajlMasolata;
-                    var xlWorkbook = xlWorkbooks.Open(Properties.Settings.Default.ExcelFajlMasolata);
+                    var xlWorkbook = xlApp.xlWorkbooks.Open(Properties.Settings.Default.ExcelFajlMasolata);
                     Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[ExcelOldalNevek.SelectedIndex + 1];
                     Excel.Range xlRange = xlWorksheet.UsedRange;
                     int totalRows = xlRange.Rows.Count;
@@ -362,7 +451,7 @@ namespace WindowsFormsApp_autósiskola
                             MessageBox.Show("Nincs találat. Ellenőrizd a beírt nevet!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
-                    fileMethods.DisposeExcelInstance(xlApp, xlWorkbooks, xlWorksheet);
+                    fileMethods.DisposeExcelInstance(xlWorkbook, xlWorksheet);
                 }
             }
             if (kivalasztott.Contains("("))
@@ -402,10 +491,10 @@ namespace WindowsFormsApp_autósiskola
             {
                 panel5.Visible = true;
                 panel5.BringToFront();
-                Excel.Application xlApp = StartExcel();
-                var xlWorkbooks = xlApp.Workbooks;
+
+
                 string hely = Properties.Settings.Default.ExcelFajlMasolata;
-                var xlWorkbook = xlWorkbooks.Open(Properties.Settings.Default.ExcelFajlMasolata, ReadOnly: true);
+                var xlWorkbook = xlApp.xlWorkbooks.Open(Properties.Settings.Default.ExcelFajlMasolata, ReadOnly: true);
                 Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[ExcelOldalNevek.SelectedIndex + 1];
                 Excel.Range xlRange = xlWorksheet.UsedRange;
                 int totalRows = xlRange.Rows.Count;
@@ -432,7 +521,7 @@ namespace WindowsFormsApp_autósiskola
                     listOnit.Add(nev2);
                 }
                 SorSzam.Items.AddRange(listOnit.ToArray());
-                fileMethods.DisposeExcelInstance(xlApp, xlWorkbooks, xlWorksheet);
+                fileMethods.DisposeExcelInstance(xlWorkbook, xlWorksheet);
                 panel5.Visible = false;
             }
         }
@@ -482,15 +571,13 @@ namespace WindowsFormsApp_autósiskola
         {
             if (fileMethods.isExcelComptaible(Properties.Settings.Default.ExcelFajlHelye))
             {
-                Excel.Application xlApp = StartExcel();
-                Excel.Workbooks workbooks = xlApp.Workbooks;
-
                 ExcelOldalNevek.Items.Clear();
                 ExcelOldalNevek.Visible = true;
                 frissites.Visible = true;
+                Excel.Workbook excelBooks = null;
                 try
                 {
-                    var excelBooks = workbooks.Open(Properties.Settings.Default.ExcelFajlMasolata);
+                    excelBooks = xlApp.xlWorkbooks.Open(Properties.Settings.Default.ExcelFajlMasolata);
 
                     String[] excelSheets = new String[excelBooks.Worksheets.Count];
                     int i = 0;
@@ -521,8 +608,10 @@ namespace WindowsFormsApp_autósiskola
                 }
                 finally
                 {
-                    fileMethods.DisposeExcelInstance(xlApp, workbooks);
-                    GC.Collect();
+                    if (excelBooks != null)
+                    {
+                        fileMethods.DisposeExcelInstance(excelBooks);
+                    }
                 }
             }
             else
@@ -592,10 +681,10 @@ namespace WindowsFormsApp_autósiskola
         {
             if (mouseDown)
             {
-                this.Location = new Point(
-                    (this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
+                Location = new Point(
+                    (Location.X - lastLocation.X) + e.X, (Location.Y - lastLocation.Y) + e.Y);
 
-                this.Update();
+                Update();
             }
         }
         private void label6_MouseUp(object sender, MouseEventArgs e)
@@ -612,93 +701,11 @@ namespace WindowsFormsApp_autósiskola
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            WindowState = FormWindowState.Minimized;
         }
 
 
-        public void setDefault()
-        {
-            excelHelye.Text = Properties.Settings.Default.ExcelFajlHelye;
-            mentesHelye.Text = Properties.Settings.Default.KeszWord;
-            nyissaEMeg.Checked = Properties.Settings.Default.wordMegnyitasa;
-            ekezetek.Checked = Properties.Settings.Default.ekezetek;
-            szokoz.Checked = Properties.Settings.Default.szokoz;
-            helyIdo.Checked = Properties.Settings.Default.helyIdo;
-            honapBetu.Checked = Properties.Settings.Default.honapBetu;
-            ujTanuloIdo.Checked = Properties.Settings.Default.ujTanuloIdo;
-            kiallitasiHely.Text = Properties.Settings.Default.kiallitasiHely;
-            frissites.Visible = ExcelOldalNevek.Visible;
-            comboBox1.SelectedIndex = Properties.Settings.Default.comboIndex;
-            iskolaAzonosito.Text = Properties.Settings.Default.iskolaAzonosito;
-            iskolaNev.Text = Properties.Settings.Default.iskolaNev;
-            iskolaCim.Text = Properties.Settings.Default.iskolaCim;
-            tanuloAdatok1.Hide();
-            panel1.Visible = false;
-            panel4.Visible = false;
-            panel5.Visible = false;
-            this.AllowDrop = true;
-            this.DragEnter += new DragEventHandler(Form1_DragEnter);
-            this.DragDrop += new DragEventHandler(Form1_DragDrop);
 
-            DateTime temp;
-            string ido = DateTime.Now.ToString("MM/dd/yyyy");
-            if (!DateTime.TryParse(ido, out temp))
-            {
-                Properties.Settings.Default.ujTanuloIdo = false;
-                ujTanuloIdo.Checked = false;
-                ujTanuloIdo.Enabled = false;
-                ujTanuloIdo.Visible = false;
-
-                Properties.Settings.Default.helyIdo = false;
-                helyIdo.Checked = false;
-                helyIdo.Enabled = false;
-                helyIdo.Visible = false;
-            }
-            else
-            {
-                ujTanuloIdo.Enabled = true;
-                ujTanuloIdo.Visible = true;
-
-                helyIdo.Enabled = true;
-                helyIdo.Visible = true;
-            }
-            Properties.Settings.Default.Save();
-
-            if (fileMethods.isExcelComptaible(Properties.Settings.Default.ExcelFajlHelye))
-            {
-                try
-                {
-                    fileMethods.FajlOlvasas();
-                }
-                catch (Exception)
-                {
-                    excelHelye.Text = "";
-                    Properties.Settings.Default.ExcelFajlHelye = "";
-                    return;
-                }
-
-
-                ExcelOldalNevek.Visible = true;
-                frissites.Visible = true;
-                ListaJelenites();
-            }
-            else
-            {
-                ExcelOldalNevek.Visible = false;
-                frissites.Visible = false;
-            }
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 40, 40));
-        }
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn
-        (
-            int nLeftRect,     // x-coordinate of upper-left corner
-            int nTopRect,      // y-coordinate of upper-left corner
-            int nRightRect,    // x-coordinate of lower-right corner
-            int nBottomRect,   // y-coordinate of lower-right corner
-            int nWidthEllipse, // width of ellipse
-            int nHeightEllipse // height of ellipse
-        );
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -814,8 +821,10 @@ namespace WindowsFormsApp_autósiskola
 
         private void ujTanulo_Click(object sender, EventArgs e)
         {
-
+            panel6.BringToFront();
+            panel6.Show();
             tanuloAdatok1.ujTanulo(excelHelye.Text);
+            panel6.Hide();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -824,6 +833,23 @@ namespace WindowsFormsApp_autósiskola
             panel7.Visible = true;
             tanuloAdatok1.TanuloAdatBetoltes(SorSzam.Text, excelHelye.Text);
             panel7.Visible = false;
+        }
+
+        private void fooldal_Click(object sender, EventArgs e)
+        {
+            panel1.Hide();
+            tanuloAdatok1.Hide();
+            statisztika1.Hide();
+        }
+
+        private void statNyit_Click(object sender, EventArgs e)
+        {
+            panel6.Show();
+            panel6.BringToFront();
+            string text = SorSzam.Text;
+            string hely = excelHelye.Text;
+            statisztika1.adatokListazas(text, hely);
+            panel6.Hide();
         }
     }
 }

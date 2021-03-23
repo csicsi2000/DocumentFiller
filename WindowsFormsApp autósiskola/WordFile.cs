@@ -15,7 +15,7 @@ namespace WindowsFormsApp_autósiskola
     class WordFile
     {
         #region WordFileLetrehozas
-        public void WordFileLetrehozas(string sorszam,object filename, object saveAs)
+        public void WordFileLetrehozas(Excel.Workbooks xlWorkbooks, string sorszam,object filename, object saveAs)
         {
             bool sikeres = true;
             List<tanulo> kivalasztott = new List<tanulo>();
@@ -106,8 +106,6 @@ namespace WindowsFormsApp_autósiskola
                 if (fileMethods.isExcelComptaible(Properties.Settings.Default.ExcelFajlHelye))
                 {
 
-                    Excel.Application xlApp = StartExcel();
-                    var xlWorkbooks = xlApp.Workbooks;
                     var xlWorkbook = xlWorkbooks.Open(Properties.Settings.Default.ExcelFajlMasolata);
                     Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[Properties.Settings.Default.oldalszam + 1];
                     Excel.Range xlRange = xlWorksheet.UsedRange;
@@ -196,8 +194,7 @@ namespace WindowsFormsApp_autósiskola
                             sikeres = false;
                         }
                     }
-                    fileMethods.DisposeExcelInstance(xlApp, xlWorkbooks, xlWorksheet);
-
+                    fileMethods.DisposeExcelInstance(xlWorkbook, xlWorksheet);
                 }
                 if (sikeres == false)
                 {

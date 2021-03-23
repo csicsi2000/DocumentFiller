@@ -12,10 +12,15 @@ namespace WindowsFormsApp_autósiskola
     public partial class TanuloAdatok : UserControl
     {
         public static int kivSor;
+        private Excel.Workbooks xlWorbooks;
 
         public TanuloAdatok()
         {
             InitializeComponent();
+        }
+        public void books(Excel.Workbooks books)
+        {
+            xlWorbooks = books;
         }
         public bool TanuloAdatBetoltes(string sorszam, string excelHelye)
         {
@@ -58,7 +63,7 @@ namespace WindowsFormsApp_autósiskola
                                     if (sor == null)
                                     {
                                         MessageBox.Show("Üres a fájl", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                        this.Visible = false;
+                                        Visible = false;
                                         return sikerült;
                                     }
                                     if (elso == true)
@@ -96,7 +101,7 @@ namespace WindowsFormsApp_autósiskola
                                     if (sor == null)
                                     {
                                         MessageBox.Show("Üres a fájl", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                        this.Visible = false;
+                                        Visible = false;
                                         return sikerült;
                                     }
                                     if (elso == true)
@@ -143,13 +148,13 @@ namespace WindowsFormsApp_autósiskola
                                     string sorString = String.Join(", ", sorszamok.ToArray());
                                     string uzenet = "Több ilyen nevű tanuló is van! Használd a sorszámát.(Azonos nevűek sorszáma: " + sorString + ")";
                                     MessageBox.Show(uzenet, "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                    this.Visible = false;
+                                    Visible = false;
                                     return sikerült;
                                 }
                                 if (count == 0)
                                 {
                                     MessageBox.Show("Nincs találat az adott excel táblázatban. Ellenőrizd a beírt nevet!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                    this.Visible = false;
+                                    Visible = false;
                                     return sikerült;
                                 }
                             }
@@ -158,7 +163,7 @@ namespace WindowsFormsApp_autósiskola
                     catch (Exception)
                     {
                         MessageBox.Show("Nem található a kiválasztott fájl.", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        this.Visible = false;
+                        Visible = false;
                         return sikerült;
                     }
                     mentes.Visible = false;
@@ -166,9 +171,9 @@ namespace WindowsFormsApp_autósiskola
 
                 else if (fileMethods.isExcelComptaible(Properties.Settings.Default.ExcelFajlHelye))
                 {
-                    Excel.Application xlApp = StartExcel();
-                    var xlWorkbooks = xlApp.Workbooks;
-                    var xlWorkbook = xlWorkbooks.Open(Properties.Settings.Default.ExcelFajlMasolata);
+
+
+                    var xlWorkbook = xlWorbooks.Open(Properties.Settings.Default.ExcelFajlMasolata);
                     Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[Properties.Settings.Default.oldalszam + 1];
                     Excel.Range xlRange = xlWorksheet.UsedRange;
                     int totalRows = xlRange.Rows.Count;
@@ -288,19 +293,19 @@ namespace WindowsFormsApp_autósiskola
                             string sorString = String.Join(", ", sorszamok.ToArray());
                             string uzenet = "Több ilyen nevű tanuló is van! Használd a sorszámát.(Azonos nevűek sorszáma: " + sorString + ")";
                             MessageBox.Show(uzenet, "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            fileMethods.DisposeExcelInstance(xlApp, xlWorkbooks, xlWorksheet);
-                            this.Visible = false;
+                            fileMethods.DisposeExcelInstance(xlWorkbook, xlWorksheet);
+                            Visible = false;
                             return sikerült;
                         }
                         if (count == 0)
                         {
                             MessageBox.Show("Nincs találat az adott excel táblázatban. Ellenőrizd a beírt nevet!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            this.Visible = false;
+                            Visible = false;
                             return sikerült;
                         }
                     }
                     mentes.Visible = true;
-                    fileMethods.DisposeExcelInstance(xlApp, xlWorkbooks, xlWorksheet);
+                    fileMethods.DisposeExcelInstance(xlWorkbook, xlWorksheet);
                 }
 
                 if (adatTipusok.Count > kivalasztott.Count)
@@ -331,13 +336,13 @@ namespace WindowsFormsApp_autósiskola
                 catch
                 {
                     MessageBox.Show("Üres a fájl!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    this.Visible = false;
+                    Visible = false;
                     return sikerült;
                 }
             }
             sikerült = true;
-            this.BringToFront();
-            this.Show();
+            BringToFront();
+            Show();
             return sikerült;
         }
 
@@ -355,9 +360,9 @@ namespace WindowsFormsApp_autósiskola
             {
                 if (fileMethods.IsFileLocked(fajlhely) == false)
                 {
-                    Excel.Application xlAppMain = new Excel.Application();
-                    var xlWorkbooks = xlAppMain.Workbooks;
-                    var xlWorkbook = xlWorkbooks.Open(fajlhely);
+
+
+                    var xlWorkbook = xlWorbooks.Open(fajlhely);
                     Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[Properties.Settings.Default.oldalszam + 1];
                     Excel.Range xlRange = xlWorksheet.UsedRange;
                     int totalRows = xlRange.Rows.Count;
@@ -372,7 +377,7 @@ namespace WindowsFormsApp_autósiskola
                     }
                     catch (Exception)
                     {
-                        fileMethods.DisposeExcelInstance(xlAppMain, xlWorkbooks, xlWorksheet);
+                        fileMethods.DisposeExcelInstance(xlWorkbook, xlWorksheet);
                         MessageBox.Show("Hiba a sorszám olvasásnál!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
@@ -405,7 +410,7 @@ namespace WindowsFormsApp_autósiskola
                     {
                         MessageBox.Show("Nem sikerült a mentés! Ellenőrizze hogy be van-e zárva a fájl.", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-                    fileMethods.DisposeExcelInstance(xlAppMain, xlWorkbooks, xlWorksheet);
+                    fileMethods.DisposeExcelInstance(xlWorkbook, xlWorksheet);
                 }
                 else
                 {
@@ -435,9 +440,9 @@ namespace WindowsFormsApp_autósiskola
                     MessageBox.Show("Nem elérhető a fájl. Zárja be a szerkesztés miatt!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false;
                 }
-                Excel.Application xlApp = StartExcel();
-                var xlWorkbooks = xlApp.Workbooks;
-                var xlWorkbook = xlWorkbooks.Open(Properties.Settings.Default.ExcelFajlMasolata);
+
+
+                var xlWorkbook = xlWorbooks.Open(Properties.Settings.Default.ExcelFajlMasolata);
                 Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[Properties.Settings.Default.oldalszam + 1];
                 Excel.Range xlRange = xlWorksheet.UsedRange;
                 totalRows = xlRange.Rows.Count;
@@ -455,7 +460,7 @@ namespace WindowsFormsApp_autósiskola
                     sb.Append("đ");
                     sb.Append(row);
                 }
-                fileMethods.DisposeExcelInstance(xlApp, xlWorkbooks, xlWorksheet);
+                fileMethods.DisposeExcelInstance(xlWorkbook, xlWorksheet);
 
                 string[] Sorelemek = sb.ToString().Split('đ');
 
@@ -485,7 +490,7 @@ namespace WindowsFormsApp_autósiskola
             catch
             {
                 MessageBox.Show("Semmilyen adattípus nincs megadva a táblázatban!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                this.Visible = false;
+                Visible = false;
                 return false;
             }
             string ido = DateTime.Now.ToString("MM/dd/yyyy");
@@ -503,7 +508,8 @@ namespace WindowsFormsApp_autósiskola
             dataGridView1.Rows[0].DefaultCellStyle.SelectionBackColor = Color.FromArgb(224, 224, 224);
             dataGridView1.Rows[0].DefaultCellStyle.SelectionForeColor = Color.Black;
 
-            this.Show();
+            BringToFront();
+            Show();
             return true;
         }
         private DataGridView.HitTestInfo hitTestInfo;
@@ -521,28 +527,9 @@ namespace WindowsFormsApp_autósiskola
             }
         }
 
-        public Excel.Application StartExcel()
-        {
-            Excel.Application instance = null;
-            try
-            {
-                instance = (Excel.Application)System.Runtime.InteropServices.Marshal.GetActiveObject("Excel.Application");
-                if (instance.Visible == true)
-                {
-                    instance = new Excel.Application();
-                }
-            }
-            catch (System.Runtime.InteropServices.COMException)
-            {
-                instance = new Excel.Application();
-            }
-            instance.Visible = false;
-            return instance;
-        }
-
         private void bezaras_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Hide();
 
         }
     }

@@ -14,6 +14,7 @@ namespace WindowsFormsApp_autósiskola
 {
     public class fileMethods
     {
+        
         public static bool isExcelComptaible(string fajlnev)
         {
             bool isIt = false;
@@ -68,6 +69,29 @@ namespace WindowsFormsApp_autósiskola
                 GC.Collect();
             }
         }
+        public static void DisposeExcelInstance(Excel.Workbook workBooks)
+        {
+            try
+            {
+                workBooks.Close();
+            }
+            catch { }
+            if (workBooks != null)
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(workBooks);
+            workBooks = null;
+            GC.Collect();
+        }
+        public static void DisposeExcelInstance(Excel.Workbook workBook, Excel._Worksheet workSheet)
+        {
+            workBook.Close();
+            if (workBook != null)
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(workBook);
+            if (workSheet != null)
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(workSheet);
+            workBook = null;
+            workSheet = null;
+            GC.Collect();
+        }
         public static void DisposeExcelInstance(Excel.Application app, Excel.Workbooks workBooks, Excel._Worksheet workSheet)
         {
             app.DisplayAlerts = false;
@@ -80,19 +104,6 @@ namespace WindowsFormsApp_autósiskola
             if (app != null)
                 System.Runtime.InteropServices.Marshal.ReleaseComObject(app);
             workSheet = null;
-            workBooks = null;
-            app = null;
-            GC.Collect();
-        }
-        public static void DisposeExcelInstance(Excel.Application app, Excel.Workbooks workBooks)
-        {
-            app.DisplayAlerts = false;
-            workBooks.Close();
-            app.Quit();
-            if (workBooks != null)
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(workBooks);
-            if (app != null)
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(app);
             workBooks = null;
             app = null;
             GC.Collect();
