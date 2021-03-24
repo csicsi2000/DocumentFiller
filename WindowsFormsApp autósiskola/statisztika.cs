@@ -19,7 +19,7 @@ namespace WindowsFormsApp_autósiskola
         {
             InitializeComponent();
         }
-        public void books (Excel.Workbooks books)
+        public void books(Excel.Workbooks books)
         {
             xlWorkbooks = books;
         }
@@ -132,8 +132,64 @@ namespace WindowsFormsApp_autósiskola
 
         private void statList_Click(object sender, EventArgs e)
         {
-            int index = dataGridView1.CurrentCell.RowIndex; 
+            int index = dataGridView1.CurrentCell.RowIndex;
 
+            dataGridView2.Rows.Clear();
+            dataGridView1.Refresh();
+
+            List<string> adatok = new List<string>();
+            List<double> db = new List<double>();
+            double totalColumns = 0;
+
+            if (fileMethods.isExcelComptaible(Properties.Settings.Default.ExcelFajlHelye))
+            {
+                var xlWorkbook = xlWorkbooks.Open(Properties.Settings.Default.ExcelFajlMasolata);
+                Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[Properties.Settings.Default.oldalszam + 1];
+                Excel.Range xlRange = xlWorksheet.UsedRange;
+                int totalRows = xlRange.Rows.Count;
+                totalColumns = xlRange.Columns.Count-1;
+
+                for (int i = 2; i < totalColumns; i++)
+                {
+                    bool vanE = false;
+                    string data = Convert.ToString(xlWorksheet.Cells[i, index + 1].Text);
+                    if (data == null || data == "")
+                    {
+                        continue;
+                    }
+                    for (int j = 0; j < adatok.Count; j++)
+                    {
+                        if (data == adatok[j])
+                        {
+                            db[j]++;
+                            vanE = true;
+                            break;
+                        }
+                    }
+                    if (vanE == false)
+                    {
+                        adatok.Add(data);
+                        db.Add(1);
+                    }
+                }
+                fileMethods.DisposeExcelInstance(xlWorkbook, xlWorksheet);
+            }
+            if (Path.GetExtension(Properties.Settings.Default.ExcelFajlHelye) == ".csv") 
+            {
+                StreamReader olvas = new StreamReader(Properties.Settings.Default.ExcelFajlHelye, Encoding.Default);
+
+            }
+
+            for(int i = 0; i < adatok.Count; i++)
+            {
+                int row = dataGridView2.Rows.Add();
+                dataGridView2.Rows[i].Cells[0].Value = adatok[i];
+                dataGridView2.Rows[i].Cells[1].Value = db[i];
+
+                double szamitas = (db[i] / totalColumns) * 100d;
+                double szazalek = Math.Round(szamitas, 2);
+                dataGridView2.Rows[i].Cells[2].Value = szazalek+ "%";
+            }
         }
-    }
+    } 
 }

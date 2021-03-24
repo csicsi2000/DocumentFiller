@@ -358,8 +358,6 @@ namespace WindowsFormsApp_autósiskola
             {
                 if (fileMethods.IsFileLocked(fajlhely) == false)
                 {
-
-
                     var xlWorkbook = xlWorbooks.Open(fajlhely);
                     Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[Properties.Settings.Default.oldalszam + 1];
                     Excel.Range xlRange = xlWorksheet.UsedRange;
@@ -506,6 +504,7 @@ namespace WindowsFormsApp_autósiskola
             dataGridView1.Rows[0].DefaultCellStyle.SelectionBackColor = Color.FromArgb(224, 224, 224);
             dataGridView1.Rows[0].DefaultCellStyle.SelectionForeColor = Color.Black;
 
+            Application.DoEvents();
             BringToFront();
             Show();
             return true;

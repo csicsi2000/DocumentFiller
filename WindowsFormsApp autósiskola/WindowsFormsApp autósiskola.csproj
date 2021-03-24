@@ -261,13 +261,23 @@
     <Compile Include="TanuloAdatok.Designer.cs">
       <DependentUpon>TanuloAdatok.cs</DependentUpon>
     </Compile>
+    <Compile Include="loading.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="loading.Designer.cs">
+      <DependentUpon>loading.cs</DependentUpon>
+    </Compile>
     <Compile Include="WordFile.cs" />
     <Content Include="favicon %283%29.ico" />
+    <None Include="Resources\1495.gif" />
     <EmbeddedResource Include="Form1.bin.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="loading.resx">
+      <DependentUpon>loading.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -51,11 +51,10 @@ namespace WindowsFormsApp_autósiskola
             iskolaAzonosito.Text = Properties.Settings.Default.iskolaAzonosito;
             iskolaNev.Text = Properties.Settings.Default.iskolaNev;
             iskolaCim.Text = Properties.Settings.Default.iskolaCim;
+            loading1.Hide();
             statisztika1.Hide();
             tanuloAdatok1.Hide();
-            panel6.Hide();
             panel1.Visible = false;
-            panel4.Visible = false;
             panel5.Visible = false;
             AllowDrop = true;
             DragEnter += new DragEventHandler(Form1_DragEnter);
@@ -108,7 +107,7 @@ namespace WindowsFormsApp_autósiskola
                 ExcelOldalNevek.Visible = false;
                 frissites.Visible = false;
             }
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 35, 35));
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -184,6 +183,12 @@ namespace WindowsFormsApp_autósiskola
             }
             string fajlHely = excelHelye.Text;
 
+            if (!File.Exists(fajlHely))
+            {
+                MessageBox.Show("Nem található a fájl. (.csv , .xlsx, .xlsm)", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             Properties.Settings.Default.ExcelFajlHelye = fajlHely;
 
             if (fileMethods.isExcelComptaible(fajlHely))
@@ -235,8 +240,8 @@ namespace WindowsFormsApp_autósiskola
                 return;
             }
             dokumentumKeszites.Enabled = false;
-            panel4.BringToFront();
-            panel4.Visible = true;
+            loading1.BringToFront();
+            loading1.Visible = true;
             fileMethods.FajlOlvasas();
 
             string kepzesiIgazolas = Path.GetFullPath("kepzesi igazolas sablon a programhoz.docx");
@@ -251,7 +256,7 @@ namespace WindowsFormsApp_autósiskola
             WordFile csinál = new WordFile();
             await (Task.Run(() => csinál.WordFileLetrehozas(xlApp.xlWorkbooks, sorszam, kepzesiIgazolas, ujfajl)));
             dokumentumKeszites.Enabled = true;
-            panel4.Visible = false;
+            loading1.Visible = false;
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -467,6 +472,7 @@ namespace WindowsFormsApp_autósiskola
             {
                 mentettFajlNeve.Text = (kivalasztott).Replace(' ', '_');
             }
+            Application.DoEvents();
             valasztFolyamatban.Visible = false;
         }
 
@@ -558,9 +564,10 @@ namespace WindowsFormsApp_autósiskola
                 MessageBox.Show("Nem található a fájl.", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             ListaJelenites();
+            Application.DoEvents();
             await PutTaskDelay();
-            panel5.Visible = false;
             frissites.Enabled = true;
+            panel5.Visible = false;
         }
         async Task PutTaskDelay()
         {
@@ -821,10 +828,10 @@ namespace WindowsFormsApp_autósiskola
 
         private void ujTanulo_Click(object sender, EventArgs e)
         {
-            panel6.BringToFront();
-            panel6.Show();
+            loading1.BringToFront();
+            loading1.Show();
             tanuloAdatok1.ujTanulo(excelHelye.Text);
-            panel6.Hide();
+            loading1.Hide();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -844,12 +851,12 @@ namespace WindowsFormsApp_autósiskola
 
         private void statNyit_Click(object sender, EventArgs e)
         {
-            panel6.Show();
-            panel6.BringToFront();
+            loading1.Show();
+            loading1.BringToFront();
             string text = SorSzam.Text;
             string hely = excelHelye.Text;
             statisztika1.adatokListazas(text, hely);
-            panel6.Hide();
+            loading1.Hide();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
