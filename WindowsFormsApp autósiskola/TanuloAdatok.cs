@@ -439,9 +439,9 @@ namespace WindowsFormsApp_autósiskola
 
 
                 var xlWorkbook = xlWorbooks.Open(Properties.Settings.Default.ExcelFajlMasolata);
-                Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[Properties.Settings.Default.oldalszam + 1];
+                Excel.Worksheet xlWorksheet = xlWorkbook.Sheets[Properties.Settings.Default.oldalszam + 1];
                 Excel.Range xlRange = xlWorksheet.UsedRange;
-                totalRows = xlRange.Rows.Count;
+                totalRows = excelApp.GetMinimalUsedRangeAddress(xlWorksheet);
                 int totalColumns = xlRange.Columns.Count;
                 kivSor = totalRows + 1;
                 int szam = 1;
@@ -456,7 +456,8 @@ namespace WindowsFormsApp_autósiskola
                     sb.Append("đ");
                     sb.Append(row);
                 }
-                fileMethods.DisposeExcelInstance(xlWorkbook, xlWorksheet);
+                excelApp.MRCO(xlWorkbook);
+                excelApp.MRCO(xlWorksheet);
 
                 string[] Sorelemek = sb.ToString().Split('đ');
 

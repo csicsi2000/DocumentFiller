@@ -188,11 +188,19 @@ namespace WindowsFormsApp_autósiskola
                 MessageBox.Show("Nem található a fájl. (.csv , .xlsx, .xlsm)", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
+            
             Properties.Settings.Default.ExcelFajlHelye = fajlHely;
 
             if (fileMethods.isExcelComptaible(fajlHely))
             {
+                if (xlApp == null)
+                {
+                    MessageBox.Show("Nem található Excel alkalmazás!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    excelHelye.Text = "";
+                    ExcelOldalNevek.Visible = false;
+                    frissites.Visible = false;
+                    return;
+                }
                 fileMethods.FajlOlvasas();
                 ListaJelenites();
             }
@@ -204,7 +212,6 @@ namespace WindowsFormsApp_autósiskola
             else
             {
                 excelHelye.Text = "";
-                fajlHely = "";
                 ExcelOldalNevek.Visible = false;
                 frissites.Visible = false;
                 MessageBox.Show("Nem megfelelő a megadott fájlformátum. (.csv , .xlsx, .xlsm)", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
