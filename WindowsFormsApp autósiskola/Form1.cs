@@ -51,6 +51,7 @@ namespace WindowsFormsApp_autósiskola
             iskolaAzonosito.Text = Properties.Settings.Default.iskolaAzonosito;
             iskolaNev.Text = Properties.Settings.Default.iskolaNev;
             iskolaCim.Text = Properties.Settings.Default.iskolaCim;
+            staticLoading.Hide();
             loading1.Hide();
             statisztika1.Hide();
             tanuloAdatok1.Hide();
@@ -188,7 +189,8 @@ namespace WindowsFormsApp_autósiskola
                 MessageBox.Show("Nem található a fájl. (.csv , .xlsx, .xlsm)", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            
+            staticLoading.Visible = true;
+            staticLoading.BringToFront();
             Properties.Settings.Default.ExcelFajlHelye = fajlHely;
 
             if (fileMethods.isExcelComptaible(fajlHely))
@@ -217,6 +219,7 @@ namespace WindowsFormsApp_autósiskola
                 MessageBox.Show("Nem megfelelő a megadott fájlformátum. (.csv , .xlsx, .xlsm)", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             Properties.Settings.Default.Save();
+            staticLoading.Visible = false;
         }
 
         private void SorSzam_TextChanged(object sender, EventArgs e)
@@ -835,10 +838,10 @@ namespace WindowsFormsApp_autósiskola
 
         private void ujTanulo_Click(object sender, EventArgs e)
         {
-            loading1.BringToFront();
-            loading1.Show();
+            staticLoading.BringToFront();
+            staticLoading.Show();
             tanuloAdatok1.ujTanulo(excelHelye.Text);
-            loading1.Hide();
+            staticLoading.Hide();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -858,12 +861,12 @@ namespace WindowsFormsApp_autósiskola
 
         private void statNyit_Click(object sender, EventArgs e)
         {
-            loading1.Show();
-            loading1.BringToFront();
+            staticLoading.Show();
+            staticLoading.BringToFront();
             string text = SorSzam.Text;
             string hely = excelHelye.Text;
             statisztika1.adatokListazas(text, hely);
-            loading1.Hide();
+            staticLoading.Hide();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)

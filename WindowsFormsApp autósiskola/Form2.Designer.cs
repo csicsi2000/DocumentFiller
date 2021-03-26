@@ -1,14 +1,14 @@
 ﻿
 namespace WindowsFormsApp_autósiskola
 {
-    partial class loading
+    partial class LoadingForm
     {
-        /// <summary> 
+        /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -21,10 +21,10 @@ namespace WindowsFormsApp_autósiskola
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
+        #region Windows Form Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
@@ -47,17 +47,17 @@ namespace WindowsFormsApp_autósiskola
             this.panel6.Location = new System.Drawing.Point(2, 2);
             this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(238, 105);
-            this.panel6.TabIndex = 31;
+            this.panel6.Size = new System.Drawing.Size(246, 106);
+            this.panel6.TabIndex = 32;
             this.panel6.UseWaitCursor = true;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::WindowsFormsApp_autósiskola.Properties.Resources.loading;
-            this.pictureBox1.Location = new System.Drawing.Point(89, 7);
+            this.pictureBox1.Location = new System.Drawing.Point(91, 7);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.UseWaitCursor = true;
@@ -71,7 +71,7 @@ namespace WindowsFormsApp_autósiskola
             this.label8.Margin = new System.Windows.Forms.Padding(2);
             this.label8.Name = "label8";
             this.label8.Padding = new System.Windows.Forms.Padding(5);
-            this.label8.Size = new System.Drawing.Size(230, 34);
+            this.label8.Size = new System.Drawing.Size(244, 34);
             this.label8.TabIndex = 0;
             this.label8.Text = "Folyamatban...";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -79,6 +79,7 @@ namespace WindowsFormsApp_autósiskola
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.panel6, 0, 0);
@@ -87,19 +88,18 @@ namespace WindowsFormsApp_autósiskola
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(242, 109);
-            this.tableLayoutPanel1.TabIndex = 32;
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(250, 110);
+            this.tableLayoutPanel1.TabIndex = 33;
             // 
-            // loading
+            // LoadingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
+            this.ClientSize = new System.Drawing.Size(250, 110);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(0);
-            this.Name = "loading";
-            this.Size = new System.Drawing.Size(242, 109);
-            this.UseWaitCursor = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "LoadingForm";
+            this.Text = "Form2";
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);

@@ -266,19 +266,22 @@ namespace WindowsFormsApp_autósiskola
 
             worksheet.Range[worksheet.Cells[1, 1], worksheet.Cells[1, 3]].Merge();
             worksheet.Cells[1, 1] = "Statisztika";
+            worksheet.Cells[1, 1].Font.bold = true ;
             worksheet.Cells[1, 1].Font.Size = 15;
             worksheet.Columns[1].ColumnWidth = 25;
+            worksheet.Columns[2].ColumnWidth = 10;
             worksheet.Cells[1, 1].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
             worksheet.Cells[2, 1] = "Adat";
             worksheet.Cells[2, 2] = "Darabszám";
             worksheet.Cells[2, 3] = "Százalék";
+            worksheet.Rows[2].Font.bold = true;
 
 
             for (int i = 0; i < 3; i++)
             {
                 for (int j = 0; j < statisztikak.Rows.Count; j++)
                 {
-                    worksheet.Cells[j+2, i+1] = statisztikak.Rows[j].Cells[i].Value;
+                    worksheet.Cells[j+3, i+1] = statisztikak.Rows[j].Cells[i].Value;
                 }
             }
             userApp.Visible = true;
