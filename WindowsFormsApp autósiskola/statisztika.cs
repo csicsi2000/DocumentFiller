@@ -112,7 +112,7 @@ namespace WindowsFormsApp_autósiskola
                             string test = Sorelemek[j];
                         }
                     }
-                    fileMethods.DisposeExcelInstance(xlWorkbook);
+                    fileMethods.DisposeExcelInstance(xlWorkbook, xlWorksheet);
                 }
 
                 for (int i = 0; i < adatTipusok.Count - 2; i++)
@@ -239,14 +239,17 @@ namespace WindowsFormsApp_autósiskola
                 double szazalek = Math.Round(szamitas, 2);
                 statisztikak.Rows[row].Cells[2].Value = szazalek+ "%";
             }
-            int utolsoSor = statisztikak.Rows.Add();
+            if(db[0] != 0) 
+            {
+                int utolsoSor = statisztikak.Rows.Add();
 
-            statisztikak.Rows[utolsoSor].Cells[0].Value = adatok[0];
-            statisztikak.Rows[utolsoSor].Cells[1].Value = db[0];
+                statisztikak.Rows[utolsoSor].Cells[0].Value = adatok[0];
+                statisztikak.Rows[utolsoSor].Cells[1].Value = db[0];
 
-            double sz = (db[0] / totalRows) * 100d;
-            double er = Math.Round(sz, 2);
-            statisztikak.Rows[utolsoSor].Cells[2].Value = er + "%";
+                double sz = (db[0] / totalRows) * 100d;
+                double er = Math.Round(sz, 2);
+                statisztikak.Rows[utolsoSor].Cells[2].Value = er + "%"; 
+            }
 
             statList.Enabled = true;
         }
@@ -279,6 +282,7 @@ namespace WindowsFormsApp_autósiskola
                 }
             }
             userApp.Visible = true;
+
         }
     } 
 }

@@ -43,11 +43,6 @@ namespace WindowsFormsApp_autósiskola
         {
             if (isExcelComptaible(Properties.Settings.Default.ExcelFajlHelye))
             {
-                if (File.Exists(Properties.Settings.Default.ExcelFajlMasolata)) 
-                { 
-                    File.Delete(Properties.Settings.Default.ExcelFajlMasolata);
-                }
-                
                 Properties.Settings.Default.ExcelFajlMasolata = System.AppDomain.CurrentDomain.BaseDirectory + "ExcelMasolat" + Path.GetExtension(Properties.Settings.Default.ExcelFajlHelye);
                 string hely = Properties.Settings.Default.ExcelFajlMasolata;
                 Properties.Settings.Default.Save();
@@ -66,7 +61,6 @@ namespace WindowsFormsApp_autósiskola
                     //to.Dispose();
                     //from.Dispose();
                 }
-                GC.Collect();
             }
         }
         public static void DisposeExcelInstance(Excel.Workbook workBook)

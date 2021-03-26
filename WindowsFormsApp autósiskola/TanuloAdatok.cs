@@ -456,8 +456,7 @@ namespace WindowsFormsApp_autósiskola
                     sb.Append("đ");
                     sb.Append(row);
                 }
-                excelApp.MRCO(xlWorkbook);
-                excelApp.MRCO(xlWorksheet);
+                fileMethods.DisposeExcelInstance(xlWorkbook, xlWorksheet);
 
                 string[] Sorelemek = sb.ToString().Split('đ');
 
