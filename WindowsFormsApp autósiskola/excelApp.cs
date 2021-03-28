@@ -35,14 +35,10 @@ namespace WindowsFormsApp_autósiskola
             int rowMax = 0;
             try
             {
-                int colMax = 0;
-
                 Excel.Range usedRange = sheet.UsedRange;
                 Excel.Range lastCell = usedRange.SpecialCells(Excel.XlCellType.xlCellTypeLastCell, Type.Missing);
                 int lastRow = lastCell.Row;
                 int lastCol = lastCell.Column;
-                int rowMin = lastRow + 1;
-                int colMin = lastCol + 1;
 
                 int rr = usedRange.Rows.Count;
                 int cc = usedRange.Columns.Count;
@@ -53,12 +49,6 @@ namespace WindowsFormsApp_autósiskola
                     {
                         if (cell.Row > rowMax)
                             rowMax = cell.Row;
-                        if (cell.Column > colMax)
-                            colMax = cell.Column;
-                        if (cell.Row < rowMin)
-                            rowMin = cell.Row;
-                        if (cell.Column < colMin)
-                            colMin = cell.Column;
                     }
                     MRCO(cell);
                 }

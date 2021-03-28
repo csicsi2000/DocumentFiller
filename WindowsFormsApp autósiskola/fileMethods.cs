@@ -57,9 +57,6 @@ namespace WindowsFormsApp_autósiskola
                     {
                         to.Write(buffer, 0, bytes);
                     }
-                    //from.CopyTo(to);
-                    //to.Dispose();
-                    //from.Dispose();
                 }
             }
         }
@@ -78,12 +75,12 @@ namespace WindowsFormsApp_autósiskola
         public static void DisposeExcelInstance(Excel.Workbook workBook, Excel._Worksheet workSheet)
         {
             workBook.Close();
-            if (workBook != null)
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(workBook);
             if (workSheet != null)
                 System.Runtime.InteropServices.Marshal.ReleaseComObject(workSheet);
-            workBook = null;
+            if (workBook != null)
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(workBook);
             workSheet = null;
+            workBook = null;
             GC.Collect();
         }
         public static void DisposeExcelInstance(Excel.Application app, Excel.Workbooks workBooks, Excel._Worksheet workSheet)
@@ -104,9 +101,17 @@ namespace WindowsFormsApp_autósiskola
         }
         public static void DisposeExcelInstance(Excel.Application app, Excel.Workbooks workBooks)
         {
-            app.DisplayAlerts = false;
-            workBooks.Close();
-            app.Quit();
+            try
+            {
+                app.DisplayAlerts = false;
+                workBooks.Close();
+                app.Quit();
+            }
+            catch 
+            {
+
+            }
+            
             if (workBooks != null)
                 System.Runtime.InteropServices.Marshal.ReleaseComObject(workBooks);
             if (app != null)

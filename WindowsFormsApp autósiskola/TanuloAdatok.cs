@@ -159,6 +159,8 @@ namespace WindowsFormsApp_autósiskola
                                 }
                             }
                         }
+                        fs.Close();
+                        fs.Dispose();
                     }
                     catch (Exception)
                     {
@@ -171,7 +173,6 @@ namespace WindowsFormsApp_autósiskola
 
                 else if (fileMethods.isExcelComptaible(Properties.Settings.Default.ExcelFajlHelye))
                 {
-
 
                     var xlWorkbook = xlWorbooks.Open(Properties.Settings.Default.ExcelFajlMasolata);
                     Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[Properties.Settings.Default.oldalszam + 1];
@@ -353,13 +354,12 @@ namespace WindowsFormsApp_autósiskola
             }
             mentesFolyamatban.Visible = true;
             mentesFolyamatban.BringToFront();
-            var fajlhely = Properties.Settings.Default.ExcelFajlHelye;
-            if (fileMethods.isExcelComptaible(fajlhely))
+            if (fileMethods.isExcelComptaible(Properties.Settings.Default.ExcelFajlHelye))
             {
-                if (fileMethods.IsFileLocked(fajlhely) == false)
+                if (fileMethods.IsFileLocked(Properties.Settings.Default.ExcelFajlHelye) == false)
                 {
-                    var xlWorkbook = xlWorbooks.Open(fajlhely);
-                    Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[Properties.Settings.Default.oldalszam + 1];
+                    var xlWorkbook = xlWorbooks.Open(Properties.Settings.Default.ExcelFajlHelye);
+                    Excel.Worksheet xlWorksheet = xlWorkbook.Sheets[Properties.Settings.Default.oldalszam + 1];
                     Excel.Range xlRange = xlWorksheet.UsedRange;
                     int totalRows = xlRange.Rows.Count;
                     int totalColumns = xlRange.Columns.Count;
@@ -406,6 +406,7 @@ namespace WindowsFormsApp_autósiskola
                     {
                         MessageBox.Show("Nem sikerült a mentés! Ellenőrizze hogy be van-e zárva a fájl.", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
+                    excelApp.MRCO(xlRange);
                     fileMethods.DisposeExcelInstance(xlWorkbook, xlWorksheet);
                 }
                 else
@@ -414,6 +415,7 @@ namespace WindowsFormsApp_autósiskola
                 }
             }
             mentesFolyamatban.Visible = false;
+            fileMethods.FajlOlvasas();
         }
 
         public bool ujTanulo(string excelHelye)
@@ -464,7 +466,6 @@ namespace WindowsFormsApp_autósiskola
                 {
                     adatTipusok.Add(Sorelemek[j]);
                     string test = Sorelemek[j];
-
                 }
             }
             else

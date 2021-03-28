@@ -19,6 +19,7 @@ namespace WindowsFormsApp_autósiskola
         public statisztika()
         {
             InitializeComponent();
+            staticLoading.Hide();
         }
         public void books(Excel.Workbooks books)
         {
@@ -140,6 +141,8 @@ namespace WindowsFormsApp_autósiskola
                 MessageBox.Show("Válassz adattípust!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            staticLoading.BringToFront();
+            staticLoading.Show();
             statList.Enabled = false;
             int index = dataGridView1.CurrentCell.RowIndex;
             adatTipus = Convert.ToString(dataGridView1.CurrentCell.Value);
@@ -186,8 +189,7 @@ namespace WindowsFormsApp_autósiskola
                     }
                 }
                 totalRows = totalRows - 1;
-                excelApp.MRCO(xlWorkbook);
-                excelApp.MRCO(xlWorksheet);
+                fileMethods.DisposeExcelInstance(xlWorkbook,xlWorksheet);
             }
             if (Path.GetExtension(Properties.Settings.Default.ExcelFajlHelye) == ".csv") 
             {
@@ -252,10 +254,13 @@ namespace WindowsFormsApp_autósiskola
             }
 
             statList.Enabled = true;
+            staticLoading.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            staticLoading.BringToFront();
+            staticLoading.Show();
             Excel.Application userApp = new Excel.Application();
             var workbooks = userApp.Workbooks;
             Excel.Workbook workbook = workbooks.Add(Type.Missing);
@@ -285,7 +290,7 @@ namespace WindowsFormsApp_autósiskola
                 }
             }
             userApp.Visible = true;
-
+            staticLoading.Hide();
         }
     } 
 }

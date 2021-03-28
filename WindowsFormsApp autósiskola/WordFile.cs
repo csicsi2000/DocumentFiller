@@ -107,9 +107,9 @@ namespace WindowsFormsApp_autósiskola
                 {
 
                     var xlWorkbook = xlWorkbooks.Open(Properties.Settings.Default.ExcelFajlMasolata);
-                    Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[Properties.Settings.Default.oldalszam + 1];
+                    Excel.Worksheet xlWorksheet = xlWorkbook.Sheets[Properties.Settings.Default.oldalszam + 1];
                     Excel.Range xlRange = xlWorksheet.UsedRange;
-                    int totalRows = xlRange.Rows.Count;
+                    int totalRows = excelApp.GetMinimalUsedRangeAddress(xlWorksheet);
                     int totalColumns = xlRange.Columns.Count;
 
                     if (generalMethods.isDigitOnly(sorszam))
@@ -238,7 +238,6 @@ namespace WindowsFormsApp_autósiskola
                         this.FindAndReplace(wordApp, "<iskolaAzonosito>", Properties.Settings.Default.iskolaAzonosito);
                         this.FindAndReplace(wordApp, "<iskolaNev>", Properties.Settings.Default.iskolaNev);
                         this.FindAndReplace(wordApp, "<iskolaCim>", Properties.Settings.Default.iskolaCim);
-
 
                         this.FindAndReplace(wordApp, "<Nev>", kivalasztott[0].Nev);
                         this.FindAndReplace(wordApp, "<SzuleteskoriNev>", kivalasztott[0].SzuleteskoriNev.Trim());

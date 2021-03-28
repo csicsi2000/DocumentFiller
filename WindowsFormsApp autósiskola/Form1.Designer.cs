@@ -70,7 +70,6 @@ namespace WindowsFormsApp_autósiskola
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.loading1 = new WindowsFormsApp_autósiskola.loading();
             this.SorSzam = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -79,6 +78,7 @@ namespace WindowsFormsApp_autósiskola
             this.label9 = new System.Windows.Forms.Label();
             this.valasztFolyamatban = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
+            this.loading1 = new WindowsFormsApp_autósiskola.loading();
             this.button5 = new System.Windows.Forms.Button();
             this.ujTanulo = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -87,11 +87,11 @@ namespace WindowsFormsApp_autósiskola
             this.fooldal = new System.Windows.Forms.Button();
             this.statNyit = new System.Windows.Forms.Button();
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.tanuloAdatok1 = new WindowsFormsApp_autósiskola.TanuloAdatok();
-            this.statisztika1 = new WindowsFormsApp_autósiskola.statisztika();
+            this.staticLoading = new System.Windows.Forms.TableLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.staticLoading = new System.Windows.Forms.TableLayoutPanel();
+            this.tanuloAdatok1 = new WindowsFormsApp_autósiskola.TanuloAdatok();
+            this.statisztika1 = new WindowsFormsApp_autósiskola.statisztika();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -102,8 +102,8 @@ namespace WindowsFormsApp_autósiskola
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.MainPanel.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.staticLoading.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -142,7 +142,7 @@ namespace WindowsFormsApp_autósiskola
             this.kereses.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold);
             this.kereses.ForeColor = System.Drawing.Color.Silver;
             this.kereses.Location = new System.Drawing.Point(159, 121);
-            this.kereses.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.kereses.Margin = new System.Windows.Forms.Padding(2);
             this.kereses.Name = "kereses";
             this.kereses.Size = new System.Drawing.Size(156, 55);
             this.kereses.TabIndex = 5;
@@ -163,7 +163,7 @@ namespace WindowsFormsApp_autósiskola
             this.excelHelye.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.excelHelye.ForeColor = System.Drawing.Color.White;
             this.excelHelye.Location = new System.Drawing.Point(71, 80);
-            this.excelHelye.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.excelHelye.Margin = new System.Windows.Forms.Padding(2);
             this.excelHelye.Name = "excelHelye";
             this.excelHelye.ReadOnly = true;
             this.excelHelye.Size = new System.Drawing.Size(328, 24);
@@ -177,7 +177,7 @@ namespace WindowsFormsApp_autósiskola
             this.dokumentumKeszites.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold);
             this.dokumentumKeszites.ForeColor = System.Drawing.Color.Silver;
             this.dokumentumKeszites.Location = new System.Drawing.Point(585, 441);
-            this.dokumentumKeszites.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dokumentumKeszites.Margin = new System.Windows.Forms.Padding(4);
             this.dokumentumKeszites.Name = "dokumentumKeszites";
             this.dokumentumKeszites.Size = new System.Drawing.Size(159, 55);
             this.dokumentumKeszites.TabIndex = 7;
@@ -193,7 +193,7 @@ namespace WindowsFormsApp_autósiskola
             this.mentesHelye.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.mentesHelye.ForeColor = System.Drawing.Color.White;
             this.mentesHelye.Location = new System.Drawing.Point(498, 80);
-            this.mentesHelye.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mentesHelye.Margin = new System.Windows.Forms.Padding(2);
             this.mentesHelye.Name = "mentesHelye";
             this.mentesHelye.ReadOnly = true;
             this.mentesHelye.Size = new System.Drawing.Size(336, 24);
@@ -207,7 +207,7 @@ namespace WindowsFormsApp_autósiskola
             this.mentesHelyeKereses.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold);
             this.mentesHelyeKereses.ForeColor = System.Drawing.Color.Silver;
             this.mentesHelyeKereses.Location = new System.Drawing.Point(585, 121);
-            this.mentesHelyeKereses.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mentesHelyeKereses.Margin = new System.Windows.Forms.Padding(2);
             this.mentesHelyeKereses.Name = "mentesHelyeKereses";
             this.mentesHelyeKereses.Size = new System.Drawing.Size(159, 55);
             this.mentesHelyeKereses.TabIndex = 4;
@@ -227,7 +227,7 @@ namespace WindowsFormsApp_autósiskola
             this.mentettFajlNeve.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.mentettFajlNeve.ForeColor = System.Drawing.Color.White;
             this.mentettFajlNeve.Location = new System.Drawing.Point(548, 403);
-            this.mentettFajlNeve.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mentettFajlNeve.Margin = new System.Windows.Forms.Padding(2);
             this.mentettFajlNeve.Name = "mentettFajlNeve";
             this.mentettFajlNeve.Size = new System.Drawing.Size(230, 24);
             this.mentettFajlNeve.TabIndex = 9;
@@ -255,7 +255,7 @@ namespace WindowsFormsApp_autósiskola
             this.sorSzamValasztas.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold);
             this.sorSzamValasztas.ForeColor = System.Drawing.Color.Silver;
             this.sorSzamValasztas.Location = new System.Drawing.Point(159, 444);
-            this.sorSzamValasztas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sorSzamValasztas.Margin = new System.Windows.Forms.Padding(4);
             this.sorSzamValasztas.Name = "sorSzamValasztas";
             this.sorSzamValasztas.Size = new System.Drawing.Size(156, 52);
             this.sorSzamValasztas.TabIndex = 11;
@@ -270,7 +270,7 @@ namespace WindowsFormsApp_autósiskola
             this.nyissaEMeg.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold);
             this.nyissaEMeg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
             this.nyissaEMeg.Location = new System.Drawing.Point(548, 511);
-            this.nyissaEMeg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nyissaEMeg.Margin = new System.Windows.Forms.Padding(4);
             this.nyissaEMeg.Name = "nyissaEMeg";
             this.nyissaEMeg.Size = new System.Drawing.Size(236, 22);
             this.nyissaEMeg.TabIndex = 14;
@@ -287,7 +287,7 @@ namespace WindowsFormsApp_autósiskola
             this.ExcelOldalNevek.FormattingEnabled = true;
             this.ExcelOldalNevek.ItemHeight = 20;
             this.ExcelOldalNevek.Location = new System.Drawing.Point(122, 187);
-            this.ExcelOldalNevek.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ExcelOldalNevek.Margin = new System.Windows.Forms.Padding(4);
             this.ExcelOldalNevek.Name = "ExcelOldalNevek";
             this.ExcelOldalNevek.Size = new System.Drawing.Size(225, 120);
             this.ExcelOldalNevek.TabIndex = 15;
@@ -300,7 +300,7 @@ namespace WindowsFormsApp_autósiskola
             this.ekezetek.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold);
             this.ekezetek.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
             this.ekezetek.Location = new System.Drawing.Point(124, 511);
-            this.ekezetek.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ekezetek.Margin = new System.Windows.Forms.Padding(4);
             this.ekezetek.Name = "ekezetek";
             this.ekezetek.Size = new System.Drawing.Size(228, 22);
             this.ekezetek.TabIndex = 16;
@@ -315,7 +315,7 @@ namespace WindowsFormsApp_autósiskola
             this.szokoz.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold);
             this.szokoz.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
             this.szokoz.Location = new System.Drawing.Point(124, 541);
-            this.szokoz.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.szokoz.Margin = new System.Windows.Forms.Padding(4);
             this.szokoz.Name = "szokoz";
             this.szokoz.Size = new System.Drawing.Size(241, 22);
             this.szokoz.TabIndex = 17;
@@ -330,7 +330,7 @@ namespace WindowsFormsApp_autósiskola
             this.frissites.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.frissites.ForeColor = System.Drawing.Color.Silver;
             this.frissites.Location = new System.Drawing.Point(360, 234);
-            this.frissites.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.frissites.Margin = new System.Windows.Forms.Padding(4);
             this.frissites.Name = "frissites";
             this.frissites.Size = new System.Drawing.Size(72, 42);
             this.frissites.TabIndex = 18;
@@ -397,7 +397,7 @@ namespace WindowsFormsApp_autósiskola
             this.iskolaCim.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.iskolaCim.ForeColor = System.Drawing.Color.White;
             this.iskolaCim.Location = new System.Drawing.Point(367, 282);
-            this.iskolaCim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iskolaCim.Margin = new System.Windows.Forms.Padding(4);
             this.iskolaCim.Name = "iskolaCim";
             this.iskolaCim.Size = new System.Drawing.Size(241, 22);
             this.iskolaCim.TabIndex = 13;
@@ -424,7 +424,7 @@ namespace WindowsFormsApp_autósiskola
             this.iskolaNev.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.iskolaNev.ForeColor = System.Drawing.Color.White;
             this.iskolaNev.Location = new System.Drawing.Point(367, 191);
-            this.iskolaNev.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iskolaNev.Margin = new System.Windows.Forms.Padding(4);
             this.iskolaNev.Name = "iskolaNev";
             this.iskolaNev.Size = new System.Drawing.Size(241, 22);
             this.iskolaNev.TabIndex = 11;
@@ -438,7 +438,7 @@ namespace WindowsFormsApp_autósiskola
             this.iskolaAzonosito.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.iskolaAzonosito.ForeColor = System.Drawing.Color.White;
             this.iskolaAzonosito.Location = new System.Drawing.Point(367, 105);
-            this.iskolaAzonosito.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iskolaAzonosito.Margin = new System.Windows.Forms.Padding(4);
             this.iskolaAzonosito.Name = "iskolaAzonosito";
             this.iskolaAzonosito.Size = new System.Drawing.Size(241, 22);
             this.iskolaAzonosito.TabIndex = 10;
@@ -477,7 +477,7 @@ namespace WindowsFormsApp_autósiskola
             this.ujTanuloIdo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.ujTanuloIdo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
             this.ujTanuloIdo.Location = new System.Drawing.Point(81, 263);
-            this.ujTanuloIdo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ujTanuloIdo.Margin = new System.Windows.Forms.Padding(4);
             this.ujTanuloIdo.Name = "ujTanuloIdo";
             this.ujTanuloIdo.Size = new System.Drawing.Size(193, 20);
             this.ujTanuloIdo.TabIndex = 6;
@@ -517,7 +517,7 @@ namespace WindowsFormsApp_autósiskola
             this.honapBetu.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.honapBetu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
             this.honapBetu.Location = new System.Drawing.Point(97, 113);
-            this.honapBetu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.honapBetu.Margin = new System.Windows.Forms.Padding(4);
             this.honapBetu.Name = "honapBetu";
             this.honapBetu.Size = new System.Drawing.Size(161, 20);
             this.honapBetu.TabIndex = 3;
@@ -531,7 +531,7 @@ namespace WindowsFormsApp_autósiskola
             this.bezaras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bezaras.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.bezaras.Location = new System.Drawing.Point(544, 329);
-            this.bezaras.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.bezaras.Margin = new System.Windows.Forms.Padding(10);
             this.bezaras.Name = "bezaras";
             this.bezaras.Size = new System.Drawing.Size(98, 39);
             this.bezaras.TabIndex = 2;
@@ -559,7 +559,7 @@ namespace WindowsFormsApp_autósiskola
             this.kiallitasiHely.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.kiallitasiHely.ForeColor = System.Drawing.Color.White;
             this.kiallitasiHely.Location = new System.Drawing.Point(49, 68);
-            this.kiallitasiHely.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kiallitasiHely.Margin = new System.Windows.Forms.Padding(4);
             this.kiallitasiHely.Name = "kiallitasiHely";
             this.kiallitasiHely.Size = new System.Drawing.Size(241, 22);
             this.kiallitasiHely.TabIndex = 0;
@@ -591,7 +591,7 @@ namespace WindowsFormsApp_autósiskola
             this.helyIdo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold);
             this.helyIdo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
             this.helyIdo.Location = new System.Drawing.Point(548, 541);
-            this.helyIdo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.helyIdo.Margin = new System.Windows.Forms.Padding(4);
             this.helyIdo.Name = "helyIdo";
             this.helyIdo.Size = new System.Drawing.Size(256, 22);
             this.helyIdo.TabIndex = 22;
@@ -686,16 +686,6 @@ namespace WindowsFormsApp_autósiskola
             this.panel3.Size = new System.Drawing.Size(882, 602);
             this.panel3.TabIndex = 24;
             // 
-            // loading1
-            // 
-            this.loading1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
-            this.loading1.Location = new System.Drawing.Point(323, 211);
-            this.loading1.Margin = new System.Windows.Forms.Padding(0);
-            this.loading1.Name = "loading1";
-            this.loading1.Size = new System.Drawing.Size(242, 109);
-            this.loading1.TabIndex = 30;
-            this.loading1.UseWaitCursor = true;
-            // 
             // SorSzam
             // 
             this.SorSzam.BackColor = System.Drawing.Color.Black;
@@ -719,7 +709,7 @@ namespace WindowsFormsApp_autósiskola
             this.button3.ForeColor = System.Drawing.Color.Silver;
             this.button3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.button3.Location = new System.Drawing.Point(339, 444);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(107, 52);
             this.button3.TabIndex = 26;
@@ -752,7 +742,7 @@ namespace WindowsFormsApp_autósiskola
             this.panel7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel7.Controls.Add(this.label9);
             this.panel7.Location = new System.Drawing.Point(323, 435);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(136, 71);
             this.panel7.TabIndex = 25;
@@ -777,7 +767,7 @@ namespace WindowsFormsApp_autósiskola
             this.valasztFolyamatban.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.valasztFolyamatban.Controls.Add(this.label13);
             this.valasztFolyamatban.Location = new System.Drawing.Point(152, 438);
-            this.valasztFolyamatban.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.valasztFolyamatban.Margin = new System.Windows.Forms.Padding(4);
             this.valasztFolyamatban.Name = "valasztFolyamatban";
             this.valasztFolyamatban.Size = new System.Drawing.Size(165, 63);
             this.valasztFolyamatban.TabIndex = 28;
@@ -796,6 +786,16 @@ namespace WindowsFormsApp_autósiskola
             this.label13.Size = new System.Drawing.Size(116, 20);
             this.label13.TabIndex = 23;
             this.label13.Text = "Folyamatban...";
+            // 
+            // loading1
+            // 
+            this.loading1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
+            this.loading1.Location = new System.Drawing.Point(323, 211);
+            this.loading1.Margin = new System.Windows.Forms.Padding(0);
+            this.loading1.Name = "loading1";
+            this.loading1.Size = new System.Drawing.Size(242, 109);
+            this.loading1.TabIndex = 30;
+            this.loading1.UseWaitCursor = true;
             // 
             // button5
             // 
@@ -933,23 +933,18 @@ namespace WindowsFormsApp_autósiskola
             this.MainPanel.Size = new System.Drawing.Size(882, 602);
             this.MainPanel.TabIndex = 2;
             // 
-            // tanuloAdatok1
+            // staticLoading
             // 
-            this.tanuloAdatok1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tanuloAdatok1.Location = new System.Drawing.Point(0, 0);
-            this.tanuloAdatok1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tanuloAdatok1.Name = "tanuloAdatok1";
-            this.tanuloAdatok1.Size = new System.Drawing.Size(882, 602);
-            this.tanuloAdatok1.TabIndex = 30;
-            // 
-            // statisztika1
-            // 
-            this.statisztika1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.statisztika1.Location = new System.Drawing.Point(0, 0);
-            this.statisztika1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.statisztika1.Name = "statisztika1";
-            this.statisztika1.Size = new System.Drawing.Size(882, 602);
-            this.statisztika1.TabIndex = 30;
+            this.staticLoading.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
+            this.staticLoading.ColumnCount = 1;
+            this.staticLoading.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.staticLoading.Controls.Add(this.panel6, 0, 0);
+            this.staticLoading.Location = new System.Drawing.Point(323, 214);
+            this.staticLoading.Name = "staticLoading";
+            this.staticLoading.RowCount = 1;
+            this.staticLoading.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.staticLoading.Size = new System.Drawing.Size(239, 103);
+            this.staticLoading.TabIndex = 31;
             // 
             // panel6
             // 
@@ -979,18 +974,23 @@ namespace WindowsFormsApp_autósiskola
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label8.UseWaitCursor = true;
             // 
-            // staticLoading
+            // tanuloAdatok1
             // 
-            this.staticLoading.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
-            this.staticLoading.ColumnCount = 1;
-            this.staticLoading.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.staticLoading.Controls.Add(this.panel6, 0, 0);
-            this.staticLoading.Location = new System.Drawing.Point(323, 214);
-            this.staticLoading.Name = "staticLoading";
-            this.staticLoading.RowCount = 1;
-            this.staticLoading.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.staticLoading.Size = new System.Drawing.Size(239, 103);
-            this.staticLoading.TabIndex = 31;
+            this.tanuloAdatok1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tanuloAdatok1.Location = new System.Drawing.Point(0, 0);
+            this.tanuloAdatok1.Margin = new System.Windows.Forms.Padding(4);
+            this.tanuloAdatok1.Name = "tanuloAdatok1";
+            this.tanuloAdatok1.Size = new System.Drawing.Size(882, 602);
+            this.tanuloAdatok1.TabIndex = 30;
+            // 
+            // statisztika1
+            // 
+            this.statisztika1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.statisztika1.Location = new System.Drawing.Point(0, 0);
+            this.statisztika1.Margin = new System.Windows.Forms.Padding(4);
+            this.statisztika1.Name = "statisztika1";
+            this.statisztika1.Size = new System.Drawing.Size(882, 602);
+            this.statisztika1.TabIndex = 30;
             // 
             // Form1
             // 
@@ -1005,7 +1005,7 @@ namespace WindowsFormsApp_autósiskola
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
@@ -1029,8 +1029,8 @@ namespace WindowsFormsApp_autósiskola
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.MainPanel.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
             this.staticLoading.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
