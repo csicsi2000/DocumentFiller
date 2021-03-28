@@ -358,7 +358,9 @@ namespace WindowsFormsApp_autósiskola
             {
                 if (fileMethods.IsFileLocked(Properties.Settings.Default.ExcelFajlHelye) == false)
                 {
-                    var xlWorkbook = xlWorbooks.Open(Properties.Settings.Default.ExcelFajlHelye);
+                    Excel.Application xlApp = new Excel.Application();
+                    Excel.Workbooks books = xlApp.Workbooks;
+                    var xlWorkbook = books.Open(Properties.Settings.Default.ExcelFajlHelye);
                     Excel.Worksheet xlWorksheet = xlWorkbook.Sheets[Properties.Settings.Default.oldalszam + 1];
                     Excel.Range xlRange = xlWorksheet.UsedRange;
                     int totalRows = xlRange.Rows.Count;
@@ -407,7 +409,7 @@ namespace WindowsFormsApp_autósiskola
                         MessageBox.Show("Nem sikerült a mentés! Ellenőrizze hogy be van-e zárva a fájl.", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     excelApp.MRCO(xlRange);
-                    fileMethods.DisposeExcelInstance(xlWorkbook, xlWorksheet);
+                    fileMethods.DisposeExcelInstance(xlApp, books, xlWorksheet);
                 }
                 else
                 {
@@ -415,7 +417,6 @@ namespace WindowsFormsApp_autósiskola
                 }
             }
             mentesFolyamatban.Visible = false;
-            fileMethods.FajlOlvasas();
         }
 
         public bool ujTanulo(string excelHelye)
@@ -528,6 +529,58 @@ namespace WindowsFormsApp_autósiskola
         private void bezaras_Click(object sender, EventArgs e)
         {
             Hide();
+        }
+
+        private void torles_Click(object sender, EventArgs e)
+        {
+            mentesFolyamatban.Visible = true;
+            mentesFolyamatban.BringToFront();
+            if (Path.GetExtension(Properties.Settings.Default.ExcelFajlHelye) == ".csv")
+            {
+                MessageBox.Show("Csak .xlsx és .xlsm fájllal működik!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (fileMethods.isExcelComptaible(Properties.Settings.Default.ExcelFajlHelye))
+            {
+                if (fileMethods.IsFileLocked(Properties.Settings.Default.ExcelFajlHelye) == false)
+                {
+                    Excel.Application xlApp = new Excel.Application();
+                    Excel.Workbooks books = xlApp.Workbooks;
+                    var xlWorkbook = books.Open(Properties.Settings.Default.ExcelFajlHelye);
+                    Excel.Worksheet xlWorksheet = xlWorkbook.Sheets[Properties.Settings.Default.oldalszam + 1];
+                    Excel.Range xlRange = xlWorksheet.UsedRange;
+                    int totalRows = xlRange.Rows.Count;
+                    int totalColumns = xlRange.Columns.Count;
+
+                    int szam = kivSor;
+
+                    Excel.Range delRange = xlWorksheet.Rows[szam];
+                    delRange.EntireRow.Delete(Type.Missing);
+
+                    for (int i = szam; i < totalRows; i++)
+                    {
+                        xlWorksheet.Cells[i, 1].Value = i - 1;
+                    }
+
+                    string megjegyzes = (megjegyzesek.Text);
+                    xlWorksheet.Cells[szam, totalColumns].Value = megjegyzes;
+                    try
+                    {
+                        xlWorkbook.Save();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Nem sikerült a mentés! Ellenőrizze hogy be van-e zárva a fájl.", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    excelApp.MRCO(xlRange);
+                    fileMethods.DisposeExcelInstance(xlApp, books, xlWorksheet);
+                }
+                else
+                {
+                    MessageBox.Show("Nem elérhető a fájl. Zárja be a szerkesztés miatt!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            mentesFolyamatban.Visible = false;
         }
     }
 }
