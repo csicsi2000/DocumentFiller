@@ -87,7 +87,7 @@ namespace WindowsFormsApp_autósiskola
                 ErtesitesCim = adatok[szamok[6]];
             }
             TanuloAzonositoja = adatok[szamok[7]];
-            if (TanuloAzonositoja.Length < 10)
+            if (TanuloAzonositoja.Length < 12)
             {
                 TAzonosito = "0";
             }

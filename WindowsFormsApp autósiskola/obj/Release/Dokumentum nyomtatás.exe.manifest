@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Dokumentum nyomtatás.exe" size="162216">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Dokumentum nyomtatás.exe" size="199080">
       <assemblyIdentity name="Dokumentum nyomtatás" version="1.1.1.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>2sWrOQyNXY83DQQtLf4KGWEBqTCvXgXRlfB85C5XOjY=</dsig:DigestValue>
+        <dsig:DigestValue>7r2flkgvpzbyST/9Q1OOdh/1QTPunKMIJ0jSKc/gyYs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -62,31 +62,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ZW278qUuDGI9SU6dgUp0C0qqADRZytGCIOxzANt9DkA=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="hu\Dokumentum nyomtatás.resources.dll" size="45568">
-      <assemblyIdentity name="Dokumentum nyomtatás.resources" version="1.1.1.1" language="hu" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>wEY7VVT6IedY2uVgIMIMIYExhyMKb+IwaOkJyqYK/p0=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="hu-HU\Dokumentum nyomtatás.resources.dll" size="45568">
-      <assemblyIdentity name="Dokumentum nyomtatás.resources" version="1.1.1.1" language="hu-HU" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>swvBRBHamAbjmvy9HG6bf7iBg19SBk3bhApqtXP3f4o=</dsig:DigestValue>
+        <dsig:DigestValue>LOV7cwxE7kLX/0emhQQUMyzPXsWV/mo1Js6QOuF+NPU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

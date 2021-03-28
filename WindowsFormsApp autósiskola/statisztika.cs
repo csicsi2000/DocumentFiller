@@ -35,11 +35,12 @@ namespace WindowsFormsApp_autósiskola
 
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
+            statisztikak.Rows.Clear();
+            statisztikak.Refresh();
             bool elso = true;
 
             fileMethods.FajlOlvasas();
             List<string> adatTipusok = new List<string>();
-            List<string> sorszamok = new List<string>();
 
             if (Properties.Settings.Default.ExcelFajlHelye != null && sorszam != null)
             {

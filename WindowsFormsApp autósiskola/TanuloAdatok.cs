@@ -12,15 +12,15 @@ namespace WindowsFormsApp_autósiskola
     public partial class TanuloAdatok : UserControl
     {
         public static int kivSor;
-        private Excel.Workbooks xlWorbooks;
+        private Excel.Workbooks xlWorkbooks;
 
         public TanuloAdatok()
         {
             InitializeComponent();
         }
-        public void books(Excel.Workbooks books)
+        public void books(Excel.Application app,Excel.Workbooks books)
         {
-            xlWorbooks = books;
+            xlWorkbooks = books;
         }
         public bool TanuloAdatBetoltes(string sorszam, string excelHelye)
         {
@@ -174,7 +174,7 @@ namespace WindowsFormsApp_autósiskola
                 else if (fileMethods.isExcelComptaible(Properties.Settings.Default.ExcelFajlHelye))
                 {
 
-                    var xlWorkbook = xlWorbooks.Open(Properties.Settings.Default.ExcelFajlMasolata);
+                    var xlWorkbook = xlWorkbooks.Open(Properties.Settings.Default.ExcelFajlMasolata);
                     Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[Properties.Settings.Default.oldalszam + 1];
                     Excel.Range xlRange = xlWorksheet.UsedRange;
                     int totalRows = xlRange.Rows.Count;
@@ -358,12 +358,10 @@ namespace WindowsFormsApp_autósiskola
             {
                 if (fileMethods.IsFileLocked(Properties.Settings.Default.ExcelFajlHelye) == false)
                 {
-                    Excel.Application xlApp = new Excel.Application();
-                    Excel.Workbooks books = xlApp.Workbooks;
-                    var xlWorkbook = books.Open(Properties.Settings.Default.ExcelFajlHelye);
+                    Excel.Workbook xlWorkbook = xlWorkbooks.Open(Properties.Settings.Default.ExcelFajlHelye);
                     Excel.Worksheet xlWorksheet = xlWorkbook.Sheets[Properties.Settings.Default.oldalszam + 1];
                     Excel.Range xlRange = xlWorksheet.UsedRange;
-                    int totalRows = xlRange.Rows.Count;
+                    int totalRows = excelApp.GetMinimalUsedRangeAddress(xlWorksheet);
                     int totalColumns = xlRange.Columns.Count;
 
 
@@ -408,8 +406,7 @@ namespace WindowsFormsApp_autósiskola
                     {
                         MessageBox.Show("Nem sikerült a mentés! Ellenőrizze hogy be van-e zárva a fájl.", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-                    excelApp.MRCO(xlRange);
-                    fileMethods.DisposeExcelInstance(xlApp, books, xlWorksheet);
+                    fileMethods.DisposeExcelInstance(xlWorkbook, xlWorksheet);
                 }
                 else
                 {
@@ -441,7 +438,7 @@ namespace WindowsFormsApp_autósiskola
                 }
 
 
-                var xlWorkbook = xlWorbooks.Open(Properties.Settings.Default.ExcelFajlMasolata);
+                Excel._Workbook xlWorkbook = xlWorkbooks.Open(Properties.Settings.Default.ExcelFajlMasolata);
                 Excel.Worksheet xlWorksheet = xlWorkbook.Sheets[Properties.Settings.Default.oldalszam + 1];
                 Excel.Range xlRange = xlWorksheet.UsedRange;
                 totalRows = excelApp.GetMinimalUsedRangeAddress(xlWorksheet);
@@ -533,8 +530,8 @@ namespace WindowsFormsApp_autósiskola
 
         private void torles_Click(object sender, EventArgs e)
         {
-            mentesFolyamatban.Visible = true;
-            mentesFolyamatban.BringToFront();
+            torlesFolyamatban.Visible = true;
+            torlesFolyamatban.BringToFront();
             if (Path.GetExtension(Properties.Settings.Default.ExcelFajlHelye) == ".csv")
             {
                 MessageBox.Show("Csak .xlsx és .xlsm fájllal működik!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -544,12 +541,10 @@ namespace WindowsFormsApp_autósiskola
             {
                 if (fileMethods.IsFileLocked(Properties.Settings.Default.ExcelFajlHelye) == false)
                 {
-                    Excel.Application xlApp = new Excel.Application();
-                    Excel.Workbooks books = xlApp.Workbooks;
-                    var xlWorkbook = books.Open(Properties.Settings.Default.ExcelFajlHelye);
+                    Excel.Workbook xlWorkbook = xlWorkbooks.Open(Properties.Settings.Default.ExcelFajlHelye);
                     Excel.Worksheet xlWorksheet = xlWorkbook.Sheets[Properties.Settings.Default.oldalszam + 1];
                     Excel.Range xlRange = xlWorksheet.UsedRange;
-                    int totalRows = xlRange.Rows.Count;
+                    int totalRows = excelApp.GetMinimalUsedRangeAddress(xlWorksheet);
                     int totalColumns = xlRange.Columns.Count;
 
                     int szam = kivSor;
@@ -572,15 +567,16 @@ namespace WindowsFormsApp_autósiskola
                     {
                         MessageBox.Show("Nem sikerült a mentés! Ellenőrizze hogy be van-e zárva a fájl.", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-                    excelApp.MRCO(xlRange);
-                    fileMethods.DisposeExcelInstance(xlApp, books, xlWorksheet);
+                    excelApp.MRCO(delRange);
+                    fileMethods.DisposeExcelInstance(xlWorkbook, xlWorksheet);
                 }
                 else
                 {
                     MessageBox.Show("Nem elérhető a fájl. Zárja be a szerkesztés miatt!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            mentesFolyamatban.Visible = false;
+            torlesFolyamatban.Visible = false;
+            this.Hide();
         }
     }
 }

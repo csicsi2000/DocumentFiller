@@ -30,7 +30,7 @@ namespace WindowsFormsApp_autósiskola
             xlApp = new excelApp();
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Properties.Settings.Default.nyelv);
             statisztika1.books(xlApp.xlWorkbooks);
-            tanuloAdatok1.books(xlApp.xlWorkbooks);
+            tanuloAdatok1.books(xlApp.xlApp,xlApp.xlWorkbooks);
             xlWorkbooks = xlApp.xlWorkbooks;
 
             MouseDown += label6_MouseDown;
@@ -504,8 +504,8 @@ namespace WindowsFormsApp_autósiskola
         {
             if (fileMethods.isExcelComptaible(Properties.Settings.Default.ExcelFajlHelye))
             {
-                panel5.Visible = true;
-                panel5.BringToFront();
+                staticLoading.Visible = true;
+                staticLoading.BringToFront();
 
 
                 string hely = Properties.Settings.Default.ExcelFajlMasolata;
@@ -537,7 +537,7 @@ namespace WindowsFormsApp_autósiskola
                 }
                 SorSzam.Items.AddRange(listOnit.ToArray());
                 fileMethods.DisposeExcelInstance(xlWorkbook, xlWorksheet);
-                panel5.Visible = false;
+                staticLoading.Visible = false;
             }
         }
 
@@ -810,6 +810,10 @@ namespace WindowsFormsApp_autósiskola
                 }
                 SorSzam.Items.AddRange(listNew.ToArray());
                 if (listNew.Count == 0)
+                {
+                    SorSzam.Items.Add(SorSzam.Text);
+                }
+                if (SorSzam.Items.Count == 0)
                 {
                     SorSzam.Items.Add(SorSzam.Text);
                 }

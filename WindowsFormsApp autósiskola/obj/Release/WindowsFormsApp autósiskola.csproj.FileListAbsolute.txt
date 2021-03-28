@@ -4,8 +4,6 @@ D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp aut
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Release\Dokumentum nyomtatás.exe
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Release\Dokumentum nyomtatás.pdb
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Release\bin\Dokumentum nyomtatás.resources.dll
-D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Release\hu-HU\Dokumentum nyomtatás.resources.dll
-D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Release\hu\Dokumentum nyomtatás.resources.dll
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Release\EPPlus.dll
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Release\Microsoft.IO.RecyclableMemoryStream.dll
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Release\System.Buffers.dll
@@ -21,19 +19,17 @@ D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp aut
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Release\System.Memory.xml
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Release\System.Numerics.Vectors.xml
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
-D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\WindowsFormsApp autósiskola.csprojAssemblyReference.cache
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\Dokumentum nyomtatás.exe.config
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\WindowsFormsApp autósiskola.csproj.ResolveComReference.cache
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\WindowsFormsApp_autósiskola.Form1.resources
+D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\WindowsFormsApp_autósiskola.loading.resources
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\WindowsFormsApp_autósiskola.Properties.Resources.resources
+D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\WindowsFormsApp_autósiskola.statisztika.resources
+D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\WindowsFormsApp_autósiskola.TanuloAdatok.resources
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\WindowsFormsApp_autósiskola.Form1.bin.resources
-D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\WindowsFormsApp_autósiskola.Form1.hu-HU.resources
-D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\WindowsFormsApp_autósiskola.Form1.hu.resources
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\WindowsFormsApp autósiskola.csproj.GenerateResource.cache
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\WindowsFormsApp autósiskola.csproj.CoreCompileInputs.cache
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\bin\Dokumentum nyomtatás.resources.dll
-D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\hu-HU\Dokumentum nyomtatás.resources.dll
-D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\hu\Dokumentum nyomtatás.resources.dll
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\Dokumentum nyomtatás.exe.manifest
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\Dokumentum nyomtatás.application
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\WindowsFormsApp autósiskola.csproj.CopyComplete

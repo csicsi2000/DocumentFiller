@@ -43,20 +43,15 @@ namespace WindowsFormsApp_autósiskola
         {
             if (isExcelComptaible(Properties.Settings.Default.ExcelFajlHelye))
             {
+                File.Delete(Properties.Settings.Default.ExcelFajlMasolata);
                 Properties.Settings.Default.ExcelFajlMasolata = System.AppDomain.CurrentDomain.BaseDirectory + "ExcelMasolat" + Path.GetExtension(Properties.Settings.Default.ExcelFajlHelye);
                 string hely = Properties.Settings.Default.ExcelFajlMasolata;
                 Properties.Settings.Default.Save();
 
                 using (var from = new FileStream(Properties.Settings.Default.ExcelFajlHelye, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-                using (var to = new FileStream(Properties.Settings.Default.ExcelFajlMasolata, FileMode.OpenOrCreate))
+                using (var to = new FileStream(Properties.Settings.Default.ExcelFajlMasolata, FileMode.OpenOrCreate, FileAccess.ReadWrite))
                 {
-                    var buffer = new byte[0x10000];
-                    int bytes;
-
-                    while((bytes = from.Read(buffer,0,buffer.Length)) > 0)
-                    {
-                        to.Write(buffer, 0, bytes);
-                    }
+                    from.CopyTo(to);
                 }
             }
         }
@@ -73,6 +68,17 @@ namespace WindowsFormsApp_autósiskola
             GC.Collect();
         }
         public static void DisposeExcelInstance(Excel.Workbook workBook, Excel._Worksheet workSheet)
+        {
+            workBook.Close();
+            if (workSheet != null)
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(workSheet);
+            if (workBook != null)
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(workBook);
+            workSheet = null;
+            workBook = null;
+            GC.Collect();
+        }
+        public static void DisposeExcelInstance(Excel._Workbook workBook, Excel._Worksheet workSheet)
         {
             workBook.Close();
             if (workSheet != null)
