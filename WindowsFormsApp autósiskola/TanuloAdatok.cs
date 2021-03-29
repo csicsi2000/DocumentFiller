@@ -18,7 +18,7 @@ namespace WindowsFormsApp_autósiskola
         {
             InitializeComponent();
         }
-        public void books(Excel.Application app,Excel.Workbooks books)
+        public void books(Excel.Workbooks books)
         {
             xlWorkbooks = books;
         }
@@ -202,7 +202,6 @@ namespace WindowsFormsApp_autósiskola
                             string test = Sorelemek[j];
 
                         }
-                        elso = false;
                     }
 
                     if (generalMethods.isDigitOnly(sorszam))
@@ -530,8 +529,6 @@ namespace WindowsFormsApp_autósiskola
 
         private void torles_Click(object sender, EventArgs e)
         {
-            torlesFolyamatban.Visible = true;
-            torlesFolyamatban.BringToFront();
             if (Path.GetExtension(Properties.Settings.Default.ExcelFajlHelye) == ".csv")
             {
                 MessageBox.Show("Csak .xlsx és .xlsm fájllal működik!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -541,6 +538,9 @@ namespace WindowsFormsApp_autósiskola
             {
                 if (fileMethods.IsFileLocked(Properties.Settings.Default.ExcelFajlHelye) == false)
                 {
+                    torlesFolyamatban.Visible = true;
+                    torlesFolyamatban.BringToFront();
+
                     Excel.Workbook xlWorkbook = xlWorkbooks.Open(Properties.Settings.Default.ExcelFajlHelye);
                     Excel.Worksheet xlWorksheet = xlWorkbook.Sheets[Properties.Settings.Default.oldalszam + 1];
                     Excel.Range xlRange = xlWorksheet.UsedRange;
@@ -567,16 +567,17 @@ namespace WindowsFormsApp_autósiskola
                     {
                         MessageBox.Show("Nem sikerült a mentés! Ellenőrizze hogy be van-e zárva a fájl.", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-                    excelApp.MRCO(delRange);
                     fileMethods.DisposeExcelInstance(xlWorkbook, xlWorksheet);
+
+                    torlesFolyamatban.Visible = false;
+                    this.Hide();
                 }
                 else
                 {
                     MessageBox.Show("Nem elérhető a fájl. Zárja be a szerkesztés miatt!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
             }
-            torlesFolyamatban.Visible = false;
-            this.Hide();
         }
     }
 }

@@ -43,7 +43,18 @@ namespace WindowsFormsApp_autósiskola
         {
             if (isExcelComptaible(Properties.Settings.Default.ExcelFajlHelye))
             {
-                File.Delete(Properties.Settings.Default.ExcelFajlMasolata);
+                if (Properties.Settings.Default.ExcelFajlMasolata != "")
+                {
+                    try
+                    {
+                        File.Delete(Properties.Settings.Default.ExcelFajlMasolata);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Nem lehet elérni a másolatot! Próbálja meg újra a műveletet, vagy indítja újra a programot.", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
                 Properties.Settings.Default.ExcelFajlMasolata = System.AppDomain.CurrentDomain.BaseDirectory + "ExcelMasolat" + Path.GetExtension(Properties.Settings.Default.ExcelFajlHelye);
                 string hely = Properties.Settings.Default.ExcelFajlMasolata;
                 Properties.Settings.Default.Save();

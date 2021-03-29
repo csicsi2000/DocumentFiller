@@ -16,6 +16,7 @@ namespace WindowsFormsApp_autósiskola
     {
         Excel.Workbooks xlWorkbooks;
         string adatTipus;
+
         public statisztika()
         {
             InitializeComponent();

@@ -16,8 +16,7 @@ namespace WindowsFormsApp_autósiskola
     public partial class Form1 : Form
     {
         public int kivSor;
-        List<string> listOnit = new List<string>();
-
+        public List<string> listOnit = new List<string>();
         List<string> listNew = new List<string>();
         private excelApp xlApp;
         private Excel.Workbooks xlWorkbooks;
@@ -30,7 +29,7 @@ namespace WindowsFormsApp_autósiskola
             xlApp = new excelApp();
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Properties.Settings.Default.nyelv);
             statisztika1.books(xlApp.xlWorkbooks);
-            tanuloAdatok1.books(xlApp.xlApp,xlApp.xlWorkbooks);
+            tanuloAdatok1.books(xlApp.xlWorkbooks);
             xlWorkbooks = xlApp.xlWorkbooks;
 
             MouseDown += label6_MouseDown;
@@ -63,9 +62,17 @@ namespace WindowsFormsApp_autósiskola
             DragEnter += new DragEventHandler(Form1_DragEnter);
             DragDrop += new DragEventHandler(Form1_DragDrop);
 
-            DateTime temp;
-            string ido = DateTime.Now.ToString("MM/dd/yyyy");
-            if (!DateTime.TryParse(ido, out temp))
+            try
+            {
+                string ido = DateTime.Now.ToString("MM/dd/yyyy");
+                ido.Substring(8, 4);
+                ujTanuloIdo.Enabled = true;
+                ujTanuloIdo.Visible = true;
+
+                helyIdo.Enabled = true;
+                helyIdo.Visible = true;
+            }
+            catch
             {
                 Properties.Settings.Default.ujTanuloIdo = false;
                 ujTanuloIdo.Checked = false;
@@ -76,14 +83,6 @@ namespace WindowsFormsApp_autósiskola
                 helyIdo.Checked = false;
                 helyIdo.Enabled = false;
                 helyIdo.Visible = false;
-            }
-            else
-            {
-                ujTanuloIdo.Enabled = true;
-                ujTanuloIdo.Visible = true;
-
-                helyIdo.Enabled = true;
-                helyIdo.Visible = true;
             }
             Properties.Settings.Default.Save();
 
@@ -509,7 +508,7 @@ namespace WindowsFormsApp_autósiskola
 
 
                 string hely = Properties.Settings.Default.ExcelFajlMasolata;
-                var xlWorkbook = xlWorkbooks.Open(Properties.Settings.Default.ExcelFajlMasolata, ReadOnly: true);
+                var xlWorkbook = xlWorkbooks.Open(Properties.Settings.Default.ExcelFajlMasolata);
                 Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[ExcelOldalNevek.SelectedIndex + 1];
                 Excel.Range xlRange = xlWorksheet.UsedRange;
                 int totalRows = xlRange.Rows.Count;
@@ -772,6 +771,7 @@ namespace WindowsFormsApp_autósiskola
 
         private void SorSzam_TextUpdate(object sender, EventArgs e)
         {
+            mentettFajlNeve.Text = "";
             SorSzam.Items.Clear();
             listNew.Clear();
             if (SorSzam.Text == null || SorSzam.Text == "")

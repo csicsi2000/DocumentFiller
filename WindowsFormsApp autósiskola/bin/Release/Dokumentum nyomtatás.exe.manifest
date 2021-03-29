@@ -4,7 +4,7 @@
   <description asmv2:iconFile="favicon (3).ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="Dokumentum nyomtatás" version="1.1.1.1" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="Dokumentum nyomtatás" version="1.1.1.5" language="neutral" processorArchitecture="msil" />
     <commandLine file="Dokumentum nyomtatás.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -43,26 +43,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Dokumentum nyomtatás.exe" size="199080">
-      <assemblyIdentity name="Dokumentum nyomtatás" version="1.1.1.1" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Dokumentum nyomtatás.exe" size="199592">
+      <assemblyIdentity name="Dokumentum nyomtatás" version="1.1.1.5" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>7r2flkgvpzbyST/9Q1OOdh/1QTPunKMIJ0jSKc/gyYs=</dsig:DigestValue>
+        <dsig:DigestValue>EXcscnSN7F111XqMWCjiv3EPrFYsImU5K+I7HvlyR+I=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="bin\Dokumentum nyomtatás.resources.dll" size="45568">
-      <assemblyIdentity name="Dokumentum nyomtatás.resources" version="1.1.1.1" language="bin" processorArchitecture="msil" />
+      <assemblyIdentity name="Dokumentum nyomtatás.resources" version="1.1.1.5" language="bin" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>LOV7cwxE7kLX/0emhQQUMyzPXsWV/mo1Js6QOuF+NPU=</dsig:DigestValue>
+        <dsig:DigestValue>Zh1Pj5gEAV1O5d1Cx+ZmHc47/pP9ywndB0tm5IIUQfw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
