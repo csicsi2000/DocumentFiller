@@ -487,12 +487,13 @@ namespace WindowsFormsApp_autósiskola
                 Visible = false;
                 return false;
             }
-            string ido = DateTime.Now.ToString("MM/dd/yyyy");
-            string ev = ido.Substring(8, 4) + ".";
-            string honap = ido.Substring(0, 2) + ".";
-            string nap = ido.Substring(4, 2) + ".";
+            
             if (Properties.Settings.Default.ujTanuloIdo)
             {
+                string ido = DateTime.Now.ToString("MM/dd/yyyy");
+                string ev = ido.Substring(8, 4) + ".";
+                string honap = ido.Substring(0, 2) + ".";
+                string nap = ido.Substring(4, 2) + ".";
                 megjegyzesek.Text = ("Hozzáadás dátuma: " + ev + honap + nap);
             }
 

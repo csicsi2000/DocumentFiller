@@ -19,6 +19,7 @@ D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp aut
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\System.Memory.xml
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\System.Numerics.Vectors.xml
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Debug\WindowsFormsApp autósiskola.csprojAssemblyReference.cache
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Debug\Dokumentum nyomtatás.exe.config
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Debug\WindowsFormsApp autósiskola.csproj.ResolveComReference.cache
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Debug\WindowsFormsApp_autósiskola.Form1.resources
