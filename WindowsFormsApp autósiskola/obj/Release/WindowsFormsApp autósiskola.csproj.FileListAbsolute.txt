@@ -1,3 +1,6 @@
+D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Release\bin\Debug\jelentkezesiLapSablon.docx
+D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Release\bin\Debug\kepzesi igazolas sablon a programhoz.docx
+D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Release\bin\Debug\SablonFajl.xlsx
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Release\Dokumentum nyomtatás.exe.config
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Release\Dokumentum nyomtatás.exe.manifest
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Release\Dokumentum nyomtatás.application
@@ -19,8 +22,6 @@ D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp aut
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Release\System.Memory.xml
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Release\System.Numerics.Vectors.xml
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
-D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\WindowsFormsApp autósiskola.csprojAssemblyReference.cache
-D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\Dokumentum nyomtatás.exe.config
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\WindowsFormsApp autósiskola.csproj.ResolveComReference.cache
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\WindowsFormsApp_autósiskola.Form1.resources
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\WindowsFormsApp_autósiskola.loading.resources

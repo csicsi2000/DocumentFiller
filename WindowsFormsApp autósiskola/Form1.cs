@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OfficeOpenXml;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -26,6 +27,8 @@ namespace WindowsFormsApp_autósiskola
         {
             InitializeComponent();
 
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+
             xlApp = new excelApp();
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Properties.Settings.Default.nyelv);
             statisztika1.books(xlApp.xlWorkbooks);
@@ -52,6 +55,7 @@ namespace WindowsFormsApp_autósiskola
             iskolaAzonosito.Text = Properties.Settings.Default.iskolaAzonosito;
             iskolaNev.Text = Properties.Settings.Default.iskolaNev;
             iskolaCim.Text = Properties.Settings.Default.iskolaCim;
+            DocTipus.SelectedIndex = Properties.Settings.Default.dokumentumTipus;
             staticLoading.Hide();
             loading1.Hide();
             statisztika1.Hide();
@@ -251,7 +255,6 @@ namespace WindowsFormsApp_autósiskola
             loading1.Visible = true;
             fileMethods.FajlOlvasas();
 
-            string kepzesiIgazolas = Path.GetFullPath("kepzesi igazolas sablon a programhoz.docx");
             string ujfajl = mentesHelye.Text + "\\" + mentettFajlNeve.Text + ".docx";
             int i = 1;
             while (File.Exists(ujfajl))
@@ -259,9 +262,21 @@ namespace WindowsFormsApp_autósiskola
                 ujfajl = mentesHelye.Text + "\\" + mentettFajlNeve.Text + "(" + i + ")" + ".docx";
                 i++;
             }
-            string sorszam = SorSzam.Text;
-            WordFile csinál = new WordFile();
-            await (Task.Run(() => csinál.WordFileLetrehozas(xlWorkbooks, sorszam, kepzesiIgazolas, ujfajl)));
+
+            if (DocTipus.SelectedIndex == 0)
+            {
+                string kepzesiIgazolas = Path.GetFullPath("kepzesi igazolas sablon a programhoz.docx");
+                string sorszam = SorSzam.Text;
+                WordFile csinál = new WordFile();
+                await (Task.Run(() => csinál.KepzesiIgazolasLetrehozas(xlWorkbooks, sorszam, kepzesiIgazolas, ujfajl)));
+            }
+            else if(DocTipus.SelectedIndex == 1)
+            {
+                string JelentkezesiLap = Path.GetFullPath("jelentkezesiLapSablon.docx");
+                string sorszam = SorSzam.Text;
+                WordFile csinál = new WordFile();
+                await (Task.Run(() => csinál.JelentkezesiLapLetrehozas(xlWorkbooks, sorszam, JelentkezesiLap, ujfajl)));
+            }
             panel3.Enabled = true;
             tableLayoutPanel3.Enabled = true;
             loading1.Visible = false;
@@ -879,6 +894,11 @@ namespace WindowsFormsApp_autósiskola
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             fileMethods.DisposeExcelInstance(xlApp.xlApp, xlWorkbooks);
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.dokumentumTipus = DocTipus.SelectedIndex;
         }
     }
 }

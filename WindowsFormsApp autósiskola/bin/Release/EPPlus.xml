@@ -746,7 +746,7 @@
         </member>
         <member name="T:OfficeOpenXml.ConditionalFormatting.ExcelConditionalFormattingAsType">
             <summary>
-            Provides a simple way to type cast a conditional formatting object top its top level class.
+            Provides a simple way to type cast a conditional formatting object to its top level class.
             </summary>
         </member>
         <member name="M:OfficeOpenXml.ConditionalFormatting.ExcelConditionalFormattingAsType.Type``1">
@@ -4119,6 +4119,11 @@
             Formula2
             </summary>
         </member>
+        <member name="P:OfficeOpenXml.ConditionalFormatting.ExcelConditionalFormattingRule.As">
+            <summary>
+            Provides access to type conversion for all conditional formatting rules.
+            </summary>
+        </member>
         <member name="T:OfficeOpenXml.ConditionalFormatting.ExcelConditionalFormattingThisMonth">
             <summary>
             ExcelConditionalFormattingThisMonth
@@ -4807,9 +4812,19 @@
             True if the current validation type allows operator.
             </summary>
         </member>
-        <member name="P:OfficeOpenXml.DataValidation.Contracts.IExcelDataValidation.As">
+        <member name="M:OfficeOpenXml.DataValidation.Contracts.IExcelDataValidation.Validate">
             <summary>
             Validates the state of the validation.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.DataValidation.Contracts.IExcelDataValidation.As">
+            <summary>
+            Use this property to cast an instance of <see cref="T:OfficeOpenXml.DataValidation.Contracts.IExcelDataValidation"/> to its subtype, see <see cref="T:OfficeOpenXml.DataValidation.ExcelDataValidationAsType"/>.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.DataValidation.Contracts.IExcelDataValidation.IsStale">
+            <summary>
+            Indicates whether this instance is stale, see https://github.com/EPPlusSoftware/EPPlus/wiki/Data-validation-Exceptions
             </summary>
         </member>
         <member name="T:OfficeOpenXml.DataValidation.Contracts.IExcelDataValidationAny">
@@ -4916,6 +4931,11 @@
             <param name="address">address for data validation</param>
             <param name="namespaceManager">Xml Namespace manager</param>
             <param name="internalValidationType"><see cref="P:OfficeOpenXml.DataValidation.ExcelDataValidation.InternalValidationType"/></param>
+        </member>
+        <member name="P:OfficeOpenXml.DataValidation.ExcelDataValidation.OfficeOpenXml#DataValidation#Contracts#IExcelDataValidation#IsStale">
+            <summary>
+            Indicates whether this instance is stale, see https://github.com/EPPlusSoftware/EPPlus/wiki/Data-validation-Exceptions
+            </summary>
         </member>
         <member name="M:OfficeOpenXml.DataValidation.ExcelDataValidation.Validate">
             <summary>
@@ -5365,6 +5385,36 @@
             <param name="validationType"></param>
             <param name="itemElementNode"></param>
             <param name="namespaceManager">For test purposes</param>
+        </member>
+        <member name="M:OfficeOpenXml.DataValidation.ExcelDataValidationExtCustom.#ctor(OfficeOpenXml.ExcelWorksheet,System.String,System.String,OfficeOpenXml.DataValidation.ExcelDataValidationType)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="worksheet"></param>
+            <param name="uid">Uid of the data validation, format should be a Guid surrounded by curly braces.</param>
+            <param name="address"></param>
+            <param name="validationType"></param>
+        </member>
+        <member name="M:OfficeOpenXml.DataValidation.ExcelDataValidationExtCustom.#ctor(OfficeOpenXml.ExcelWorksheet,System.String,System.String,OfficeOpenXml.DataValidation.ExcelDataValidationType,System.Xml.XmlNode)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="worksheet"></param>
+            <param name="uid">Uid of the data validation, format should be a Guid surrounded by curly braces.</param>
+            <param name="address"></param>
+            <param name="validationType"></param>
+            <param name="itemElementNode"></param>
+        </member>
+        <member name="M:OfficeOpenXml.DataValidation.ExcelDataValidationExtCustom.#ctor(OfficeOpenXml.ExcelWorksheet,System.String,System.String,OfficeOpenXml.DataValidation.ExcelDataValidationType,System.Xml.XmlNode,System.Xml.XmlNamespaceManager)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="worksheet"></param>
+            <param name="uid">Uid of the data validation, format should be a Guid surrounded by curly braces.</param>
+            <param name="address"></param>
+            <param name="validationType"></param>
+            <param name="itemElementNode"></param>
+            <param name="namespaceManager">Namespace manager, for test purposes</param>
         </member>
         <member name="M:OfficeOpenXml.DataValidation.ExcelDataValidationExtList.#ctor(OfficeOpenXml.ExcelWorksheet,System.String,System.String,OfficeOpenXml.DataValidation.ExcelDataValidationType)">
             <summary>
@@ -5872,6 +5922,11 @@
             Converts the object to a string
             </summary>
             <returns>The string</returns>
+        </member>
+        <member name="T:OfficeOpenXml.DataValidation.Exceptions.DataValidationStaleException">
+            <summary>
+            This exception is thrown by an instance of <see cref="T:OfficeOpenXml.DataValidation.ExcelDataValidation"/> if it is stale and should not allow setting of properties.
+            </summary>
         </member>
         <member name="T:OfficeOpenXml.DataValidation.Formulas.Contracts.IExcelDataValidationFormula">
             <summary>
@@ -21750,6 +21805,126 @@
             If true, items that have no data are not displayed
             </summary>
         </member>
+        <member name="T:OfficeOpenXml.Drawing.Slicer.Style.ExcelSlicerNamedStyle">
+            <summary>
+            A named table style that applies to tables only
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.Slicer.Style.ExcelSlicerNamedStyle.Name">
+            <summary>
+            The name of the table named style
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.Slicer.Style.ExcelSlicerNamedStyle.WholeTable">
+            <summary>
+            Applies to the entire content of a table or pivot table
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.Slicer.Style.ExcelSlicerNamedStyle.HeaderRow">
+            <summary>
+            Applies to the header row of a table or pivot table
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.Slicer.Style.ExcelSlicerNamedStyle.SelectedItemWithData">
+            <summary>
+            Applies to slicer item that is selected
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.Slicer.Style.ExcelSlicerNamedStyle.SelectedItemWithNoData">
+            <summary>
+            Applies to a select slicer item with no data.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.Slicer.Style.ExcelSlicerNamedStyle.UnselectedItemWithData">
+            <summary>
+            Applies to a slicer item with data that is not selected
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.Slicer.Style.ExcelSlicerNamedStyle.UnselectedItemWithNoData">
+            <summary>
+            Applies to a slicer item with no data that is not selected
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.Slicer.Style.ExcelSlicerNamedStyle.HoveredSelectedItemWithData">
+            <summary>
+            Applies to a selected slicer item with data and over which the mouse is paused on
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.Slicer.Style.ExcelSlicerNamedStyle.HoveredSelectedItemWithNoData">
+            <summary>
+            Applies to a selected slicer item with no data and over which the mouse is paused on
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.Slicer.Style.ExcelSlicerNamedStyle.HoveredUnselectedItemWithData">
+            <summary>
+            Applies to a slicer item with data that is not selected and over which the mouse is paused on
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.Slicer.Style.ExcelSlicerNamedStyle.HoveredUnselectedItemWithNoData">
+            <summary>
+            Applies to a selected slicer item with no data and over which the mouse is paused on
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.Drawing.Slicer.Style.ExcelSlicerStyleElement">
+            <summary>
+            A style element for a custom slicer style 
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.Slicer.Style.ExcelSlicerStyleElement.Style">
+            <summary>
+            Access to style settings
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.Slicer.Style.ExcelSlicerStyleElement.Type">
+            <summary>
+            The type of the slicer element that this style is applied to.
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.Drawing.Slicer.Style.eSlicerStyleElement">
+            <summary>
+            A type specifing the type of style element for a named custom slicer style.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Drawing.Slicer.Style.eSlicerStyleElement.UnselectedItemWithData">
+            <summary>
+            Styles a slicer item with data that is not selected
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Drawing.Slicer.Style.eSlicerStyleElement.SelectedItemWithData">
+            <summary>
+            Styles a slicer item that is selected
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Drawing.Slicer.Style.eSlicerStyleElement.UnselectedItemWithNoData">
+            <summary>
+            Styles a slicer item with no data that is not selected
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Drawing.Slicer.Style.eSlicerStyleElement.SelectedItemWithNoData">
+            <summary>
+            Styles a select slicer item with no data.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Drawing.Slicer.Style.eSlicerStyleElement.HoveredUnselectedItemWithData">
+            <summary>
+            Styles a slicer item with data that is not selected and over which the mouse is paused on
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Drawing.Slicer.Style.eSlicerStyleElement.HoveredSelectedItemWithData">
+            <summary>
+            Styles a selected slicer item with data and over which the mouse is paused on
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Drawing.Slicer.Style.eSlicerStyleElement.HoveredUnselectedItemWithNoData">
+            <summary>
+            Styles a slicer item with no data that is not selected and over which the mouse is paused on
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Drawing.Slicer.Style.eSlicerStyleElement.HoveredSelectedItemWithNoData">
+            <summary>
+            Styles a selected slicer item with no data and over which the mouse is paused on
+            </summary>
+        </member>
         <member name="T:OfficeOpenXml.Drawing.Style.Coloring.eColorTransformDataType">
             <summary>
             Datatypes for color transformation types
@@ -24384,7 +24559,9 @@
             <summary>
             Sets the address
             </summary>
-            <param name="address">the address</param>
+            <param name="address">The address</param>
+            <param name="wb"></param>
+            <param name="wsName"></param>
         </member>
         <member name="M:OfficeOpenXml.ExcelAddressBase.ChangeAddress">
             <summary>
@@ -24521,6 +24698,7 @@
             Creates an Address object
             </summary>
             <param name="address">The formula address</param>
+            <param name="worksheet">The worksheet</param>
         </member>
         <member name="P:OfficeOpenXml.ExcelFormulaAddress.Address">
             <summary>
@@ -27004,7 +27182,7 @@
         </member>
         <member name="P:OfficeOpenXml.ExcelRangeBase.Style">
             <summary>
-            The styleobject for the range.
+            The style object for the range.
             </summary>
         </member>
         <member name="P:OfficeOpenXml.ExcelRangeBase.StyleName">
@@ -27100,7 +27278,7 @@
         </member>
         <member name="M:OfficeOpenXml.ExcelRangeBase.Delete(OfficeOpenXml.eShiftTypeDelete)">
             <summary>
-            Delete the range from the worksheet and shift effected cells in the selected direction.
+            Delete the range from the worksheet and shift affected cells in the selected direction.
             </summary>
             <param name="shift">The direction that the cells will shift.</param>
         </member>
@@ -27312,6 +27490,12 @@
             <param name="descending">Descending if true, otherwise Ascending. Default Ascending. Zerobased</param>
             <param name="culture">The CultureInfo used to compare values. A null value means CurrentCulture</param>
             <param name="compareOptions">String compare option</param>
+        </member>
+        <member name="M:OfficeOpenXml.ExcelRangeBase.GetName">
+            <summary>
+            If the range is a name or a table, return the name.
+            </summary>
+            <returns></returns>
         </member>
         <member name="M:OfficeOpenXml.ExcelRangeBase.LoadFromDataReader(System.Data.IDataReader,System.Boolean,System.String,OfficeOpenXml.Table.TableStyles)">
             <summary>
@@ -27936,6 +28120,13 @@
             </summary>
             <param name="Password"></param>
         </member>
+        <member name="P:OfficeOpenXml.ExcelNamedStyleCollection`1.Item(System.String)">
+            <summary>
+            Indexer for the collection
+            </summary>
+            <param name="name">The name of the Style</param>
+            <returns></returns>
+        </member>
         <member name="T:OfficeOpenXml.ExcelStyleCollection`1">
             <summary>
             Base collection class for styles.
@@ -28044,12 +28235,22 @@
         </member>
         <member name="F:OfficeOpenXml.ExcelStyles.NamedStyles">
             <summary>
-            Contain all named styles for that package
+            Contain all named styles for the package
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.ExcelStyles.TableStyles">
+            <summary>
+            Contain all table styles for the package. Tables styles can be used to customly format tables and pivot tables.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.ExcelStyles.SlicerStyles">
+            <summary>
+            Contain all slicer styles for the package. Tables styles can be used to customly format tables and pivot tables.
             </summary>
         </member>
         <member name="F:OfficeOpenXml.ExcelStyles.Dxfs">
             <summary>
-            Contain all differential formatting styles for the package
+            Contain differential formatting styles for the package. This collection does not contain style records for slicers.
             </summary>
         </member>
         <member name="M:OfficeOpenXml.ExcelStyles.CreateNamedStyle(System.String)">
@@ -28066,6 +28267,98 @@
             <param name="name">The name of the style</param>
             <param name="Template">A template style</param>
             <returns>A named style object that can be custumized</returns>
+        </member>
+        <member name="M:OfficeOpenXml.ExcelStyles.CreatePivotTableStyle(System.String)">
+            <summary>
+            Creates a tables style only visible for pivot tables and with elements specific to pivot tables.
+            </summary>
+            <param name="name">The name of the style</param>
+            <returns>The table style object</returns>
+        </member>
+        <member name="M:OfficeOpenXml.ExcelStyles.CreatePivotTableStyle(System.String,OfficeOpenXml.Table.PivotTableStyles)">
+            <summary>
+            Creates a tables style only visible for pivot tables and with elements specific to pivot tables.
+            </summary>
+            <param name="name">The name of the style</param>
+            <param name="templateStyle">The built-in table style to use as a template for this custom style</param>
+            <returns>The table style object</returns>
+        </member>
+        <member name="M:OfficeOpenXml.ExcelStyles.CreatePivotTableStyle(System.String,OfficeOpenXml.Style.Table.ExcelTableNamedStyleBase)">
+            <summary>
+            Creates a tables style only visible for pivot tables and with elements specific to pivot tables.
+            </summary>
+            <param name="name">The name of the style</param>
+            <param name="templateStyle">The table style to use as a template for this custom style</param>
+            <returns>The table style object</returns>
+        </member>
+        <member name="M:OfficeOpenXml.ExcelStyles.CreateTableStyle(System.String)">
+            <summary>
+            Creates a tables style only visible for tables and with elements specific to pivot tables.
+            </summary>
+            <param name="name">The name of the style</param>
+            <returns>The table style object</returns>
+        </member>
+        <member name="M:OfficeOpenXml.ExcelStyles.CreateTableStyle(System.String,OfficeOpenXml.Table.TableStyles)">
+            <summary>
+            Creates a tables style only visible for tables and with elements specific to pivot tables.
+            </summary>
+            <param name="name">The name of the style</param>
+            <param name="templateStyle">The built-in table style to use as a template for this custom style</param>
+            <returns>The table style object</returns>
+        </member>
+        <member name="M:OfficeOpenXml.ExcelStyles.CreateTableStyle(System.String,OfficeOpenXml.Style.Table.ExcelTableNamedStyleBase)">
+            <summary>
+            Creates a tables style only visible for tables and with elements specific to pivot tables.
+            </summary>
+            <param name="name">The name of the style</param>
+            <param name="templateStyle">The table style to use as a template for this custom style</param>
+            <returns>The table style object</returns>
+        </member>
+        <member name="M:OfficeOpenXml.ExcelStyles.CreateTableAndPivotTableStyle(System.String)">
+            <summary>
+            Creates a tables visible for tables and pivot tables and with elements for both.
+            </summary>
+            <param name="name">The name of the style</param>
+            <returns>The table style object</returns>
+        </member>
+        <member name="M:OfficeOpenXml.ExcelStyles.CreateTableAndPivotTableStyle(System.String,OfficeOpenXml.Table.TableStyles)">
+            <summary>
+            Creates a tables visible for tables and pivot tables and with elements for both.
+            </summary>
+            <param name="name">The name of the style</param>
+            <param name="templateStyle">The built-in table style to use as a template for this custom style</param>
+            <returns>The table style object</returns>
+        </member>
+        <member name="M:OfficeOpenXml.ExcelStyles.CreateTableAndPivotTableStyle(System.String,OfficeOpenXml.Table.PivotTableStyles)">
+            <summary>
+            Creates a tables visible for tables and pivot tables and with elements for both.
+            </summary>
+            <param name="name">The name of the style</param>
+            <param name="templateStyle">The built-in pivot table style to use as a template for this custom style</param>
+            <returns>The table style object</returns>
+        </member>
+        <member name="M:OfficeOpenXml.ExcelStyles.CreateTableAndPivotTableStyle(System.String,OfficeOpenXml.Style.Table.ExcelTableNamedStyleBase)">
+            <summary>
+            Creates a tables visible for tables and pivot tables and with elements for both.
+            </summary>
+            <param name="name">The name of the style</param>
+            <param name="templateStyle">The table style to use as a template for this custom style</param>
+            <returns>The table style object</returns>
+        </member>
+        <member name="M:OfficeOpenXml.ExcelStyles.CreateSlicerStyle(System.String)">
+            <summary>
+            Creates a custom slicer style.
+            </summary>
+            <param name="name">The name of the style</param>
+            <returns>The slicer style object</returns>
+        </member>
+        <member name="M:OfficeOpenXml.ExcelStyles.CreateSlicerStyle(System.String,OfficeOpenXml.eSlicerStyle)">
+            <summary>
+            Creates a custom slicer style.
+            </summary>
+            <param name="name">The name of the style</param>
+            <param name="templateStyle">The slicer style to use as a template for this custom style</param>
+            <returns>The slicer style object</returns>
         </member>
         <member name="M:OfficeOpenXml.ExcelStyles.UpdateXml">
             <summary>
@@ -29187,7 +29480,7 @@
             <param name="value">value</param>
             <param name="styleId">styleId</param>
         </member>
-        <member name="M:OfficeOpenXml.ExcelWorksheet.SetRangeValueInner(System.Int32,System.Int32,System.Int32,System.Int32,System.Object[0:,0:])">
+        <member name="M:OfficeOpenXml.ExcelWorksheet.SetRangeValueInner(System.Int32,System.Int32,System.Int32,System.Int32,System.Object[0:,0:],System.Boolean)">
             <summary>
             Bulk(Range) set accessor of sheet value, for value array
             </summary>
@@ -29196,6 +29489,7 @@
             <param name="toRow">end row</param>
             <param name="toColumn">end column</param>
             <param name="values">set values</param>
+            <param name="setHyperLinkFromValue">If the value is of type Uri or ExcelHyperlink the Hyperlink property is set.</param>
         </member>
         <member name="M:OfficeOpenXml.ExcelWorksheet.ExistsValueInner(System.Int32,System.Int32)">
             <summary>
@@ -31161,6 +31455,17 @@
             <returns>Value of the argument as an integer.</returns>
             <exception cref="T:OfficeOpenXml.FormulaParsing.Exceptions.ExcelErrorValueException"></exception>
         </member>
+        <member name="M:OfficeOpenXml.FormulaParsing.Excel.Functions.ExcelFunction.ArgToInt(System.Collections.Generic.IEnumerable{OfficeOpenXml.FormulaParsing.Excel.Functions.FunctionArgument},System.Int32,OfficeOpenXml.FormulaParsing.Excel.Functions.RoundingMethod)">
+            <summary>
+            Returns the value of the argument att the position of the 0-based
+            <paramref name="index"/> as an integer.
+            </summary>
+            <param name="arguments"></param>
+            <param name="index"></param>
+            <param name="roundingMethod"></param>
+            <returns>Value of the argument as an integer.</returns>
+            <exception cref="T:OfficeOpenXml.FormulaParsing.Exceptions.ExcelErrorValueException"></exception>
+        </member>
         <member name="M:OfficeOpenXml.FormulaParsing.Excel.Functions.ExcelFunction.ArgToString(System.Collections.Generic.IEnumerable{OfficeOpenXml.FormulaParsing.Excel.Functions.FunctionArgument},System.Int32)">
             <summary>
             Returns the value of the argument att the position of the 0-based
@@ -31532,6 +31837,16 @@
         <member name="P:OfficeOpenXml.FormulaParsing.Excel.Functions.Metadata.FunctionMetadataAttribute.Description">
             <summary>
             Short description of the function.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.FormulaParsing.Excel.Functions.RoundingMethod.Convert">
+            <summary>
+            Round decimal number to int using Convert.ToInt32
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.FormulaParsing.Excel.Functions.RoundingMethod.Floor">
+            <summary>
+            Round decimal number to int using Math.Floor
             </summary>
         </member>
         <member name="T:OfficeOpenXml.FormulaParsing.Exceptions.ExcelErrorValueException">
@@ -49853,36 +50168,51 @@
             </summary>
             <param name="sparklineGroup">The sparklinegroup to be removed</param>
         </member>
-        <member name="T:OfficeOpenXml.Style.Dxf.DxfStyleBase`1">
+        <member name="T:OfficeOpenXml.Style.Dxf.DxfStyleBase">
             <summary>
             Base class for differential formatting styles. 
             </summary>
-            <typeparam name="T"></typeparam>
         </member>
-        <member name="P:OfficeOpenXml.Style.Dxf.DxfStyleBase`1.Id">
+        <member name="M:OfficeOpenXml.Style.Dxf.DxfStyleBase.Clear">
+            <summary>
+            Reset all properties for the style.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Dxf.DxfStyleBase.Id">
             <summary>
             The id
             </summary>
         </member>
-        <member name="P:OfficeOpenXml.Style.Dxf.DxfStyleBase`1.HasValue">
+        <member name="P:OfficeOpenXml.Style.Dxf.DxfStyleBase.HasValue">
             <summary>
-            If the dfx has a value
+            If the style has any value set
             </summary>
         </member>
-        <member name="M:OfficeOpenXml.Style.Dxf.DxfStyleBase`1.CreateNodes(OfficeOpenXml.XmlHelper,System.String)">
+        <member name="M:OfficeOpenXml.Style.Dxf.DxfStyleBase.CreateNodes(OfficeOpenXml.XmlHelper,System.String)">
             <summary>
             Create the nodes
             </summary>
             <param name="helper">The xml helper</param>
             <param name="path">The Xpath</param>
         </member>
-        <member name="M:OfficeOpenXml.Style.Dxf.DxfStyleBase`1.Clone">
+        <member name="M:OfficeOpenXml.Style.Dxf.DxfStyleBase.SetValuesFromXml(OfficeOpenXml.XmlHelper)">
+            <summary>
+            Sets the values from an XmlHelper instance. 
+            </summary>
+            <param name="helper">The helper</param>
+        </member>
+        <member name="M:OfficeOpenXml.Style.Dxf.DxfStyleBase.SetStyle">
+            <summary>
+            Set the cell style values from the dxf using the callback method.
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Style.Dxf.DxfStyleBase.Clone">
             <summary>
             Clone the object
             </summary>
             <returns></returns>
         </member>
-        <member name="M:OfficeOpenXml.Style.Dxf.DxfStyleBase`1.SetValueColor(OfficeOpenXml.XmlHelper,System.String,OfficeOpenXml.Style.Dxf.ExcelDxfColor)">
+        <member name="M:OfficeOpenXml.Style.Dxf.DxfStyleBase.SetValueColor(OfficeOpenXml.XmlHelper,System.String,OfficeOpenXml.Style.Dxf.ExcelDxfColor)">
             <summary>
             Set the color value
             </summary>
@@ -49890,7 +50220,7 @@
             <param name="path">The x path</param>
             <param name="color">The color</param>
         </member>
-        <member name="M:OfficeOpenXml.Style.Dxf.DxfStyleBase`1.SetValueEnum(OfficeOpenXml.XmlHelper,System.String,System.Enum)">
+        <member name="M:OfficeOpenXml.Style.Dxf.DxfStyleBase.SetValueEnum(OfficeOpenXml.XmlHelper,System.String,System.Enum)">
             <summary>
             Same as SetValue but will set first char to lower case.
             </summary>
@@ -49898,7 +50228,7 @@
             <param name="path">The Xpath</param>
             <param name="v">The value</param>
         </member>
-        <member name="M:OfficeOpenXml.Style.Dxf.DxfStyleBase`1.SetValue(OfficeOpenXml.XmlHelper,System.String,System.Object)">
+        <member name="M:OfficeOpenXml.Style.Dxf.DxfStyleBase.SetValue(OfficeOpenXml.XmlHelper,System.String,System.Object)">
             <summary>
             Sets the value
             </summary>
@@ -49906,7 +50236,15 @@
             <param name="path">The x path</param>
             <param name="v">The object</param>
         </member>
-        <member name="M:OfficeOpenXml.Style.Dxf.DxfStyleBase`1.SetValueBool(OfficeOpenXml.XmlHelper,System.String,System.Nullable{System.Boolean})">
+        <member name="M:OfficeOpenXml.Style.Dxf.DxfStyleBase.SetValue(OfficeOpenXml.XmlHelper,System.String,System.String)">
+            <summary>
+            Sets the value
+            </summary>
+            <param name="helper">The xml helper</param>
+            <param name="path">The x path</param>
+            <param name="v">The string</param>
+        </member>
+        <member name="M:OfficeOpenXml.Style.Dxf.DxfStyleBase.SetValueBool(OfficeOpenXml.XmlHelper,System.String,System.Nullable{System.Boolean})">
             <summary>
             Sets the value
             </summary>
@@ -49914,7 +50252,7 @@
             <param name="path">The x path</param>
             <param name="v">The boolean value</param>
         </member>
-        <member name="P:OfficeOpenXml.Style.Dxf.DxfStyleBase`1.AllowChange">
+        <member name="P:OfficeOpenXml.Style.Dxf.DxfStyleBase.AllowChange">
             <summary>
             Is this value allowed to be changed?
             </summary>
@@ -49944,6 +50282,16 @@
             Bottom border style
             </summary>
         </member>
+        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfBorderBase.Horizontal">
+            <summary>
+            Horizontal border style
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfBorderBase.Vertical">
+            <summary>
+            Vertical border style
+            </summary>
+        </member>
         <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfBorderBase.Id">
             <summary>
             The Id
@@ -49958,7 +50306,12 @@
         </member>
         <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfBorderBase.HasValue">
             <summary>
-            If the object has a value
+            If the object has any properties set
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Style.Dxf.ExcelDxfBorderBase.Clear">
+            <summary>
+            Clears all properties
             </summary>
         </member>
         <member name="M:OfficeOpenXml.Style.Dxf.ExcelDxfBorderBase.Clone">
@@ -49996,7 +50349,12 @@
         </member>
         <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfBorderItem.HasValue">
             <summary>
-            If the object has a value
+            If the object has any properties set
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Style.Dxf.ExcelDxfBorderItem.Clear">
+            <summary>
+            Clears all properties
             </summary>
         </member>
         <member name="M:OfficeOpenXml.Style.Dxf.ExcelDxfBorderItem.Clone">
@@ -50071,7 +50429,12 @@
         </member>
         <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfColor.HasValue">
             <summary>
-            If the object has a value
+            If the object has any properties set
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Style.Dxf.ExcelDxfColor.Clear">
+            <summary>
+            Clears all properties
             </summary>
         </member>
         <member name="M:OfficeOpenXml.Style.Dxf.ExcelDxfColor.CreateNodes(OfficeOpenXml.XmlHelper,System.String)">
@@ -50106,6 +50469,11 @@
             The Id
             </summary>
         </member>
+        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfFill.Style">
+            <summary>
+            Fill style for a differential style record
+            </summary>
+        </member>
         <member name="M:OfficeOpenXml.Style.Dxf.ExcelDxfFill.CreateNodes(OfficeOpenXml.XmlHelper,System.String)">
             <summary>
             Creates the the xml node
@@ -50115,7 +50483,7 @@
         </member>
         <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfFill.HasValue">
             <summary>
-            If the object has a value
+            If the object has any properties set
             </summary>
         </member>
         <member name="M:OfficeOpenXml.Style.Dxf.ExcelDxfFill.Clone">
@@ -50123,6 +50491,42 @@
             Clone the object
             </summary>
             <returns>A new instance of the object</returns>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfFont.Size">
+            <summary>
+            The font size 
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfFont.Name">
+            <summary>
+            The name of the font
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfFont.Family">
+            <summary>
+            Font family 
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfFont.VerticalAlign">
+            <summary>
+            Font-Vertical Align
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Style.Dxf.ExcelDxfFont.Clone">
+            <summary>
+            Clone the object
+            </summary>
+            <returns>A new instance of the object</returns>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfFont.HasValue">
+            <summary>
+            If the object has any properties set
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Style.Dxf.ExcelDxfFont.Clear">
+            <summary>
+            Clears all properties
+            </summary>
         </member>
         <member name="T:OfficeOpenXml.Style.Dxf.ExcelDxfFontBase">
             <summary>
@@ -50168,7 +50572,12 @@
         </member>
         <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfFontBase.HasValue">
             <summary>
-            If the font has a value
+            If the object has any properties set
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Style.Dxf.ExcelDxfFontBase.Clear">
+            <summary>
+            Clears all properties
             </summary>
         </member>
         <member name="M:OfficeOpenXml.Style.Dxf.ExcelDxfFontBase.Clone">
@@ -50176,6 +50585,147 @@
             Clone the object
             </summary>
             <returns>A new instance of the object</returns>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfGradientFill.HasValue">
+            <summary>
+            If the object has any properties set
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Style.Dxf.ExcelDxfGradientFill.Clear">
+            <summary>
+            Clears all properties
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfGradientFill.Colors">
+            <summary>
+            A collection of colors and percents for the gradient fill
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfGradientFill.GradientType">
+            <summary>
+            Type of gradient fill
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfGradientFill.Degree">
+            <summary>
+            Angle of the linear gradient
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfGradientFill.Left">
+            <summary>
+            The left position of the inner rectangle (color 1). 
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfGradientFill.Right">
+            <summary>
+            The right position of the inner rectangle (color 1). 
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfGradientFill.Top">
+            <summary>
+            The top position of the inner rectangle (color 1). 
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfGradientFill.Bottom">
+            <summary>
+            The bottom position of the inner rectangle (color 1). 
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.Style.Dxf.ExcelDxfGradientFillColor">
+            <summary>
+            Represents a position of a color in a gradient list for differencial styles.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfGradientFillColor.Position">
+            <summary>
+            The position of the color 
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfGradientFillColor.Color">
+            <summary>
+            The color to use at the position
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfGradientFillColor.HasValue">
+            <summary>
+            If the object has any properties set
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Style.Dxf.ExcelDxfGradientFillColor.Clear">
+            <summary>
+            Clears all colors
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.Style.Dxf.ExcelDxfGradientFillColorCollection">
+            <summary>
+            A collection of colors and their positions used for a gradiant fill.
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Style.Dxf.ExcelDxfGradientFillColorCollection.GetEnumerator">
+            <summary>
+            Get the enumerator
+            </summary>
+            <returns>The enumerator</returns>
+        </member>
+        <member name="M:OfficeOpenXml.Style.Dxf.ExcelDxfGradientFillColorCollection.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Get the enumerator
+            </summary>
+            <returns>The enumerator</returns>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfGradientFillColorCollection.Item(System.Int32)">
+            <summary>
+            Indexer for the collection
+            </summary>
+            <param name="index">The index in the collection</param>
+            <returns>The color</returns>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfGradientFillColorCollection.Item(System.Double)">
+            <summary>
+            Gets the first occurance with the color with the specified position
+            </summary>
+            <param name="position">The position in percentage</param>
+            <returns>The color</returns>
+        </member>
+        <member name="M:OfficeOpenXml.Style.Dxf.ExcelDxfGradientFillColorCollection.Add(System.Double)">
+            <summary>
+            Adds a RGB color at the specified position
+            </summary>
+            <param name="position">The position from 0 to 100%</param>
+            <returns>The gradient color position object</returns>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfGradientFillColorCollection.Count">
+            <summary>
+            Number of items in the collection
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfGradientFillColorCollection.HasValue">
+            <summary>
+            If the style has any value set
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Style.Dxf.ExcelDxfGradientFillColorCollection.RemoveAt(System.Int32)">
+            <summary>
+            Remove the style at the index in the collection.
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:OfficeOpenXml.Style.Dxf.ExcelDxfGradientFillColorCollection.RemoveAt(System.Double)">
+            <summary>
+            Remove the style at the position from the collection.
+            </summary>
+            <param name="position"></param>
+        </member>
+        <member name="M:OfficeOpenXml.Style.Dxf.ExcelDxfGradientFillColorCollection.Remove(OfficeOpenXml.Style.Dxf.ExcelDxfGradientFillColor)">
+            <summary>
+            Remove the style from the collection
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:OfficeOpenXml.Style.Dxf.ExcelDxfGradientFillColorCollection.Clear">
+            <summary>
+            Clear all style items from the collection
+            </summary>
         </member>
         <member name="T:OfficeOpenXml.Style.Dxf.ExcelDxfNumberFormat">
             <summary>
@@ -50237,7 +50787,12 @@
         </member>
         <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfNumberFormat.HasValue">
             <summary>
-            If the object has a value
+            If the object has any properties set
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Style.Dxf.ExcelDxfNumberFormat.Clear">
+            <summary>
+            Clears all properties
             </summary>
         </member>
         <member name="M:OfficeOpenXml.Style.Dxf.ExcelDxfNumberFormat.Clone">
@@ -50246,52 +50801,167 @@
             </summary>
             <returns>A new instance of the object</returns>
         </member>
-        <member name="T:OfficeOpenXml.Style.Dxf.ExcelDxfStyleConditionalFormatting">
+        <member name="T:OfficeOpenXml.Style.Dxf.ExcelDxfSlicerStyle">
             <summary>
             Differential formatting record used in conditional formatting
             </summary>
         </member>
-        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfStyleConditionalFormatting.Font">
+        <member name="T:OfficeOpenXml.Style.Dxf.ExcelDxfStyle">
+            <summary>
+            Differential formatting record used in conditional formatting
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfStyle.Font">
             <summary>
             Font formatting settings
             </summary>
         </member>
-        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfStyleConditionalFormatting.NumberFormat">
+        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfStyle.NumberFormat">
             <summary>
-            Numberformat formatting settings
+            Number format settings
             </summary>
         </member>
-        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfStyleConditionalFormatting.Fill">
+        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfStyle.HasValue">
+            <summary>
+            If the object has any properties set
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Style.Dxf.ExcelDxfStyle.Clear">
+            <summary>
+            Clears all properties
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfStyleBase.Fill">
             <summary>
             Fill formatting settings
             </summary>
         </member>
-        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfStyleConditionalFormatting.Border">
+        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfStyleBase.Border">
             <summary>
             Border formatting settings
             </summary>
         </member>
-        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfStyleConditionalFormatting.Id">
+        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfStyleBase.Id">
             <summary>
             Id
             </summary>
         </member>
-        <member name="M:OfficeOpenXml.Style.Dxf.ExcelDxfStyleConditionalFormatting.Clone">
-            <summary>
-            Clone the object
-            </summary>
-            <returns>A new instance of the object</returns>
-        </member>
-        <member name="M:OfficeOpenXml.Style.Dxf.ExcelDxfStyleConditionalFormatting.CreateNodes(OfficeOpenXml.XmlHelper,System.String)">
+        <member name="M:OfficeOpenXml.Style.Dxf.ExcelDxfStyleBase.CreateNodes(OfficeOpenXml.XmlHelper,System.String)">
             <summary>
             Creates the node
             </summary>
             <param name="helper">The helper</param>
             <param name="path">The XPath</param>
         </member>
+        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfStyleBase.HasValue">
+            <summary>
+            If the object has any properties set
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Style.Dxf.ExcelDxfStyleBase.Clear">
+            <summary>
+            Clears all properties
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.Style.Dxf.ExcelDxfStyleFont">
+            <summary>
+            Differential formatting record used in conditional formatting
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfStyleFont.Font">
+            <summary>
+            Font formatting settings
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfStyleFont.HasValue">
+            <summary>
+            If the object has any properties set
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Style.Dxf.ExcelDxfStyleFont.Clear">
+            <summary>
+            Clears all properties
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.Style.Dxf.ExcelDxfStyleLimitedFont">
+            <summary>
+            Differential formatting record with limited font settings
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfStyleLimitedFont.Font">
+            <summary>
+            Font formatting settings
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Style.Dxf.ExcelDxfStyleLimitedFont.Clone">
+            <summary>
+            Clone the object
+            </summary>
+            <returns>A new instance of the object</returns>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfStyleLimitedFont.HasValue">
+            <summary>
+            If the object has any properties set
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Style.Dxf.ExcelDxfStyleLimitedFont.Clear">
+            <summary>
+            Clears all properties
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.Style.Dxf.ExcelDxfTableStyle">
+            <summary>
+            Differential formatting record used for table styles
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.Style.Dxf.ExcelDxfStyleConditionalFormatting">
+            <summary>
+            Differential formatting record used in conditional formatting
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfStyleConditionalFormatting.NumberFormat">
+            <summary>
+            Number format settings
+            </summary>
+        </member>
         <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfStyleConditionalFormatting.HasValue">
             <summary>
-            If the object has a value
+            If the object has any properties set
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Style.Dxf.ExcelDxfStyleConditionalFormatting.Clear">
+            <summary>
+            Clears all properties
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.Style.eDxfFillStyle">
+            <summary>
+            Fill style for a differential style
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Style.eDxfFillStyle.PatternFill">
+            <summary>
+            Fill using the selected pattern and color
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Style.eDxfFillStyle.GradientFill">
+            <summary>
+            A gradient fill using multiple colors.        
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.Style.eDxfGradientFillType">
+            <summary>
+            Type of gradient fill
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Style.eDxfGradientFillType.Linear">
+            <summary>
+            Linear gradient type. Linear gradient type means that the transition from one color to the next is along a line.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Style.eDxfGradientFillType.Path">
+            <summary>
+            Path gradient type. Path gradient type means the that the transition from one color to the next is a rectangle, defined by coordinates.
             </summary>
         </member>
         <member name="T:OfficeOpenXml.Style.eStrikeType">
@@ -50312,6 +50982,151 @@
         <member name="F:OfficeOpenXml.Style.eStrikeType.Single">
             <summary>
             Single-lined font strike
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.Style.eTableStyleElement">
+            <summary>
+            Custom style element for a table / pivot table 
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Style.eTableStyleElement.BlankRow">
+            <summary>
+            Style that applies to a pivot table's blank rows.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Style.eTableStyleElement.FirstColumn">
+            <summary>
+            Style that applies to a pivot table's first column.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Style.eTableStyleElement.FirstColumnStripe">
+            <summary>
+            Style that applies to a pivot table's first column stripes.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Style.eTableStyleElement.FirstColumnSubheading">
+            <summary>
+            Style that applies to a pivot table's first column subheading.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Style.eTableStyleElement.FirstHeaderCell">
+            <summary>
+            Style that applies to a pivot table's first header row cell.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Style.eTableStyleElement.FirstRowStripe">
+            <summary>
+            Style that applies to a pivot table's first row stripes.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Style.eTableStyleElement.FirstRowSubheading">
+            <summary>
+            Style that applies to a pivot table's first row subheading.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Style.eTableStyleElement.FirstSubtotalColumn">
+            <summary>
+            Style that applies to a pivot table's first subtotal column.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Style.eTableStyleElement.FirstSubtotalRow">
+            <summary>
+            Style that applies to a pivot table's first subtotal row.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Style.eTableStyleElement.HeaderRow">
+            <summary>
+            Style that applies to a pivot table's header row.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Style.eTableStyleElement.LastColumn">
+            <summary>
+            Style that applies to a pivot table's last column.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Style.eTableStyleElement.PageFieldLabels">
+            <summary>
+            Style that applies to a pivot table's page field labels.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Style.eTableStyleElement.PageFieldValues">
+            <summary>
+            Style that applies to a pivot table's page field values.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Style.eTableStyleElement.SecondColumnStripe">
+            <summary>
+            Style that applies to a pivot table's second column stripes.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Style.eTableStyleElement.SecondColumnSubheading">
+            <summary>
+            Style that applies to a pivot table's second column subheading.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Style.eTableStyleElement.SecondRowStripe">
+            <summary>
+            Style that applies to a pivot table's second row stripes.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Style.eTableStyleElement.SecondRowSubheading">
+            <summary>
+            Style that applies to a pivot table's second row subheading.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Style.eTableStyleElement.SecondSubtotalColumn">
+            <summary>
+            Style that applies to a pivot table's second subtotal column.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Style.eTableStyleElement.SecondSubtotalRow">
+            <summary>
+            Style that applies to a pivot table's second subtotal row.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Style.eTableStyleElement.ThirdColumnSubheading">
+            <summary>
+            Style that applies to a pivot table's third column subheading.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Style.eTableStyleElement.ThirdRowSubheading">
+            <summary>
+            Style that applies to a pivot table's third row subheading.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Style.eTableStyleElement.ThirdSubtotalColumn">
+            <summary>
+            Style that applies to a pivot table's third subtotal column.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Style.eTableStyleElement.ThirdSubtotalRow">
+            <summary>
+            Style that applies to a pivot table's third subtotal row.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Style.eTableStyleElement.TotalRow">
+            <summary>
+            Style that applies to a pivot table's total row.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Style.eTableStyleElement.WholeTable">
+            <summary>
+            Style that applies to a pivot table's entire content.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Style.eTableStyleElement.LastHeaderCell">
+            <summary>
+            Style that applies to a table's last header row cell.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Style.eTableStyleElement.FirstTotalCell">
+            <summary>
+            Style that applies to a table's first total row cell.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Style.eTableStyleElement.LastTotalCell">
+            <summary>
+            Style that applies to a table's last total row cell.
             </summary>
         </member>
         <member name="T:OfficeOpenXml.Style.eUnderLineType">
@@ -51785,6 +52600,281 @@
             Base class for styles
             </summary>
         </member>
+        <member name="T:OfficeOpenXml.Style.ExcelBandedTableStyleElement">
+            <summary>
+            A style element for a custom table style with band size
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.ExcelBandedTableStyleElement.BandSize">
+            <summary>
+            Band size. Only applicable when <see cref="T:System.Type"/> is set to FirstRowStripe, FirstColumnStripe, SecondRowStripe or SecondColumnStripe
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.Style.Table.ExcelPivotTableNamedStyle">
+            <summary>
+            A custom named table style that applies to pivot tables only
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelPivotTableNamedStyle.AppliesTo">
+            <summary>
+            If the style applies to tables, pivot table or both
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelPivotTableNamedStyle.PageFieldLabels">
+            <summary>
+            Applies to the page field labels of a pivot table
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelPivotTableNamedStyle.PageFieldValues">
+            <summary>
+            Applies to the page field values of a pivot table
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelPivotTableNamedStyle.FirstSubtotalColumn">
+            <summary>
+            Applies to the first subtotal column of a pivot table
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelPivotTableNamedStyle.SecondSubtotalColumn">
+            <summary>
+            Applies to the second subtotal column of a pivot table
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelPivotTableNamedStyle.ThirdSubtotalColumn">
+            <summary>
+            Applies to the third subtotal column of a pivot table
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelPivotTableNamedStyle.BlankRow">
+            <summary>
+            Applies to blank rows of a pivot table
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelPivotTableNamedStyle.FirstSubtotalRow">
+            <summary>
+            Applies to the first subtotal row of a pivot table
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelPivotTableNamedStyle.SecondSubtotalRow">
+            <summary>
+            Applies to the second subtotal row of a pivot table
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelPivotTableNamedStyle.ThirdSubtotalRow">
+            <summary>
+            Applies to the third subtotal row of a pivot table
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelPivotTableNamedStyle.FirstColumnSubheading">
+            <summary>
+            Applies to the first column subheading of a pivot table
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelPivotTableNamedStyle.SecondColumnSubheading">
+            <summary>
+            Applies to the second column subheading of a pivot table
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelPivotTableNamedStyle.ThirdColumnSubheading">
+            <summary>
+            Applies to the third column subheading of a pivot table
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelPivotTableNamedStyle.FirstRowSubheading">
+            <summary>
+            Applies to the first row subheading of a pivot table
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelPivotTableNamedStyle.SecondRowSubheading">
+            <summary>
+            Applies to the second row subheading of a pivot table
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelPivotTableNamedStyle.ThirdRowSubheading">
+            <summary>
+            Applies to the third row subheading of a pivot table
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.Style.Table.ExcelTableAndPivotTableNamedStyle">
+            <summary>
+            A custom named table style that applies to both tables and pivot tables
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelTableAndPivotTableNamedStyle.AppliesTo">
+            <summary>
+            If the style applies to tables, pivot table or both
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelTableAndPivotTableNamedStyle.LastHeaderCell">
+            <summary>
+            Applies to the last header cell of a table
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelTableAndPivotTableNamedStyle.FirstTotalCell">
+            <summary>
+            Applies to the first total cell of a table
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelTableAndPivotTableNamedStyle.LastTotalCell">
+            <summary>
+            Applies to the last total cell of a table
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.Style.Table.ExcelTableNamedStyle">
+            <summary>
+            A custom named table style that applies to tables only
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelTableNamedStyle.LastHeaderCell">
+            <summary>
+            Applies to the last header cell of a table
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelTableNamedStyle.FirstTotalCell">
+            <summary>
+            Applies to the first total cell of a table
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelTableNamedStyle.LastTotalCell">
+            <summary>
+            Applies to the last total cell of a table
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelTableNamedStyle.AppliesTo">
+            <summary>
+            If the style applies to tables, pivot table or both
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.Style.Table.ExcelTableNamedStyleAsType">
+            <summary>
+            Provides a simple way to type cast a table named style objects to its top level class.
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Style.Table.ExcelTableNamedStyleAsType.Type``1">
+            <summary>
+            Converts the table named style object to it's top level or another nested class.        
+            </summary>
+            <typeparam name="T">The type of table named style object. T must be inherited from ExcelTableNamedStyleBase</typeparam>
+            <returns>The table named style as type T</returns>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelTableNamedStyleAsType.TableStyle">
+            <summary>
+            Returns the table named style object as a named style for tables only
+            </summary>
+            <returns>The table named style object</returns>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelTableNamedStyleAsType.PivotTableStyle">
+            <summary>
+            Returns the table named style object as a named style for pivot tables only
+            </summary>
+            <returns>The pivot table named style object</returns>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelTableNamedStyleAsType.TableAndPivotTableStyle">
+            <summary>
+            Returns the table named style object as a named style that can be applied to both tables and pivot tables.
+            </summary>
+            <returns>The shared table named style object</returns>
+        </member>
+        <member name="T:OfficeOpenXml.Style.Table.ExcelTableNamedStyleBase">
+            <summary>
+            A base class for custom named table styles
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelTableNamedStyleBase.AppliesTo">
+            <summary>
+            If a table style is applied for a table/pivot table or both
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelTableNamedStyleBase.Name">
+            <summary>
+            The name of the table named style
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelTableNamedStyleBase.WholeTable">
+            <summary>
+            Applies to the entire content of a table or pivot table
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelTableNamedStyleBase.FirstColumnStripe">
+            <summary>
+            Applies to the first column stripe of a table or pivot table
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelTableNamedStyleBase.SecondColumnStripe">
+            <summary>
+            Applies to the second column stripe of a table or pivot table
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelTableNamedStyleBase.FirstRowStripe">
+            <summary>
+            Applies to the first row stripe of a table or pivot table
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelTableNamedStyleBase.SecondRowStripe">
+            <summary>
+            Applies to the second row stripe of a table or pivot table
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelTableNamedStyleBase.LastColumn">
+            <summary>
+            Applies to the last column of a table or pivot table
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelTableNamedStyleBase.FirstColumn">
+            <summary>
+            Applies to the first column of a table or pivot table
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelTableNamedStyleBase.HeaderRow">
+            <summary>
+            Applies to the header row of a table or pivot table
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelTableNamedStyleBase.TotalRow">
+            <summary>
+            Applies to the total row of a table or pivot table
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelTableNamedStyleBase.FirstHeaderCell">
+            <summary>
+            Applies to the first header cell of a table or pivot table
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.Table.ExcelTableNamedStyleBase.As">
+            <summary>
+            Provides access to type conversion for all table named styles.
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.Style.ExcelSlicerTableStyleElement">
+            <summary>
+            A style element for a custom slicer style with band
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.ExcelSlicerTableStyleElement.Style">
+            <summary>
+            Access to style settings
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.ExcelSlicerTableStyleElement.Type">
+            <summary>
+            The type of custom style element for a table style
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.Style.ExcelTableStyleElement">
+            <summary>
+            A style element for a custom table style 
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.ExcelTableStyleElement.Style">
+            <summary>
+            Access to style properties
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Style.ExcelTableStyleElement.Type">
+            <summary>
+            The type of table style element for a custom table style.
+            </summary>
+        </member>
         <member name="T:OfficeOpenXml.Style.XmlAccess.ExcelBorderItemXml">
             <summary>
             Xml access class for border items
@@ -52240,6 +53330,21 @@
         <member name="T:OfficeOpenXml.Style.XmlAccess.StyleXmlHelper">
             <summary>
             Xml helper class for cell style classes
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.eTableNamedStyleAppliesTo.Tables">
+            <summary>
+            The named style applies to tables only
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.eTableNamedStyleAppliesTo.PivotTables">
+            <summary>
+            The named style applies to pivot tables only
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.eTableNamedStyleAppliesTo.TablesAndPivotTables">
+            <summary>
+            The named style can be applied to both tables and pivot tables
             </summary>
         </member>
         <member name="T:OfficeOpenXml.Table.PivotTableStyles">
@@ -53256,12 +54361,13 @@
             <param name="rows">Number of rows to add to the table. Default is 1</param>
             <returns></returns>
         </member>
-        <member name="M:OfficeOpenXml.Table.ExcelTable.InsertRow(System.Int32,System.Int32)">
+        <member name="M:OfficeOpenXml.Table.ExcelTable.InsertRow(System.Int32,System.Int32,System.Boolean)">
             <summary>
             Inserts one or more rows before the specified position in the table.
             </summary>
             <param name="position">The position in the table where the row will be inserted. Default is in the end of the table. 0 will insert the row at the top. Any value larger than the number of rows in the table will insert a row at the bottom of the table.</param>
             <param name="rows">Number of rows to insert.</param>
+            <param name="copyStyles">Copy styles from the row above. If inserting a row at position 0, the first row will be used as a template.</param>
             <returns>The inserted range</returns>
         </member>
         <member name="M:OfficeOpenXml.Table.ExcelTable.DeleteRow(System.Int32,System.Int32)">
@@ -53272,12 +54378,13 @@
             <param name="rows">Number of rows to delete.</param>
             <returns></returns>
         </member>
-        <member name="M:OfficeOpenXml.Table.ExcelTable.InsertColumn(System.Int32,System.Int32)">
+        <member name="M:OfficeOpenXml.Table.ExcelTable.InsertColumn(System.Int32,System.Int32,System.Boolean)">
             <summary>
             Inserts one or more columns before the specified position in the table.
             </summary>
             <param name="position">The position in the table where the column will be inserted. 0 will insert the column at the leftmost. Any value larger than the number of rows in the table will insert a row at the bottom of the table.</param>
             <param name="columns">Number of rows to insert.</param>
+            <param name="copyStyles">Copy styles from the column to the left.</param>
             <returns>The inserted range</returns>
         </member>
         <member name="M:OfficeOpenXml.Table.ExcelTable.DeleteColumn(System.Int32,System.Int32)">
@@ -53411,7 +54518,9 @@
             Sets a calculated column Formula.
             Be carefull with this property since it is not validated. 
             <example>
-            tbl.Columns[9].CalculatedColumnFormula = string.Format("SUM(MyDataTable[[#This Row],[{0}]])",tbl.Columns[9].Name);
+            tbl.Columns[9].CalculatedColumnFormula = string.Format("SUM(MyDataTable[[#This Row],[{0}]])",tbl.Columns[9].Name);  //Reference within the current row
+            tbl.Columns[9].CalculatedColumnFormula = string.Format("MyDataTable[[#Headers],[{0}]]",tbl.Columns[9].Name);  //Reference to a column header
+            tbl.Columns[9].CalculatedColumnFormula = string.Format("MyDataTable[[#Totals],[{0}]]",tbl.Columns[9].Name);  //Reference to a column total        
             </example>
             </summary>
         </member>
@@ -53466,6 +54575,29 @@
             <param name="position">The position in the table where the column will be inserted. 0 will insert the column at the leftmost position. Any value larger than the number of rows in the table will insert a row at the end of the table.</param>
             <param name="columns">Number of columns to insert.</param>
             <returns>The inserted range</returns>
+        </member>
+        <member name="T:OfficeOpenXml.Table.ExcelTableDxfBase">
+            <summary>
+            Base class for handling differnetial style records for tables.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.ExcelTableDxfBase.HeaderRowStyle">
+            <summary>
+            Style applied on the header range of a table. 
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.ExcelTableDxfBase.DataStyle">
+            <summary>
+            Style applied on the data range of a table. 
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.ExcelTableDxfBase.TotalsRowStyle">
+            <summary>
+            
+            </summary>
+            <summary>
+            Style applied on the total row range of a table. 
+            </summary>
         </member>
         <member name="T:OfficeOpenXml.Table.PivotTable.DataFieldFunctions">
             <summary>
@@ -53653,6 +54785,46 @@
             The pivot item represents the "variance population" aggregate value.
             </summary>
         </member>
+        <member name="T:OfficeOpenXml.Table.PivotTable.ePivotAreaType">
+            <summary>
+            Defines the pivot area affected by a style
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Table.PivotTable.ePivotAreaType.All">
+            <summary>
+            Refers to the whole pivot table
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Table.PivotTable.ePivotAreaType.FieldButton">
+            <summary>
+            Refers to a field button
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Table.PivotTable.ePivotAreaType.Data">
+            <summary>
+            Refers to data in the data area.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Table.PivotTable.ePivotAreaType.None">
+            <summary>
+            Refers to no pivot area
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Table.PivotTable.ePivotAreaType.Normal">
+            <summary>
+            Refers to a header or item
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Table.PivotTable.ePivotAreaType.Origin">
+            <summary>
+            Refers to the blank cells at the top-left(LTR sheets) or bottom-right(RTL sheets) of the pivot table.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Table.PivotTable.ePivotAreaType.TopEnd">
+            <summary>
+            Refers to the blank cells at the top of the pivot table, on its trailing edge. 
+            </summary>
+        </member>
         <member name="T:OfficeOpenXml.Table.PivotTable.ePivotFieldAxis">
             <summary>
             Defines the axis for a PivotTable
@@ -53682,6 +54854,36 @@
         <member name="F:OfficeOpenXml.Table.PivotTable.ePivotFieldAxis.Values">
             <summary>
             Values axis
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.Table.PivotTable.ePivotTableAxis">
+            <summary>
+            Defines the axis for a pivot table
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Table.PivotTable.ePivotTableAxis.None">
+            <summary>
+            No axis defined
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Table.PivotTable.ePivotTableAxis.ColumnAxis">
+            <summary>
+            Defines the column axis
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Table.PivotTable.ePivotTableAxis.PageAxis">
+            <summary>
+            Defines the page axis
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Table.PivotTable.ePivotTableAxis.RowAxis">
+            <summary>
+            Defines the row axis
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Table.PivotTable.ePivotTableAxis.ValuesAxis">
+            <summary>
+            Defines the values axis
             </summary>
         </member>
         <member name="T:OfficeOpenXml.Table.PivotTable.ePivotTableCaptionFilterType">
@@ -54631,6 +55833,14 @@
             If multiple datafields are displayed in the row area or the column area
             </summary>
         </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotTable.ValuesFieldPosition">
+            <summary>
+            The position of the values in the row- or column- fields list. Position is dependent on <see cref="P:OfficeOpenXml.Table.PivotTable.ExcelPivotTable.DataOnRows"/>.
+            If DataOnRows is true then the position is within the <see cref="P:OfficeOpenXml.Table.PivotTable.ExcelPivotTable.ColumnFields"/> collection,
+            a value of false the position is within the <see cref="P:OfficeOpenXml.Table.PivotTable.ExcelPivotTable.RowFields" /> collection.
+            A negative value or a value out of range of the add the "Σ values" field to the end of the collection.
+            </summary>
+        </member>
         <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotTable.ApplyNumberFormats">
             <summary>
             if true apply legacy table autoformat number format properties.
@@ -54767,9 +55977,15 @@
             A boolean that indicates if new fields should have their compact flag set to true
             </summary>
         </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTable.SetCompact(System.Boolean)">
+            <summary>
+            Sets all pivot table fields <see cref="P:OfficeOpenXml.Table.PivotTable.ExcelPivotTableField.Compact"/> property to the value supplied.
+            </summary>
+            <param name="value">The the value for the Compact property.</param>
+        </member>
         <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotTable.CompactData">
             <summary>
-            A boolean that indicates if the field next to the data field in the PivotTable should be displayed in the same column of the spreadsheet
+            A boolean that indicates if the field next to the data field in the PivotTable should be displayed in the same column of the spreadsheet.
             </summary>
         </member>
         <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotTable.GrandTotalCaption">
@@ -55311,14 +56527,14 @@
         </member>
         <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableFieldItemsCollection.GetByValue(System.Object)">
             <summary>
-            Get the item with the value supplied. If the value don't not exist, null is returned
+            Get the item with the value supplied. If the value does not exist, null is returned.
             </summary>
             <param name="value">The value</param>
             <returns>The pivot table field</returns>
         </member>
         <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableFieldItemsCollection.GetIndexByValue(System.Object)">
             <summary>
-            Get the index of the item with the value supplied. If the value don't not exist, -1 is returned
+            Get the index of the item with the value supplied. If the value does not exist, null is returned.
             </summary>
             <param name="value">The value</param>
             <returns>The index of the item</returns>
@@ -55327,6 +56543,12 @@
             <summary>
             Set Hidden to false for all items in the collection
             </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableFieldItemsCollection.ShowDetails(System.Boolean)">
+            <summary>
+            Set the ShowDetails for all items.
+            </summary>
+            <param name="isExpanded">The value of true is set all items to be expanded. The value of false set all items to be collapsed</param>
         </member>
         <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableFieldItemsCollection.SelectSingleItem(System.Int32)">
             <summary>
@@ -55361,6 +56583,13 @@
             </summary>
             <param name="Index">The index</param>
             <returns>The pivot table field</returns>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableFieldCollectionBase`1.IndexOf(`0)">
+            <summary>
+            Returns the zero-based index of the item.
+            </summary>
+            <param name="item">The item</param>
+            <returns>the zero-based index of the item in the list</returns>
         </member>
         <member name="T:OfficeOpenXml.Table.PivotTable.ExcelPivotTableFieldDateGroup">
             <summary>
@@ -55414,7 +56643,12 @@
         </member>
         <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotTableFieldItem.Hidden">
             <summary>
-            True if the items is hidden
+            A flag indicating if the items are hidden
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotTableFieldItem.ShowDetails">
+            <summary>
+            A flag indicating if the items expanded or collapsed.
             </summary>
         </member>
         <member name="T:OfficeOpenXml.Table.PivotTable.ExcelPivotTableFieldNumericGroup">
@@ -55454,7 +56688,7 @@
         </member>
         <member name="T:OfficeOpenXml.Table.PivotTable.ExcelPivotTableRowColumnFieldCollection">
             <summary>
-            Collection class for Row and column fields in a Pivottable 
+            Collection class for row and column fields in a Pivottable 
             </summary>
         </member>
         <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableRowColumnFieldCollection.Add(OfficeOpenXml.Table.PivotTable.ExcelPivotTableField)">
@@ -55484,6 +56718,95 @@
             </summary>
             <param name="Index"></param>
         </member>
+        <member name="T:OfficeOpenXml.Table.PivotTable.Filter.ExcelPivotTableFieldFilterCollection">
+            <summary>
+            A collection of pivot filters for a pivot table
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.Filter.ExcelPivotTableFieldFilterCollection.AddCaptionFilter(OfficeOpenXml.Table.PivotTable.ePivotTableCaptionFilterType,System.String,System.String)">
+            <summary>
+            Adds a caption (label) filter for a pivot tabel field
+            </summary>
+            <param name="type"></param>
+            <param name="value1"></param>
+            <param name="value2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.Filter.ExcelPivotTableFieldFilterCollection.AddTop10Filter(OfficeOpenXml.Table.PivotTable.ePivotTableTop10FilterType,OfficeOpenXml.Table.PivotTable.ExcelPivotTableDataField,System.Double,System.Boolean)">
+            <summary>
+            Adds a top 10 filter to the field
+            </summary>
+            <param name="type">The top-10 filter type</param>
+            <param name="dataField">The datafield within the pivot table</param>
+            <param name="value">The top or bottom value to relate to </param>
+            <param name="isTop">Top or bottom. true is Top, false is Bottom</param>
+            <returns></returns>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.Filter.ExcelPivotTableFieldFilterCollection.AddTop10Filter(OfficeOpenXml.Table.PivotTable.ePivotTableTop10FilterType,System.Int32,System.Double,System.Boolean)">
+            <summary>
+            Adds a top 10 filter to the field
+            </summary>
+            <param name="type">The top-10 filter type</param>
+            <param name="dataFieldIndex">The index to the data field within the pivot tables DataField collection</param>
+            <param name="value">The top or bottom value to relate to </param>
+            <param name="isTop">Top or bottom. true is Top, false is Bottom</param>
+            <returns></returns>
+        </member>
+        <member name="T:OfficeOpenXml.Table.PivotTable.Filter.ExcelPivotTableFilter">
+            <summary>
+            Defines a pivot table filter
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.Filter.ExcelPivotTableFilter.Id">
+            <summary>
+            The id 
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.Filter.ExcelPivotTableFilter.Name">
+            <summary>
+            The name of the pivot filter
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.Filter.ExcelPivotTableFilter.Description">
+            <summary>
+            The description of the pivot filter
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.Filter.ExcelPivotTableFilter.Type">
+            <summary>
+            The type of pivot filter
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.Filter.ExcelPivotTableFilter.EvalOrder">
+            <summary>
+            The evaluation order of the pivot filter
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.Filter.ExcelPivotTableFilter.Value1">
+            <summary>
+            The value 1 to compare the filter to
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.Filter.ExcelPivotTableFilter.Value2">
+            <summary>
+            The value 2 to compare the filter to
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.Filter.ExcelPivotTableFilter.StringValue1">
+            <summary>
+            The string value 1 used by caption filters.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.Filter.ExcelPivotTableFilter.StringValue2">
+            <summary>
+            The string value 2 used by caption filters.
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.Table.PivotTable.Filter.ExcelPivotTableFilterCollection">
+            <summary>
+            A collection of pivot filters for a pivot table
+            </summary>
+        </member>
         <member name="T:OfficeOpenXml.Table.PivotTable.PivotTableCacheInternal">
             <summary>
             Handles the pivot table cache.
@@ -55502,6 +56825,376 @@
         <member name="P:OfficeOpenXml.Table.PivotTable.PivotTableCacheInternal.CacheDefinitionUri">
             <summary>
             The package internal URI to the pivottable cache definition Xml Document.
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.Table.PivotTable.ExcelPivotArea">
+            <summary>
+            Defines a pivot table area of selection used for different purposes.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotArea.FieldIndex">
+            <summary>
+            The field referenced. -2 means refers to values.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotArea.FieldPosition">
+            <summary>
+            Position of the field within the axis to which this rule applies. 
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotArea.IsValuesField">
+            <summary>
+            If the pivot area referes to the "Σ Values" field in the column or row fields.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotArea.PivotAreaType">
+            <summary>
+            The pivot area type that affecting the selection.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotArea.Axis">
+            <summary>
+            The region of the PivotTable affected.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotArea.DataOnly">
+            <summary>
+            If the data values in the data area are included. Setting this property to true will set <see cref="P:OfficeOpenXml.Table.PivotTable.ExcelPivotArea.LabelOnly"/> to false.
+            <seealso cref="P:OfficeOpenXml.Table.PivotTable.ExcelPivotArea.LabelOnly"/>
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotArea.LabelOnly">
+            <summary>
+            If the item labels are included. Setting this property to true will set <see cref="P:OfficeOpenXml.Table.PivotTable.ExcelPivotArea.DataOnly"/> to false.
+            <seealso cref="P:OfficeOpenXml.Table.PivotTable.ExcelPivotArea.DataOnly"/>
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotArea.GrandRow">
+            <summary>
+            If the row grand total is included
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotArea.GrandColumn">
+            <summary>
+            If the column grand total is included
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotArea.CacheIndex">
+            <summary>
+            If any indexes refers to fields or items in the pivot cache and not the view.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotArea.Outline">
+            <summary>
+            Indicating whether the pivot table area refers to an area that is in outline mode.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotArea.Offset">
+            <summary>
+            A address in A1C1 format that specifies a subset of the selection area. Points are relative to the top left of the selection area.
+            The first cell is referenced as A1. For example, B1:C1 reference the second and third column of the first row of the pivot area.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotArea.CollapsedLevelsAreSubtotals">
+            <summary>
+            If collapsed levels/dimensions are considered subtotals
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaDataFieldReference">
+            <summary>
+            A collection of data fields used in a pivot area selection
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaDataFieldReference.Item(System.Int32)">
+            <summary>
+            The indexer
+            </summary>
+            <param name="index">The zero-based index of the collection</param>
+            <returns></returns>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaDataFieldReference.Count">
+            <summary>
+            Number of items in the collection
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaDataFieldReference.Add(System.Int32)">
+            <summary>
+            Adds the data field at the specific index
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaDataFieldReference.Add(OfficeOpenXml.Table.PivotTable.ExcelPivotTableDataField)">
+            <summary>
+            Adds a data field from the pivot table to the pivot area
+            </summary>
+            <param name="field"></param>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaDataFieldReference.GetEnumerator">
+            <summary>
+            Gets the enumerator
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaDataFieldReference.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Gets the enumerator
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaReference">
+            <summary>
+            A reference to a field in a pivot area 
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaReference.Field">
+            <summary>
+            The pivot table field referenced
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaReference.Items">
+            <summary>
+            References to the pivot table cache or within the table.
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaReferenceBase">
+            <summary>
+            Base class for pivot area references
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaReferenceBase.Selected">
+            <summary>
+            If this field has selection. This property is used when the pivot table is in outline view. It is also used when both header and data cells have selection.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaReferenceBase.Relative">
+            <summary>
+            If the item is referred to by a relative reference rather than an absolute reference.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaReferenceBase.ByPosition">
+            <summary>
+            Whether the item is referred to by position rather than item index.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaReferenceBase.DefaultSubtotal">
+            <summary>
+            If the default subtotal is included in the filter.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaReferenceBase.AvgSubtotal">
+            <summary>
+            If the Average aggregation function is included in the filter.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaReferenceBase.CountSubtotal">
+            <summary>
+            If the Count aggregation function is included in the filter.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaReferenceBase.CountASubtotal">
+            <summary>
+            If the CountA aggregation function is included in the filter.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaReferenceBase.MaxSubtotal">
+            <summary>
+            If the Maximum aggregation function is included in the filter.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaReferenceBase.MinSubtotal">
+            <summary>
+            If the Minimum aggregation function is included in the filter.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaReferenceBase.ProductSubtotal">
+            <summary>
+            If the Product aggregation function is included in the filter.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaReferenceBase.StdDevPSubtotal">
+            <summary>
+            If the population standard deviation aggregation function is included in the filter.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaReferenceBase.StdDevSubtotal">
+            <summary>
+            If the standard deviation aggregation function is included in the filter.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaReferenceBase.SumSubtotal">
+            <summary>
+            If the sum aggregation function is included in the filter.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaReferenceBase.VarPSubtotal">
+            <summary>
+            If the population variance aggregation function is included in the filter.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaReferenceBase.VarSubtotal">
+            <summary>
+            If the variance aggregation function is included in the filter.
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaReferenceCollection">
+            <summary>
+            A collection of pivot area references. A pivot area reference is a reference to a column, row field or a data field
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaReferenceCollection.Add(OfficeOpenXml.Table.PivotTable.ExcelPivotTableField)">
+            <summary>
+            Adds a pivot table field to the collection. The field is usually a column or row field
+            </summary>
+            <param name="field">The column or row field</param>
+            <returns>The pivot area reference</returns>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaReferenceCollection.Add(OfficeOpenXml.Table.PivotTable.ExcelPivotTable,System.Int32)">
+            <summary>
+            Adds a pivot table field to the collection. The field is usually a column or row field
+            </summary>
+            <param name="pivotTable">The pivot table</param>
+            <param name="fieldIndex">The index of the pivot table field</param>
+            <returns></returns>
+        </member>
+        <member name="T:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaReferenceItems">
+            <summary>
+            A list of pivot item refernces
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaReferenceItems.Add(System.Int32)">
+            <summary>
+            Adds the item at the index to the condition. The index referes to the pivot cache.
+            </summary>
+            <param name="index">Index into the pivot cache items. Either the shared items or the group items</param>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaReferenceItems.AddByValue(System.Object)">
+            <summary>
+            Adds a specific cache item to the condition. The value is matched against the values in the pivot cache, either the shared items or the group items.
+            </summary>
+            <param name="value">The value to match against. Is matched agaist the cache values and must be matched with the same data type.</param>
+            <returns>true if the value has been added, otherwise false</returns>
+        </member>
+        <member name="T:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaStyleConditions">
+            <summary>
+            Conditions for a pivot table area style.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaStyleConditions.Fields">
+            <summary>
+            Row and column fields that the conditions will apply to. 
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaStyleConditions.DataFields">
+            <summary>
+            The data field that the conditions will apply to. 
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.Table.PivotTable.ExcelPivotTableAreaStyle">
+            <summary>
+            Defines a pivot table area of selection used for styling.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotTableAreaStyle.Conditions">
+            <summary>
+            Conditions for the pivot table. Conditions can be set for specific row-, column- or data fields. Specify labels, data grand totals and more.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotTableAreaStyle.Style">
+            <summary>
+            Access to the style property for the pivot area
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.Table.PivotTable.ExcelPivotTableAreaStyleCollection">
+            <summary>
+            A collection of pivot areas used for styling a pivot table.
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableAreaStyleCollection.Add">
+            <summary>
+            Adds a pivot area style for labels or data.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableAreaStyleCollection.AddTopEnd">
+            <summary>
+            Adds a pivot area style for the top right cells of the pivot table, to the right of any filter button, if reading order i set to Left-To-Right. 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableAreaStyleCollection.AddTopEnd(System.String)">
+            <summary>
+            Adds a style for the top right cells of the pivot table, to the right of any filter button, if reading order i set to Left-To-Right. 
+            </summary>
+            <param name="offsetAddress">Offset address from the top-left cell to the right of any filter button. The top-left cell is refereced as A1. For example, B1:C1 will reference the second and third cell of the first row of the area. "null" will mean all cells</param>
+            <returns></returns>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableAreaStyleCollection.AddTopStart(System.String)">
+            <summary>
+            Adds a style for the top left cells of the pivot table, if reading order i set to Left-To-Right
+            </summary>
+            <param name="offsetAddress">Offset address from the left cell. The top-left cell is refereced as A1. For example, B1:C1 will reference the second and third cell of the first row of the area. "null" will mean all cells </param>
+            <returns></returns>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableAreaStyleCollection.AddButtonField(OfficeOpenXml.Table.PivotTable.ExcelPivotTableField)">
+            <summary>
+            Adds a style for the filter box.
+            </summary>
+            <param name="field">The field with the box to style</param>
+            <returns></returns>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableAreaStyleCollection.AddWholeTable">
+            <summary>
+            Adds a pivot area style that affects the whole table.
+            </summary>
+            <returns>The style object used to set the styles</returns>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableAreaStyleCollection.AddAllLabels">
+            <summary>
+            Adds a pivot area style that affects all labels
+            </summary>
+            <returns>The style object used to set the styles</returns>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableAreaStyleCollection.AddAllData">
+            <summary>
+            Adds a pivot area style that affects all data cells
+            </summary>
+            <returns>The style object used to set the styles</returns>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableAreaStyleCollection.AddLabel(OfficeOpenXml.Table.PivotTable.ExcelPivotTableField[])">
+            <summary>
+            Adds a style for the labels of a pivot table
+            </summary>
+            <param name="fields">The pivot table field that style affects</param>
+            <returns></returns>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableAreaStyleCollection.AddData(OfficeOpenXml.Table.PivotTable.ExcelPivotTableField[])">
+            <summary>
+            Adds a style for the data area of a pivot table
+            </summary>
+            <param name="fields"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableAreaStyleCollection.AddButtonField(OfficeOpenXml.Table.PivotTable.ePivotTableAxis,System.Int32)">
+            <summary>
+            Adds a style for filter boxes.
+            </summary>
+            <param name="axis">The axis for the field buttons</param>
+            <param name="index">The zero-based index in the axis collection</param>
+            <returns></returns>
+        </member>
+        <member name="T:OfficeOpenXml.Table.PivotTable.PivotItemReference">
+            <summary>
+            A reference to a pivot table value item
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.PivotItemReference.Index">
+            <summary>
+            The index of the item in items of the pivot table field
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.PivotItemReference.Value">
+            <summary>
+            The value of the item
             </summary>
         </member>
         <member name="T:OfficeOpenXml.ThreadedComments.ExcelThreadedComment">
@@ -57478,95 +59171,6 @@
             This method always throws a NotSupportedException.
             </summary>
             <param name="value">ignored</param>
-        </member>
-        <member name="T:EPPlusTest.Table.PivotTable.Filter.ExcelPivotTableFieldFilterCollection">
-            <summary>
-            A collection of pivot filters for a pivot table
-            </summary>
-        </member>
-        <member name="M:EPPlusTest.Table.PivotTable.Filter.ExcelPivotTableFieldFilterCollection.AddCaptionFilter(OfficeOpenXml.Table.PivotTable.ePivotTableCaptionFilterType,System.String,System.String)">
-            <summary>
-            Adds a caption (label) filter for a pivot tabel field
-            </summary>
-            <param name="type"></param>
-            <param name="value1"></param>
-            <param name="value2"></param>
-            <returns></returns>
-        </member>
-        <member name="M:EPPlusTest.Table.PivotTable.Filter.ExcelPivotTableFieldFilterCollection.AddTop10Filter(OfficeOpenXml.Table.PivotTable.ePivotTableTop10FilterType,OfficeOpenXml.Table.PivotTable.ExcelPivotTableDataField,System.Double,System.Boolean)">
-            <summary>
-            Adds a top 10 filter to the field
-            </summary>
-            <param name="type">The top-10 filter type</param>
-            <param name="dataField">The datafield within the pivot table</param>
-            <param name="value">The top or bottom value to relate to </param>
-            <param name="isTop">Top or bottom. true is Top, false is Bottom</param>
-            <returns></returns>
-        </member>
-        <member name="M:EPPlusTest.Table.PivotTable.Filter.ExcelPivotTableFieldFilterCollection.AddTop10Filter(OfficeOpenXml.Table.PivotTable.ePivotTableTop10FilterType,System.Int32,System.Double,System.Boolean)">
-            <summary>
-            Adds a top 10 filter to the field
-            </summary>
-            <param name="type">The top-10 filter type</param>
-            <param name="dataFieldIndex">The index to the data field within the pivot tables DataField collection</param>
-            <param name="value">The top or bottom value to relate to </param>
-            <param name="isTop">Top or bottom. true is Top, false is Bottom</param>
-            <returns></returns>
-        </member>
-        <member name="T:EPPlusTest.Table.PivotTable.Filter.ExcelPivotTableFilter">
-            <summary>
-            Defines a pivot table filter
-            </summary>
-        </member>
-        <member name="P:EPPlusTest.Table.PivotTable.Filter.ExcelPivotTableFilter.Id">
-            <summary>
-            The id 
-            </summary>
-        </member>
-        <member name="P:EPPlusTest.Table.PivotTable.Filter.ExcelPivotTableFilter.Name">
-            <summary>
-            The name of the pivot filter
-            </summary>
-        </member>
-        <member name="P:EPPlusTest.Table.PivotTable.Filter.ExcelPivotTableFilter.Description">
-            <summary>
-            The description of the pivot filter
-            </summary>
-        </member>
-        <member name="P:EPPlusTest.Table.PivotTable.Filter.ExcelPivotTableFilter.Type">
-            <summary>
-            The type of pivot filter
-            </summary>
-        </member>
-        <member name="P:EPPlusTest.Table.PivotTable.Filter.ExcelPivotTableFilter.EvalOrder">
-            <summary>
-            The evaluation order of the pivot filter
-            </summary>
-        </member>
-        <member name="P:EPPlusTest.Table.PivotTable.Filter.ExcelPivotTableFilter.Value1">
-            <summary>
-            The value 1 to compare the filter to
-            </summary>
-        </member>
-        <member name="P:EPPlusTest.Table.PivotTable.Filter.ExcelPivotTableFilter.Value2">
-            <summary>
-            The value 2 to compare the filter to
-            </summary>
-        </member>
-        <member name="P:EPPlusTest.Table.PivotTable.Filter.ExcelPivotTableFilter.StringValue1">
-            <summary>
-            The string value 1 used by caption filters.
-            </summary>
-        </member>
-        <member name="P:EPPlusTest.Table.PivotTable.Filter.ExcelPivotTableFilter.StringValue2">
-            <summary>
-            The string value 2 used by caption filters.
-            </summary>
-        </member>
-        <member name="T:EPPlusTest.Table.PivotTable.Filter.ExcelPivotTableFilterCollection">
-            <summary>
-            A collection of pivot filters for a pivot table
-            </summary>
         </member>
     </members>
 </doc>

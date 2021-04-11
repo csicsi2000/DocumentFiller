@@ -42,7 +42,7 @@
       <Value Profile="(Default)">en-US</Value>
     </Setting>
     <Setting Name="tablaSync" Type="System.String" Scope="User">
-      <Value Profile="(Default)">1;2;3;4;5;7;8;16;14;17;20;14;15;18;19;30;11;0;foutŁ1;0;3;2;4;5;6;11;12;14;18;12;13;15;0;0;9;10;abc</Value>
+      <Value Profile="(Default)">1;2;3;4;5;7;8;16;14;17;20;14;15;18;19;30;11;0;6;9;10;foutŁ1;0;3;2;4;5;6;11;12;14;18;12;13;15;0;0;9;10;0;7;8;abc</Value>
     </Setting>
     <Setting Name="comboIndex" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
@@ -58,6 +58,9 @@
     </Setting>
     <Setting Name="iskolaCim" Type="System.String" Scope="User">
       <Value Profile="(Default)">Érd, Fő Utca 52.</Value>
+    </Setting>
+    <Setting Name="dokumentumTipus" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
     </Setting>
   </Settings>
 </SettingsFile>

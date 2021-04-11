@@ -28,6 +28,10 @@ namespace WindowsFormsApp_autósiskola
         public string Korlatozasok;
         public string Kategoria;
 
+        public string allampolgarsag;
+        public string telefonszam;
+        public string email;
+
 
         public tanulo(string Adatsor)
         {
@@ -56,6 +60,13 @@ namespace WindowsFormsApp_autósiskola
             }
 
             string[] adatok = Adatsor.Split(';');
+            for(int i = 0; i < adatok.Length; i++)
+            {
+                if (adatok[i] == "0")
+                {
+                    adatok[i] = "\t";
+                }
+            }
 
             for (int i = 0; i < adatok.Length; i++)
             {
@@ -104,7 +115,9 @@ namespace WindowsFormsApp_autósiskola
             SikeresElmeletVizsga = adatok[szamok[14]];
             SikertelenSzama = adatok[szamok[15]];
             Korlatozasok = adatok[szamok[16]];
-            Kategoria = "";
+            telefonszam = adatok[szamok[19]];
+            email = adatok[szamok[20]];
+            allampolgarsag = "-";
 
             if (sablonok[index].Contains("abc"))
             {
@@ -133,7 +146,7 @@ namespace WindowsFormsApp_autósiskola
                 }
                 Kategoria = ", " + adatok[szamok[17]];
             }
-            else
+            else if(sablonok[index].Contains("fout"))
             {
                 if (adatok[szamok[1]] == "U.A." || adatok[szamok[1]] == "U.A" || adatok[szamok[1]] == "u.a." || adatok[szamok[1]] == "u.a")
                 {
@@ -143,7 +156,8 @@ namespace WindowsFormsApp_autósiskola
                 {
                     SzuleteskoriNev = adatok[szamok[1]];
                 }
-
+                allampolgarsag = adatok[szamok[18]];
+                Kategoria = ", B";
             }
         }
     }
