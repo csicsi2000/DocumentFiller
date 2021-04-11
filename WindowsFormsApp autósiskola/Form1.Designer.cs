@@ -933,7 +933,7 @@ namespace WindowsFormsApp_autósiskola
             this.fooldal.Name = "fooldal";
             this.fooldal.Size = new System.Drawing.Size(130, 30);
             this.fooldal.TabIndex = 31;
-            this.fooldal.Text = "Fő oldal";
+            this.fooldal.Text = "Főoldal";
             this.fooldal.UseVisualStyleBackColor = true;
             this.fooldal.Click += new System.EventHandler(this.fooldal_Click);
             // 

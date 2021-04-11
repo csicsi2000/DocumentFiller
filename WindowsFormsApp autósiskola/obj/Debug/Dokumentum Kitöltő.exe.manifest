@@ -50,7 +50,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>eNNNmwiRWlLDK1zVzFSCguq0ETGxI5+M5EJC//vL6EE=</dsig:DigestValue>
+        <dsig:DigestValue>PFZUoFUCGDli1oTvvYkCWEKXz7vi+3o1Ewo1POgL0rg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -62,7 +62,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+KjR9MiHEMIwcsCXi82gYpi+bWY9sA61BEzDz8dj8N0=</dsig:DigestValue>
+        <dsig:DigestValue>NSsiyAjmtZP0yPKbb+/OnObSwWQ+XY6dlBV+F0mjNA0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -120,13 +120,13 @@
       <dsig:DigestValue>onQQpBhdsT+Yzhnxoa0MsTqbdw1fs+rvk/z5GMd+R5I=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\SablonFajl.xlsx" size="11805">
+  <file name="bin\Debug\SablonFajl.xlsx" size="11744">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Puby2uA85lttSSp3LCID7kSYQUW4TWx8kluCg1nQZwk=</dsig:DigestValue>
+      <dsig:DigestValue>y4EwoBH2ambCcfsdix/Jw4IYJb3z/P1WoBK624S3fZA=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Dokumentum Kitöltő.exe.config" size="4035">
