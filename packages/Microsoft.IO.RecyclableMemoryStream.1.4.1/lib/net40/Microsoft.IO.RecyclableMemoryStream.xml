@@ -717,17 +717,6 @@
             until Dispose is called, but the next time GetBuffer() is called, a new buffer from the pool will be required.</remarks>
             <exception cref="T:System.ObjectDisposedException">Object has been disposed</exception>
         </member>
-        <member name="M:Microsoft.IO.RecyclableMemoryStream.CopyToAsync(System.IO.Stream,System.Int32,System.Threading.CancellationToken)">
-            <summary>Asynchronously reads all the bytes from the current position in this stream and writes them to another stream.</summary>
-            <param name="destination">The stream to which the contents of the current stream will be copied.</param>
-            <param name="bufferSize">This parameter is ignored.</param>
-            <param name="cancellationToken">The token to monitor for cancellation requests.</param>
-            <returns>A task that represents the asynchronous copy operation.</returns>
-            <exception cref="T:System.ArgumentNullException">
-              <paramref name="destination" /> is <see langword="null" />.</exception>
-            <exception cref="T:System.ObjectDisposedException">Either the current stream or the destination stream is disposed.</exception>
-            <exception cref="T:System.NotSupportedException">The current stream does not support reading, or the destination stream does not support writing.</exception>
-        </member>
         <member name="M:Microsoft.IO.RecyclableMemoryStream.TryGetBuffer(System.ArraySegment{System.Byte}@)">
             <summary>
             Returns an ArraySegment that wraps a single buffer containing the contents of the stream.

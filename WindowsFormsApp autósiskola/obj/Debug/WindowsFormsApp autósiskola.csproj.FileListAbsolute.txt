@@ -1,27 +1,17 @@
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\bin\Debug\jelentkezesiLapSablon.docx
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\bin\Debug\kepzesi igazolas sablon a programhoz.docx
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\bin\Debug\SablonFajl.xlsx
-D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\Dokumentum nyomtatás.exe.config
-D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\Dokumentum nyomtatás.exe.manifest
-D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\Dokumentum nyomtatás.application
-D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\Dokumentum nyomtatás.exe
-D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\Dokumentum nyomtatás.pdb
-D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\bin\Dokumentum nyomtatás.resources.dll
+D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\Dokumentum Kitöltő.exe.config
+D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\Dokumentum Kitöltő.exe.manifest
+D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\Dokumentum Kitöltő.application
+D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\Dokumentum Kitöltő.exe
+D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\Dokumentum Kitöltő.pdb
+D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\bin\Dokumentum Kitöltő.resources.dll
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\EPPlus.dll
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
-D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\System.Buffers.dll
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\System.ComponentModel.Annotations.dll
-D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\System.Diagnostics.DiagnosticSource.dll
-D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\System.Memory.dll
-D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\System.Numerics.Vectors.dll
-D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\EPPlus.xml
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
-D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\System.Buffers.xml
-D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\System.Diagnostics.DiagnosticSource.xml
-D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\System.Memory.xml
-D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\System.Numerics.Vectors.xml
-D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Debug\WindowsFormsApp autósiskola.csproj.ResolveComReference.cache
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Debug\WindowsFormsApp_autósiskola.Form1.resources
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Debug\WindowsFormsApp_autósiskola.loading.resources
@@ -31,9 +21,10 @@ D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp aut
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Debug\WindowsFormsApp_autósiskola.Form1.bin.resources
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Debug\WindowsFormsApp autósiskola.csproj.GenerateResource.cache
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Debug\WindowsFormsApp autósiskola.csproj.CoreCompileInputs.cache
-D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Debug\bin\Dokumentum nyomtatás.resources.dll
-D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Debug\Dokumentum nyomtatás.exe.manifest
-D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Debug\Dokumentum nyomtatás.application
+D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Debug\bin\Dokumentum Kitöltő.resources.dll
+D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Debug\Dokumentum Kitöltő.exe.manifest
+D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Debug\Dokumentum Kitöltő.application
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Debug\WindowsFormsApp autósiskola.csproj.CopyComplete
-D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Debug\Dokumentum nyomtatás.exe
-D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Debug\Dokumentum nyomtatás.pdb
+D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Debug\Dokumentum Kitöltő.exe
+D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Debug\Dokumentum Kitöltő.pdb
+D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Debug\WindowsFormsApp autósiskola.csprojAssemblyReference.cache
