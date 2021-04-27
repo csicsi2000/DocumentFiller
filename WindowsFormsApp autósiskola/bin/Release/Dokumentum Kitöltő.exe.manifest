@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Dokumentum Kitöltő.exe" size="206248">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Dokumentum Kitöltő.exe" size="208808">
       <assemblyIdentity name="Dokumentum Kitöltő" version="1.1.1.7" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>vqmMf3FWeRpyZwdxuai0oM/Kayym1G//xOA7I516sDo=</dsig:DigestValue>
+        <dsig:DigestValue>NiCAoiONjK92O75i8G/8jfNZjpgJBI3WwoDCscOeNqs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -62,7 +62,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>AyCWWDWhcfwE5+Q8xKTkLK2kjzXrqtC1LPiFGOVlgpQ=</dsig:DigestValue>
+        <dsig:DigestValue>ON9Xlbxz67x3/6AaZbG5h33b9A/RXNp1LAcHDYrhAvY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -129,13 +129,13 @@
       <dsig:DigestValue>y4EwoBH2ambCcfsdix/Jw4IYJb3z/P1WoBK624S3fZA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Dokumentum Kitöltő.exe.config" size="4035">
+  <file name="Dokumentum Kitöltő.exe.config" size="4155">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>wIYdbkT13Ct8dGhQ8Wakh5M6pgn7asSF38K6aZfw5Fo=</dsig:DigestValue>
+      <dsig:DigestValue>opeLdl46o6/cdy2kEiNFo+KOiA4nfxPEnj6vZ1pSnLM=</dsig:DigestValue>
     </hash>
   </file>
   <file name="favicon (3).ico" size="40654">

@@ -263,5 +263,17 @@ namespace WindowsFormsApp_autósiskola.Properties {
                 this["dokumentumTipus"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int fileFormat {
+            get {
+                return ((int)(this["fileFormat"]));
+            }
+            set {
+                this["fileFormat"] = value;
+            }
+        }
     }
 }

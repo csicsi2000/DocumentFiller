@@ -56,6 +56,7 @@ namespace WindowsFormsApp_autósiskola
             iskolaNev.Text = Properties.Settings.Default.iskolaNev;
             iskolaCim.Text = Properties.Settings.Default.iskolaCim;
             DocTipus.SelectedIndex = Properties.Settings.Default.dokumentumTipus;
+            fileFormat.SelectedIndex = Properties.Settings.Default.fileFormat;
             staticLoading.Hide();
             loading1.Hide();
             statisztika1.Hide();
@@ -255,27 +256,24 @@ namespace WindowsFormsApp_autósiskola
             loading1.Visible = true;
             fileMethods.FajlOlvasas();
 
-            string ujfajl = mentesHelye.Text + "\\" + mentettFajlNeve.Text + ".docx";
-            int i = 1;
-            while (File.Exists(ujfajl))
-            {
-                ujfajl = mentesHelye.Text + "\\" + mentettFajlNeve.Text + "(" + i + ")" + ".docx";
-                i++;
-            }
+            string ujfajl = mentesHelye.Text + "\\" + mentettFajlNeve.Text;
+            
 
             if (DocTipus.SelectedIndex == 0)
             {
                 string kepzesiIgazolas = Path.GetFullPath("kepzesi igazolas sablon a programhoz.docx");
                 string sorszam = SorSzam.Text;
+                string format = fileFormat.Text;
                 WordFile csinál = new WordFile();
-                await (Task.Run(() => csinál.KepzesiIgazolasLetrehozas(xlWorkbooks, sorszam, kepzesiIgazolas, ujfajl)));
+                await (Task.Run(() => csinál.KepzesiIgazolasLetrehozas(xlWorkbooks, sorszam, kepzesiIgazolas, ujfajl, format)));
             }
             else if(DocTipus.SelectedIndex == 1)
             {
                 string JelentkezesiLap = Path.GetFullPath("jelentkezesiLapSablon.docx");
                 string sorszam = SorSzam.Text;
+                string format = fileFormat.Text;
                 WordFile csinál = new WordFile();
-                await (Task.Run(() => csinál.JelentkezesiLapLetrehozas(xlWorkbooks, sorszam, JelentkezesiLap, ujfajl)));
+                await (Task.Run(() => csinál.JelentkezesiLapLetrehozas(xlWorkbooks, sorszam, JelentkezesiLap, ujfajl, format)));
             }
             panel3.Enabled = true;
             tableLayoutPanel3.Enabled = true;
@@ -899,6 +897,11 @@ namespace WindowsFormsApp_autósiskola
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.dokumentumTipus = DocTipus.SelectedIndex;
+        }
+
+        private void fileFormat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.fileFormat = fileFormat.SelectedIndex;
         }
     }
 }

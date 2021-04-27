@@ -12,7 +12,6 @@ D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp aut
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Release\System.ComponentModel.Annotations.dll
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Release\EPPlus.xml
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Release\Microsoft.IO.RecyclableMemoryStream.xml
-D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\WindowsFormsApp autósiskola.csprojAssemblyReference.cache
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\WindowsFormsApp autósiskola.csproj.ResolveComReference.cache
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\WindowsFormsApp_autósiskola.Form1.resources
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\WindowsFormsApp_autósiskola.loading.resources
@@ -28,3 +27,4 @@ D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp aut
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\WindowsFormsApp autósiskola.csproj.CopyComplete
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\Dokumentum Kitöltő.exe
 D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\Dokumentum Kitöltő.pdb
+D:\Programozás\Extra projektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\WindowsFormsApp autósiskola.csprojAssemblyReference.cache

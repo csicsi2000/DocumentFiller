@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Word = Microsoft.Office.Interop.Word;
 using Excel = Microsoft.Office.Interop.Excel;
-
+using Microsoft.Office.Interop.Word;
 
 namespace WindowsFormsApp_autósiskola
 {
     class WordFile
     {
         #region Képzési Igazolás Létrehozása
-        public void KepzesiIgazolasLetrehozas(Excel.Workbooks xlWorkbooks, string sorszam,object filename, object saveAs)
+        public void KepzesiIgazolasLetrehozas(Excel.Workbooks xlWorkbooks, string sorszam,object filename, object saveAs, string format)
         {
             bool sikeres = true;
             List<tanulo> kivalasztott = new List<tanulo>();
@@ -105,7 +105,6 @@ namespace WindowsFormsApp_autósiskola
 
                 if (fileMethods.isExcelComptaible(Properties.Settings.Default.ExcelFajlHelye))
                 {
-
                     var xlWorkbook = xlWorkbooks.Open(Properties.Settings.Default.ExcelFajlMasolata);
                     Excel.Worksheet xlWorksheet = xlWorkbook.Sheets[Properties.Settings.Default.oldalszam + 1];
                     Excel.Range xlRange = xlWorksheet.UsedRange;
@@ -277,12 +276,25 @@ namespace WindowsFormsApp_autósiskola
                             this.FindAndReplace(wordApp, "<helyido>", "\t,\tév\thónap\tnap");
                         }
 
+                        if (format == ".docx")
+                        {
+                            saveAs = createNewFile(saveAs.ToString(), format);
+                            aDoc.SaveAs2(saveAs, ref missing,
+                                                ref readOnly, ref missing, ref missing, ref missing,
+                                                ref missing, ref missing, ref missing, ref missing,
+                                                ref missing, ref isVisible, ref missing, ref missing,
+                                                ref missing, ref missing);
 
-                        aDoc.SaveAs2(ref saveAs, ref missing,
-                                            ref readOnly, ref missing, ref missing, ref missing,
-                                            ref missing, ref missing, ref missing, ref missing,
-                                            ref missing, ref isVisible, ref missing, ref missing,
-                                            ref missing, ref missing);
+                        } 
+                        else if(format == ".pdf")
+                        {
+                            saveAs = createNewFile(saveAs.ToString(), format);
+
+                            aDoc.SaveAs2(saveAs, WdSaveFormat.wdFormatPDF, ref readOnly, ref missing, ref missing, ref missing,
+                                                ref missing, ref missing, ref missing, ref missing,
+                                                ref missing, ref isVisible, ref missing, ref missing,
+                                                ref missing, ref missing);
+                        }
 
                         if (Properties.Settings.Default.wordMegnyitasa == true)
                         {
@@ -293,7 +305,11 @@ namespace WindowsFormsApp_autósiskola
                         {
                             MessageBox.Show("Sikerült!");
                         }
-                        aDoc.Close();
+                        //prevent original file changes on save
+                        object saveOption = Word.WdSaveOptions.wdDoNotSaveChanges;
+                        object originalFormat = Word.WdOriginalFormat.wdOriginalDocumentFormat;
+                        object routeDocument = false;
+                        aDoc.Close(ref saveOption, ref originalFormat, ref routeDocument);
                     }
                     else
                     {
@@ -315,7 +331,7 @@ namespace WindowsFormsApp_autósiskola
         #endregion
 
         #region Jelentkezési lap létrehozása
-        public void JelentkezesiLapLetrehozas(Excel.Workbooks xlWorkbooks, string sorszam, object filename, object saveAs)
+        public void JelentkezesiLapLetrehozas(Excel.Workbooks xlWorkbooks, string sorszam, object filename, object saveAs, string format)
         {
             bool sikeres = true;
             List<tanulo> kivalasztott = new List<tanulo>();
@@ -666,12 +682,26 @@ namespace WindowsFormsApp_autósiskola
                             this.FindAndReplace(wordApp, "<helyido>", "\t,\tév\thónap\tnap");
                         }
 
+                        if (format == ".docx")
+                        {
+                            saveAs = createNewFile(saveAs.ToString(), format);
 
-                        aDoc.SaveAs2(ref saveAs, ref missing,
-                                            ref readOnly, ref missing, ref missing, ref missing,
-                                            ref missing, ref missing, ref missing, ref missing,
-                                            ref missing, ref isVisible, ref missing, ref missing,
-                                            ref missing, ref missing);
+                            aDoc.SaveAs2(ref saveAs, ref missing,
+                                                ref readOnly, ref missing, ref missing, ref missing,
+                                                ref missing, ref missing, ref missing, ref missing,
+                                                ref missing, ref isVisible, ref missing, ref missing,
+                                                ref missing, ref missing);
+                        }
+                        else if (format == ".pdf")
+                        {
+                            saveAs = createNewFile(saveAs.ToString(), format);
+
+                            aDoc.SaveAs2(ref saveAs, WdSaveFormat.wdFormatPDF, ref readOnly, ref missing, ref missing, ref missing,
+                                                ref missing, ref missing, ref missing, ref missing,
+                                                ref missing, ref isVisible, ref missing, ref missing,
+                                                ref missing, ref missing);
+                        }
+
 
                         if (Properties.Settings.Default.wordMegnyitasa == true)
                         {
@@ -682,7 +712,10 @@ namespace WindowsFormsApp_autósiskola
                         {
                             MessageBox.Show("Sikerült!");
                         }
-                        aDoc.Close();
+                        object saveOption = Word.WdSaveOptions.wdDoNotSaveChanges;
+                        object originalFormat = Word.WdOriginalFormat.wdOriginalDocumentFormat;
+                        object routeDocument = false;
+                        aDoc.Close(ref saveOption, ref originalFormat, ref routeDocument);
                     }
                     else
                     {
@@ -749,6 +782,19 @@ namespace WindowsFormsApp_autósiskola
             }
             instance.Visible = false;
             return instance;
+        }
+
+        public string createNewFile(string saveAs, string format)
+        {
+            string NewFile = saveAs + format;
+            int i = 1;
+            while (File.Exists(NewFile.ToString()))
+            {
+                NewFile = saveAs + "(" + i + ")" + format;
+                i++;
+            }
+
+            return NewFile;
         }
     }
 }
