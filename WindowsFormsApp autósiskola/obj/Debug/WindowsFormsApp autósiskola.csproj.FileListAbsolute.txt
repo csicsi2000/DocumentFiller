@@ -42,7 +42,6 @@ D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp aut�
 D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\System.ComponentModel.Annotations.dll
 D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\EPPlus.xml
 D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
-D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Debug\WindowsFormsApp autósiskola.csprojAssemblyReference.cache
 D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Debug\WindowsFormsApp autósiskola.csproj.ResolveComReference.cache
 D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Debug\WindowsFormsApp_autósiskola.Form1.resources
 D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Debug\WindowsFormsApp_autósiskola.loading.resources
