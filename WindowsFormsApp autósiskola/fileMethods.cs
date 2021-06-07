@@ -51,7 +51,7 @@ namespace WindowsFormsApp_autósiskola
                     }
                     catch
                     {
-                        MessageBox.Show("Nem lehet elérni a másolatot! Próbálja meg újra a műveletet, vagy indítja újra a programot.", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Nem lehet elérni a másolatot! Próbálja meg újra a műveletet, vagy indítsa újra a programot.", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                 }

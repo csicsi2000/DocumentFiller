@@ -246,7 +246,7 @@ namespace WindowsFormsApp_autósiskola
                         this.FindAndReplace(wordApp, "<ErtesitesCim>", kivalasztott[0].ErtesitesCim);
                         this.FindAndReplace(wordApp, "<TAzonosito>", kivalasztott[0].TAzonosito);
                         this.FindAndReplace(wordApp, "<Kategoria>", kivalasztott[0].Kategoria);
-                        this.FindAndReplace(wordApp, "<TKezdete>", kivalasztott[0].TKezdete + " - " + kivalasztott[0].ElmeletTargy);
+                        this.FindAndReplace(wordApp, "<TKezdete>", kivalasztott[0].TKezdete + " - " + kivalasztott[0].TVege);
                         this.FindAndReplace(wordApp, "<TanuloAzonositoja>", kivalasztott[0].TanuloAzonositoja);
                         this.FindAndReplace(wordApp, "<TanuloIktatoszama>", kivalasztott[0].TanuloIktatoszama);
                         this.FindAndReplace(wordApp, "<VezetesiKarton>", kivalasztott[0].VezetesiKarton);

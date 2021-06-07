@@ -66,6 +66,7 @@ namespace WindowsFormsApp_autósiskola
             AllowDrop = true;
             DragEnter += new DragEventHandler(Form1_DragEnter);
             DragDrop += new DragEventHandler(Form1_DragDrop);
+            VersionDisplay.Text = System.Windows.Forms.Application.ProductVersion;
 
             try
             {
@@ -325,8 +326,8 @@ namespace WindowsFormsApp_autósiskola
                 MessageBox.Show("Válaszd ki a mentés helyét!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            valasztFolyamatban.Visible = true;
-            valasztFolyamatban.BringToFront();
+            label8.Visible = true;
+            label8.BringToFront();
             string kivalasztott = "";
             if (Properties.Settings.Default.ExcelFajlHelye != null && SorSzam.Text != null)
             {
@@ -494,7 +495,7 @@ namespace WindowsFormsApp_autósiskola
                 mentettFajlNeve.Text = (kivalasztott).Replace(' ', '_');
             }
             Application.DoEvents();
-            valasztFolyamatban.Visible = false;
+            label8.Visible = false;
         }
 
 

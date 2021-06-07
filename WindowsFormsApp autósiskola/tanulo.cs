@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace WindowsFormsApp_autósiskola
 {
@@ -17,6 +18,7 @@ namespace WindowsFormsApp_autósiskola
         public string ErtesitesCim;
         public string TAzonosito;
         public string TKezdete;
+        public string TVege;
         public string TanuloAzonositoja;
         public string TanuloIktatoszama;
         public string VezetesiKarton;
@@ -36,7 +38,15 @@ namespace WindowsFormsApp_autósiskola
         public tanulo(string Adatsor)
         {
             int index = Properties.Settings.Default.comboIndex;
-            string[] sablonok = Properties.Settings.Default.tablaSync.Split('Ł');
+            List<string> sablonok = new List<string>();
+            StreamReader oszlopokOlvas = new StreamReader(Path.GetFullPath("oszlopElrendezes.csv"), Encoding.UTF8);
+            string fejlec = oszlopokOlvas.ReadLine();
+            while (!oszlopokOlvas.EndOfStream)
+            {
+                sablonok.Add(oszlopokOlvas.ReadLine());
+            }
+            oszlopokOlvas.Close();
+            //string[] sablonok = Properties.Settings.Default.tablaSync.Split('Ł');
             string[] szamString = sablonok[index].Split(';');
             int[] szamok = new int[szamString.Length];
             for (int i = 0; i < (szamString.Length - 1); i++)
@@ -141,10 +151,12 @@ namespace WindowsFormsApp_autósiskola
                     }
                     else
                     {
+                        ElsoElmeletVizsga = adatok[15].Substring(0, 10);
                         SikeresElmeletVizsga = adatok[16].Replace("M", "");
                     }
                 }
                 Kategoria = ", " + adatok[szamok[17]];
+                TVege = adatok[szamok[21]];
             }
             else if(sablonok[index].Contains("fout"))
             {
@@ -158,6 +170,7 @@ namespace WindowsFormsApp_autósiskola
                 }
                 allampolgarsag = adatok[szamok[18]];
                 Kategoria = ", B";
+                TVege = adatok[szamok[12]];
             }
         }
     }

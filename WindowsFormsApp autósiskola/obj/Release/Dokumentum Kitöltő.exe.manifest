@@ -50,7 +50,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>PSSgE3boJasGz6q2COyY4E3R9yYTM4/Icjhfc1rypsk=</dsig:DigestValue>
+        <dsig:DigestValue>Kh1pu7lHk+C26ihbjZ3aydzsGzYciQGIcOGTbQXZKuQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -62,7 +62,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>5DkpG8E+mqpF1vd0liU6DEVNeSflhlIHUdxPJY5RCtg=</dsig:DigestValue>
+        <dsig:DigestValue>2yPMe7vejAw17vtKpOA0qLI42DZViGZExJrFxly2XxU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -129,13 +129,13 @@
       <dsig:DigestValue>y4EwoBH2ambCcfsdix/Jw4IYJb3z/P1WoBK624S3fZA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Dokumentum Kitöltő.exe.config" size="4155">
+  <file name="Dokumentum Kitöltő.exe.config" size="4159">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>opeLdl46o6/cdy2kEiNFo+KOiA4nfxPEnj6vZ1pSnLM=</dsig:DigestValue>
+      <dsig:DigestValue>Gj8i0L9oTNmb9kifNT/5O8+GGAbqUTopxQxMw2TcrLU=</dsig:DigestValue>
     </hash>
   </file>
   <file name="favicon (3).ico" size="40654">
