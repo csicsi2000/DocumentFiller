@@ -144,15 +144,24 @@ namespace WindowsFormsApp_autósiskola
                 }
                 if (sablonok[index].Contains("abc"))
                 {
-                    SikertelenSzama = "\t";
-                    if (adatok[15].Contains("M"))
+                    try
                     {
-                        SikeresElmeletVizsga = adatok[15].Replace("M", "");
+                        SikertelenSzama = "\t";
+                        if (adatok[15].Contains("M"))
+                        {
+                            SikeresElmeletVizsga = adatok[15].Replace("M", "");
+                        }
+                        else
+                        {
+                            ElsoElmeletVizsga = adatok[15].Substring(0, 10);
+                            SikeresElmeletVizsga = adatok[16].Replace("M", "");
+                        }
                     }
-                    else
+                    catch
                     {
-                        ElsoElmeletVizsga = adatok[15].Substring(0, 10);
-                        SikeresElmeletVizsga = adatok[16].Replace("M", "");
+                        ElsoElmeletVizsga = "\t";
+                        SikeresElmeletVizsga = "\t";
+
                     }
                 }
                 Kategoria = ", " + adatok[szamok[17]];

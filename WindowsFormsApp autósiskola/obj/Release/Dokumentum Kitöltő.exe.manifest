@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="Dokumentum Kitöltő.exe" version="1.1.1.8" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="Dokumentum Kitöltő.exe" version="1.1.1.10" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="favicon (3).ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="Dokumentum Kitöltő" version="1.1.1.7" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="Dokumentum Kitöltő" version="1.1.1.10" language="neutral" processorArchitecture="msil" />
     <commandLine file="Dokumentum Kitöltő.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -43,26 +43,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Dokumentum Kitöltő.exe" size="209320">
-      <assemblyIdentity name="Dokumentum Kitöltő" version="1.1.1.7" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Dokumentum Kitöltő.exe" size="209832">
+      <assemblyIdentity name="Dokumentum Kitöltő" version="1.1.1.10" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Kh1pu7lHk+C26ihbjZ3aydzsGzYciQGIcOGTbQXZKuQ=</dsig:DigestValue>
+        <dsig:DigestValue>gY7xU1f/KWckv7UvsMK16U2GZAjk2o/XbKDRiC9aJxY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="bin\Dokumentum Kitöltő.resources.dll" size="45568">
-      <assemblyIdentity name="Dokumentum Kitöltő.resources" version="1.1.1.7" language="bin" processorArchitecture="msil" />
+      <assemblyIdentity name="Dokumentum Kitöltő.resources" version="1.1.1.10" language="bin" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>2yPMe7vejAw17vtKpOA0qLI42DZViGZExJrFxly2XxU=</dsig:DigestValue>
+        <dsig:DigestValue>f+ZX18IFnyrTmUBl0zRo82sG9wHtO+YtIQPovNb0wYE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

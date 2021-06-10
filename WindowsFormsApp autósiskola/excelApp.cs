@@ -27,7 +27,23 @@ namespace WindowsFormsApp_autósiskola
             {
                 instance = new Excel.Application();
             }
+            /*
+            bool excelSiker = false;
+            while (!excelSiker)
+            {
+                try
+                {
+                    instance.Visible = false;
+                    excelSiker = true;
+                }
+                catch
+                {
+
+                }
+            }
+            */
             instance.Visible = false;
+
             return instance;
         }
         public static int GetMinimalUsedRangeAddress(Excel.Worksheet sheet)
