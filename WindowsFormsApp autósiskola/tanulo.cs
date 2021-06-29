@@ -39,7 +39,7 @@ namespace WindowsFormsApp_autósiskola
         {
             int index = Properties.Settings.Default.comboIndex;
             List<string> sablonok = new List<string>();
-            StreamReader oszlopokOlvas = new StreamReader(Path.GetFullPath("oszlopElrendezes.csv"), Encoding.UTF8);
+            StreamReader oszlopokOlvas = new StreamReader(fileMethods.FileUtvonal+ "\\oszlopElrendezes.csv", Encoding.UTF8);
             string fejlec = oszlopokOlvas.ReadLine();
             while (!oszlopokOlvas.EndOfStream)
             {

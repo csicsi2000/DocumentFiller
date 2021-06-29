@@ -14,7 +14,7 @@ namespace WindowsFormsApp_autósiskola
 {
     public class fileMethods
     {
-        
+        public static string FileUtvonal = Directory.GetParent(System.Environment.CurrentDirectory).Parent.FullName;
         public static bool isExcelComptaible(string fajlnev)
         {
             bool isIt = false;

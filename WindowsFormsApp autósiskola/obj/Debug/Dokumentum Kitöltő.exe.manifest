@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Dokumentum Kitöltő.exe" size="215976">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Dokumentum Kitöltő.exe" size="216488">
       <assemblyIdentity name="Dokumentum Kitöltő" version="1.1.1.10" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>84p2ZIuuksz1+aHaTWUm27j2c6EFkOmiFep9r2bxoVA=</dsig:DigestValue>
+        <dsig:DigestValue>slplC6S9n1DsrH658Kv/IByVKknN0mWt1LTqzx4bqYs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -62,7 +62,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ao6/18yrENRnnuqXJIrq55s0ESsAD2iDwdh/Keflkiw=</dsig:DigestValue>
+        <dsig:DigestValue>y8sQowlvm3caQp/4KnE2LnoQ94ceqwmUyFzLMTSXcnw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

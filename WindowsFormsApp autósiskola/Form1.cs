@@ -262,7 +262,7 @@ namespace WindowsFormsApp_autósiskola
 
             if (DocTipus.SelectedIndex == 0)
             {
-                string kepzesiIgazolas = Path.GetFullPath("kepzesi igazolas sablon a programhoz.docx");
+                string kepzesiIgazolas = fileMethods.FileUtvonal +"\\kepzesi igazolas sablon a programhoz.docx";
                 string sorszam = SorSzam.Text;
                 string format = fileFormat.Text;
                 WordFile csinál = new WordFile();
@@ -270,7 +270,7 @@ namespace WindowsFormsApp_autósiskola
             }
             else if(DocTipus.SelectedIndex == 1)
             {
-                string JelentkezesiLap = Path.GetFullPath("jelentkezesiLapSablon.docx");
+                string JelentkezesiLap = fileMethods.FileUtvonal +  "\\jelentkezesiLapSablon.docx";
                 string sorszam = SorSzam.Text;
                 string format = fileFormat.Text;
                 WordFile csinál = new WordFile();
@@ -326,8 +326,8 @@ namespace WindowsFormsApp_autósiskola
                 MessageBox.Show("Válaszd ki a mentés helyét!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            label8.Visible = true;
-            label8.BringToFront();
+            staticLoading.Visible = true;
+            staticLoading.BringToFront();
             string kivalasztott = "";
             if (Properties.Settings.Default.ExcelFajlHelye != null && SorSzam.Text != null)
             {
@@ -495,7 +495,7 @@ namespace WindowsFormsApp_autósiskola
                 mentettFajlNeve.Text = (kivalasztott).Replace(' ', '_');
             }
             Application.DoEvents();
-            label8.Visible = false;
+            staticLoading.Visible = false;
         }
 
 
@@ -740,7 +740,7 @@ namespace WindowsFormsApp_autósiskola
         {
             try
             {
-                string path = Path.GetFullPath("SablonFajl.xlsx");
+                string path = fileMethods.FileUtvonal +"\\SablonFajl.xlsx";
                 Excel.Application excel = new Excel.Application();
                 Excel.Workbook wb = excel.Workbooks.Open(path);
                 excel.Visible = true;
@@ -837,25 +837,7 @@ namespace WindowsFormsApp_autósiskola
             Cursor = Cursors.Default;
             SorSzam.AutoCompleteMode = AutoCompleteMode.None;
         }
-
-        public Excel.Application StartExcel()
-        {
-            Excel.Application instance = null;
-            try
-            {
-                instance = (Excel.Application)System.Runtime.InteropServices.Marshal.GetActiveObject("Excel.Application");
-                if (instance.Visible == true)
-                {
-                    instance = new Excel.Application();
-                }
-            }
-            catch (System.Runtime.InteropServices.COMException)
-            {
-                instance = new Excel.Application();
-            }
-            instance.Visible = false;
-            return instance;
-        }
+        
 
         private void ujTanulo_Click(object sender, EventArgs e)
         {
@@ -903,6 +885,21 @@ namespace WindowsFormsApp_autósiskola
         private void fileFormat_SelectedIndexChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.fileFormat = fileFormat.SelectedIndex;
+        }
+
+        private void excelHelye_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (excelHelye.Text != "")
+            {
+                try
+                {
+                    System.Diagnostics.Process.Start(excelHelye.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("Nem lehet megnyitni a fájlt!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
         }
     }
 }
