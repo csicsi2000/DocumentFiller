@@ -68,6 +68,7 @@ namespace WindowsFormsApp_autósiskola
             DragDrop += new DragEventHandler(Form1_DragDrop);
             VersionDisplay.Text = System.Windows.Forms.Application.ProductVersion;
 
+            //DateTime sometimes can fail on somemachines so this code disable all things that's using DateTime
             try
             {
                 string ido = DateTime.Now.ToString("MM/dd/yyyy");
@@ -279,11 +280,6 @@ namespace WindowsFormsApp_autósiskola
             panel3.Enabled = true;
             tableLayoutPanel3.Enabled = true;
             loading1.Visible = false;
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void mentesHelyeKereses_Click(object sender, EventArgs e)
@@ -866,9 +862,8 @@ namespace WindowsFormsApp_autósiskola
         {
             staticLoading.Show();
             staticLoading.BringToFront();
-            string text = SorSzam.Text;
             string hely = excelHelye.Text;
-            statisztika1.adatokListazas(text, hely);
+            statisztika1.adatokListazas(hely);
             staticLoading.Hide();
         }
 
@@ -898,6 +893,21 @@ namespace WindowsFormsApp_autósiskola
                 catch
                 {
                     MessageBox.Show("Nem lehet megnyitni a fájlt!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        private void mentesHelye_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (mentesHelye.Text != "")
+            {
+                try
+                {
+                    System.Diagnostics.Process.Start(mentesHelye.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("Nem lehet megnyitni a mappát!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }

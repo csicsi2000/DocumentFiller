@@ -26,7 +26,7 @@ namespace WindowsFormsApp_autósiskola
         {
             xlWorkbooks = books;
         }
-        public void adatokListazas(string sorszam, string excelHelye)
+        public void adatokListazas(string excelHelye)
         {
             if (excelHelye == "" || excelHelye == null)
             {
@@ -43,7 +43,7 @@ namespace WindowsFormsApp_autósiskola
             fileMethods.FajlOlvasas();
             List<string> adatTipusok = new List<string>();
 
-            if (Properties.Settings.Default.ExcelFajlHelye != null && sorszam != null)
+            if (Properties.Settings.Default.ExcelFajlHelye != null)
             {
                 if (Path.GetExtension(Properties.Settings.Default.ExcelFajlHelye) == ".csv")
                 {
@@ -52,8 +52,6 @@ namespace WindowsFormsApp_autósiskola
                         var fs = new FileStream(Properties.Settings.Default.ExcelFajlHelye, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
                         using (var Olvas = new StreamReader(fs, Encoding.Default))
                         {
-
-                            for (int i = 0; i <= (Convert.ToInt32(sorszam)); i++)
                             {
                                 string sor = Olvas.ReadLine();
                                 if (sor == null)
@@ -112,7 +110,7 @@ namespace WindowsFormsApp_autósiskola
                         for (int j = 1; j < Sorelemek.Length; j++)
                         {
                             adatTipusok.Add(Sorelemek[j]);
-                            string test = Sorelemek[j];
+                            //string test = Sorelemek[j];
                         }
                     }
                     fileMethods.DisposeExcelInstance(xlWorkbook, xlWorksheet);
@@ -259,40 +257,47 @@ namespace WindowsFormsApp_autósiskola
             staticLoading.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void statExport_Click(object sender, EventArgs e)
         {
-            staticLoading.BringToFront();
-            staticLoading.Show();
-            Excel.Application userApp = new Excel.Application();
-            var workbooks = userApp.Workbooks;
-            Excel.Workbook workbook = workbooks.Add(Type.Missing);
-            Excel._Worksheet worksheet = workbook.ActiveSheet;
-            Excel.Range xlRange = worksheet.UsedRange;
-
-            worksheet.Name = "statisztika";
-
-            worksheet.Range[worksheet.Cells[1, 1], worksheet.Cells[1, 3]].Merge();
-            worksheet.Cells[1, 1] = "Statisztika";
-            worksheet.Cells[1, 1].Font.bold = true ;
-            worksheet.Cells[1, 1].Font.Size = 15;
-            worksheet.Columns[1].ColumnWidth = 25;
-            worksheet.Columns[2].ColumnWidth = 10;
-            worksheet.Cells[1, 1].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
-            worksheet.Cells[2, 1] = "Adat";
-            worksheet.Cells[2, 2] = "Darabszám";
-            worksheet.Cells[2, 3] = "Százalék";
-            worksheet.Rows[2].Font.bold = true;
-
-
-            for (int i = 0; i < 3; i++)
+            if (statisztikak.Rows.Count != 0)
             {
-                for (int j = 0; j < statisztikak.Rows.Count; j++)
+                staticLoading.BringToFront();
+                staticLoading.Show();
+                Excel.Application userApp = new Excel.Application();
+                var workbooks = userApp.Workbooks;
+                Excel.Workbook workbook = workbooks.Add(Type.Missing);
+                Excel._Worksheet worksheet = workbook.ActiveSheet;
+                Excel.Range xlRange = worksheet.UsedRange;
+
+                worksheet.Name = "statisztika";
+
+                worksheet.Range[worksheet.Cells[1, 1], worksheet.Cells[1, 3]].Merge();
+                worksheet.Cells[1, 1] = "Statisztika";
+                worksheet.Cells[1, 1].Font.bold = true;
+                worksheet.Cells[1, 1].Font.Size = 15;
+                worksheet.Columns[1].ColumnWidth = 25;
+                worksheet.Columns[2].ColumnWidth = 10;
+                worksheet.Cells[1, 1].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+                worksheet.Cells[2, 1] = "Adat";
+                worksheet.Cells[2, 2] = "Darabszám";
+                worksheet.Cells[2, 3] = "Százalék";
+                worksheet.Rows[2].Font.bold = true;
+
+
+                for (int i = 0; i < 3; i++)
                 {
-                    worksheet.Cells[j+3, i+1] = statisztikak.Rows[j].Cells[i].Value;
+                    for (int j = 0; j < statisztikak.Rows.Count; j++)
+                    {
+                        worksheet.Cells[j + 3, i + 1] = statisztikak.Rows[j].Cells[i].Value;
+                    }
                 }
+                userApp.Visible = true;
+                staticLoading.Hide();
             }
-            userApp.Visible = true;
-            staticLoading.Hide();
+            else
+            {
+                MessageBox.Show("Listázzon ki statisztikát!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     } 
 }

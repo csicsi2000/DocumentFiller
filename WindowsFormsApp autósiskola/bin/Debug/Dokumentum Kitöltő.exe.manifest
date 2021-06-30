@@ -50,7 +50,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>slplC6S9n1DsrH658Kv/IByVKknN0mWt1LTqzx4bqYs=</dsig:DigestValue>
+        <dsig:DigestValue>qN5szeqfyXCo4P0lGdlvv1lSg7JYfb//Rx9TolR0Ugs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -62,19 +62,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>y8sQowlvm3caQp/4KnE2LnoQ94ceqwmUyFzLMTSXcnw=</dsig:DigestValue>
+        <dsig:DigestValue>V10JQs9g7DXrOMIdph73y4KH7MGieJl9tQS5mg2LndM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EPPlus.dll" size="2571776">
-      <assemblyIdentity name="EPPlus" version="5.6.2.0" publicKeyToken="EA159FDAA78159A1" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EPPlus.dll" size="2639360">
+      <assemblyIdentity name="EPPlus" version="5.7.0.0" publicKeyToken="EA159FDAA78159A1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>kri/HDfMvwU3o8oONhcrhu3zrh8NMOTQhxN5JUxuxt4=</dsig:DigestValue>
+        <dsig:DigestValue>M0YFzC3omBGszqtM/isCMw+VWZofiKXIphK5Qtg514M=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

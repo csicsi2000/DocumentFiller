@@ -74,12 +74,12 @@ namespace WindowsFormsApp_autósiskola
             }
             catch (Exception)
             {
-                // log as needed
+                
             }
             return rowMax; // caller should test return for String.Empty
         }
 
-
+        /*
         public static string Cells2Address(int row1, int col1, int row2, int col2)
         {
             return ColNum2Letter(col1) + row1.ToString() + ":" + ColNum2Letter(col2) + row2.ToString();
@@ -94,7 +94,7 @@ namespace WindowsFormsApp_autósiskola
             colNum--; //decrement to put value on zero based index
             return ColNum2Letter(colNum / 26) + ColNum2Letter((colNum % 26) + 1);
         }
-
+        */
 
         public static void MRCO(object obj)
         {

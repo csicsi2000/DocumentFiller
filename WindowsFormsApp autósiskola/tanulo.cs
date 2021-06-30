@@ -142,28 +142,26 @@ namespace WindowsFormsApp_autósiskola
                 {
                     SzuleteskoriNev = Nev;
                 }
-                if (sablonok[index].Contains("abc"))
+                try
                 {
-                    try
+                    SikertelenSzama = "\t";
+                    if (adatok[15].Contains("M"))
                     {
-                        SikertelenSzama = "\t";
-                        if (adatok[15].Contains("M"))
-                        {
-                            SikeresElmeletVizsga = adatok[15].Replace("M", "");
-                        }
-                        else
-                        {
-                            ElsoElmeletVizsga = adatok[15].Substring(0, 10);
-                            SikeresElmeletVizsga = adatok[16].Replace("M", "");
-                        }
+                        SikeresElmeletVizsga = adatok[15].Replace("M", "");
                     }
-                    catch
+                    else
                     {
-                        ElsoElmeletVizsga = "\t";
-                        SikeresElmeletVizsga = "\t";
-
+                        ElsoElmeletVizsga = adatok[15].Substring(0, 10);
+                        SikeresElmeletVizsga = adatok[16].Replace("M", "");
                     }
                 }
+                catch
+                {
+                    ElsoElmeletVizsga = "\t";
+                    SikeresElmeletVizsga = "\t";
+
+                }
+                
                 Kategoria = ", " + adatok[szamok[17]];
                 TVege = adatok[szamok[21]];
             }

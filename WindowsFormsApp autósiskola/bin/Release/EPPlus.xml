@@ -4857,6 +4857,17 @@
             Interface for a data validation list
             </summary>
         </member>
+        <member name="P:OfficeOpenXml.DataValidation.Contracts.IExcelDataValidationList.HideDropDown">
+            <summary>
+            True if an in-cell dropdown should be hidden.
+            </summary>
+            <remarks>
+            This property corresponds to the showDropDown attribute of a data validation in Office Open Xml. Strangely enough this
+            attributes hides the in-cell dropdown if it is true and shows the dropdown if it is not present or false. We have checked
+            this in both Ms Excel and Google sheets and it seems like this is how it is implemented in both applications. Hence why we have
+            renamed this property to HideDropDown since that better corresponds to the functionality.
+            </remarks>
+        </member>
         <member name="T:OfficeOpenXml.DataValidation.Contracts.IExcelDataValidationTime">
             <summary>
             Data validation interface for time validation.
@@ -5446,6 +5457,17 @@
             <param name="itemElementNode"></param>
             <param name="namespaceManager">Namespace manager, for test purposes</param>
         </member>
+        <member name="P:OfficeOpenXml.DataValidation.ExcelDataValidationExtList.HideDropDown">
+            <summary>
+            True if an in-cell dropdown should be hidden.
+            </summary>
+            <remarks>
+            This property corresponds to the showDropDown attribute of a data validation in Office Open Xml. Strangely enough this
+            attributes hides the in-cell dropdown if it is true and shows the dropdown if it is not present or false. We have checked
+            this in both Ms Excel and Google sheets and it seems like this is how it is implemented in both applications. Hence why we have
+            renamed this property to HideDropDown since that better corresponds to the functionality.
+            </remarks>
+        </member>
         <member name="T:OfficeOpenXml.DataValidation.ExcelDataValidationFactory">
             <summary>
             Factory class for ExcelDataValidation.
@@ -5532,6 +5554,17 @@
             <param name="validationType"></param>
             <param name="itemElementNode"></param>
             <param name="namespaceManager">Namespace manager, for test purposes</param>
+        </member>
+        <member name="P:OfficeOpenXml.DataValidation.ExcelDataValidationList.HideDropDown">
+            <summary>
+            True if an in-cell dropdown should be hidden.
+            </summary>
+            <remarks>
+            This property corresponds to the showDropDown attribute of a data validation in Office Open Xml. Strangely enough this
+            attributes hides the in-cell dropdown if it is true and shows the dropdown if it is not present or false. We have checked
+            this in both Ms Excel and Google sheets and it seems like this is how it is implemented in both applications. Hence why we have
+            renamed this property to HideDropDown since that better corresponds to the functionality.
+            </remarks>
         </member>
         <member name="T:OfficeOpenXml.DataValidation.ExcelDataValidationOperator">
             <summary>
@@ -9353,6 +9386,12 @@
             </summary>
             <returns>True if the chart is a bubble chart</returns>
         </member>
+        <member name="M:OfficeOpenXml.Drawing.Chart.ExcelChart.IsTypeArea">
+            <summary>
+            Returns true if the chart is a scatter chart
+            </summary>
+            <returns>True if the chart is a scatter chart</returns>
+        </member>
         <member name="M:OfficeOpenXml.Drawing.Chart.ExcelChart.IsTypeSurface">
             <summary>
             Returns true if the chart is a sureface chart
@@ -10197,7 +10236,7 @@
         </member>
         <member name="P:OfficeOpenXml.Drawing.Chart.ExcelChartErrorBars.Direction">
             <summary>
-            The directions for the error bars
+            The directions for the error bars. For scatter-, bubble- and area charts this property can't be changed. Please use the ErrorBars property for Y direction and ErrorBarsX for the X direction.
             </summary>
         </member>
         <member name="P:OfficeOpenXml.Drawing.Chart.ExcelChartErrorBars.BarType">
@@ -10592,6 +10631,42 @@
             Returns true if the serie has Error Bars
             </summary>
             <returns>True if the serie has Error Bars</returns>
+        </member>
+        <member name="T:OfficeOpenXml.Drawing.Chart.ExcelChartSerieWithHorizontalErrorBars">
+            <summary>
+            A base class used for chart series that support ErrorBars
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Drawing.Chart.ExcelChartSerieWithHorizontalErrorBars.#ctor(OfficeOpenXml.Drawing.Chart.ExcelChart,System.Xml.XmlNamespaceManager,System.Xml.XmlNode,System.Boolean)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="chart">Chart series</param>
+            <param name="ns">Namespacemanager</param>
+            <param name="node">Topnode</param>
+            <param name="isPivot">Is pivotchart</param>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.Chart.ExcelChartSerieWithHorizontalErrorBars.ErrorBarsX">
+            <summary>
+            Horizontal error bars
+            <seealso cref="P:OfficeOpenXml.Drawing.Chart.ExcelChartSerieWithHorizontalErrorBars.ErrorBarsX"/>
+            <seealso cref="M:OfficeOpenXml.Drawing.Chart.ExcelChartSerieWithHorizontalErrorBars.AddErrorBars(OfficeOpenXml.Drawing.eErrorBarType,OfficeOpenXml.Drawing.eErrorValueType)"/>
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Drawing.Chart.ExcelChartSerieWithHorizontalErrorBars.AddErrorBars(OfficeOpenXml.Drawing.eErrorBarType,OfficeOpenXml.Drawing.eErrorValueType)">
+            <summary>
+            Adds error bars to the chart serie for both vertical and horizontal directions.
+            </summary>
+            <param name="barType">The type of error bars</param>
+            <param name="valueType">The type of value the error bars will show</param>
+        </member>
+        <member name="M:OfficeOpenXml.Drawing.Chart.ExcelChartSerieWithHorizontalErrorBars.AddErrorBars(OfficeOpenXml.Drawing.eErrorBarType,OfficeOpenXml.Drawing.eErrorValueType,System.Nullable{OfficeOpenXml.Drawing.eErrorBarDirection})">
+            <summary>
+            Adds error bars to the chart serie for vertical or horizontal directions.
+            </summary>
+            <param name="barType">The type of error bars</param>
+            <param name="valueType">The type of value the error bars will show</param>
+            <param name="direction">Direction for the error bars. A value of null will add both horizontal and vertical error bars. </param>
         </member>
         <member name="T:OfficeOpenXml.Drawing.Chart.ExcelChartStandard">
             <summary>
@@ -24453,45 +24528,40 @@
             The worksheet is hidden and cannot be shown by the user via the user interface
             </summary>
         </member>
-        <member name="T:OfficeOpenXml.ExcelTableAddress">
+        <member name="T:OfficeOpenXml.ExcelAddress">
             <summary>
-            Extended address information for a table address
+            Range address with the address property readonly
             </summary>
         </member>
-        <member name="P:OfficeOpenXml.ExcelTableAddress.Name">
+        <member name="M:OfficeOpenXml.ExcelAddress.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
             <summary>
-            The name of the table
+            Constructor
             </summary>
+            <param name="fromRow">From row</param>
+            <param name="fromCol">From column</param>
+            <param name="toRow">To row</param>
+            <param name="toColumn">To column</param>
         </member>
-        <member name="P:OfficeOpenXml.ExcelTableAddress.ColumnSpan">
+        <member name="M:OfficeOpenXml.ExcelAddress.#ctor(System.String)">
             <summary>
-            Column span
+            Constructor
             </summary>
+            <param name="address">The Excel address</param>
         </member>
-        <member name="P:OfficeOpenXml.ExcelTableAddress.IsAll">
+        <member name="M:OfficeOpenXml.ExcelAddress.#ctor(System.String,OfficeOpenXml.ExcelPackage,OfficeOpenXml.ExcelAddressBase)">
             <summary>
-            Reference entire table
+            Creates an Address object
             </summary>
+            <remarks>Examples of addresses are "A1" "B1:C2" "A:A" "1:1" "A1:E2,G3:G5" </remarks>
+            <param name="Address">The Excel Address</param>
+            <param name="package">Reference to the package to find information about tables and names</param>
+            <param name="referenceAddress">The address</param>
         </member>
-        <member name="P:OfficeOpenXml.ExcelTableAddress.IsHeader">
+        <member name="P:OfficeOpenXml.ExcelAddress.Address">
             <summary>
-            Reference the table header row
+            The address for the range
             </summary>
-        </member>
-        <member name="P:OfficeOpenXml.ExcelTableAddress.IsData">
-            <summary>
-            Reference table data
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.ExcelTableAddress.IsTotals">
-            <summary>
-            Reference table totals row
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.ExcelTableAddress.IsThisRow">
-            <summary>
-            Reference the current table row
-            </summary>
+            <remarks>Examples of addresses are "A1" "B1:C2" "A:A" "1:1" "A1:E2,G3:G5" </remarks>
         </member>
         <member name="T:OfficeOpenXml.ExcelAddressBase">
             <summary>
@@ -24537,6 +24607,8 @@
             </summary>
             <remarks>Examples of addresses are "A1" "B1:C2" "A:A" "1:1" "A1:E2,G3:G5" </remarks>
             <param name="address">The Excel Address</param>
+            <param name="wb">The workbook to verify any defined names from</param>
+            <param name="wsName">The name of the worksheet the address referes to</param>
             <ws></ws>
         </member>
         <member name="M:OfficeOpenXml.ExcelAddressBase.#ctor(System.String,OfficeOpenXml.ExcelPackage,OfficeOpenXml.ExcelAddressBase)">
@@ -24639,76 +24711,14 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="T:OfficeOpenXml.ExcelAddress">
+        <member name="P:OfficeOpenXml.ExcelAddressBase.LocalAddress">
             <summary>
-            Range address with the address property readonly
+            The address without the workbook or worksheet reference
             </summary>
         </member>
-        <member name="M:OfficeOpenXml.ExcelAddress.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+        <member name="P:OfficeOpenXml.ExcelAddressBase.WorkbookLocalAddress">
             <summary>
-            Constructor
-            </summary>
-            <param name="fromRow">From row</param>
-            <param name="fromCol">From column</param>
-            <param name="toRow">To row</param>
-            <param name="toColumn">To column</param>
-        </member>
-        <member name="M:OfficeOpenXml.ExcelAddress.#ctor(System.String)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="address">The Excel address</param>
-        </member>
-        <member name="M:OfficeOpenXml.ExcelAddress.#ctor(System.String,OfficeOpenXml.ExcelPackage,OfficeOpenXml.ExcelAddressBase)">
-            <summary>
-            Creates an Address object
-            </summary>
-            <remarks>Examples of addresses are "A1" "B1:C2" "A:A" "1:1" "A1:E2,G3:G5" </remarks>
-            <param name="Address">The Excel Address</param>
-            <param name="package">Reference to the package to find information about tables and names</param>
-            <param name="referenceAddress">The address</param>
-        </member>
-        <member name="P:OfficeOpenXml.ExcelAddress.Address">
-            <summary>
-            The address for the range
-            </summary>
-            <remarks>Examples of addresses are "A1" "B1:C2" "A:A" "1:1" "A1:E2,G3:G5" </remarks>
-        </member>
-        <member name="T:OfficeOpenXml.ExcelFormulaAddress">
-            <summary>
-            Range address used in the formula parser
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.ExcelFormulaAddress.#ctor">
-            <summary>
-            Creates a Address object
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.ExcelFormulaAddress.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
-            <summary>
-            Creates an Address object
-            </summary>
-            <param name="fromRow">start row</param>
-            <param name="fromCol">start column</param>
-            <param name="toRow">End row</param>
-            <param name="toColumn">End column</param>
-        </member>
-        <member name="M:OfficeOpenXml.ExcelFormulaAddress.#ctor(System.String,OfficeOpenXml.ExcelWorksheet)">
-            <summary>
-            Creates an Address object
-            </summary>
-            <param name="address">The formula address</param>
-            <param name="worksheet">The worksheet</param>
-        </member>
-        <member name="P:OfficeOpenXml.ExcelFormulaAddress.Address">
-            <summary>
-            The address for the range
-            </summary>
-            <remarks>Examples of addresses are "A1" "B1:C2" "A:A" "1:1" "A1:E2,G3:G5" </remarks>
-        </member>
-        <member name="P:OfficeOpenXml.ExcelFormulaAddress.Addresses">
-            <summary>
-            Addresses can be separated by a comma. If the address contains multiple addresses this list contains them.
+            The address without the workbook reference
             </summary>
         </member>
         <member name="T:OfficeOpenXml.ExcelBackgroundImage">
@@ -24794,20 +24804,20 @@
             Base class containing cell address manipulating methods.
             </summary>
         </member>
-        <member name="M:OfficeOpenXml.ExcelCellBase.SplitCellID(System.UInt64,System.Int32@,System.Int32@,System.Int32@)">
+        <member name="M:OfficeOpenXml.ExcelCellBase.SplitCellId(System.UInt64,System.Int32@,System.Int32@,System.Int32@)">
             <summary>
             Get the sheet, row and column from the CellID
             </summary>
-            <param name="cellID"></param>
+            <param name="cellId"></param>
             <param name="sheet"></param>
             <param name="row"></param>
             <param name="col"></param>
         </member>
-        <member name="M:OfficeOpenXml.ExcelCellBase.GetCellID(System.Int32,System.Int32,System.Int32)">
+        <member name="M:OfficeOpenXml.ExcelCellBase.GetCellId(System.Int32,System.Int32,System.Int32)">
             <summary>
             Get the cellID for the cell. 
             </summary>
-            <param name="SheetID"></param>
+            <param name="sheetId"></param>
             <param name="row"></param>
             <param name="col"></param>
             <returns></returns>
@@ -24859,13 +24869,6 @@
             <param name="fixedToRow">Is the to row fixed?</param>
             <param name="fixedToColumn">Is the to column fixed?</param>
             <param name="ws">The worksheet for the formula</param>
-            <returns></returns>
-        </member>
-        <member name="M:OfficeOpenXml.ExcelCellBase.IsCellAddress(System.String)">
-            <summary>
-            Validates that the address has the format cccNNNN...
-            </summary>
-            <param name="cellAddress"></param>
             <returns></returns>
         </member>
         <member name="M:OfficeOpenXml.ExcelCellBase.GetRowColFromAddress(System.String,System.Int32@,System.Int32@)">
@@ -25404,6 +25407,43 @@
             If the author recommends that you open the workbook in read-only mode.
             </summary>
         </member>
+        <member name="T:OfficeOpenXml.ExcelFormulaAddress">
+            <summary>
+            Range address used in the formula parser
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.ExcelFormulaAddress.#ctor">
+            <summary>
+            Creates a Address object
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.ExcelFormulaAddress.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Creates an Address object
+            </summary>
+            <param name="fromRow">start row</param>
+            <param name="fromCol">start column</param>
+            <param name="toRow">End row</param>
+            <param name="toColumn">End column</param>
+        </member>
+        <member name="M:OfficeOpenXml.ExcelFormulaAddress.#ctor(System.String,OfficeOpenXml.ExcelWorksheet)">
+            <summary>
+            Creates an Address object
+            </summary>
+            <param name="address">The formula address</param>
+            <param name="worksheet">The worksheet</param>
+        </member>
+        <member name="P:OfficeOpenXml.ExcelFormulaAddress.Address">
+            <summary>
+            The address for the range
+            </summary>
+            <remarks>Examples of addresses are "A1" "B1:C2" "A:A" "1:1" "A1:E2,G3:G5" </remarks>
+        </member>
+        <member name="P:OfficeOpenXml.ExcelFormulaAddress.Addresses">
+            <summary>
+            Addresses can be separated by a comma. If the address contains multiple addresses this list contains them.
+            </summary>
+        </member>
         <member name="T:OfficeOpenXml.PictureAlignment">
             <summary>
             How a picture will be aligned in the header/footer
@@ -25792,7 +25832,7 @@
         </member>
         <member name="M:OfficeOpenXml.ExcelNamedRangeCollection.Add(System.String,OfficeOpenXml.ExcelRangeBase)">
             <summary>
-            Add a new named range
+            Adds a new named range
             </summary>
             <param name="Name">The name</param>
             <param name="Range">The range</param>
@@ -25800,7 +25840,7 @@
         </member>
         <member name="M:OfficeOpenXml.ExcelNamedRangeCollection.AddName(System.String,OfficeOpenXml.ExcelRangeBase)">
             <summary>
-            Add the name without validation as Excel allows some names on load that is not permitted in the GUI
+            Adds the name without validation as Excel allows some names on load that is not permitted in the GUI
             </summary>
             <param name="Name">The Name</param>
             <param name="Range">The Range</param>
@@ -25810,8 +25850,8 @@
             <summary>
             Add a defined name referencing value
             </summary>
-            <param name="Name"></param>
-            <param name="value"></param>
+            <param name="Name">The name</param>
+            <param name="value">The value for the name</param>
             <returns></returns>
         </member>
         <member name="M:OfficeOpenXml.ExcelNamedRangeCollection.AddFormla(System.String,System.String)">
@@ -25881,7 +25921,7 @@
         </member>
         <member name="T:OfficeOpenXml.ExcelPackage">
              <summary>
-             Represents an Excel 2007/2010 XLSX file package.  
+             Represents an Excel XLSX file package.  
              This is the top-level object to access all parts of the document.
              </summary>
              <remarks>
@@ -27252,8 +27292,27 @@
         </member>
         <member name="P:OfficeOpenXml.ExcelRangeBase.Hyperlink">
             <summary>
-            Set the hyperlink property for a range of cells
+            Set the Hyperlink property for a range of cells
             </summary>
+        </member>
+        <member name="M:OfficeOpenXml.ExcelRangeBase.SetHyperlink(System.Uri)">
+            <summary>
+            Sets the hyperlink property
+            </summary>
+            <param name="uri">The URI to set</param>
+        </member>
+        <member name="M:OfficeOpenXml.ExcelRangeBase.SetHyperlink(OfficeOpenXml.ExcelHyperLink)">
+            <summary>
+            Sets the Hyperlink property using the ExcelHyperLink class.
+            </summary>
+            <param name="uri">The <see cref="T:OfficeOpenXml.ExcelHyperLink"/> uri to set</param>
+        </member>
+        <member name="M:OfficeOpenXml.ExcelRangeBase.SetHyperlink(OfficeOpenXml.ExcelRange,System.String)">
+            <summary>
+            Sets the Hyperlink property to an url within the workbook.
+            </summary>
+            <param name="range">A reference within the same workbook</param>
+            <param name="display">The displayed text in the cell</param>f
         </member>
         <member name="P:OfficeOpenXml.ExcelRangeBase.Merge">
             <summary>
@@ -27490,6 +27549,62 @@
             <param name="descending">Descending if true, otherwise Ascending. Default Ascending. Zerobased</param>
             <param name="culture">The CultureInfo used to compare values. A null value means CurrentCulture</param>
             <param name="compareOptions">String compare option</param>
+        </member>
+        <member name="M:OfficeOpenXml.ExcelRangeBase.SortInternal(System.Int32[],System.Boolean[],System.Collections.Generic.Dictionary{System.Int32,System.String[]},System.Globalization.CultureInfo,System.Globalization.CompareOptions,OfficeOpenXml.Table.ExcelTable,System.Boolean)">
+            <summary>
+            Sort the range by value
+            </summary>
+            <param name="columns">The column(s) to sort by within the range. Zerobased</param>
+            <param name="descending">Descending if true, otherwise Ascending. Default Ascending. Zerobased</param>
+            <param name="customLists">A Dictionary containing custom lists indexed by column</param>
+            <param name="culture">The CultureInfo used to compare values. A null value means CurrentCulture</param>
+            <param name="compareOptions">String compare option</param>
+            <param name="table"><see cref="T:OfficeOpenXml.Table.ExcelTable"/> to be sorted</param>
+            <param name="leftToRight">Indicates if the range should be sorted left to right (by column) instead of top-down (by row)</param>
+        </member>
+        <member name="M:OfficeOpenXml.ExcelRangeBase.SortInternal(OfficeOpenXml.Sorting.SortOptionsBase)">
+            <summary>
+            Sort the range by value
+            </summary>
+            <param name="options">An instance of <see cref="T:OfficeOpenXml.Sorting.RangeSortOptions"/> where sort parameters can be set</param>
+        </member>
+        <member name="M:OfficeOpenXml.ExcelRangeBase.Sort(System.Action{OfficeOpenXml.Sorting.RangeSortOptions})">
+            <summary>
+            Sort the range by value. Supports top-down and left to right sort.
+            </summary>
+            <param name="configuration">An action of <see cref="T:OfficeOpenXml.Sorting.RangeSortOptions"/> where sort parameters can be set.</param>
+            <example> 
+            <code>
+            // 1. Sort rows (top-down)
+            
+            // The Column function takes the zero based column index in the range
+            worksheet.Cells["A1:D15"].Sort(x => x.SortBy.Column(0).ThenSortBy.Column(1, eSortOrder.Descending));
+            
+            // 2. Sort columns(left to right)
+            // The Row function takes the zero based row index in the range
+            worksheet.Cells["A1:D15"].Sort(x => x.SortLeftToRightBy.Row(0));
+            
+            // 3. Sort using a custom list
+            worksheet.Cells["A1:D15"].Sort(x => x.SortBy.Column(0).UsingCustomList("S", "M", "L", "XL"));
+            worksheet.Cells["A1:D15"].Sort(x => x.SortLeftToRightBy.Row(0).UsingCustomList("S", "M", "L", "XL"));
+            </code>
+            </example>
+        </member>
+        <member name="M:OfficeOpenXml.ExcelRangeBase.Sort(OfficeOpenXml.Sorting.RangeSortOptions)">
+            <summary>
+            Sort the range by value. Use RangeSortOptions.Create() to create an instance of the sort options, then
+            use the <see cref="P:OfficeOpenXml.Sorting.RangeSortOptions.SortBy"/> or <see cref="P:OfficeOpenXml.Sorting.RangeSortOptions.SortLeftToRightBy"/> properties to build up your sort parameters.
+            </summary>
+            <param name="options"><see cref="T:OfficeOpenXml.Sorting.RangeSortOptions">Options</see> for the sort</param>
+            <example> 
+            <code>
+            var options = RangeSortOptions.Create();
+            var builder = options.SortBy.Column(0);
+            builder.ThenSortBy.Column(2).UsingCustomList("S", "M", "L", "XL");
+            builder.ThenSortBy.Column(3);
+            worksheet.Cells["A1:D15"].Sort(options);
+            </code>
+            </example>
         </member>
         <member name="M:OfficeOpenXml.ExcelRangeBase.GetName">
             <summary>
@@ -28366,6 +28481,46 @@
             This will remove any unused styles from the collections.
             </summary>
         </member>
+        <member name="T:OfficeOpenXml.ExcelTableAddress">
+            <summary>
+            Extended address information for a table address
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExcelTableAddress.Name">
+            <summary>
+            The name of the table
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExcelTableAddress.ColumnSpan">
+            <summary>
+            Column span
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExcelTableAddress.IsAll">
+            <summary>
+            Reference entire table
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExcelTableAddress.IsHeader">
+            <summary>
+            Reference the table header row
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExcelTableAddress.IsData">
+            <summary>
+            Reference table data
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExcelTableAddress.IsTotals">
+            <summary>
+            Reference table totals row
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExcelTableAddress.IsThisRow">
+            <summary>
+            Reference the current table row
+            </summary>
+        </member>
         <member name="T:OfficeOpenXml.eDataTypes">
             <summary>
             Discribes a column when reading a text using the ExcelRangeBase.LoadFromText method
@@ -28604,6 +28759,12 @@
         <member name="P:OfficeOpenXml.ExcelWorkbook.Names">
             <summary>
             Provides access to named ranges
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExcelWorkbook.ExternalLinks">
+            <summary>
+            A collection of links to external workbooks and it's cached data.
+            This collection can also contain DDE and OLE links. DDE and OLE are readonly and can not be added.
             </summary>
         </member>
         <member name="P:OfficeOpenXml.ExcelWorkbook.FormulaParserManager">
@@ -28928,11 +29089,12 @@
             The index in the worksheets collection
             </summary>
         </member>
-        <member name="P:OfficeOpenXml.ExcelWorksheet.AutoFilterAddress">
+        <member name="F:OfficeOpenXml.ExcelWorksheet.SortStatePath">
             <summary>
             Address for autofilter
             <seealso cref="P:OfficeOpenXml.ExcelRangeBase.AutoFilter" />        
             </summary>
+            
         </member>
         <member name="P:OfficeOpenXml.ExcelWorksheet.AutoFilter">
             <summary>
@@ -29176,35 +29338,35 @@
         </member>
         <member name="M:OfficeOpenXml.ExcelWorksheet.InsertRow(System.Int32,System.Int32)">
             <summary>
-            Inserts a new row into the spreadsheet.  Existing rows below the position are 
-            shifted down.  All formula are updated to take account of the new row.
+            Inserts new rows into the spreadsheet.  Existing rows below the position are 
+            shifted down.  All formula are updated to take account of the new row(s).
             </summary>
-            <param name="rowFrom">The position of the new row</param>
+            <param name="rowFrom">The position of the new row(s)</param>
             <param name="rows">Number of rows to insert</param>
         </member>
         <member name="M:OfficeOpenXml.ExcelWorksheet.InsertRow(System.Int32,System.Int32,System.Int32)">
             <summary>
-            Inserts a new row into the spreadsheet.  Existing rows below the position are 
-            shifted down.  All formula are updated to take account of the new row.
+            Inserts new rows into the spreadsheet.  Existing rows below the position are 
+            shifted down.  All formula are updated to take account of the new row(s).
             </summary>
-            <param name="rowFrom">The position of the new row</param>
+            <param name="rowFrom">The position of the new row(s)</param>
             <param name="rows">Number of rows to insert.</param>
             <param name="copyStylesFromRow">Copy Styles from this row. Applied to all inserted rows</param>
         </member>
         <member name="M:OfficeOpenXml.ExcelWorksheet.InsertColumn(System.Int32,System.Int32)">
             <summary>
-            Inserts a new column into the spreadsheet.  Existing columns below the position are 
-            shifted down.  All formula are updated to take account of the new column.
+            Inserts new columns into the spreadsheet.  Existing columns below the position are 
+            shifted down.  All formula are updated to take account of the new column(s).
             </summary>
-            <param name="columnFrom">The position of the new column</param>
+            <param name="columnFrom">The position of the new column(s)</param>
             <param name="columns">Number of columns to insert</param>        
         </member>
         <member name="M:OfficeOpenXml.ExcelWorksheet.InsertColumn(System.Int32,System.Int32,System.Int32)">
             <summary>
-             Inserts a new column into the spreadsheet.  Existing column to the left are 
-             shifted.  All formula are updated to take account of the new column.
+             Inserts new columns into the spreadsheet.  Existing column to the left are 
+             shifted.  All formula are updated to take account of the new column(s).
              </summary>
-             <param name="columnFrom">The position of the new column</param>
+             <param name="columnFrom">The position of the new column(s)</param>
              <param name="columns">Number of columns to insert.</param>
              <param name="copyStylesFromColumn">Copy Styles from this column. Applied to all inserted columns</param>
         </member>
@@ -29216,14 +29378,14 @@
         </member>
         <member name="M:OfficeOpenXml.ExcelWorksheet.DeleteRow(System.Int32,System.Int32)">
             <summary>
-            Delete the specified row from the worksheet.
+            Delete the specified rows from the worksheet.
             </summary>
             <param name="rowFrom">The start row</param>
             <param name="rows">Number of rows to delete</param>
         </member>
         <member name="M:OfficeOpenXml.ExcelWorksheet.DeleteRow(System.Int32,System.Int32,System.Boolean)">
             <summary>
-            Deletes the specified row from the worksheet.
+            Deletes the specified rows from the worksheet.
             </summary>
             <param name="rowFrom">The number of the start row to be deleted</param>
             <param name="rows">Number of rows to delete</param>
@@ -29237,7 +29399,7 @@
         </member>
         <member name="M:OfficeOpenXml.ExcelWorksheet.DeleteColumn(System.Int32,System.Int32)">
             <summary>
-            Delete the specified column from the worksheet.
+            Delete the specified columns from the worksheet.
             </summary>
             <param name="columnFrom">The start column</param>
             <param name="columns">Number of columns to delete</param>
@@ -29382,14 +29544,6 @@
             <summary>
             An image displayed as the background of the worksheet.
             </summary>
-        </member>
-        <member name="M:OfficeOpenXml.ExcelWorksheet.GetStyleID(System.String)">
-            <summary>
-            Returns the style ID given a style name.  
-            The style ID will be created if not found, but only if the style name exists!
-            </summary>
-            <param name="StyleName"></param>
-            <returns></returns>
         </member>
         <member name="P:OfficeOpenXml.ExcelWorksheet.Workbook">
             <summary>
@@ -30078,6 +30232,513 @@
             Sets the primary key of the data table. 
             </summary>
             <param name="zeroBasedRangeIndexes">The index or indexes of one or more column in the range that builds up the primary key of the <see cref="T:System.Data.DataTable"/></param>
+        </member>
+        <member name="M:OfficeOpenXml.ExternalReferences.ExternalLinksHandler.BreakAllFormulaLinks(OfficeOpenXml.ExcelWorkbook)">
+            <summary>
+            Clears all formulas leaving the value only for formulas containing external links
+            </summary>
+            <param name="wb"></param>
+        </member>
+        <member name="T:OfficeOpenXml.ExternalReferences.eDdeValueType">
+            <summary>
+            The type of DDE value.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.ExternalReferences.eDdeValueType.Boolean">
+            <summary>
+            The value is a boolean.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.ExternalReferences.eDdeValueType.Error">
+            <summary>
+            The value is an error.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.ExternalReferences.eDdeValueType.Number">
+            <summary>
+            The value is a real number.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.ExternalReferences.eDdeValueType.Nil">
+            <summary>
+            The value is nil.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.ExternalReferences.eDdeValueType.String">
+            <summary>
+            The value is a string.
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.ExternalReferences.eExternalLinkType">
+            <summary>
+            The type of external link
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.ExternalReferences.eExternalLinkType.ExternalWorkbook">
+            <summary>
+            The external link is of type <see cref="T:OfficeOpenXml.ExternalReferences.ExcelExternalWorkbook" />
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.ExternalReferences.eExternalLinkType.DdeLink">
+            <summary>
+            The external link is of type <see cref="T:OfficeOpenXml.ExternalReferences.ExcelExternalDdeLink" />
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.ExternalReferences.eExternalLinkType.OleLink">
+            <summary>
+            The external link is of type <see cref="T:OfficeOpenXml.ExternalReferences.ExcelExternalOleLink" />
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.ExternalReferences.eExternalWorkbookCacheStatus">
+            <summary>
+            The status of an external workbooks cache.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.ExternalReferences.eExternalWorkbookCacheStatus.NotUpdated">
+            <summary>
+            Cache has not been updated. Saving an external reference with this status will update the cache on save.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.ExternalReferences.eExternalWorkbookCacheStatus.LoadedFromPackage">
+            <summary>
+            Cache has been loaded from the external reference cache within the package.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.ExternalReferences.eExternalWorkbookCacheStatus.Failed">
+            <summary>
+            Update of the cache failed. Any loaded data from the package is still available. 
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.ExternalReferences.eExternalWorkbookCacheStatus.Updated">
+            <summary>
+            The cache has been successfully updated
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.ExternalReferences.ExcelExternalCellCollection">
+            <summary>
+            A collection of <see cref="T:OfficeOpenXml.ExternalReferences.ExcelExternalCellValue" />
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.ExternalReferences.ExcelExternalCellValue">
+            <summary>
+            Represents a cell value of an external worksheets cell.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalCellValue.Address">
+            <summary>
+            The address of the cell
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalCellValue.Row">
+            <summary>
+            The row of the cell
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalCellValue.Column">
+            <summary>
+            The column of the cell
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalCellValue.Value">
+            <summary>
+            The value of the cell
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalCellValue.MetaDataReference">
+            <summary>
+            A reference index to meta data for the cell
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.ExternalReferences.ExcelExternalDdeItem">
+            <summary>
+            Represents a DDE link. This class is read-only.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalDdeItem.Name">
+            <summary>
+            The name of the DDE link item
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalDdeItem.Advise">
+            <summary>
+            If the linked object should notify the application when the external data changes.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalDdeItem.PreferPicture">
+            <summary>
+            If the linked object is represented by an image.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalDdeItem.Ole">
+            <summary>
+            If this is item uses an ole technology.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalDdeItem.Values">
+            <summary>
+            A collection of DDE values
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.ExternalReferences.ExcelExternalDdeItemCollection">
+            <summary>
+            A collection of <see cref="T:OfficeOpenXml.ExternalReferences.ExcelExternalDdeItem" />
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.ExternalReferences.ExcelExternalDdeLink">
+            <summary>
+            Represents an external DDE link.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalDdeLink.ExternalLinkType">
+            <summary>
+            The type of external link
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalDdeLink.DdeService">
+            <summary>
+            Service name for the DDE connection
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalDdeLink.DdeTopic">
+            <summary>
+            Topic for DDE server. 
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalDdeLink.DdeItems">
+            <summary>
+            A collection of <see cref="T:OfficeOpenXml.ExternalReferences.ExcelExternalDdeItem" />
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.ExternalReferences.ExcelExternalDdeValue">
+            <summary>
+            Represents a value for a DDE item.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalDdeValue.DdeValueType">
+            <summary>
+            The data type of the value
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalDdeValue.Value">
+            <summary>
+            The value of the item
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.ExternalReferences.ExcelExternalDdeValueCollection">
+            <summary>
+            A collection of <see cref="T:OfficeOpenXml.ExternalReferences.ExcelExternalDdeValue" />
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.ExternalReferences.ExcelExternalDefinedName">
+            <summary>
+            Represents a defined name in an external workbook
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalDefinedName.Name">
+            <summary>
+            The name
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalDefinedName.RefersTo">
+            <summary>
+            The address that the defined name referes to
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalDefinedName.SheetId">
+            <summary>
+            The sheet id
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.ExternalReferences.ExcelExternalDefinedName.ToString">
+            <summary>
+            The string representation of the name
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:OfficeOpenXml.ExternalReferences.ExcelExternalLink">
+            <summary>
+            Base class for external references
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalLink.ExternalLinkType">
+            <summary>
+            The type of external link
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalLink.As">
+            <summary>
+            Provides an easy way to type cast the object to it's top level class
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.ExternalReferences.ExcelExternalLink.ToString">
+            <summary>
+            Returns the string representation of the object.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalLink.Index">
+            <summary>
+            The index of the external link. The index can be used in formulas between brackets to reference this link.
+            </summary>
+            <example>
+            <code>worksheet.Cells["A1"].Formula="'[1]Sheet1'!A1"</code>
+            </example>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalLink.ErrorLog">
+            <summary>
+            A list of errors that occured during load or update of the external workbook.
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.ExternalReferences.ExcelExternalLinkAsType">
+            <summary>
+            Provides a simple way to type cast <see cref="T:OfficeOpenXml.ExternalReferences.ExcelExternalLink"/> object top its top level class.
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.ExternalReferences.ExcelExternalLinkAsType.Type``1">
+            <summary>
+            Converts the external link to it's top level .
+            </summary>
+            <typeparam name="T">The type of external link. T must be inherited from ExcelExternalLink</typeparam>
+            <returns>The external link as type T</returns>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalLinkAsType.ExternalWorkbook">
+            <summary>
+            Return the external link as an external workbook. If the external link is not of type <see cref="!:ExcelExternalBook" />, null is returned
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalLinkAsType.DdeLink">
+            <summary>
+            Return the external link as a dde link. If the external link is not of type <see cref="T:OfficeOpenXml.ExternalReferences.ExcelExternalDdeLink"/>, null is returned
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalLinkAsType.OleLink">
+            <summary>
+            Return the external link as a ole link. If the external link is not of type <see cref="T:OfficeOpenXml.ExternalReferences.ExcelExternalOleLink"/>, null is returned
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.ExternalReferences.ExcelExternalLinksCollection.AddExternalWorkbook(System.IO.FileInfo)">
+            <summary>
+            Adds an external reference to another workbook. 
+            </summary>
+            <param name="file">The location of the external workbook. The external workbook must of type .xlsx, .xlsm or xlst</param>
+            <returns>The <see cref="T:OfficeOpenXml.ExternalReferences.ExcelExternalWorkbook"/> object</returns>
+        </member>
+        <member name="M:OfficeOpenXml.ExternalReferences.ExcelExternalLinksCollection.RemoveAt(System.Int32)">
+            <summary>
+            Removes the external link at the zero-based index. If the external reference is an workbook any formula links are broken.
+            </summary>
+            <param name="index">The zero-based index</param>
+        </member>
+        <member name="M:OfficeOpenXml.ExternalReferences.ExcelExternalLinksCollection.Remove(OfficeOpenXml.ExternalReferences.ExcelExternalLink)">
+            <summary>
+            Removes the external link from the package.If the external reference is an workbook any formula links are broken.
+            </summary>
+            <param name="externalLink"></param>
+        </member>
+        <member name="M:OfficeOpenXml.ExternalReferences.ExcelExternalLinksCollection.Clear">
+            <summary>
+            Clear all external links and break any formula links.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalLinksCollection.Directories">
+            <summary>
+            A list of directories to look for the external files that can not be found on the path of the uri.
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.ExternalReferences.ExcelExternalLinksCollection.LoadWorkbooks">
+            <summary>
+            Will load all external workbooks that can be accessed via the file system.
+            External workbook referenced via other protocols must be loaded manually.
+            </summary>
+            <returns>Returns false if any workbook fails to loaded otherwise true. </returns>
+        </member>
+        <member name="M:OfficeOpenXml.ExternalReferences.ExcelExternalLinksCollection.UpdateCaches">
+            <summary>
+            Updates the value cache for any external workbook in the collection. The link must be an workbook and of type xlsx, xlsm or xlst.
+            </summary>
+            <returns>True if all updates succeeded, otherwise false. Any errors can be found on the External links. <seealso cref="P:OfficeOpenXml.ExternalReferences.ExcelExternalLink.ErrorLog"/></returns>
+        </member>
+        <member name="T:OfficeOpenXml.ExternalReferences.ExcelExternalNamedItemCollection`1">
+            <summary>
+            A collection of cached defined names in an external workbook
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalNamedItemCollection`1.Item(System.String)">
+            <summary>
+            Indexer for the collection
+            </summary>
+            <param name="name">The name if the defined name</param>
+            <returns></returns>
+        </member>
+        <member name="M:OfficeOpenXml.ExternalReferences.ExcelExternalNamedItemCollection`1.ContainsKey(System.String)">
+            <summary>
+            If the name exists in the collection
+            </summary>
+            <param name="name">The name. Case insensitive</param>
+            <returns>true if the name exists in the collection, otherwise false</returns>
+        </member>
+        <member name="T:OfficeOpenXml.ExternalReferences.ExcelExternalOleItem">
+            <summary>
+            An OLE item in an external OLE link. Readonly.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalOleItem.Advise">
+            <summary>
+            If the linked object should notify the application when the external data changes.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalOleItem.PreferPicture">
+            <summary>
+            If the linked object is represented by an image.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalOleItem.Icon">
+            <summary>
+            If the linked object is represented by an icon
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalOleItem.Name">
+            <summary>
+            The name of the OLE link item
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.ExternalReferences.ExcelExternalOleItemsCollection">
+            <summary>
+            A collection of <see cref="T:OfficeOpenXml.ExternalReferences.ExcelExternalOleItem" />
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.ExternalReferences.ExcelExternalOleLink">
+            <summary>
+            Represents an external DDE link.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalOleLink.ExternalLinkType">
+            <summary>
+            The type of external link.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalOleLink.OleItems">
+            <summary>
+            A collection of OLE items
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalOleLink.ProgId">
+            <summary>
+            The id for the connection. This is the ProgID of the OLE object
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalWorkbook.ExternalLinkUri">
+            <summary>
+            The Uri to the external workbook. This property will be set by the <see cref="P:OfficeOpenXml.ExternalReferences.ExcelExternalWorkbook.File"/> property on save, if it has been set.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalWorkbook.File">
+            <summary>
+            If the external reference is a file in the filesystem
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalWorkbook.Package">
+            <summary>
+            A reference to the external package, it it has been loaded.
+            <seealso cref="M:OfficeOpenXml.ExternalReferences.ExcelExternalWorkbook.Load"/>
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.ExternalReferences.ExcelExternalWorkbook.Load">
+            <summary>
+            Tries to Loads the external package using the External Uri into the <see cref="P:OfficeOpenXml.ExternalReferences.ExcelExternalWorkbook.Package"/> property
+            </summary>
+            <returns>True if the load succeeded, otherwise false. If false, see <see cref="P:OfficeOpenXml.ExternalReferences.ExcelExternalLink.ErrorLog"/></returns>
+        </member>
+        <member name="M:OfficeOpenXml.ExternalReferences.ExcelExternalWorkbook.Load(System.IO.FileInfo)">
+            <summary>
+            Tries to Loads the external package using the External Uri into the <see cref="P:OfficeOpenXml.ExternalReferences.ExcelExternalWorkbook.Package"/> property
+            </summary>
+            <returns>True if the load succeeded, otherwise false. If false, see <see cref="P:OfficeOpenXml.ExternalReferences.ExcelExternalLink.ErrorLog"/></returns>
+        </member>
+        <member name="M:OfficeOpenXml.ExternalReferences.ExcelExternalWorkbook.Load(OfficeOpenXml.ExcelPackage)">
+            <summary>
+            Tries to Loads the external package using the External Uri into the <see cref="P:OfficeOpenXml.ExternalReferences.ExcelExternalWorkbook.Package"/> property
+            </summary>
+            <returns>True if the load succeeded, otherwise false. If false, see <see cref="P:OfficeOpenXml.ExternalReferences.ExcelExternalLink.ErrorLog"/> and <see cref="P:OfficeOpenXml.ExternalReferences.ExcelExternalWorkbook.CacheStatus"/> of each <see cref="T:OfficeOpenXml.ExternalReferences.ExcelExternalWorkbook"/></returns>
+        </member>
+        <member name="M:OfficeOpenXml.ExternalReferences.ExcelExternalWorkbook.UpdateCache">
+            <summary>
+            Updates the external reference cache for the external workbook. To be used a <see cref="P:OfficeOpenXml.ExternalReferences.ExcelExternalWorkbook.Package"/> must be loaded via the <see cref="M:OfficeOpenXml.ExternalReferences.ExcelExternalWorkbook.Load"/> method.
+            <seealso cref="P:OfficeOpenXml.ExternalReferences.ExcelExternalWorkbook.CacheStatus"/>
+            <seealso cref="P:OfficeOpenXml.ExternalReferences.ExcelExternalLink.ErrorLog"/>
+            </summary>
+            <returns>True if the update was successful otherwise false</returns>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalWorkbook.CacheStatus">
+            <summary>
+            The status of the cache. If the <see cref="M:OfficeOpenXml.ExternalReferences.ExcelExternalWorkbook.UpdateCache" />method fails this status is set to <see cref="F:OfficeOpenXml.ExternalReferences.eExternalWorkbookCacheStatus.Failed" />
+            If cache status is set to NotUpdated, the cache will be updated when the package is saved.
+            <seealso cref="M:OfficeOpenXml.ExternalReferences.ExcelExternalWorkbook.UpdateCache"/>
+            <seealso cref="P:OfficeOpenXml.ExternalReferences.ExcelExternalLink.ErrorLog"/>
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalWorkbook.CachedNames">
+            <summary>
+            A collection of cached defined names in the external workbook
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalWorkbook.CachedWorksheets">
+            <summary>
+            A collection of cached worksheets in the external workbook
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.ExternalReferences.ExcelExternalWorksheet">
+            <summary>
+            A representation of an external cached worksheet.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalWorksheet.SheetId">
+            <summary>
+            The sheet id
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalWorksheet.Name">
+            <summary>
+            The name of the worksheet.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalWorksheet.RefreshError">
+            <summary>
+            If errors have occured on the last update of the cached values.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalWorksheet.CachedNames">
+            <summary>
+            A collection of cached names for an external worksheet
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalWorksheet.CellValues">
+            <summary>
+            Cached cell values for the worksheet. Only cells referenced in the workbook are stored in the cache.
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.ExternalReferences.ExcelExternalWorksheetCollection">
+            <summary>
+            A collection of external worksheets
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.ExcelExternalWorksheetCollection.Item(System.String)">
+            <summary>
+            The indexer to reference the external worksheet objects 
+            </summary>
+            <param name="name">The name of the worksheet</param>
+            <returns></returns>
+        </member>
+        <member name="T:OfficeOpenXml.ExternalReferences.IExcelExternalNamedItem">
+            <summary>
+            An interface for an external object that contains a name
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExternalReferences.IExcelExternalNamedItem.Name">
+            <summary>
+            The name
+            </summary>
         </member>
         <member name="T:OfficeOpenXml.Filter.eCalendarType">
             <summary>
@@ -31086,6 +31747,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:OfficeOpenXml.FormulaParsing.ExcelDataProvider.IsExternalName(System.String)">
+            <summary>
+            Returns the names of all worksheet names
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:OfficeOpenXml.FormulaParsing.ExcelDataProvider.GetWorksheetIndex(System.String)">
             <summary>
             Returns the number of a worksheet in the workbook
@@ -31125,6 +31792,15 @@
             <param name="row"></param>
             <param name="col"></param>
             <returns></returns>
+        </member>
+        <member name="M:OfficeOpenXml.FormulaParsing.ExcelDataProvider.GetCellId(System.String,System.Int32,System.Int32)">
+            <summary>
+            Creates a cell id, representing the full address of a cell.
+            </summary>
+            <param name="sheetName">Name of the worksheet</param>
+            <param name="row">Row ix</param>
+            <param name="col">Column Index</param>
+            <returns>An <see cref="T:System.UInt64"/> representing the addrss</returns>
         </member>
         <member name="M:OfficeOpenXml.FormulaParsing.ExcelDataProvider.GetDimensionEnd(System.String)">
             <summary>
@@ -31171,6 +31847,22 @@
             <param name="col"></param>
             <param name="row"></param>
             <param name="behaviour"></param>
+        </member>
+        <member name="M:OfficeOpenXml.FormulaParsing.ExcelUtilities.ExpressionEvaluator.Evaluate(System.Object,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Returns true if any of the supplied expressions evaluates to true
+            </summary>
+            <param name="left">The object to evaluate</param>
+            <param name="expressions">The expressions to evaluate the object against</param>
+            <returns>True if any of the supplied expressions evaluates to true</returns>
+        </member>
+        <member name="M:OfficeOpenXml.FormulaParsing.ExcelUtilities.ExpressionEvaluator.Evaluate(System.Object,System.String)">
+            <summary>
+            Returns true if the supplied expression evaluates to true
+            </summary>
+            <param name="left">The object to evaluate</param>
+            <param name="expression">The expressions to evaluate the object against</param>
+            <returns></returns>
         </member>
         <member name="M:OfficeOpenXml.FormulaParsing.ExcelUtilities.RangeAddress.CollidesWith(OfficeOpenXml.FormulaParsing.ExcelUtilities.RangeAddress)">
             <summary>
@@ -49818,6 +50510,239 @@
             Number of items in the collection
             </summary>
         </member>
+        <member name="M:OfficeOpenXml.Sorting.Internal.RangeWorksheetData.#ctor(OfficeOpenXml.ExcelRangeBase)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Sorting.RangeLeftToRightSortLayer.Row(System.Int32)">
+            <summary>
+            Sorts by the column that corresponds to the <paramref name="row"/> (zerobased) with ascending sort direction
+            </summary>
+            <param name="row">The row to sort on</param>
+            <returns>A <see cref="T:OfficeOpenXml.Sorting.RangeLeftToRightSortLayerBuilder"/> for adding more sort criterias</returns>
+        </member>
+        <member name="M:OfficeOpenXml.Sorting.RangeLeftToRightSortLayer.Row(System.Int32,OfficeOpenXml.eSortOrder)">
+            <summary>
+            Sorts by the column that corresponds to the <paramref name="row"/> (zerobased) using the supplied sort direction.
+            </summary>
+            <param name="row">The column to sort on</param>
+            <param name="sortOrder">Ascending or Descending sort</param>
+            <returns>A <see cref="T:OfficeOpenXml.Sorting.RangeLeftToRightSortLayerBuilder"/> for adding more sort criterias</returns>
+        </member>
+        <member name="T:OfficeOpenXml.Sorting.RangeLeftToRightSortLayerBuilder">
+            <summary>
+            This class is used to build multiple search parameters for columnbased sorting.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Sorting.RangeLeftToRightSortLayerBuilder.ThenSortBy">
+            <summary>
+            Adds a new <see cref="T:OfficeOpenXml.Sorting.RangeLeftToRightSortLayer">sort layer</see>
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Sorting.RangeLeftToRightSortLayerBuilder.UsingCustomList(System.String[])">
+            <summary>
+            Use a custom list for sorting on the current Sort layer.
+            </summary>
+            <param name="values">An array of strings defining the sort order</param>
+            <returns>A <see cref="T:OfficeOpenXml.Sorting.RangeLeftToRightSortLayerBuilder"/></returns>
+        </member>
+        <member name="T:OfficeOpenXml.Sorting.RangeSortLayer">
+            <summary>
+            This class represents a condition in a sort.
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Sorting.RangeSortLayer.Column(System.Int32)">
+            <summary>
+            Sorts by the column that corresponds to the <paramref name="column"/> (zerobased) with ascending sort direction
+            </summary>
+            <param name="column">The column to sort</param>
+            <returns>A <see cref="T:OfficeOpenXml.Sorting.RangeSortLayerBuilder"/> for adding more sort criterias</returns>
+        </member>
+        <member name="M:OfficeOpenXml.Sorting.RangeSortLayer.Column(System.Int32,OfficeOpenXml.eSortOrder)">
+            <summary>
+            Sorts by the column that corresponds to the <paramref name="column"/> (zerobased) using the supplied sort direction.
+            </summary>
+            <param name="column">The column to sort</param>
+            <param name="sortOrder">Ascending or Descending sort</param>
+            <returns>A <see cref="T:OfficeOpenXml.Sorting.RangeSortLayerBuilder"/> for adding more sort criterias</returns>
+        </member>
+        <member name="T:OfficeOpenXml.Sorting.RangeSortLayerBuilder">
+            <summary>
+            This class is used to build multiple search parameters for rowbased sorting.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Sorting.RangeSortLayerBuilder.ThenSortBy">
+            <summary>
+            Adds a new Sort layer to the sort options (i.e. the sort).
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Sorting.RangeSortLayerBuilder.UsingCustomList(System.String[])">
+            <summary>
+            Use a custom list for sorting on the current Sort layer.
+            </summary>
+            <param name="values">An array of strings defining the sort order</param>
+            <returns>A <see cref="T:OfficeOpenXml.Sorting.RangeSortLayerBuilder"/></returns>
+        </member>
+        <member name="T:OfficeOpenXml.Sorting.RangeSortOptions">
+            <summary>
+            Sort options for sorting a range.
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Sorting.RangeSortOptions.Create">
+            <summary>
+            Creates a new instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:OfficeOpenXml.Sorting.RangeSortOptions.SortBy">
+            <summary>
+            Creates the first sort layer (i.e. the first sort condition) for a row based/top to bottom sort.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Sorting.RangeSortOptions.SortLeftToRightBy">
+            <summary>
+            Creates the first sort layer (i.e. the first sort condition) for a column based/left to right sort.
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.Sorting.SortCondition">
+            <summary>
+            Represents a sort condition within a sort
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Sorting.SortCondition.Descending">
+            <summary>
+            Sort direction of this condition. If false - ascending, if true - descending.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Sorting.SortCondition.Ref">
+            <summary>
+            Address of the range used by this condition.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Sorting.SortCondition.CustomList">
+            <summary>
+            A custom list of strings that defines the sort order for this condition.
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.Sorting.SortConditionCollection">
+            <summary>
+            A collection of <see cref="T:OfficeOpenXml.Sorting.SortCondition"/>s.
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Sorting.SortConditionCollection.Add(System.String,System.Nullable{System.Boolean})">
+            <summary>
+            Adds a new condition to the collection.
+            </summary>
+            <param name="ref">Address of the range used by this condition.</param>
+            <param name="decending">If true - descending sort order, if false or null - ascending sort order.</param>
+        </member>
+        <member name="M:OfficeOpenXml.Sorting.SortConditionCollection.Add(System.String,System.Nullable{System.Boolean},System.String[])">
+            <summary>
+            Adds a new condition to the collection.
+            </summary>
+            <param name="ref">Address of the range used by this condition.</param>
+            <param name="decending">If true - descending sort order, if false or null - ascending sort order.</param>
+            <param name="customList">A custom list of strings that defines the sort order for this condition.</param>
+        </member>
+        <member name="T:OfficeOpenXml.Sorting.SortLayerBase">
+            <summary>
+            Base class for sort layers
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.Sorting.SortOptionsBase">
+            <summary>
+            Base class for Sort options.
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Sorting.SortOptionsBase.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.Sorting.SortState">
+            <summary>
+            Preserves the AutoFilter sort state.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Sorting.SortState.SortConditions">
+            <summary>
+            The preserved sort conditions of the sort state.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Sorting.SortState.CaseSensitive">
+            <summary>
+            Indicates whether or not the sort is case-sensitive
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Sorting.SortState.ColumnSort">
+            <summary>
+            Indicates whether or not to sort by columns.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Sorting.SortState.Ref">
+            <summary>
+            The whole range of data to sort (not only the sort-by column)
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Sorting.TableSortLayer.Column(System.Int32)">
+            <summary>
+            Sorts by the column that corresponds to the <paramref name="column"/> (zerobased) with ascending sort direction
+            </summary>
+            <param name="column">The column to sort</param>
+            <returns>A <see cref="T:OfficeOpenXml.Sorting.TableSortLayerBuilder"/> for adding more sort criterias</returns>
+        </member>
+        <member name="M:OfficeOpenXml.Sorting.TableSortLayer.Column(System.Int32,OfficeOpenXml.eSortOrder)">
+            <summary>
+            Sorts by the column that corresponds to the <paramref name="column"/> (zerobased) using the supplied sort direction.
+            </summary>
+            <param name="column">The column to sort</param>
+            <param name="sortOrder">Ascending or Descending sort</param>
+            <returns>A <see cref="T:OfficeOpenXml.Sorting.TableSortLayerBuilder"/> for adding more sort criterias</returns>
+        </member>
+        <member name="M:OfficeOpenXml.Sorting.TableSortLayer.ColumnNamed(System.String)">
+            <summary>
+            Sorts by the column that corresponds to the <paramref name="columnName"/> ith ascending sort direction
+            </summary>
+            <param name="columnName">The name of the column to sort, see <see cref="P:OfficeOpenXml.Table.ExcelTableColumn.Name"/>.</param>
+            <returns>A <see cref="T:OfficeOpenXml.Sorting.TableSortLayerBuilder"/> for adding more sort criterias</returns>
+        </member>
+        <member name="M:OfficeOpenXml.Sorting.TableSortLayer.ColumnNamed(System.String,OfficeOpenXml.eSortOrder)">
+            <summary>
+            Sorts by the column that corresponds to the <paramref name="columnName"/> using the supplied sort direction.
+            </summary>
+            <param name="columnName">Name of the column to sort, see <see cref="P:OfficeOpenXml.Table.ExcelTableColumn.Name"/></param>
+            <param name="sortOrder">Ascending or Descending sort</param>
+            <returns>A <see cref="T:OfficeOpenXml.Sorting.TableSortLayerBuilder"/> for adding more sort criterias</returns>
+        </member>
+        <member name="P:OfficeOpenXml.Sorting.TableSortLayerBuilder.ThenSortBy">
+            <summary>
+            Add a new Sort layer.
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Sorting.TableSortLayerBuilder.UsingCustomList(System.String[])">
+            <summary>
+            Use a custom list for sorting on the current Sort layer.
+            </summary>
+            <param name="values">An array of strings defining the sort order</param>
+            <returns>A <see cref="T:OfficeOpenXml.Sorting.TableSortLayerBuilder"/></returns>
+        </member>
+        <member name="T:OfficeOpenXml.Sorting.TableSortOptions">
+            <summary>
+            Sort options for sorting an <see cref="T:OfficeOpenXml.Table.ExcelTable"/>
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Sorting.TableSortOptions.#ctor(OfficeOpenXml.Table.ExcelTable)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="table">The table sort</param>
+        </member>
+        <member name="P:OfficeOpenXml.Sorting.TableSortOptions.SortBy">
+            <summary>
+            Defines the first <see cref="T:OfficeOpenXml.Sorting.TableSortLayer"/>.
+            </summary>
+        </member>
         <member name="T:OfficeOpenXml.Sparkline.eDispBlanksAs">
             <summary>
             Show empty cells as
@@ -54395,6 +55320,29 @@
             <param name="columns">Number of rows to delete.</param>
             <returns>The deleted range</returns>
         </member>
+        <member name="M:OfficeOpenXml.Table.ExcelTable.Sort(OfficeOpenXml.Sorting.TableSortOptions)">
+            <summary>
+            Sorts the data in the table according to the supplied <see cref="T:OfficeOpenXml.Sorting.RangeSortOptions"/>
+            </summary>
+            <param name="options"></param>
+            <example> 
+            <code>
+            var options = new SortOptions();
+            options.SortBy.Column(0).ThenSortBy.Column(1, eSortDirection.Descending);
+            </code>
+            </example>
+        </member>
+        <member name="M:OfficeOpenXml.Table.ExcelTable.Sort(System.Action{OfficeOpenXml.Sorting.TableSortOptions})">
+            <summary>
+            Sorts the data in the table according to the supplied action of <see cref="T:OfficeOpenXml.Sorting.RangeSortOptions"/>
+            </summary>
+            <example> 
+            <code>
+            table.Sort(x =&gt; x.SortBy.Column(0).ThenSortBy.Column(1, eSortDirection.Descending);
+            </code>
+            </example>
+            <param name="configuration">An action with parameters for sorting</param>
+        </member>
         <member name="T:OfficeOpenXml.Table.ExcelTableCollection">
             <summary>
             A collection of table objects
@@ -55584,6 +56532,7 @@
         <member name="F:OfficeOpenXml.Table.PivotTable.eShowDataAs.Index">
             <summary>
             The field is shown as the index.
+            ((Cell Value) x (Grand Total of Grand Totals)) / ((Grand Row Total) x (Grand Column Total))
             </summary>
         </member>
         <member name="F:OfficeOpenXml.Table.PivotTable.eShowDataAs.Normal">
@@ -55596,12 +56545,12 @@
             The field is show as the percentage of a value
             </summary>
         </member>
-        <member name="F:OfficeOpenXml.Table.PivotTable.eShowDataAs.PercentDiff">
+        <member name="F:OfficeOpenXml.Table.PivotTable.eShowDataAs.PercentDifference">
             <summary>
             The field is shown as the percentage difference from a value.
             </summary>
         </member>
-        <member name="F:OfficeOpenXml.Table.PivotTable.eShowDataAs.PercentOfCol">
+        <member name="F:OfficeOpenXml.Table.PivotTable.eShowDataAs.PercentOfColumn">
             <summary>
             The field is shown as the percentage of the column.
             </summary>
@@ -55616,9 +56565,41 @@
             The field is shown as the percentage of the total
             </summary>
         </member>
-        <member name="F:OfficeOpenXml.Table.PivotTable.eShowDataAs.RunTotal">
+        <member name="F:OfficeOpenXml.Table.PivotTable.eShowDataAs.RunningTotal">
             <summary>
             The field is shown as the running total in the the table
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Table.PivotTable.eShowDataAs.PercentOfParentRow">
+            <summary>
+            The field is shown as the percentage of the parent row total
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Table.PivotTable.eShowDataAs.PercentOfParentColumn">
+            <summary>
+            The field is shown as the percentage of the parent column total
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Table.PivotTable.eShowDataAs.PercentOfParent">
+            <summary>
+            The field is shown as the percentage of the parent total
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Table.PivotTable.eShowDataAs.RankAscending">
+            <summary>
+            The field is shown as the rank ascending.
+            Lists the smallest item in the field as 1, and each larger value with a higher rank value.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Table.PivotTable.eShowDataAs.RankDescending">
+            <summary>
+            The field is shown as the rank descending.
+            Lists the largest item in the field as 1, and each smaller value with a higher rank value.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Table.PivotTable.eShowDataAs.PercentOfRunningTotal">
+            <summary>
+            The field is shown as the percentage of the running total
             </summary>
         </member>
         <member name="T:OfficeOpenXml.Table.PivotTable.eSortType">
@@ -56285,6 +57266,132 @@
             </summary>
             <param name="dataField">The data field to remove</param>
         </member>
+        <member name="T:OfficeOpenXml.Table.PivotTable.ePrevNextPivotItem">
+            <summary>
+            Compares the item to the previous or next item.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Table.PivotTable.ePrevNextPivotItem.Previous">
+            <summary>
+            Previous item
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.Table.PivotTable.ePrevNextPivotItem.Next">
+            <summary>
+            Next item
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableDataFieldShowDataAs.SetNormal">
+            <summary>
+            Sets the show data as to type Normal. This removes the Show data as setting.
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableDataFieldShowDataAs.SetPercentOfTotal">
+            <summary>
+            Sets the show data as to type Percent Of Total
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableDataFieldShowDataAs.SetPercentOfRow">
+            <summary>
+            Sets the show data as to type Percent Of Row
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableDataFieldShowDataAs.SetPercentOfColumn">
+            <summary>
+            Sets the show data as to type Percent Of Column
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableDataFieldShowDataAs.SetPercent(OfficeOpenXml.Table.PivotTable.ExcelPivotTableField,System.Int32)">
+            <summary>
+            Sets the show data as to type Percent
+            <param name="baseField">The base field to use</param>
+            <param name="baseItem">The index of the item to use within the <see cref="P:OfficeOpenXml.Table.PivotTable.ExcelPivotTableField.Items"/> collection of the base field</param>
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableDataFieldShowDataAs.SetPercent(OfficeOpenXml.Table.PivotTable.ExcelPivotTableField,OfficeOpenXml.Table.PivotTable.ePrevNextPivotItem)">
+            <summary>
+            Sets the show data as to type Percent
+            <param name="baseField">The base field to use</param>
+            <param name="baseItem">The previous or next field</param>
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableDataFieldShowDataAs.SetPercentParent(OfficeOpenXml.Table.PivotTable.ExcelPivotTableField)">
+            <summary>
+            Sets the show data as to type Percent Of Parent
+            <param name="baseField">The base field to use</param>
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableDataFieldShowDataAs.SetIndex">
+            <summary>
+            Sets the show data as to type Index
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableDataFieldShowDataAs.SetRunningTotal(OfficeOpenXml.Table.PivotTable.ExcelPivotTableField)">
+            <summary>
+            Sets the show data as to type Running Total
+            </summary>
+            <param name="baseField">The base field to use</param>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableDataFieldShowDataAs.SetDifference(OfficeOpenXml.Table.PivotTable.ExcelPivotTableField,System.Int32)">
+            <summary>
+            Sets the show data as to type Difference
+            </summary>
+            <param name="baseField">The base field to use</param>
+            <param name="baseItem">The index of the item to use within the <see cref="P:OfficeOpenXml.Table.PivotTable.ExcelPivotTableField.Items"/> collection of the base field</param>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableDataFieldShowDataAs.SetDifference(OfficeOpenXml.Table.PivotTable.ExcelPivotTableField,OfficeOpenXml.Table.PivotTable.ePrevNextPivotItem)">
+            <summary>
+            Sets the show data as to type Difference
+            </summary>
+            <param name="baseField">The base field to use</param>
+            <param name="baseItem">The previous or next field</param>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableDataFieldShowDataAs.SetPercentageDifference(OfficeOpenXml.Table.PivotTable.ExcelPivotTableField,System.Int32)">
+            <summary>
+            Sets the show data as to type Percent Of Total
+            <param name="baseField">The base field to use</param>
+            <param name="baseItem">The index of the item to use within the <see cref="P:OfficeOpenXml.Table.PivotTable.ExcelPivotTableField.Items"/> collection of the base field</param>
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableDataFieldShowDataAs.SetPercentageDifference(OfficeOpenXml.Table.PivotTable.ExcelPivotTableField,OfficeOpenXml.Table.PivotTable.ePrevNextPivotItem)">
+            <summary>
+            Sets the show data as to type Percent Of Total
+            <param name="baseField">The base field to use</param>
+            <param name="baseItem">The previous or next field</param>
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableDataFieldShowDataAs.SetPercentParentRow">
+            <summary>
+            Sets the show data as to type Percent Of Parent Row
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableDataFieldShowDataAs.SetPercentParentColumn">
+            <summary>
+            Sets the show data as to type Percent Of Parent Column
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableDataFieldShowDataAs.SetPercentOfRunningTotal(OfficeOpenXml.Table.PivotTable.ExcelPivotTableField)">
+            <summary>
+            Sets the show data as to type Percent Of Running Total
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableDataFieldShowDataAs.SetRankAscending(OfficeOpenXml.Table.PivotTable.ExcelPivotTableField)">
+            <summary>
+            Sets the show data as to type Rank Ascending
+            <param name="baseField">The base field to use</param>
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableDataFieldShowDataAs.SetRankDescending(OfficeOpenXml.Table.PivotTable.ExcelPivotTableField)">
+            <summary>
+            Sets the show data as to type Rank Descending
+            <param name="baseField">The base field to use</param>
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotTableDataFieldShowDataAs.Value">
+            <summary>
+            The value of the "Show Data As" setting
+            </summary>
+        </member>
         <member name="T:OfficeOpenXml.Table.PivotTable.ExcelPivotTableField">
             <summary>
             A pivot table field.
@@ -56358,6 +57465,25 @@
         <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotTableField.Sort">
             <summary>
             The type of sort that is applied to this field
+            </summary>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableField.SetAutoSort(OfficeOpenXml.Table.PivotTable.ExcelPivotTableDataField,OfficeOpenXml.Table.PivotTable.eSortType)">
+            <summary>
+            Set auto sort on a data field for this field.
+            </summary>
+            <param name="dataField">The data field to sort on</param>
+            <param name="sortType">Sort ascending or descending</param>
+        </member>
+        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableField.RemoveAutoSort">
+            <summary>
+            Remove auto sort and set the <see cref="P:OfficeOpenXml.Table.PivotTable.ExcelPivotTableField.AutoSort"/> property to null
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotTableField.AutoSort">
+            <summary>
+            Auto sort for a field. Sort is set on a data field for a row/column field.
+            Use <see cref="!:SetAutoSort(ExcelPivotTableDataField)"/> to set auto sort 
+            Use <seealso cref="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableField.RemoveAutoSort"/> to remove auto sort and set this property to null
             </summary>
         </member>
         <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotTableField.IncludeNewItemsInFilter">
@@ -56807,24 +57933,9 @@
             A collection of pivot filters for a pivot table
             </summary>
         </member>
-        <member name="T:OfficeOpenXml.Table.PivotTable.PivotTableCacheInternal">
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaAutoSort.Conditions">
             <summary>
-            Handles the pivot table cache.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Table.PivotTable.PivotTableCacheInternal.Part">
-            <summary>
-            Reference to the internal package part
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Table.PivotTable.PivotTableCacheInternal.CacheDefinitionXml">
-            <summary>
-            Provides access to the XML data representing the cache definition in the package.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Table.PivotTable.PivotTableCacheInternal.CacheDefinitionUri">
-            <summary>
-            The package internal URI to the pivottable cache definition Xml Document.
+            Conditions for the auto sort scope. Conditions can be set for specific data fields. Specify labels, data grand totals and more.
             </summary>
         </member>
         <member name="T:OfficeOpenXml.Table.PivotTable.ExcelPivotArea">
@@ -57074,6 +58185,21 @@
             <param name="value">The value to match against. Is matched agaist the cache values and must be matched with the same data type.</param>
             <returns>true if the value has been added, otherwise false</returns>
         </member>
+        <member name="T:OfficeOpenXml.Table.PivotTable.PivotItemReference">
+            <summary>
+            A reference to a pivot table value item
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.PivotItemReference.Index">
+            <summary>
+            The index of the item in items of the pivot table field
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.PivotItemReference.Value">
+            <summary>
+            The value of the item
+            </summary>
+        </member>
         <member name="T:OfficeOpenXml.Table.PivotTable.ExcelPivotAreaStyleConditions">
             <summary>
             Conditions for a pivot table area style.
@@ -57182,19 +58308,24 @@
             <param name="index">The zero-based index in the axis collection</param>
             <returns></returns>
         </member>
-        <member name="T:OfficeOpenXml.Table.PivotTable.PivotItemReference">
+        <member name="T:OfficeOpenXml.Table.PivotTable.PivotTableCacheInternal">
             <summary>
-            A reference to a pivot table value item
+            Handles the pivot table cache.
             </summary>
         </member>
-        <member name="P:OfficeOpenXml.Table.PivotTable.PivotItemReference.Index">
+        <member name="P:OfficeOpenXml.Table.PivotTable.PivotTableCacheInternal.Part">
             <summary>
-            The index of the item in items of the pivot table field
+            Reference to the internal package part
             </summary>
         </member>
-        <member name="P:OfficeOpenXml.Table.PivotTable.PivotItemReference.Value">
+        <member name="P:OfficeOpenXml.Table.PivotTable.PivotTableCacheInternal.CacheDefinitionXml">
             <summary>
-            The value of the item
+            Provides access to the XML data representing the cache definition in the package.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.PivotTableCacheInternal.CacheDefinitionUri">
+            <summary>
+            The package internal URI to the pivottable cache definition Xml Document.
             </summary>
         </member>
         <member name="T:OfficeOpenXml.ThreadedComments.ExcelThreadedComment">

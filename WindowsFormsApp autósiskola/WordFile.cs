@@ -765,6 +765,7 @@ namespace WindowsFormsApp_autósiskola
         }
         #endregion
 
+        /*
         public Excel.Application StartExcel()
         {
             Excel.Application instance = null;
@@ -783,7 +784,7 @@ namespace WindowsFormsApp_autósiskola
             instance.Visible = false;
             return instance;
         }
-
+        */
         public string createNewFile(string saveAs, string format)
         {
             string NewFile = saveAs + format;
