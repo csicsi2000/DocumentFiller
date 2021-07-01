@@ -145,6 +145,7 @@ namespace WindowsFormsApp_autósiskola
             string fajlHely = files[0];
 
             Properties.Settings.Default.ExcelFajlHelye = fajlHely;
+            excelHelye.Text = fajlHely;
 
             if (fileMethods.isExcelComptaible(fajlHely))
             {
@@ -153,7 +154,7 @@ namespace WindowsFormsApp_autósiskola
             }
             else if (Path.GetExtension(fajlHely) == ".csv")
             {
-
+                ListaJelenites();
             }
             else
             {
