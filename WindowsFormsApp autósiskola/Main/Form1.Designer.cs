@@ -94,9 +94,9 @@ namespace WindowsFormsApp_autósiskola
             this.fooldal = new System.Windows.Forms.Button();
             this.statNyit = new System.Windows.Forms.Button();
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.tanuloAdatok1 = new WindowsFormsApp_autósiskola.TanuloAdatok();
             this.statisztika1 = new WindowsFormsApp_autósiskola.statisztika();
             this.loading1 = new WindowsFormsApp_autósiskola.loading();
+            this.tanuloAdatok1 = new WindowsFormsApp_autósiskola.TanuloAdatok();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -529,7 +529,8 @@ namespace WindowsFormsApp_autósiskola
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Főút Autósiskola",
-            "ABC Autósiskola"});
+            "ABC Autósiskola",
+            "ÉRD 2021"});
             this.comboBox1.Location = new System.Drawing.Point(95, 217);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(180, 25);
@@ -796,7 +797,8 @@ namespace WindowsFormsApp_autósiskola
             this.DocTipus.FormattingEnabled = true;
             this.DocTipus.Items.AddRange(new object[] {
             "Képzési Igazolás",
-            "Jelentkezési Lap"});
+            "Jelentkezési Lap",
+            "Beiratkozási Adatlap"});
             this.DocTipus.Location = new System.Drawing.Point(606, 278);
             this.DocTipus.Name = "DocTipus";
             this.DocTipus.Size = new System.Drawing.Size(192, 24);
@@ -1027,26 +1029,17 @@ namespace WindowsFormsApp_autósiskola
             // MainPanel
             // 
             this.MainPanel.BackColor = System.Drawing.Color.Black;
+            this.MainPanel.Controls.Add(this.loading1);
             this.MainPanel.Controls.Add(this.panel3);
             this.MainPanel.Controls.Add(this.tanuloAdatok1);
             this.MainPanel.Controls.Add(this.panel1);
             this.MainPanel.Controls.Add(this.statisztika1);
-            this.MainPanel.Controls.Add(this.loading1);
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainPanel.Location = new System.Drawing.Point(0, 60);
             this.MainPanel.Margin = new System.Windows.Forms.Padding(0);
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(941, 592);
             this.MainPanel.TabIndex = 2;
-            // 
-            // tanuloAdatok1
-            // 
-            this.tanuloAdatok1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tanuloAdatok1.Location = new System.Drawing.Point(0, 0);
-            this.tanuloAdatok1.Margin = new System.Windows.Forms.Padding(4);
-            this.tanuloAdatok1.Name = "tanuloAdatok1";
-            this.tanuloAdatok1.Size = new System.Drawing.Size(941, 592);
-            this.tanuloAdatok1.TabIndex = 30;
             // 
             // statisztika1
             // 
@@ -1066,6 +1059,15 @@ namespace WindowsFormsApp_autósiskola
             this.loading1.Size = new System.Drawing.Size(258, 107);
             this.loading1.TabIndex = 30;
             this.loading1.UseWaitCursor = true;
+            // 
+            // tanuloAdatok1
+            // 
+            this.tanuloAdatok1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tanuloAdatok1.Location = new System.Drawing.Point(0, 0);
+            this.tanuloAdatok1.Margin = new System.Windows.Forms.Padding(4);
+            this.tanuloAdatok1.Name = "tanuloAdatok1";
+            this.tanuloAdatok1.Size = new System.Drawing.Size(941, 592);
+            this.tanuloAdatok1.TabIndex = 30;
             // 
             // Form1
             // 

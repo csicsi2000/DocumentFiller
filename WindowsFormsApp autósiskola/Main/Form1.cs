@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp_autósiskola.Classes;
 using Excel = Microsoft.Office.Interop.Excel;
 
 
@@ -264,7 +265,7 @@ namespace WindowsFormsApp_autósiskola
 
             if (DocTipus.SelectedIndex == 0)
             {
-                string kepzesiIgazolas = fileMethods.FileUtvonal +"\\kepzesi igazolas sablon a programhoz.docx";
+                string kepzesiIgazolas = documentAccess.DocKepzesiIgazolas;
                 string sorszam = SorSzam.Text;
                 string format = fileFormat.Text;
                 WordFile csinál = new WordFile();
@@ -272,11 +273,19 @@ namespace WindowsFormsApp_autósiskola
             }
             else if(DocTipus.SelectedIndex == 1)
             {
-                string JelentkezesiLap = fileMethods.FileUtvonal +  "\\jelentkezesiLapSablon.docx";
+                string JelentkezesiLap = documentAccess.DocJelentkezesiLap;
                 string sorszam = SorSzam.Text;
                 string format = fileFormat.Text;
                 WordFile csinál = new WordFile();
                 await (Task.Run(() => csinál.JelentkezesiLapLetrehozas(xlWorkbooks, sorszam, JelentkezesiLap, ujfajl, format)));
+            }
+            else if (DocTipus.SelectedIndex == 2)
+            {
+                string BeiratkozasiLap = documentAccess.DocBeiratkozas;
+                string sorszam = SorSzam.Text;
+                string format = fileFormat.Text;
+                WordFile csinál = new WordFile();
+                await (Task.Run(() => csinál.BeiratkozasLetrehozas(xlWorkbooks, sorszam, BeiratkozasiLap, ujfajl, format)));
             }
             panel3.Enabled = true;
             tableLayoutPanel3.Enabled = true;
@@ -737,7 +746,7 @@ namespace WindowsFormsApp_autósiskola
         {
             try
             {
-                string path = fileMethods.FileUtvonal +"\\SablonFajl.xlsx";
+                string path = documentAccess.folder + "ExcelSablon.xlsx";
                 Excel.Application excel = new Excel.Application();
                 Excel.Workbook wb = excel.Workbooks.Open(path);
                 excel.Visible = true;
@@ -871,6 +880,8 @@ namespace WindowsFormsApp_autósiskola
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             fileMethods.DisposeExcelInstance(xlApp.xlApp, xlWorkbooks);
+            Properties.Settings.Default.Save();
+            Application.Exit();
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)

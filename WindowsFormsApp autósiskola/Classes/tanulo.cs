@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using WindowsFormsApp_autósiskola.Classes;
 
 namespace WindowsFormsApp_autósiskola
 {
@@ -34,12 +35,12 @@ namespace WindowsFormsApp_autósiskola
         public string telefonszam;
         public string email;
 
-
+        public tanulo() { }
         public tanulo(string Adatsor)
         {
             int index = Properties.Settings.Default.comboIndex;
             List<string> sablonok = new List<string>();
-            StreamReader oszlopokOlvas = new StreamReader(fileMethods.FileUtvonal+ "\\oszlopElrendezes.csv", Encoding.UTF8);
+            StreamReader oszlopokOlvas = new StreamReader(documentAccess.oszlopRendezes, Encoding.UTF8);
             string fejlec = oszlopokOlvas.ReadLine();
             while (!oszlopokOlvas.EndOfStream)
             {
@@ -54,23 +55,19 @@ namespace WindowsFormsApp_autósiskola
                 szamok[i] = Convert.ToInt32(szamString[i]);
             }
 
-
-            int count = 0;
-            foreach (char c in Adatsor)
-                if (c == ';') count++;
-
-            if (count < 30)
+            string[] adatok = Adatsor.Split(';');
+            if (adatok.Length < 30)
             {
                 StringBuilder sb = new StringBuilder(Adatsor);
-                for (int i = count; i <= 30; i++)
+                for (int i = 0; i <= 30; i++)
                 {
                     sb.Append(";");
                 }
                 Adatsor = Convert.ToString(sb);
             }
+            adatok = Adatsor.Split(';');
 
-            string[] adatok = Adatsor.Split(';');
-            for(int i = 0; i < adatok.Length; i++)
+            for (int i = 0; i < adatok.Length; i++)
             {
                 if (adatok[i] == "0")
                 {

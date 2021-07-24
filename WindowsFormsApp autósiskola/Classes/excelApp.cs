@@ -1,5 +1,7 @@
 ﻿using System;
 using Excel = Microsoft.Office.Interop.Excel;
+using WindowsFormsApp_autósiskola.Classes;
+
 
 namespace WindowsFormsApp_autósiskola
 {

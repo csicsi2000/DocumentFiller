@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 using Word = Microsoft.Office.Interop.Word;
 using Excel = Microsoft.Office.Interop.Excel;
 using OfficeOpenXml;
+using WindowsFormsApp_autósiskola.Classes;
 
 namespace WindowsFormsApp_autósiskola
 {
@@ -55,7 +56,7 @@ namespace WindowsFormsApp_autósiskola
                         return;
                     }
                 }
-                Properties.Settings.Default.ExcelFajlMasolata = System.AppDomain.CurrentDomain.BaseDirectory + "ExcelMasolat" + Path.GetExtension(Properties.Settings.Default.ExcelFajlHelye);
+                Properties.Settings.Default.ExcelFajlMasolata = documentAccess.folder + "ExcelMasolat" + Path.GetExtension(Properties.Settings.Default.ExcelFajlHelye);
                 string hely = Properties.Settings.Default.ExcelFajlMasolata;
                 Properties.Settings.Default.Save();
 
