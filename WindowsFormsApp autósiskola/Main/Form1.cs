@@ -881,7 +881,6 @@ namespace WindowsFormsApp_autósiskola
         {
             fileMethods.DisposeExcelInstance(xlApp.xlApp, xlWorkbooks);
             Properties.Settings.Default.Save();
-            Application.Exit();
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
