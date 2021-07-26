@@ -94,9 +94,9 @@ namespace WindowsFormsApp_autósiskola
             this.fooldal = new System.Windows.Forms.Button();
             this.statNyit = new System.Windows.Forms.Button();
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.statisztika1 = new WindowsFormsApp_autósiskola.statisztika();
             this.loading1 = new WindowsFormsApp_autósiskola.loading();
             this.tanuloAdatok1 = new WindowsFormsApp_autósiskola.TanuloAdatok();
+            this.statisztika1 = new WindowsFormsApp_autósiskola.statisztika();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -265,7 +265,7 @@ namespace WindowsFormsApp_autósiskola
             this.sorSzamValasztas.Name = "sorSzamValasztas";
             this.sorSzamValasztas.Size = new System.Drawing.Size(166, 51);
             this.sorSzamValasztas.TabIndex = 11;
-            this.sorSzamValasztas.Text = "Választ";
+            this.sorSzamValasztas.Text = "Ellenőrzés";
             this.sorSzamValasztas.UseVisualStyleBackColor = true;
             this.sorSzamValasztas.Click += new System.EventHandler(this.valaszt_Click_1);
             // 
@@ -798,7 +798,8 @@ namespace WindowsFormsApp_autósiskola
             this.DocTipus.Items.AddRange(new object[] {
             "Képzési Igazolás",
             "Jelentkezési Lap",
-            "Beiratkozási Adatlap"});
+            "Beiratkozási Adatlap",
+            "Felnőttk. Szerződés"});
             this.DocTipus.Location = new System.Drawing.Point(606, 278);
             this.DocTipus.Name = "DocTipus";
             this.DocTipus.Size = new System.Drawing.Size(192, 24);
@@ -818,6 +819,7 @@ namespace WindowsFormsApp_autósiskola
             this.SorSzam.Name = "SorSzam";
             this.SorSzam.Size = new System.Drawing.Size(245, 26);
             this.SorSzam.TabIndex = 29;
+            this.SorSzam.SelectedIndexChanged += new System.EventHandler(this.SorSzam_SelectedIndexChanged);
             this.SorSzam.TextUpdate += new System.EventHandler(this.SorSzam_TextUpdate);
             // 
             // button3
@@ -1041,15 +1043,6 @@ namespace WindowsFormsApp_autósiskola
             this.MainPanel.Size = new System.Drawing.Size(941, 592);
             this.MainPanel.TabIndex = 2;
             // 
-            // statisztika1
-            // 
-            this.statisztika1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.statisztika1.Location = new System.Drawing.Point(0, 0);
-            this.statisztika1.Margin = new System.Windows.Forms.Padding(4);
-            this.statisztika1.Name = "statisztika1";
-            this.statisztika1.Size = new System.Drawing.Size(941, 592);
-            this.statisztika1.TabIndex = 30;
-            // 
             // loading1
             // 
             this.loading1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
@@ -1068,6 +1061,15 @@ namespace WindowsFormsApp_autósiskola
             this.tanuloAdatok1.Name = "tanuloAdatok1";
             this.tanuloAdatok1.Size = new System.Drawing.Size(941, 592);
             this.tanuloAdatok1.TabIndex = 30;
+            // 
+            // statisztika1
+            // 
+            this.statisztika1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.statisztika1.Location = new System.Drawing.Point(0, 0);
+            this.statisztika1.Margin = new System.Windows.Forms.Padding(4);
+            this.statisztika1.Name = "statisztika1";
+            this.statisztika1.Size = new System.Drawing.Size(941, 592);
+            this.statisztika1.TabIndex = 30;
             // 
             // Form1
             // 

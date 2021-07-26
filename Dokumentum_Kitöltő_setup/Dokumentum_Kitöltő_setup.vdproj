@@ -16,12 +16,6 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_13022BDDE00143DD821DA468D00BC527"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_1AE87B63E56AFE5FDEF67C036CBF8CA6"
         "OwnerKey" = "8:_B09B53FB22E84D6F87C803081B62D498"
         "MsmSig" = "8:_UNDEFINED"
@@ -52,8 +46,20 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_61CA8A71694946C89459C664CA5B0BA3"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_81B5FB4EF57FA764C7CD0A982E37BFF5"
         "OwnerKey" = "8:_B09B53FB22E84D6F87C803081B62D498"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_82D912ED0AC49B4932AA7B46CF73F660"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -126,6 +132,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_AF0282C35B80200E5C200D979B3B1775"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_82D912ED0AC49B4932AA7B46CF73F660"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -241,26 +253,6 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_13022BDDE00143DD821DA468D00BC527"
-            {
-            "SourcePath" = "8:..\\WindowsFormsApp autósiskola\\DocumentFiles\\ExcelMasolat.xlsx"
-            "TargetName" = "8:ExcelMasolat.xlsx"
-            "Tag" = "8:"
-            "Folder" = "8:_8BDD411A31ED4D019A82A9974B853543"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1AE87B63E56AFE5FDEF67C036CBF8CA6"
             {
             "AssemblyRegister" = "3:1"
@@ -394,6 +386,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_61CA8A71694946C89459C664CA5B0BA3"
+            {
+            "SourcePath" = "8:..\\WindowsFormsApp autósiskola\\DocumentFiles\\FelnottkepzesiSzerzodes.docx"
+            "TargetName" = "8:FelnottkepzesiSzerzodes.docx"
+            "Tag" = "8:"
+            "Folder" = "8:_8BDD411A31ED4D019A82A9974B853543"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_81B5FB4EF57FA764C7CD0A982E37BFF5"
             {
             "AssemblyRegister" = "3:1"
@@ -422,6 +434,37 @@
             "PackageAs" = "3:1"
             "Register" = "3:1"
             "Exclude" = "11:TRUE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_82D912ED0AC49B4932AA7B46CF73F660"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_82D912ED0AC49B4932AA7B46CF73F660"
+                    {
+                    "Name" = "8:Microsoft.IO.RecyclableMemoryStream.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Microsoft.IO.RecyclableMemoryStream.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_63C14801B605474D801625C2B89B20E1"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
@@ -614,15 +657,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Dokumentum_Kitöltő_setup"
-        "ProductCode" = "8:{3956DCF5-E129-4378-A854-90A288083DD6}"
-        "PackageCode" = "8:{D9237A87-3DF3-4AF9-85D0-DE7C5A3BEE9C}"
+        "ProductCode" = "8:{4ED64549-6D06-4567-AF22-3785ED1EE34D}"
+        "PackageCode" = "8:{6440F099-84DD-4495-A6AA-B04BB89EAF0F}"
         "UpgradeCode" = "8:{CAE56E24-FC75-4F7D-8542-62322F4153C4}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.1.11"
+        "ProductVersion" = "8:1.1.12"
         "Manufacturer" = "8:Zheng Yuan Qi"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"

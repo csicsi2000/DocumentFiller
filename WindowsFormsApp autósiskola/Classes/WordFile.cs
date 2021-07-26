@@ -494,11 +494,127 @@ namespace WindowsFormsApp_autósiskola
         }
         #endregion
 
-    
-    #endregion
+        #endregion
 
-    #region FindAndReplace
-    private void FindAndReplace(Word.Application wordApp,
+        #region Felnőttképzési szerződés
+        public void FelnottSzerzodesLetrehozas(Excel.Workbooks xlWorkbooks, string sorszam, object filename, object saveAs, string format)
+        {
+            tanulo kivalasztott;
+            ExcelRead.getExcelData(xlWorkbooks, sorszam, out kivalasztott);
+
+            #region word fájlozás
+
+            object missing = System.Reflection.Missing.Value;
+
+            Word.Application wordApp = null;
+            try
+            {
+                wordApp = (Word.Application)System.Runtime.InteropServices.Marshal.GetActiveObject("Word.Application");
+                if (wordApp.Visible == true)
+                {
+                    wordApp = new Word.Application();
+                }
+            }
+            catch (System.Runtime.InteropServices.COMException)
+            {
+                wordApp = new Word.Application();
+            }
+            wordApp.Visible = false;
+
+            try
+            {
+                Word.Document aDoc = null;
+
+                if (File.Exists((string)filename))
+                {
+                    object readOnly = false;
+                    object isVisible = false;
+                    wordApp.Visible = false;
+
+                    aDoc = wordApp.Documents.Open(ref filename, ref missing,
+                                                    ref readOnly, ref missing, ref missing, ref missing,
+                                                    ref missing, ref missing, ref missing, ref missing,
+                                                    ref missing, ref isVisible, ref missing, ref missing,
+                                                    ref missing, ref missing);
+                    aDoc.Activate();
+
+                    this.FindAndReplace(wordApp, "<Nev>", kivalasztott.Nev);
+
+                    if (kivalasztott.Nev == kivalasztott.SzuleteskoriNev.Trim())
+                    {
+                        this.FindAndReplace(wordApp, "<SzuleteskoriNev>", "");
+                    }
+                    else
+                    {
+                        this.FindAndReplace(wordApp, "<SzuleteskoriNev>", kivalasztott.SzuleteskoriNev.Trim());
+                    }
+
+                    this.FindAndReplace(wordApp, "<SzuletesiHelyIdo>", kivalasztott.SzuletesiHely + ", " + kivalasztott.SzuletesiIdo);
+
+                    this.FindAndReplace(wordApp, "<Anyja>", kivalasztott.Anyja);
+                    this.FindAndReplace(wordApp, "<Lakcim>", kivalasztott.Lakcim);
+                    this.FindAndReplace(wordApp, "<ErtesitesCim>", kivalasztott.ErtesitesCim);
+                    this.FindAndReplace(wordApp, "<Telefonszam>", kivalasztott.telefonszam);
+                    this.FindAndReplace(wordApp, "<Email>", kivalasztott.email);
+                    this.FindAndReplace(wordApp, "<allampolgarsag>", kivalasztott.allampolgarsag);
+                    this.FindAndReplace(wordApp, "<TanuloAzonositoja>", kivalasztott.TanuloAzonositoja);
+                    this.FindAndReplace(wordApp, "<TKezdete>", kivalasztott.TKezdete);
+
+
+                    if (format == ".docx")
+                    {
+                        saveAs = createNewFile(saveAs.ToString(), format);
+
+                        aDoc.SaveAs2(ref saveAs, ref missing,
+                                            ref readOnly, ref missing, ref missing, ref missing,
+                                            ref missing, ref missing, ref missing, ref missing,
+                                            ref missing, ref isVisible, ref missing, ref missing,
+                                            ref missing, ref missing);
+                    }
+                    else if (format == ".pdf")
+                    {
+                        saveAs = createNewFile(saveAs.ToString(), format);
+
+                        aDoc.SaveAs2(ref saveAs, WdSaveFormat.wdFormatPDF, ref readOnly, ref missing, ref missing, ref missing,
+                                            ref missing, ref missing, ref missing, ref missing,
+                                            ref missing, ref isVisible, ref missing, ref missing,
+                                            ref missing, ref missing);
+                    }
+
+
+                    if (Properties.Settings.Default.wordMegnyitasa == true)
+                    {
+                        File.SetAttributes(Convert.ToString(saveAs), FileAttributes.Normal);
+                        System.Diagnostics.Process.Start(saveAs.ToString());
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sikerült!");
+                    }
+                    object saveOption = Word.WdSaveOptions.wdDoNotSaveChanges;
+                    object originalFormat = Word.WdOriginalFormat.wdOriginalDocumentFormat;
+                    object routeDocument = false;
+                    aDoc.Close(ref saveOption, ref originalFormat, ref routeDocument);
+                }
+                else
+                {
+                    MessageBox.Show("Nincs meg a Word fájl.", "No File", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Zárja be a word fájlt a feladatkezelőben!", "No File", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            finally
+            {
+                wordApp.Quit();
+            }
+        }
+        #endregion
+        #endregion
+
+        #region FindAndReplace
+        private void FindAndReplace(Word.Application wordApp,
             object findText, object replaceText)
         {
             object matchCase = true;

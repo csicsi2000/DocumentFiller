@@ -287,6 +287,14 @@ namespace WindowsFormsApp_autósiskola
                 WordFile csinál = new WordFile();
                 await (Task.Run(() => csinál.BeiratkozasLetrehozas(xlWorkbooks, sorszam, BeiratkozasiLap, ujfajl, format)));
             }
+            else if (DocTipus.SelectedIndex == 3)
+            {
+                string BeiratkozasiLap = documentAccess.DocFelnottkepzesiSzerzodes;
+                string sorszam = SorSzam.Text;
+                string format = fileFormat.Text;
+                WordFile csinál = new WordFile();
+                await (Task.Run(() => csinál.FelnottSzerzodesLetrehozas(xlWorkbooks, sorszam, BeiratkozasiLap, ujfajl, format)));
+            }
             panel3.Enabled = true;
             tableLayoutPanel3.Enabled = true;
             loading1.Visible = false;
@@ -921,6 +929,15 @@ namespace WindowsFormsApp_autósiskola
                     MessageBox.Show("Nem lehet megnyitni a mappát!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
+        }
+
+        private void SorSzam_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (SorSzam.Text == null || SorSzam.Text == "")
+            {
+                return;
+            }
+            mentettFajlNeve.Text = SorSzam.Text.Trim().Replace(' ', '_');
         }
     }
 }

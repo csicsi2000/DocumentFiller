@@ -179,7 +179,7 @@
     <None Include="bin\Release\Dokumentum Kitöltő.application" />
     <None Include="bin\Release\Dokumentum Kitöltő.exe.config" />
     <None Include="bin\Release\Dokumentum Kitöltő.exe.manifest" />
-    <Content Include="DocumentFiles\ExcelMasolat.xlsx" />
+    <None Include="DocumentFiles\ExcelMasolat.xlsx" />
     <Content Include="DocumentFiles\jelentkezesiLapSablon.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -187,6 +187,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="DocumentFiles\oszlopElrendezes.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DocumentFiles\FelnottkepzesiSzerzodes.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="packages.config" />

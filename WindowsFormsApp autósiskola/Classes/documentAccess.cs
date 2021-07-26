@@ -13,5 +13,6 @@ namespace WindowsFormsApp_autósiskola.Classes
         public static string DocJelentkezesiLap = folder + "jelentkezesiLapSablon.docx";
         public static string DocKepzesiIgazolas = folder + "kepzesiIgazolasSablon.docx";
         public static string oszlopRendezes = folder + "oszlopElrendezes.csv";
+        public static string DocFelnottkepzesiSzerzodes = folder + "FelnottkepzesiSzerzodes.docx";
     }
 }
