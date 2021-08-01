@@ -323,7 +323,7 @@ namespace WindowsFormsApp_autósiskola
                     }
                     else
                     {
-                        this.FindAndReplace(wordApp, "<helyido>", "\t,\tév\thónap\tnap");
+                        this.FindAndReplace(wordApp, "<helyido>", "\t");
                     }
 
                     if (format == ".docx")
