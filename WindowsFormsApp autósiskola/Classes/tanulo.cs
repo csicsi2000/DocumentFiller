@@ -179,7 +179,7 @@ namespace WindowsFormsApp_autósiskola
             else
             {
                 Kategoria = adatok[szamok[17]];
-                TVege = "";
+                TVege = adatok[szamok[21]];
             }
         }
     }

@@ -54,3 +54,4 @@ D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp aut�
 D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\WindowsFormsApp autósiskola.csproj.CopyComplete
 D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\Dokumentum Kitöltő.exe
 D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\Dokumentum Kitöltő.pdb
+D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Release\WindowsFormsApp autósiskola.csprojAssemblyReference.cache
