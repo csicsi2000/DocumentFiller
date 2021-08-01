@@ -176,6 +176,11 @@ namespace WindowsFormsApp_autósiskola
                 Kategoria = ", B";
                 TVege = adatok[szamok[12]];
             }
+            else
+            {
+                Kategoria = adatok[szamok[17]];
+                TVege = "";
+            }
         }
     }
 }
