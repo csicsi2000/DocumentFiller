@@ -60,16 +60,22 @@
     <ManifestKeyFile>WindowsFormsApp autósiskola_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
+    <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>favicon %283%29.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\favicon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup />
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EPPlus, Version=5.7.0.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
       <HintPath>..\packages\EPPlus.5.7.0\lib\net45\EPPlus.dll</HintPath>
@@ -100,51 +106,102 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="adatDB.cs" />
-    <Compile Include="excelApp.cs" />
-    <Compile Include="fileMethods.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Classes\adatDB.cs" />
+    <Compile Include="Classes\documentAccess.cs" />
+    <Compile Include="Classes\excelApp.cs" />
+    <Compile Include="Classes\ExcelRead.cs" />
+    <Compile Include="Classes\fileMethods.cs" />
+    <Compile Include="Main\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Main\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="generalMethods.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Classes\generalMethods.cs" />
+    <Compile Include="Main\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="statisztika.cs">
+    <Compile Include="UserControls\statisztika.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="statisztika.Designer.cs">
+    <Compile Include="UserControls\statisztika.Designer.cs">
       <DependentUpon>statisztika.cs</DependentUpon>
     </Compile>
-    <Compile Include="tanulo.cs" />
-    <Compile Include="TanuloAdatok.cs">
+    <Compile Include="Classes\tanulo.cs" />
+    <Compile Include="UserControls\TanuloAdatok.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TanuloAdatok.Designer.cs">
+    <Compile Include="UserControls\TanuloAdatok.Designer.cs">
       <DependentUpon>TanuloAdatok.cs</DependentUpon>
     </Compile>
-    <Compile Include="loading.cs">
+    <Compile Include="UserControls\loading.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="loading.Designer.cs">
+    <Compile Include="UserControls\loading.Designer.cs">
       <DependentUpon>loading.cs</DependentUpon>
     </Compile>
-    <Compile Include="WordFile.cs" />
-    <Content Include="favicon %283%29.ico" />
-    <Content Include="bin\Debug\jelentkezesiLapSablon.docx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Compile Include="Classes\WordFile.cs" />
+    <Content Include="bin\Debug\app.publish\Dokumentum Kitöltő.exe" />
+    <Content Include="bin\Debug\bin\Dokumentum Kitöltő.resources.dll" />
+    <Content Include="bin\Debug\Dokumentum Kitöltő.exe" />
+    <Content Include="bin\Debug\Dokumentum Kitöltő.pdb" />
+    <Content Include="bin\Debug\EPPlus.dll" />
+    <Content Include="bin\Debug\EPPlus.xml" />
+    <Content Include="bin\Debug\jelentkezesiLapSablon.docx" />
+    <Content Include="bin\Debug\kepzesi igazolas sablon a programhoz.docx" />
+    <Content Include="bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll" />
+    <Content Include="bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml" />
+    <Content Include="bin\Debug\SablonFajl.xlsx" />
+    <Content Include="bin\Debug\System.ComponentModel.Annotations.dll" />
+    <Content Include="bin\Release\app.publish\Dokumentum Kitöltő.exe" />
+    <Content Include="bin\Release\bin\Dokumentum Kitöltő.resources.dll" />
+    <Content Include="bin\Release\Dokumentum Kitöltő.exe" />
+    <Content Include="bin\Release\Dokumentum Kitöltő.pdb" />
+    <Content Include="bin\Release\EPPlus.dll" />
+    <Content Include="bin\Release\EPPlus.xml" />
+    <Content Include="bin\Release\Microsoft.IO.RecyclableMemoryStream.dll" />
+    <Content Include="bin\Release\Microsoft.IO.RecyclableMemoryStream.xml" />
+    <Content Include="bin\Release\System.ComponentModel.Annotations.dll" />
+    <Content Include="Resources\favicon.ico" />
+    <None Include="DocumentFiles\adatlapBeiratkozáshozSablon.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="bin\Debug\bin\Debug\jelentkezesiLapSablon.docx" />
+    <None Include="bin\Debug\bin\Debug\kepzesi igazolas sablon a programhoz.docx" />
+    <None Include="bin\Debug\bin\Debug\SablonFajl.xlsx" />
+    <None Include="bin\Debug\Dokumentum Kitöltő.application" />
+    <None Include="bin\Debug\Dokumentum Kitöltő.exe.config" />
+    <None Include="bin\Debug\Dokumentum Kitöltő.exe.manifest" />
+    <None Include="bin\Debug\ExcelMasolat.xlsx" />
+    <None Include="bin\Debug\oszlopElrendezes.csv" />
+    <None Include="bin\Release\bin\Debug\jelentkezesiLapSablon.docx" />
+    <None Include="bin\Release\bin\Debug\kepzesi igazolas sablon a programhoz.docx" />
+    <None Include="bin\Release\bin\Debug\SablonFajl.xlsx" />
+    <None Include="bin\Release\Dokumentum Kitöltő.application" />
+    <None Include="bin\Release\Dokumentum Kitöltő.exe.config" />
+    <None Include="bin\Release\Dokumentum Kitöltő.exe.manifest" />
+    <None Include="DocumentFiles\ExcelMasolat.xlsx" />
+    <Content Include="DocumentFiles\jelentkezesiLapSablon.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DocumentFiles\kepzesiIgazolasSablon.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DocumentFiles\oszlopElrendezes.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DocumentFiles\FelnottkepzesiSzerzodes.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
     <None Include="Resources\1495.gif" />
-    <EmbeddedResource Include="Form1.bin.resx">
+    <EmbeddedResource Include="Main\Form1.bin.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="Main\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="loading.resx">
+    <EmbeddedResource Include="UserControls\loading.resx">
       <DependentUpon>loading.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -157,19 +214,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Content Include="bin\Debug\kepzesi igazolas sablon a programhoz.docx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <EmbeddedResource Include="statisztika.resx">
+    <EmbeddedResource Include="UserControls\statisztika.resx">
       <DependentUpon>statisztika.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TanuloAdatok.resx">
+    <EmbeddedResource Include="UserControls\TanuloAdatok.resx">
       <DependentUpon>TanuloAdatok.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
-    <Content Include="bin\Debug\SablonFajl.xlsx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -179,6 +230,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Content Include="DocumentFiles\ExcelSablon.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="WindowsFormsApp autósiskola_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -230,6 +284,10 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\hu-HU\" />
+    <Folder Include="bin\Release\hu\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

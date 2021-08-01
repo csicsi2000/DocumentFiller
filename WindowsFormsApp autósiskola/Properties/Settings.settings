@@ -51,13 +51,13 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="iskolaAzonosito" Type="System.String" Scope="User">
-      <Value Profile="(Default)">2030</Value>
+      <Value Profile="(Default)">0003</Value>
     </Setting>
     <Setting Name="iskolaNev" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Főút Autósiskola</Value>
+      <Value Profile="(Default)">ABC Autósiskola</Value>
     </Setting>
     <Setting Name="iskolaCim" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Érd, Fő Utca 52.</Value>
+      <Value Profile="(Default)">1192 Budapest Aba u. 4.</Value>
     </Setting>
     <Setting Name="dokumentumTipus" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>

@@ -218,7 +218,7 @@ namespace WindowsFormsApp_autósiskola.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2030")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0003")]
         public string iskolaAzonosito {
             get {
                 return ((string)(this["iskolaAzonosito"]));
@@ -230,7 +230,7 @@ namespace WindowsFormsApp_autósiskola.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Főút Autósiskola")]
+        [global::System.Configuration.DefaultSettingValueAttribute("ABC Autósiskola")]
         public string iskolaNev {
             get {
                 return ((string)(this["iskolaNev"]));
@@ -242,7 +242,7 @@ namespace WindowsFormsApp_autósiskola.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Érd, Fő Utca 52.")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1192 Budapest Aba u. 4.")]
         public string iskolaCim {
             get {
                 return ((string)(this["iskolaCim"]));

@@ -16,25 +16,25 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_08BD52CB229243898F9AEFEB4B0CA094"
+        "MsmKey" = "8:_1AE87B63E56AFE5FDEF67C036CBF8CA6"
+        "OwnerKey" = "8:_B09B53FB22E84D6F87C803081B62D498"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_480A6F166C1917077020436B1AFC249C"
+        "OwnerKey" = "8:_B09B53FB22E84D6F87C803081B62D498"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4E6F30DBACDC40B8AB14A34BC3508574"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_1AE87B63E56AFE5FDEF67C036CBF8CA6"
-        "OwnerKey" = "8:_EDA867E23BBC4469843C20B7558570D2"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_3D05FD4CEC2C3BAFD4088175FC42D9A8"
-        "OwnerKey" = "8:_EDA867E23BBC4469843C20B7558570D2"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_488056099EE742DC81CFED8E60462528"
+        "MsmKey" = "8:_59B638DF4BD0463DB582DC8C7174E759"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -46,37 +46,55 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_61CA8A71694946C89459C664CA5B0BA3"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_81B5FB4EF57FA764C7CD0A982E37BFF5"
-        "OwnerKey" = "8:_EDA867E23BBC4469843C20B7558570D2"
+        "OwnerKey" = "8:_B09B53FB22E84D6F87C803081B62D498"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_9B65A9848AA94C359B62254E164EEEC7"
+        "MsmKey" = "8:_82D912ED0AC49B4932AA7B46CF73F660"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_AD018D731A5265DD3258259654EAAF40"
-        "OwnerKey" = "8:_EDA867E23BBC4469843C20B7558570D2"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_BDEC3B1357F141839869E79F25946176"
+        "MsmKey" = "8:_8397543CC3AA4119A03A24D0875CD7C3"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_C5BA0CA993EC45FDA41D0D72C6DCE58B"
+        "MsmKey" = "8:_959831CECA8640A28E877F8C85D1B86A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_EDA867E23BBC4469843C20B7558570D2"
+        "MsmKey" = "8:_983FBC57D2374A63B63C77C544DEDE59"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_AF0282C35B80200E5C200D979B3B1775"
+        "OwnerKey" = "8:_B09B53FB22E84D6F87C803081B62D498"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B09B53FB22E84D6F87C803081B62D498"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D5F0E1C247474B9D871EA4C34429A53C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -89,31 +107,37 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_EDA867E23BBC4469843C20B7558570D2"
+        "OwnerKey" = "8:_AF0282C35B80200E5C200D979B3B1775"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_3D05FD4CEC2C3BAFD4088175FC42D9A8"
+        "OwnerKey" = "8:_B09B53FB22E84D6F87C803081B62D498"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_EDA867E23BBC4469843C20B7558570D2"
+        "OwnerKey" = "8:_480A6F166C1917077020436B1AFC249C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_AD018D731A5265DD3258259654EAAF40"
+        "OwnerKey" = "8:_B09B53FB22E84D6F87C803081B62D498"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_AD018D731A5265DD3258259654EAAF40"
+        "OwnerKey" = "8:_AF0282C35B80200E5C200D979B3B1775"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_82D912ED0AC49B4932AA7B46CF73F660"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -229,26 +253,6 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_08BD52CB229243898F9AEFEB4B0CA094"
-            {
-            "SourcePath" = "8:..\\WindowsFormsApp autósiskola\\bin\\Debug\\kepzesi igazolas sablon a programhoz.docx"
-            "TargetName" = "8:kepzesi igazolas sablon a programhoz.docx"
-            "Tag" = "8:"
-            "Folder" = "8:_63C14801B605474D801625C2B89B20E1"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1AE87B63E56AFE5FDEF67C036CBF8CA6"
             {
             "AssemblyRegister" = "3:1"
@@ -280,14 +284,14 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3D05FD4CEC2C3BAFD4088175FC42D9A8"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_480A6F166C1917077020436B1AFC249C"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_3D05FD4CEC2C3BAFD4088175FC42D9A8"
+                    "_480A6F166C1917077020436B1AFC249C"
                     {
                     "Name" = "8:System.ComponentModel.Annotations.dll"
                     "Attributes" = "3:512"
@@ -311,12 +315,32 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_488056099EE742DC81CFED8E60462528"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4E6F30DBACDC40B8AB14A34BC3508574"
             {
-            "SourcePath" = "8:..\\WindowsFormsApp autósiskola\\bin\\Debug\\jelentkezesiLapSablon.docx"
-            "TargetName" = "8:jelentkezesiLapSablon.docx"
+            "SourcePath" = "8:..\\WindowsFormsApp autósiskola\\Resources\\favicon.ico"
+            "TargetName" = "8:favicon.ico"
             "Tag" = "8:"
-            "Folder" = "8:_63C14801B605474D801625C2B89B20E1"
+            "Folder" = "8:_53732D5A438C4F08845326597C4BC6B3"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_59B638DF4BD0463DB582DC8C7174E759"
+            {
+            "SourcePath" = "8:..\\WindowsFormsApp autósiskola\\DocumentFiles\\oszlopElrendezes.csv"
+            "TargetName" = "8:oszlopElrendezes.csv"
+            "Tag" = "8:"
+            "Folder" = "8:_8BDD411A31ED4D019A82A9974B853543"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -362,6 +386,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_61CA8A71694946C89459C664CA5B0BA3"
+            {
+            "SourcePath" = "8:..\\WindowsFormsApp autósiskola\\DocumentFiles\\FelnottkepzesiSzerzodes.docx"
+            "TargetName" = "8:FelnottkepzesiSzerzodes.docx"
+            "Tag" = "8:"
+            "Folder" = "8:_8BDD411A31ED4D019A82A9974B853543"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_81B5FB4EF57FA764C7CD0A982E37BFF5"
             {
             "AssemblyRegister" = "3:1"
@@ -393,12 +437,43 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9B65A9848AA94C359B62254E164EEEC7"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_82D912ED0AC49B4932AA7B46CF73F660"
             {
-            "SourcePath" = "8:..\\WindowsFormsApp autósiskola\\favicon (3).ico"
-            "TargetName" = "8:favicon (3).ico"
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_82D912ED0AC49B4932AA7B46CF73F660"
+                    {
+                    "Name" = "8:Microsoft.IO.RecyclableMemoryStream.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Microsoft.IO.RecyclableMemoryStream.dll"
+            "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_63C14801B605474D801625C2B89B20E1"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8397543CC3AA4119A03A24D0875CD7C3"
+            {
+            "SourcePath" = "8:..\\WindowsFormsApp autósiskola\\DocumentFiles\\kepzesiIgazolasSablon.docx"
+            "TargetName" = "8:kepzesiIgazolasSablon.docx"
+            "Tag" = "8:"
+            "Folder" = "8:_8BDD411A31ED4D019A82A9974B853543"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -413,14 +488,54 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_AD018D731A5265DD3258259654EAAF40"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_959831CECA8640A28E877F8C85D1B86A"
+            {
+            "SourcePath" = "8:..\\WindowsFormsApp autósiskola\\DocumentFiles\\jelentkezesiLapSablon.docx"
+            "TargetName" = "8:jelentkezesiLapSablon.docx"
+            "Tag" = "8:"
+            "Folder" = "8:_8BDD411A31ED4D019A82A9974B853543"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_983FBC57D2374A63B63C77C544DEDE59"
+            {
+            "SourcePath" = "8:..\\WindowsFormsApp autósiskola\\DocumentFiles\\adatlapBeiratkozáshozSablon.docx"
+            "TargetName" = "8:adatlapBeiratkozáshozSablon.docx"
+            "Tag" = "8:"
+            "Folder" = "8:_8BDD411A31ED4D019A82A9974B853543"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_AF0282C35B80200E5C200D979B3B1775"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:EPPlus, Version=5.6.2.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:EPPlus, Version=5.7.0.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_AD018D731A5265DD3258259654EAAF40"
+                    "_AF0282C35B80200E5C200D979B3B1775"
                     {
                     "Name" = "8:EPPlus.dll"
                     "Attributes" = "3:512"
@@ -444,32 +559,12 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BDEC3B1357F141839869E79F25946176"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D5F0E1C247474B9D871EA4C34429A53C"
             {
-            "SourcePath" = "8:..\\WindowsFormsApp autósiskola\\bin\\Debug\\SablonFajl.xlsx"
-            "TargetName" = "8:SablonFajl.xlsx"
+            "SourcePath" = "8:..\\WindowsFormsApp autósiskola\\DocumentFiles\\ExcelSablon.xlsx"
+            "TargetName" = "8:ExcelSablon.xlsx"
             "Tag" = "8:"
-            "Folder" = "8:_63C14801B605474D801625C2B89B20E1"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C5BA0CA993EC45FDA41D0D72C6DCE58B"
-            {
-            "SourcePath" = "8:..\\WindowsFormsApp autósiskola\\bin\\Debug\\oszlopElrendezes.csv"
-            "TargetName" = "8:oszlopElrendezes.csv"
-            "Tag" = "8:"
-            "Folder" = "8:_63C14801B605474D801625C2B89B20E1"
+            "Folder" = "8:_8BDD411A31ED4D019A82A9974B853543"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -493,7 +588,7 @@
             "{1525181F-901A-416C-8A58-119130FE478E}:_3D375EA9A0F84392959EAFD75B7DD3A6"
             {
             "Name" = "8:#1916"
-            "AlwaysCreate" = "11:FALSE"
+            "AlwaysCreate" = "11:TRUE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Property" = "8:DesktopFolder"
@@ -503,7 +598,7 @@
             }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_63C14801B605474D801625C2B89B20E1"
             {
-            "DefaultLocation" = "8:[ProgramFilesFolder][Manufacturer]\\[ProductName]"
+            "DefaultLocation" = "8:[ProgramFiles64Folder][Manufacturer]\\[ProductName]"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
@@ -511,6 +606,28 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_53732D5A438C4F08845326597C4BC6B3"
+                    {
+                    "Name" = "8:Resources"
+                    "AlwaysCreate" = "11:TRUE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_75F6161F5BC9497AA70BD73C03F0F3AD"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_8BDD411A31ED4D019A82A9974B853543"
+                    {
+                    "Name" = "8:DocumentFiles"
+                    "AlwaysCreate" = "11:TRUE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_4DAC19B12CFA43AE81AB8DEF5183450E"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_B6A0B90E61414D1FA37B25482E8F78DE"
@@ -540,15 +657,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Dokumentum_Kitöltő_setup"
-        "ProductCode" = "8:{6D102448-DB4D-49C0-AC22-F0F227E37DA2}"
-        "PackageCode" = "8:{ABAA7865-056E-42CA-A62C-F0D603BF0786}"
+        "ProductCode" = "8:{4ED64549-6D06-4567-AF22-3785ED1EE34D}"
+        "PackageCode" = "8:{6440F099-84DD-4495-A6AA-B04BB89EAF0F}"
         "UpgradeCode" = "8:{CAE56E24-FC75-4F7D-8542-62322F4153C4}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.1.10"
+        "ProductVersion" = "8:1.1.12"
         "Manufacturer" = "8:Zheng Yuan Qi"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -562,7 +679,7 @@
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
-        "TargetPlatform" = "3:0"
+        "TargetPlatform" = "3:1"
         "PreBuildEvent" = "8:"
         "PostBuildEvent" = "8:"
         "RunPostBuildEvent" = "3:0"
@@ -661,20 +778,6 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_59946BB77AF144D1814A9B19F8AD6675"
-            {
-            "Name" = "8:Dokumentum Kitöltő"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_EDA867E23BBC4469843C20B7558570D2"
-            "Folder" = "8:_3D375EA9A0F84392959EAFD75B7DD3A6"
-            "WorkingFolder" = "8:_63C14801B605474D801625C2B89B20E1"
-            "Icon" = "8:_9B65A9848AA94C359B62254E164EEEC7"
-            "Feature" = "8:"
-            }
         }
         "UserInterface"
         {
@@ -1074,7 +1177,7 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_EDA867E23BBC4469843C20B7558570D2"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_B09B53FB22E84D6F87C803081B62D498"
             {
             "SourcePath" = "8:..\\WindowsFormsApp autósiskola\\obj\\Debug\\Dokumentum Kitöltő.exe"
             "TargetName" = "8:"
