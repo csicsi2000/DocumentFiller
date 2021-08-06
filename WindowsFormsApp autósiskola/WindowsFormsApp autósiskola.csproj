@@ -111,6 +111,8 @@
     <Compile Include="Classes\excelApp.cs" />
     <Compile Include="Classes\ExcelRead.cs" />
     <Compile Include="Classes\fileMethods.cs" />
+    <Compile Include="DataType\GoogleUser.cs" />
+    <Compile Include="GoogleSheet\SheetAccess.cs" />
     <Compile Include="Main\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,7 +128,7 @@
     <Compile Include="UserControls\statisztika.Designer.cs">
       <DependentUpon>statisztika.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\tanulo.cs" />
+    <Compile Include="DataType\tanulo.cs" />
     <Compile Include="UserControls\TanuloAdatok.cs">
       <SubType>UserControl</SubType>
     </Compile>
