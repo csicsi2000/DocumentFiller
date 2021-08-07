@@ -52,7 +52,6 @@ D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp aut�
 D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Debug\WindowsFormsApp autósiskola.csproj.CopyComplete
 D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Debug\Dokumentum Kitöltő.exe
 D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Debug\Dokumentum Kitöltő.pdb
-D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\client_secrets.json
 D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\Google.Apis.Auth.dll
 D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\Google.Apis.Auth.PlatformServices.dll
 D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\Google.Apis.Core.dll
@@ -69,3 +68,10 @@ D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp aut�
 D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\Google.Apis.Sheets.v4.pdb
 D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\Google.Apis.Sheets.v4.xml
 D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\Newtonsoft.Json.xml
+D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Debug\WindowsFormsApp_autósiskola.UserControls.GoogleSheet.resources
+D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\EPPlus.dll
+D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\System.ComponentModel.Annotations.dll
+D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\EPPlus.xml
+D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Debug\WindowsFormsApp_autósiskola.UserControls.beallitasok.resources

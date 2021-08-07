@@ -8,7 +8,7 @@ using WindowsFormsApp_autósiskola.Classes;
 
 namespace WindowsFormsApp_autósiskola
 {
-    class tanulo
+    public class tanulo
     {
         public string Nev;
         public string SzuleteskoriNev;

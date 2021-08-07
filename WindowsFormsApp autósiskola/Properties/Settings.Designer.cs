@@ -299,5 +299,17 @@ namespace WindowsFormsApp_autósiskola.Properties {
                 this["GoogleSheetName"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsGoogleSheet {
+            get {
+                return ((bool)(this["IsGoogleSheet"]));
+            }
+            set {
+                this["IsGoogleSheet"] = value;
+            }
+        }
     }
 }

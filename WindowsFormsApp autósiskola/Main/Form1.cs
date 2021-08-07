@@ -10,6 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp_autósiskola.Classes;
+using WindowsFormsApp_autósiskola.GoogleSheet;
 using Excel = Microsoft.Office.Interop.Excel;
 
 
@@ -21,6 +22,7 @@ namespace WindowsFormsApp_autósiskola
         public List<string> listOnit = new List<string>();
         List<string> listNew = new List<string>();
         private excelApp xlApp;
+        private SheetAccess sheetAccess;
         private Excel.Workbooks xlWorkbooks;
 
 
@@ -31,6 +33,8 @@ namespace WindowsFormsApp_autósiskola
             ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
 
             xlApp = new excelApp();
+            sheetAccess = new SheetAccess();
+            googleSheet1.GiveAccess(sheetAccess);
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Properties.Settings.Default.nyelv);
             statisztika1.books(xlApp.xlWorkbooks);
             tanuloAdatok1.books(xlApp.xlWorkbooks);
@@ -48,34 +52,28 @@ namespace WindowsFormsApp_autósiskola
             ekezetek.Checked = Properties.Settings.Default.ekezetek;
             szokoz.Checked = Properties.Settings.Default.szokoz;
             helyIdo.Checked = Properties.Settings.Default.helyIdo;
-            honapBetu.Checked = Properties.Settings.Default.honapBetu;
-            ujTanuloIdo.Checked = Properties.Settings.Default.ujTanuloIdo;
-            kiallitasiHely.Text = Properties.Settings.Default.kiallitasiHely;
-            frissites.Visible = ExcelOldalNevek.Visible;
-            comboBox1.SelectedIndex = Properties.Settings.Default.comboIndex;
-            iskolaAzonosito.Text = Properties.Settings.Default.iskolaAzonosito;
-            iskolaNev.Text = Properties.Settings.Default.iskolaNev;
-            iskolaCim.Text = Properties.Settings.Default.iskolaCim;
             DocTipus.SelectedIndex = Properties.Settings.Default.dokumentumTipus;
             fileFormat.SelectedIndex = Properties.Settings.Default.fileFormat;
+            frissites.Visible = ExcelOldalNevek.Visible;
+
             staticLoading.Hide();
             loading1.Hide();
             statisztika1.Hide();
             tanuloAdatok1.Hide();
-            panel1.Visible = false;
+            googleSheet1.Hide();
+            beallitasok1.Visible = false;
             panel5.Visible = false;
             AllowDrop = true;
             DragEnter += new DragEventHandler(Form1_DragEnter);
             DragDrop += new DragEventHandler(Form1_DragDrop);
-            VersionDisplay.Text = System.Windows.Forms.Application.ProductVersion;
 
             //DateTime sometimes can fail on somemachines so this code disable all things that's using DateTime
             try
             {
                 string ido = DateTime.Now.ToString("MM/dd/yyyy");
                 ido.Substring(8, 4);
-                ujTanuloIdo.Enabled = true;
-                ujTanuloIdo.Visible = true;
+                //ujTanuloIdo.Enabled = true;
+                //ujTanuloIdo.Visible = true;
 
                 helyIdo.Enabled = true;
                 helyIdo.Visible = true;
@@ -83,9 +81,9 @@ namespace WindowsFormsApp_autósiskola
             catch
             {
                 Properties.Settings.Default.ujTanuloIdo = false;
-                ujTanuloIdo.Checked = false;
-                ujTanuloIdo.Enabled = false;
-                ujTanuloIdo.Visible = false;
+                //ujTanuloIdo.Checked = false;
+                //ujTanuloIdo.Enabled = false;
+                //ujTanuloIdo.Visible = false;
 
                 Properties.Settings.Default.helyIdo = false;
                 helyIdo.Checked = false;
@@ -255,7 +253,6 @@ namespace WindowsFormsApp_autósiskola
                 return;
             }
             panel3.Enabled = false;
-            tableLayoutPanel3.Enabled = false;
             loading1.BringToFront();
             loading1.Visible = true;
             fileMethods.FajlOlvasas();
@@ -296,7 +293,6 @@ namespace WindowsFormsApp_autósiskola
                 await (Task.Run(() => csinál.FelnottSzerzodesLetrehozas(xlWorkbooks, sorszam, BeiratkozasiLap, ujfajl, format)));
             }
             panel3.Enabled = true;
-            tableLayoutPanel3.Enabled = true;
             loading1.Visible = false;
         }
 
@@ -315,11 +311,6 @@ namespace WindowsFormsApp_autósiskola
         {
             SorSzam.Items.Clear();
             listOnit.Clear();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void valaszt_Click_1(object sender, EventArgs e)
@@ -529,7 +520,14 @@ namespace WindowsFormsApp_autósiskola
         }
         public void autoSuggestTolt()
         {
-            if (fileMethods.isExcelComptaible(Properties.Settings.Default.ExcelFajlHelye))
+            SorSzam.Items.Clear();
+            listOnit.Clear();
+
+            if (isGoogleSheet.Checked)
+            {
+                listOnit = sheetAccess.AllStudent;
+            }
+            else if (fileMethods.isExcelComptaible(Properties.Settings.Default.ExcelFajlHelye))
             {
                 staticLoading.Visible = true;
                 staticLoading.BringToFront();
@@ -544,8 +542,6 @@ namespace WindowsFormsApp_autósiskola
                 AutoCompleteStringCollection nevek = new AutoCompleteStringCollection();
                 string nev = SorSzam.Text.ToLower().Trim();
 
-                SorSzam.Items.Clear();
-                listOnit.Clear();
                 for (int Row = 2; Row <= totalRows; Row++)
                 {
                     string SzerkNev = Convert.ToString(xlWorksheet.Cells[Row, 2].Text);
@@ -562,17 +558,13 @@ namespace WindowsFormsApp_autósiskola
                     }
                     listOnit.Add(nev2);
                 }
-                SorSzam.Items.AddRange(listOnit.ToArray());
+               
                 fileMethods.DisposeExcelInstance(xlWorkbook, xlWorksheet);
                 staticLoading.Visible = false;
             }
+
+            SorSzam.Items.AddRange(listOnit.ToArray());
         }
-
-        private void mentesHelye_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void ekezetek_CheckedChanged(object sender, EventArgs e)
         {
@@ -671,38 +663,20 @@ namespace WindowsFormsApp_autósiskola
         private void button1_Click_1(object sender, EventArgs e)
         {
 
-            if (panel1.Visible)
+            if (beallitasok1.Visible)
             {
-                panel1.Visible = false;
+                beallitasok1.Visible = false;
             }
-            else if (!panel1.Visible)
+            else if (!beallitasok1.Visible)
             {
-                panel1.BringToFront();
-                panel1.Visible = true;
+                beallitasok1.BringToFront();
+                beallitasok1.Visible = true;
             }
-        }
-
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.kiallitasiHely = kiallitasiHely.Text;
-            Properties.Settings.Default.Save();
-        }
-
-        private void bezaras_Click(object sender, EventArgs e)
-        {
-            panel1.Visible = false;
         }
 
         private void helyIdo_CheckedChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.helyIdo = helyIdo.Checked;
-            Properties.Settings.Default.Save();
-        }
-
-
-        private void honapBetu_CheckedChanged(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.honapBetu = honapBetu.Checked;
             Properties.Settings.Default.Save();
         }
 
@@ -766,37 +740,6 @@ namespace WindowsFormsApp_autósiskola
             }
         }
 
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.comboIndex = comboBox1.SelectedIndex;
-            Properties.Settings.Default.Save();
-        }
-
-        private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.ujTanuloIdo = ujTanuloIdo.Checked;
-            Properties.Settings.Default.Save();
-        }
-
-        private void iskolaAzonosito_TextChanged(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.iskolaAzonosito = iskolaAzonosito.Text;
-            Properties.Settings.Default.Save();
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.iskolaNev = iskolaNev.Text;
-            Properties.Settings.Default.Save();
-        }
-
-        private void iskolaCim_TextChanged(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.iskolaCim = iskolaCim.Text;
-            Properties.Settings.Default.Save();
-        }
-
         private void SorSzam_TextUpdate(object sender, EventArgs e)
         {
             mentettFajlNeve.Text = "";
@@ -858,6 +801,8 @@ namespace WindowsFormsApp_autósiskola
             staticLoading.BringToFront();
             staticLoading.Show();
             tanuloAdatok1.ujTanulo(excelHelye.Text);
+            HideAllControls();
+            tanuloAdatok1.Show();
             staticLoading.Hide();
         }
 
@@ -871,9 +816,8 @@ namespace WindowsFormsApp_autósiskola
 
         private void fooldal_Click(object sender, EventArgs e)
         {
-            panel1.Hide();
-            tanuloAdatok1.Hide();
-            statisztika1.Hide();
+            HideAllControls();
+            beallitasok1.Hide();
         }
 
         private void statNyit_Click(object sender, EventArgs e)
@@ -882,6 +826,8 @@ namespace WindowsFormsApp_autósiskola
             staticLoading.BringToFront();
             string hely = excelHelye.Text;
             statisztika1.adatokListazas(hely);
+            HideAllControls();
+            statisztika1.Show();
             staticLoading.Hide();
         }
 
@@ -916,8 +862,47 @@ namespace WindowsFormsApp_autósiskola
             }
         }
 
-        private void mentesHelye_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void SorSzam_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (SorSzam.Text == null || SorSzam.Text == "")
+            {
+                return;
+            }
+            mentettFajlNeve.Text = SorSzam.Text.Trim().Replace(' ', '_');
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            HideAllControls();
+            googleSheet1.BringToFront();
+            googleSheet1.Show();
+        }
+
+        private void HideAllControls()
+        {
+            tanuloAdatok1.Hide();
+            googleSheet1.Hide();
+            statisztika1.Hide();
+            beallitasok1.Hide();
+        }
+
+        private void checkBox1_CheckedChanged_2(object sender, EventArgs e)
+        {
+            if (isGoogleSheet.Checked)
+            {
+                localExcel.Enabled = false;
+            }
+            else
+            {
+                localExcel.Enabled = true;
+            }
+            Properties.Settings.Default.IsGoogleSheet = isGoogleSheet.Checked;
+            Properties.Settings.Default.Save();
+        }
+
+        private void mentesHelye_MouseDoubleClick(object sender, EventArgs e)
+        {
+
             if (mentesHelye.Text != "")
             {
                 try
@@ -929,15 +914,6 @@ namespace WindowsFormsApp_autósiskola
                     MessageBox.Show("Nem lehet megnyitni a mappát!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-        }
-
-        private void SorSzam_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (SorSzam.Text == null || SorSzam.Text == "")
-            {
-                return;
-            }
-            mentettFajlNeve.Text = SorSzam.Text.Trim().Replace(' ', '_');
         }
     }
 }

@@ -45,10 +45,16 @@ namespace WindowsFormsApp_autósiskola
             this.label8 = new System.Windows.Forms.Label();
             this.torles = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.torlesFolyamatban.SuspendLayout();
             this.mentesFolyamatban.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel6.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // torlesFolyamatban
@@ -56,7 +62,7 @@ namespace WindowsFormsApp_autósiskola
             this.torlesFolyamatban.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.torlesFolyamatban.Controls.Add(this.label12);
             this.torlesFolyamatban.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.torlesFolyamatban.Location = new System.Drawing.Point(729, 459);
+            this.torlesFolyamatban.Location = new System.Drawing.Point(196, 32);
             this.torlesFolyamatban.Margin = new System.Windows.Forms.Padding(4);
             this.torlesFolyamatban.Name = "torlesFolyamatban";
             this.torlesFolyamatban.Size = new System.Drawing.Size(122, 50);
@@ -80,7 +86,7 @@ namespace WindowsFormsApp_autósiskola
             this.mentesFolyamatban.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mentesFolyamatban.Controls.Add(this.label10);
             this.mentesFolyamatban.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.mentesFolyamatban.Location = new System.Drawing.Point(537, 522);
+            this.mentesFolyamatban.Location = new System.Drawing.Point(10, 117);
             this.mentesFolyamatban.Margin = new System.Windows.Forms.Padding(4);
             this.mentesFolyamatban.Name = "mentesFolyamatban";
             this.mentesFolyamatban.Size = new System.Drawing.Size(122, 51);
@@ -125,15 +131,16 @@ namespace WindowsFormsApp_autósiskola
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Location = new System.Drawing.Point(38, 7);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(20, 20);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(20);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(474, 562);
+            this.dataGridView1.Size = new System.Drawing.Size(492, 562);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseUp);
             // 
@@ -162,12 +169,12 @@ namespace WindowsFormsApp_autósiskola
             // 
             // bezaras
             // 
-            this.bezaras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bezaras.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bezaras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bezaras.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.bezaras.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.bezaras.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.bezaras.Location = new System.Drawing.Point(733, 523);
+            this.bezaras.Location = new System.Drawing.Point(200, 118);
             this.bezaras.Margin = new System.Windows.Forms.Padding(4);
             this.bezaras.Name = "bezaras";
             this.bezaras.Size = new System.Drawing.Size(117, 49);
@@ -179,22 +186,24 @@ namespace WindowsFormsApp_autósiskola
             // megjegyzesek
             // 
             this.megjegyzesek.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.megjegyzesek.Dock = System.Windows.Forms.DockStyle.Fill;
             this.megjegyzesek.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.megjegyzesek.Location = new System.Drawing.Point(542, 33);
+            this.megjegyzesek.Location = new System.Drawing.Point(20, 50);
+            this.megjegyzesek.Margin = new System.Windows.Forms.Padding(20, 10, 20, 10);
             this.megjegyzesek.Multiline = true;
             this.megjegyzesek.Name = "megjegyzesek";
             this.megjegyzesek.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.megjegyzesek.Size = new System.Drawing.Size(306, 412);
+            this.megjegyzesek.Size = new System.Drawing.Size(304, 336);
             this.megjegyzesek.TabIndex = 6;
             // 
             // mentes
             // 
-            this.mentes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.mentes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.mentes.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.mentes.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.mentes.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.mentes.Location = new System.Drawing.Point(544, 523);
+            this.mentes.Location = new System.Drawing.Point(17, 118);
             this.mentes.Margin = new System.Windows.Forms.Padding(4);
             this.mentes.Name = "mentes";
             this.mentes.Size = new System.Drawing.Size(109, 49);
@@ -206,22 +215,25 @@ namespace WindowsFormsApp_autósiskola
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
-            this.label8.Location = new System.Drawing.Point(543, 9);
+            this.label8.Location = new System.Drawing.Point(3, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(117, 18);
+            this.label8.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.label8.Size = new System.Drawing.Size(338, 40);
             this.label8.TabIndex = 7;
             this.label8.Text = "Megjegyzések";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // torles
             // 
-            this.torles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.torles.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.torles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.torles.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.torles.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.torles.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.torles.Location = new System.Drawing.Point(733, 460);
+            this.torles.Location = new System.Drawing.Point(200, 33);
             this.torles.Margin = new System.Windows.Forms.Padding(4);
             this.torles.Name = "torles";
             this.torles.Size = new System.Drawing.Size(117, 49);
@@ -233,20 +245,60 @@ namespace WindowsFormsApp_autósiskola
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Black;
-            this.panel6.Controls.Add(this.torles);
-            this.panel6.Controls.Add(this.label8);
-            this.panel6.Controls.Add(this.mentes);
-            this.panel6.Controls.Add(this.megjegyzesek);
-            this.panel6.Controls.Add(this.bezaras);
-            this.panel6.Controls.Add(this.dataGridView1);
-            this.panel6.Controls.Add(this.mentesFolyamatban);
-            this.panel6.Controls.Add(this.torlesFolyamatban);
+            this.panel6.Controls.Add(this.tableLayoutPanel1);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Margin = new System.Windows.Forms.Padding(0);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(882, 602);
             this.panel6.TabIndex = 28;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 350F));
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(882, 602);
+            this.tableLayoutPanel1.TabIndex = 28;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.label8, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.megjegyzesek, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.panel1, 0, 2);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(535, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 3;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(344, 596);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.torles);
+            this.panel1.Controls.Add(this.mentes);
+            this.panel1.Controls.Add(this.torlesFolyamatban);
+            this.panel1.Controls.Add(this.mentesFolyamatban);
+            this.panel1.Controls.Add(this.bezaras);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 399);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(338, 194);
+            this.panel1.TabIndex = 8;
             // 
             // TanuloAdatok
             // 
@@ -261,7 +313,10 @@ namespace WindowsFormsApp_autósiskola
             this.mentesFolyamatban.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -281,5 +336,8 @@ namespace WindowsFormsApp_autósiskola
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button torles;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

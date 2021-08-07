@@ -10,7 +10,7 @@ using Google.Apis.Sheets.v4.Data;
 
 namespace WindowsFormsApp_autósiskola.GoogleSheet
 {
-    class SheetAccess
+    public class SheetAccess
     {
         public static readonly string UserName = "documentfillersheet@documentfiller-322119.iam.gserviceaccount.com";
         public string UniqueID = "111047218257159267512";
@@ -44,23 +44,31 @@ namespace WindowsFormsApp_autósiskola.GoogleSheet
             }
         }
 
-        public SheetAccess(string url)
+        public bool SaveSpreadsheetID(string url)
         {
-            GoogleCredential credential;
-            using (var stream = new FileStream("client_secrets.json", FileMode.Open, FileAccess.Read))
+            try
             {
-                credential = GoogleCredential.FromStream(stream).CreateScoped(Scopes);
+                GoogleCredential credential;
+                using (var stream = new FileStream("client_secrets.json", FileMode.Open, FileAccess.Read))
+                {
+                    credential = GoogleCredential.FromStream(stream).CreateScoped(Scopes);
+                }
+
+                service = new SheetsService(new Google.Apis.Services.BaseClientService.Initializer()
+                {
+                    HttpClientInitializer = credential,
+                    ApplicationName = ApplicationName,
+                });
+
+                string[] urlParts = url.Split('/');
+                SpreadSheetId = urlParts[urlParts.Length - 1];
+                GetAllStudentNames();
+                return true;
             }
-
-            service = new SheetsService(new Google.Apis.Services.BaseClientService.Initializer()
+            catch
             {
-                HttpClientInitializer = credential,
-                ApplicationName = ApplicationName,
-            });
-
-            string[] urlParts = url.Split('/');
-            SpreadSheetId = urlParts[urlParts.Length - 1];
-            GetAllStudentNames();
+                return false;
+            }
         }
 
         public List<string> GetSheetNames()
@@ -121,7 +129,8 @@ namespace WindowsFormsApp_autósiskola.GoogleSheet
                     count++;
                 }
             }
-            return new tanulo(names.ToString());
+            tanulo student = new tanulo(names.ToString());
+            return student;
         }
         public tanulo GetStudent(int index)
         {

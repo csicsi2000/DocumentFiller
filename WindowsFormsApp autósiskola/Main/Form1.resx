@@ -124,19 +124,6 @@
     <value>272, 7</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="beallitasok.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAB3RJTUUH5QIXCzMzer33EAAAAWVJREFU
-        OE+N0+krRUEch/Fj3yVZyi65ZMuS8kaKbNnzAlnKvpOtRPztnufcM7gI3/rUnHFn+82IfkkrTnCKHjv+
-        k2qUpJvRApYxgS07SCFqkRV/fUkHnnCGAdyiGZV4wCD28YIhZKQYz3DbKexhGDlwtV7soh81eEUVMrKC
-        qXQzjpN2oytph4xgG7nx16c04Rqu2IJLrGMDF2iEOYQ7eo/btkieeRRu28p7lBB3cQwn9xj32EF8O25d
-        5fAHdThI2iHZOILnN6XwdixqtJg0XLEAFscd5CHE6ztHBexvg8ezsPGAcbhFJzNrmIcrlcH3sAozhitM
-        ot6OEO/8BtbAqi/BNyEncxfGhfrSzY84KNy9yYc1cJDHsm2f6YSTFsVfSfzhHXxt3oRtC+tgJ59J+qbh
-        BI+wHhnxjXuVm7Da/iO1J23fh393Ugd79T8mrGhc1dvxIVlU43WGWvwZb2cWc2iw43ui6A2idCY/e+nH
-        SAAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAAAAAAAEAIAC4ngAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAEAAAABAAgGAAAAXHKoZgAAgABJ
