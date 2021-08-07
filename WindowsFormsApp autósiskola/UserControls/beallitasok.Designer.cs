@@ -82,7 +82,7 @@ namespace WindowsFormsApp_autósiskola.UserControls
             // 
             this.VersionDisplay.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.VersionDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.VersionDisplay.Location = new System.Drawing.Point(120, 360);
+            this.VersionDisplay.Location = new System.Drawing.Point(111, 356);
             this.VersionDisplay.Name = "VersionDisplay";
             this.VersionDisplay.Size = new System.Drawing.Size(110, 17);
             this.VersionDisplay.TabIndex = 16;
@@ -91,7 +91,7 @@ namespace WindowsFormsApp_autósiskola.UserControls
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label12.Location = new System.Drawing.Point(56, 360);
+            this.label12.Location = new System.Drawing.Point(47, 356);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(70, 17);
             this.label12.TabIndex = 15;
@@ -103,7 +103,7 @@ namespace WindowsFormsApp_autósiskola.UserControls
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
-            this.label17.Location = new System.Drawing.Point(473, 41);
+            this.label17.Location = new System.Drawing.Point(464, 37);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(132, 23);
@@ -118,7 +118,7 @@ namespace WindowsFormsApp_autósiskola.UserControls
             this.iskolaCim.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.iskolaCim.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.iskolaCim.ForeColor = System.Drawing.Color.White;
-            this.iskolaCim.Location = new System.Drawing.Point(419, 293);
+            this.iskolaCim.Location = new System.Drawing.Point(410, 289);
             this.iskolaCim.Margin = new System.Windows.Forms.Padding(4);
             this.iskolaCim.Name = "iskolaCim";
             this.iskolaCim.Size = new System.Drawing.Size(257, 22);
@@ -132,7 +132,7 @@ namespace WindowsFormsApp_autósiskola.UserControls
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold);
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
-            this.label16.Location = new System.Drawing.Point(525, 257);
+            this.label16.Location = new System.Drawing.Point(516, 253);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(38, 18);
@@ -147,7 +147,7 @@ namespace WindowsFormsApp_autósiskola.UserControls
             this.iskolaNev.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.iskolaNev.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.iskolaNev.ForeColor = System.Drawing.Color.White;
-            this.iskolaNev.Location = new System.Drawing.Point(419, 203);
+            this.iskolaNev.Location = new System.Drawing.Point(410, 199);
             this.iskolaNev.Margin = new System.Windows.Forms.Padding(4);
             this.iskolaNev.Name = "iskolaNev";
             this.iskolaNev.Size = new System.Drawing.Size(257, 22);
@@ -162,7 +162,7 @@ namespace WindowsFormsApp_autósiskola.UserControls
             this.iskolaAzonosito.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.iskolaAzonosito.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.iskolaAzonosito.ForeColor = System.Drawing.Color.White;
-            this.iskolaAzonosito.Location = new System.Drawing.Point(419, 118);
+            this.iskolaAzonosito.Location = new System.Drawing.Point(410, 114);
             this.iskolaAzonosito.Margin = new System.Windows.Forms.Padding(4);
             this.iskolaAzonosito.Name = "iskolaAzonosito";
             this.iskolaAzonosito.Size = new System.Drawing.Size(257, 22);
@@ -176,7 +176,7 @@ namespace WindowsFormsApp_autósiskola.UserControls
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold);
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
-            this.label15.Location = new System.Drawing.Point(526, 170);
+            this.label15.Location = new System.Drawing.Point(517, 166);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(37, 18);
@@ -190,7 +190,7 @@ namespace WindowsFormsApp_autósiskola.UserControls
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold);
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
-            this.label14.Location = new System.Drawing.Point(504, 82);
+            this.label14.Location = new System.Drawing.Point(495, 78);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(79, 18);
@@ -204,7 +204,7 @@ namespace WindowsFormsApp_autósiskola.UserControls
             this.ujTanuloIdo.AutoSize = true;
             this.ujTanuloIdo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.ujTanuloIdo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
-            this.ujTanuloIdo.Location = new System.Drawing.Point(114, 274);
+            this.ujTanuloIdo.Location = new System.Drawing.Point(105, 270);
             this.ujTanuloIdo.Margin = new System.Windows.Forms.Padding(4);
             this.ujTanuloIdo.Name = "ujTanuloIdo";
             this.ujTanuloIdo.Size = new System.Drawing.Size(193, 20);
@@ -219,7 +219,7 @@ namespace WindowsFormsApp_autósiskola.UserControls
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold);
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
-            this.label11.Location = new System.Drawing.Point(133, 203);
+            this.label11.Location = new System.Drawing.Point(124, 199);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(148, 18);
@@ -237,7 +237,7 @@ namespace WindowsFormsApp_autósiskola.UserControls
             "Főút Autósiskola",
             "ABC Autósiskola",
             "ÉRD 2021"});
-            this.comboBox1.Location = new System.Drawing.Point(123, 232);
+            this.comboBox1.Location = new System.Drawing.Point(114, 228);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(180, 25);
             this.comboBox1.TabIndex = 4;
@@ -249,7 +249,7 @@ namespace WindowsFormsApp_autósiskola.UserControls
             this.honapBetu.AutoSize = true;
             this.honapBetu.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.honapBetu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
-            this.honapBetu.Location = new System.Drawing.Point(131, 126);
+            this.honapBetu.Location = new System.Drawing.Point(122, 122);
             this.honapBetu.Margin = new System.Windows.Forms.Padding(4);
             this.honapBetu.Name = "honapBetu";
             this.honapBetu.Size = new System.Drawing.Size(161, 20);
@@ -263,7 +263,7 @@ namespace WindowsFormsApp_autósiskola.UserControls
             this.bezaras.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bezaras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bezaras.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.bezaras.Location = new System.Drawing.Point(608, 339);
+            this.bezaras.Location = new System.Drawing.Point(625, 345);
             this.bezaras.Margin = new System.Windows.Forms.Padding(10);
             this.bezaras.Name = "bezaras";
             this.bezaras.Size = new System.Drawing.Size(105, 38);
@@ -278,7 +278,7 @@ namespace WindowsFormsApp_autósiskola.UserControls
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
-            this.label5.Location = new System.Drawing.Point(79, 46);
+            this.label5.Location = new System.Drawing.Point(70, 42);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(250, 18);
@@ -293,7 +293,7 @@ namespace WindowsFormsApp_autósiskola.UserControls
             this.kiallitasiHely.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kiallitasiHely.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.kiallitasiHely.ForeColor = System.Drawing.Color.White;
-            this.kiallitasiHely.Location = new System.Drawing.Point(80, 82);
+            this.kiallitasiHely.Location = new System.Drawing.Point(71, 78);
             this.kiallitasiHely.Margin = new System.Windows.Forms.Padding(4);
             this.kiallitasiHely.Name = "kiallitasiHely";
             this.kiallitasiHely.Size = new System.Drawing.Size(257, 22);

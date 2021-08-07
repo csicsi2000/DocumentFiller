@@ -73,6 +73,10 @@ namespace WindowsFormsApp_autósiskola.GoogleSheet
 
         public List<string> GetSheetNames()
         {
+            if(service == null)
+            {
+                return null;
+            }
             var ssRequest = service.Spreadsheets.Get(UniqueID);
             Spreadsheet ss = ssRequest.Execute();
             List<string> sheetList = new List<string>();

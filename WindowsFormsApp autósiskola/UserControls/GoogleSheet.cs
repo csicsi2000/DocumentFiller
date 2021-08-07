@@ -29,7 +29,10 @@ namespace WindowsFormsApp_autósiskola.UserControls
 
         private void kereses_Click(object sender, EventArgs e)
         {
-
+            if (!sheetAccess.SaveSpreadsheetID(sheetLink.Text))
+            {
+                MessageBox.Show("Nem sikerült kinyerni az ID-t!", "Hiba", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

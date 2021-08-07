@@ -31,6 +31,7 @@ namespace WindowsFormsApp_autósiskola.UserControls
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.serviceEmail = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,7 +41,6 @@ namespace WindowsFormsApp_autósiskola.UserControls
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.serviceEmail = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -82,6 +82,21 @@ namespace WindowsFormsApp_autósiskola.UserControls
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(941, 617);
             this.tableLayoutPanel1.TabIndex = 10;
+            // 
+            // serviceEmail
+            // 
+            this.serviceEmail.BackColor = System.Drawing.Color.Black;
+            this.serviceEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.serviceEmail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.serviceEmail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.serviceEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
+            this.serviceEmail.Location = new System.Drawing.Point(13, 216);
+            this.serviceEmail.Name = "serviceEmail";
+            this.serviceEmail.ReadOnly = true;
+            this.serviceEmail.Size = new System.Drawing.Size(915, 20);
+            this.serviceEmail.TabIndex = 12;
+            this.serviceEmail.Text = "documentfillersheet@documentfiller-322119.iam.gserviceaccount.com";
+            this.serviceEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel2
             // 
@@ -201,21 +216,6 @@ namespace WindowsFormsApp_autósiskola.UserControls
             this.button1.Text = "Másolás";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // serviceEmail
-            // 
-            this.serviceEmail.BackColor = System.Drawing.Color.Black;
-            this.serviceEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.serviceEmail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.serviceEmail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.serviceEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(176)))), ((int)(((byte)(24)))));
-            this.serviceEmail.Location = new System.Drawing.Point(13, 216);
-            this.serviceEmail.Name = "serviceEmail";
-            this.serviceEmail.ReadOnly = true;
-            this.serviceEmail.Size = new System.Drawing.Size(915, 20);
-            this.serviceEmail.TabIndex = 12;
-            this.serviceEmail.Text = "documentfillersheet@documentfiller-322119.iam.gserviceaccount.com";
-            this.serviceEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // GoogleSheet
             // 
