@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp autósiskola", "WindowsFormsApp autósiskola\WindowsFormsApp autósiskola.csproj", "{F99BA618-621B-4A43-9838-6C789E2515CF}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Dokumentum_Kitöltő_setup", "Dokumentum_Kitöltő_setup\Dokumentum_Kitöltő_setup.vdproj", "{2452DDA5-4177-4FC9-8F57-6F233F629733}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,8 +15,6 @@ Global
 		{F99BA618-621B-4A43-9838-6C789E2515CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F99BA618-621B-4A43-9838-6C789E2515CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F99BA618-621B-4A43-9838-6C789E2515CF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2452DDA5-4177-4FC9-8F57-6F233F629733}.Debug|Any CPU.ActiveCfg = Debug
-		{2452DDA5-4177-4FC9-8F57-6F233F629733}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

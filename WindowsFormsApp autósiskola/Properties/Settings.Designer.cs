@@ -275,5 +275,29 @@ namespace WindowsFormsApp_autósiskola.Properties {
                 this["fileFormat"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string GoogleSheetAccess {
+            get {
+                return ((string)(this["GoogleSheetAccess"]));
+            }
+            set {
+                this["GoogleSheetAccess"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string GoogleSheetName {
+            get {
+                return ((string)(this["GoogleSheetName"]));
+            }
+            set {
+                this["GoogleSheetName"] = value;
+            }
+        }
     }
 }
