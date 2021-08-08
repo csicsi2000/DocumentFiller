@@ -61,7 +61,7 @@ namespace WindowsFormsApp_autósiskola.GoogleSheet
             try
             {
                 GoogleCredential credential;
-                using (var stream = new FileStream("client_secrets.json", FileMode.Open, FileAccess.Read))
+                using (var stream = new FileStream("GoogleSheet//client_secrets.json", FileMode.Open, FileAccess.Read))
                 {
                     credential = GoogleCredential.FromStream(stream).CreateScoped(Scopes);
                 }
@@ -73,7 +73,7 @@ namespace WindowsFormsApp_autósiskola.GoogleSheet
                 });
 
                 string[] urlParts = url.Split('/');
-                SpreadSheetId = urlParts[urlParts.Length - 1];
+                SpreadSheetId = urlParts[urlParts.Length - 2];
                 GetAllStudentNames();
                 return true;
             }
@@ -109,13 +109,26 @@ namespace WindowsFormsApp_autósiskola.GoogleSheet
         {
             if (!IsValidSheetId())
             {
-                return;
+                //return;
+            }
+
+            var request = service.Spreadsheets.Get(SpreadSheetId);
+            var response = request.Execute();
+            try
+            {
+                string sheetName = response.Sheets[Properties.Settings.Default.ExcelOldal].Properties.Title;
+            }
+            catch
+            {
+                string sheetName = response.Sheets[0].Properties.Title;
+                Properties.Settings.Default.ExcelOldal = 0;
+                Properties.Settings.Default.Save();
             }
             var range = "{" + sheetName + "}!B:B";
-            var request = service.Spreadsheets.Values.Get(SpreadSheetId, range);
 
-            var response = request.Execute();
-            var values = response.Values;
+            var requestNames = service.Spreadsheets.Values.Get(SpreadSheetId, range);
+            var responseNames = requestNames.Execute();
+            var values = responseNames.Values;
             List<string> names = new List<string>();
             if(values != null && values.Count > 0)
             {
@@ -221,10 +234,9 @@ namespace WindowsFormsApp_autósiskola.GoogleSheet
             }
             try
             {
-                var range = "{" + sheetName + "}!5:5";
-                var request = service.Spreadsheets.Values.Get(SpreadSheetId, range);
+                var request = service.Spreadsheets.Get(SpreadSheetId);
+                //var response = request.Execute();
 
-                var response = request.Execute();
             }
             catch
             {
