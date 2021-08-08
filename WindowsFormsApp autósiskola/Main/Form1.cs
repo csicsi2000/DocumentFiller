@@ -253,6 +253,18 @@ namespace WindowsFormsApp_autósiskola
                 MessageBox.Show("Nincs találat az adott sorszámra vagy névre az adott dokumentumban.", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            if (!isGoogleSheet.Checked && (excelHelye.Text == "" || excelHelye.Text == null))
+            {
+                MessageBox.Show("Válaszd ki az olvasni kívánt excel fájlt!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (isGoogleSheet.Checked && !sheetAccess.IsValidSheetId())
+            {
+                MessageBox.Show("Illessze be a megfelelő URL-t.", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                googleSheet1.Show();
+                googleSheet1.BringToFront();
+                return;
+            }
             panel3.Enabled = false;
             loading1.BringToFront();
             loading1.Visible = true;
@@ -322,9 +334,16 @@ namespace WindowsFormsApp_autósiskola
                 MessageBox.Show("Írj be nevet vagy sorszámot", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (excelHelye.Text == "" || excelHelye.Text == null)
+            if (!isGoogleSheet.Checked && (excelHelye.Text == "" || excelHelye.Text == null))
             {
                 MessageBox.Show("Válaszd ki az olvasni kívánt excel fájlt!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if(isGoogleSheet.Checked && !sheetAccess.IsValidSheetId())
+            {
+                MessageBox.Show("Illessze be a megfelelő URL-t.", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                googleSheet1.Show();
+                googleSheet1.BringToFront();
                 return;
             }
             if (mentesHelye.Text == "" || mentesHelye.Text == null)
@@ -611,9 +630,13 @@ namespace WindowsFormsApp_autósiskola
         {
             if (isGoogleSheet.Checked)
             {
+                if(sheetAccess.AllStudent == null || sheetAccess.AllStudent.Count == 0)
+                {
+                    return;
+                }
                 ExcelOldalNevek.DataSource = sheetAccess.AllStudent;
             }
-            if (fileMethods.isExcelComptaible(Properties.Settings.Default.ExcelFajlHelye))
+            else if (fileMethods.isExcelComptaible(Properties.Settings.Default.ExcelFajlHelye))
             {
                 ExcelOldalNevek.Items.Clear();
                 ExcelOldalNevek.Visible = true;
@@ -818,6 +841,12 @@ namespace WindowsFormsApp_autósiskola
         {
             panel7.BringToFront();
             panel7.Visible = true;
+
+            /*
+            if (isGoogleSheet.Checked)
+            {
+                tanuloAdatok1.TanuloAdatBetoltes(SorSzam.Text, sheetAccess);
+            }*/
             tanuloAdatok1.TanuloAdatBetoltes(SorSzam.Text, excelHelye.Text);
             panel7.Visible = false;
         }
@@ -899,10 +928,16 @@ namespace WindowsFormsApp_autósiskola
             if (isGoogleSheet.Checked)
             {
                 localExcel.Enabled = false;
+                button3.Enabled = false;
+                ujTanulo.Enabled = false;
+                statNyit.Enabled = false;
             }
             else
             {
                 localExcel.Enabled = true;
+                button3.Enabled = true;
+                ujTanulo.Enabled = true;
+                statNyit.Enabled = true;
             }
             Properties.Settings.Default.IsGoogleSheet = isGoogleSheet.Checked;
             Properties.Settings.Default.Save();

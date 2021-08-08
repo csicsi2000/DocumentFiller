@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using WindowsFormsApp_autósiskola.GoogleSheet;
 using Excel = Microsoft.Office.Interop.Excel;
 
 namespace WindowsFormsApp_autósiskola
@@ -22,6 +23,27 @@ namespace WindowsFormsApp_autósiskola
         {
             xlWorkbooks = books;
         }
+        public bool TanuloAdatBetoltes(string sorszam, SheetAccess sheetAccess)
+        {
+            bool sikerült = false;
+            if (sorszam == "" || sorszam == null)
+            {
+                MessageBox.Show("Írj be nevet vagy sorszámot", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return sikerült;
+            }
+            if (!sheetAccess.IsValidSheetId())
+            {
+                MessageBox.Show("Nem Valid!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return sikerült;
+            }
+
+            string Sorszam = "";
+            List<string> allData= sheetAccess.GetAllDataTypes(ref Sorszam);
+
+
+            return sikerült;
+        }
+
         public bool TanuloAdatBetoltes(string sorszam, string excelHelye)
         {
             bool sikerült = false;
@@ -46,6 +68,7 @@ namespace WindowsFormsApp_autósiskola
             string megjegyzes = "";
             List<string> sorszamok = new List<string>();
 
+            //csv fájl olvasása
             if (Properties.Settings.Default.ExcelFajlHelye != null && sorszam != null)
             {
                 if (Path.GetExtension(Properties.Settings.Default.ExcelFajlHelye) == ".csv")

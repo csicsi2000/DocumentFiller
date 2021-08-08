@@ -148,7 +148,6 @@ namespace WindowsFormsApp_autósiskola.UserControls
             this.sheetLink.Location = new System.Drawing.Point(101, 52);
             this.sheetLink.Margin = new System.Windows.Forms.Padding(2);
             this.sheetLink.Name = "sheetLink";
-            this.sheetLink.ReadOnly = true;
             this.sheetLink.Size = new System.Drawing.Size(713, 24);
             this.sheetLink.TabIndex = 7;
             this.sheetLink.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

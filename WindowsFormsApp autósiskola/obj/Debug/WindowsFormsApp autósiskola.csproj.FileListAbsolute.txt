@@ -75,3 +75,4 @@ D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp aut�
 D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\EPPlus.xml
 D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
 D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\obj\Debug\WindowsFormsApp_autósiskola.UserControls.beallitasok.resources
+D:\Programozás\ExtraProjektek\WindowsFormsApp autósiskola\WindowsFormsApp autósiskola\bin\Debug\GoogleSheet\client_secrets.json

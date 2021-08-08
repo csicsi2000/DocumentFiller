@@ -176,7 +176,9 @@
     </Compile>
     <Compile Include="Classes\WordFile.cs" />
     <Content Include="Resources\favicon.ico" />
-    <None Include="GoogleSheet\client_secrets.json" />
+    <None Include="GoogleSheet\client_secrets.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="DocumentFiles\adatlapBeiratkozáshozSablon.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

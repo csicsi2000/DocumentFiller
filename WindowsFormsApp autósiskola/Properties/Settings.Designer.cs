@@ -311,5 +311,17 @@ namespace WindowsFormsApp_autósiskola.Properties {
                 this["IsGoogleSheet"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SheetURL {
+            get {
+                return ((string)(this["SheetURL"]));
+            }
+            set {
+                this["SheetURL"] = value;
+            }
+        }
     }
 }
