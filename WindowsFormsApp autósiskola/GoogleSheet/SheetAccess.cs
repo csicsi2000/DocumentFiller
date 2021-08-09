@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using System.IO;
 using Google.Apis.Sheets.v4;
 using Google.Apis.Sheets.v4.Data;
+using Google.Apis.Services;
+
 
 namespace WindowsFormsApp_autósiskola.GoogleSheet
 {
@@ -15,7 +17,7 @@ namespace WindowsFormsApp_autósiskola.GoogleSheet
         public static readonly string UserName = "documentfillersheet@documentfiller-322119.iam.gserviceaccount.com";
         public string UniqueID = "111047218257159267512";
         public string[] Scopes = { SheetsService.Scope.Spreadsheets };
-        public string ApplicationName = "DocumentumFiller";
+        public string ApplicationName = "DocumentFiller";
         private SheetsService service;
         public List<string> AllStudent;
         public string SpreadSheetId
@@ -74,6 +76,7 @@ namespace WindowsFormsApp_autósiskola.GoogleSheet
 
                 string[] urlParts = url.Split('/');
                 SpreadSheetId = urlParts[urlParts.Length - 2];
+
                 GetAllStudentNames();
                 return true;
             }
