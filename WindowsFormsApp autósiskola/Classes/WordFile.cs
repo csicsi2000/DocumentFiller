@@ -18,8 +18,8 @@ namespace WindowsFormsApp_autósiskola
         #region Képzési Igazolás Létrehozása
         public void KepzesiIgazolasLetrehozas(Excel.Workbooks xlWorkbooks, string sorszam, object filename, object saveAs, string format)
         {
-            tanulo kivalasztott;
-            ExcelRead.getExcelData(xlWorkbooks, sorszam, out kivalasztott);
+            Tanulo kivalasztott;
+            ExcelRead.GetExcelData(xlWorkbooks, sorszam, out kivalasztott);
 
             #region word fájlozás
 
@@ -156,8 +156,8 @@ namespace WindowsFormsApp_autósiskola
         public void JelentkezesiLapLetrehozas(Excel.Workbooks xlWorkbooks, string sorszam, object filename, object saveAs, string format)
         {
 
-            tanulo kivalasztott;
-            ExcelRead.getExcelData(xlWorkbooks, sorszam, out kivalasztott);
+            Tanulo kivalasztott;
+            ExcelRead.GetExcelData(xlWorkbooks, sorszam, out kivalasztott);
 
             #region word fájlozás
 
@@ -382,8 +382,8 @@ namespace WindowsFormsApp_autósiskola
         #region Beiratkozási Adatlap
         public void BeiratkozasLetrehozas(Excel.Workbooks xlWorkbooks, string sorszam, object filename, object saveAs, string format)
         {
-            tanulo kivalasztott;
-            ExcelRead.getExcelData(xlWorkbooks, sorszam, out kivalasztott);
+            Tanulo kivalasztott;
+            ExcelRead.GetExcelData(xlWorkbooks, sorszam, out kivalasztott);
 
             #region word fájlozás
 
@@ -499,8 +499,8 @@ namespace WindowsFormsApp_autósiskola
         #region Felnőttképzési szerződés
         public void FelnottSzerzodesLetrehozas(Excel.Workbooks xlWorkbooks, string sorszam, object filename, object saveAs, string format)
         {
-            tanulo kivalasztott;
-            ExcelRead.getExcelData(xlWorkbooks, sorszam, out kivalasztott);
+            Tanulo kivalasztott;
+            ExcelRead.GetExcelData(xlWorkbooks, sorszam, out kivalasztott);
 
             #region word fájlozás
 

@@ -13,10 +13,10 @@ using WindowsFormsApp_autósiskola.Classes;
 
 namespace WindowsFormsApp_autósiskola
 {
-    public class fileMethods
+    public class FileMethods
     {
         public static string FileUtvonal = Directory.GetParent(System.Environment.CurrentDirectory).Parent.FullName;
-        public static bool isExcelComptaible(string fajlnev)
+        public static bool IsExcelComptaible(string fajlnev)
         {
             bool isIt = false;
             if (Path.GetExtension(fajlnev) == ".xlsx"  || Path.GetExtension(fajlnev) == ".xlsm")
@@ -42,7 +42,7 @@ namespace WindowsFormsApp_autósiskola
         }
         public static void FajlOlvasas()
         {
-            if (isExcelComptaible(Properties.Settings.Default.ExcelFajlHelye))
+            if (IsExcelComptaible(Properties.Settings.Default.ExcelFajlHelye))
             {
                 if (Properties.Settings.Default.ExcelFajlMasolata != "")
                 {
@@ -56,7 +56,7 @@ namespace WindowsFormsApp_autósiskola
                         return;
                     }
                 }
-                Properties.Settings.Default.ExcelFajlMasolata = documentAccess.folder + "ExcelMasolat" + Path.GetExtension(Properties.Settings.Default.ExcelFajlHelye);
+                Properties.Settings.Default.ExcelFajlMasolata = DocumentAccess.Folder + "ExcelMasolat" + Path.GetExtension(Properties.Settings.Default.ExcelFajlHelye);
                 string hely = Properties.Settings.Default.ExcelFajlMasolata;
                 Properties.Settings.Default.Save();
 

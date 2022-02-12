@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp_autósiskola
 {
-    public partial class loading : UserControl
+    public partial class Loading : UserControl
     {
-        public loading()
+        public Loading()
         {
             InitializeComponent();
         }

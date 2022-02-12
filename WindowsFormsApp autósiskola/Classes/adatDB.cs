@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WindowsFormsApp_autósiskola
+﻿namespace WindowsFormsApp_autósiskola
 {
-    class adatDB
+    class AdatDB
     {
-        public string adat;
-        public double db;
-        public adatDB(string Adat, double Db)
+        public string Adat;
+        public double Db;
+
+        public AdatDB(string adat, double db)
         {
-            adat = Adat;
-            db = Db;
+            this.Adat = adat;
+            Db = db;
         }
     }
 }

@@ -12,9 +12,9 @@ namespace WindowsFormsApp_autósiskola.Classes
 {
     class ExcelRead
     {
-        public static bool getExcelData(Excel.Workbooks xlWorkbooks, string sorszam, out tanulo kivalasztott)
+        public static bool GetExcelData(Excel.Workbooks xlWorkbooks, string sorszam, out Tanulo kivalasztott)
         {
-            kivalasztott = new tanulo();
+            kivalasztott = new Tanulo();
             if (Properties.Settings.Default.ExcelFajlHelye != null && sorszam != null)
             {
                 if (Path.GetExtension(Properties.Settings.Default.ExcelFajlHelye) == ".csv")
@@ -24,14 +24,14 @@ namespace WindowsFormsApp_autósiskola.Classes
                         var fs = new FileStream(Properties.Settings.Default.ExcelFajlHelye, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
                         using (var Olvas = new StreamReader(fs, Encoding.Default))
                         {
-                            if (generalMethods.isDigitOnly(sorszam))
+                            if (GeneralMethods.IsDigitOnly(sorszam))
                             {
                                 for (int i = 0; i <= (Convert.ToInt32(sorszam)); i++)
                                 {
                                     if (i == Convert.ToInt32(sorszam))
                                     {
                                         string Sor = Olvas.ReadLine();
-                                        kivalasztott = new tanulo(Sor);
+                                        kivalasztott = new Tanulo(Sor);
                                     }
                                     else
                                     {
@@ -39,7 +39,7 @@ namespace WindowsFormsApp_autósiskola.Classes
                                     }
                                 }
                             }
-                            else if (!generalMethods.isDigitOnly(sorszam))
+                            else if (!GeneralMethods.IsDigitOnly(sorszam))
                             {
                                 int count = 0;
                                 List<string> sorszamok = new List<string>();
@@ -52,8 +52,8 @@ namespace WindowsFormsApp_autósiskola.Classes
                                     string nev2 = Sorelemek[1].ToLower();
                                     if (!Properties.Settings.Default.ekezetek)
                                     {
-                                        nev = generalMethods.RemoveDiacritics(nev);
-                                        nev2 = generalMethods.RemoveDiacritics(nev2);
+                                        nev = GeneralMethods.RemoveDiacritics(nev);
+                                        nev2 = GeneralMethods.RemoveDiacritics(nev2);
                                     }
                                     if (!Properties.Settings.Default.szokoz)
                                     {
@@ -71,7 +71,7 @@ namespace WindowsFormsApp_autósiskola.Classes
 
                                     if (nev == nev2)
                                     {
-                                        kivalasztott = new tanulo(sor);
+                                        kivalasztott = new Tanulo(sor);
                                         count++;
                                         sorszamok.Add(Sorelemek[0]);
                                     }
@@ -96,15 +96,15 @@ namespace WindowsFormsApp_autósiskola.Classes
                     }
                 }
 
-                if (fileMethods.isExcelComptaible(Properties.Settings.Default.ExcelFajlHelye))
+                if (FileMethods.IsExcelComptaible(Properties.Settings.Default.ExcelFajlHelye))
                 {
                     var xlWorkbook = xlWorkbooks.Open(Properties.Settings.Default.ExcelFajlMasolata);
                     Excel.Worksheet xlWorksheet = xlWorkbook.Sheets[Properties.Settings.Default.oldalszam + 1];
                     Excel.Range xlRange = xlWorksheet.UsedRange;
-                    int totalRows = excelApp.GetMinimalUsedRangeAddress(xlWorksheet);
+                    int totalRows = ExcelApp.GetMinimalUsedRangeAddress(xlWorksheet);
                     int totalColumns = xlRange.Columns.Count;
 
-                    if (generalMethods.isDigitOnly(sorszam))
+                    if (GeneralMethods.IsDigitOnly(sorszam))
                     {
                         int szam = Convert.ToInt32(sorszam) + 1;
                         var sb = new StringBuilder();
@@ -118,9 +118,9 @@ namespace WindowsFormsApp_autósiskola.Classes
                             sb.Append(";");
                             sb.Append(row);
                         }
-                        kivalasztott = new tanulo(sb.ToString());
+                        kivalasztott = new Tanulo(sb.ToString());
                     }
-                    if (!generalMethods.isDigitOnly(sorszam))
+                    if (!GeneralMethods.IsDigitOnly(sorszam))
                     {
                         List<string> sorszamok = new List<string>();
                         int count = 0;
@@ -136,8 +136,8 @@ namespace WindowsFormsApp_autósiskola.Classes
                             nev2 = nev2.ToLower();
                             if (!Properties.Settings.Default.ekezetek)
                             {
-                                nev = generalMethods.RemoveDiacritics(nev);
-                                nev2 = generalMethods.RemoveDiacritics(nev2);
+                                nev = GeneralMethods.RemoveDiacritics(nev);
+                                nev2 = GeneralMethods.RemoveDiacritics(nev2);
                             }
                             if (!Properties.Settings.Default.szokoz)
                             {
@@ -167,7 +167,7 @@ namespace WindowsFormsApp_autósiskola.Classes
                                     sb.Append(";");
                                     sb.Append(nextData);
                                 }
-                                kivalasztott = new tanulo(sb.ToString());
+                                kivalasztott = new Tanulo(sb.ToString());
                                 count++;
                                 sorszamok.Add(Convert.ToString(xlWorksheet.Cells[Row, 1].Text));
                             }
@@ -184,7 +184,7 @@ namespace WindowsFormsApp_autósiskola.Classes
                             MessageBox.Show("Nincs találat az adott excel táblázatban. Ellenőrizd a beírt nevet!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
-                    fileMethods.DisposeExcelInstance(xlWorkbook, xlWorksheet);
+                    FileMethods.DisposeExcelInstance(xlWorkbook, xlWorksheet);
                 }
                 return true;
             }

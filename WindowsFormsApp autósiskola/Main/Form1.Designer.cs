@@ -94,9 +94,9 @@ namespace WindowsFormsApp_autósiskola
             this.fooldal = new System.Windows.Forms.Button();
             this.statNyit = new System.Windows.Forms.Button();
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.loading1 = new WindowsFormsApp_autósiskola.loading();
+            this.loading1 = new WindowsFormsApp_autósiskola.Loading();
             this.tanuloAdatok1 = new WindowsFormsApp_autósiskola.TanuloAdatok();
-            this.statisztika1 = new WindowsFormsApp_autósiskola.statisztika();
+            this.statisztika1 = new WindowsFormsApp_autósiskola.Statisztika();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -204,7 +204,7 @@ namespace WindowsFormsApp_autósiskola
             this.mentesHelye.ReadOnly = true;
             this.mentesHelye.Size = new System.Drawing.Size(358, 24);
             this.mentesHelye.TabIndex = 7;
-            this.mentesHelye.TextChanged += new System.EventHandler(this.mentesHelye_TextChanged);
+            this.mentesHelye.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.MentesHelye_MouseDoubleClick_1);
             // 
             // mentesHelyeKereses
             // 
@@ -223,7 +223,6 @@ namespace WindowsFormsApp_autósiskola
             // 
             // filepath
             // 
-            this.filepath.HelpRequest += new System.EventHandler(this.folderBrowserDialog1_HelpRequest);
             // 
             // mentettFajlNeve
             // 
@@ -504,7 +503,7 @@ namespace WindowsFormsApp_autósiskola
             this.ujTanuloIdo.Location = new System.Drawing.Point(86, 259);
             this.ujTanuloIdo.Margin = new System.Windows.Forms.Padding(4);
             this.ujTanuloIdo.Name = "ujTanuloIdo";
-            this.ujTanuloIdo.Size = new System.Drawing.Size(193, 20);
+            this.ujTanuloIdo.Size = new System.Drawing.Size(192, 20);
             this.ujTanuloIdo.TabIndex = 6;
             this.ujTanuloIdo.Text = "Új tanuló bekerülési ideje";
             this.ujTanuloIdo.UseVisualStyleBackColor = true;
@@ -545,7 +544,7 @@ namespace WindowsFormsApp_autósiskola
             this.honapBetu.Location = new System.Drawing.Point(103, 111);
             this.honapBetu.Margin = new System.Windows.Forms.Padding(4);
             this.honapBetu.Name = "honapBetu";
-            this.honapBetu.Size = new System.Drawing.Size(161, 20);
+            this.honapBetu.Size = new System.Drawing.Size(160, 20);
             this.honapBetu.TabIndex = 3;
             this.honapBetu.Text = "Dátum hónap névvel";
             this.honapBetu.UseVisualStyleBackColor = true;
@@ -854,7 +853,7 @@ namespace WindowsFormsApp_autósiskola
             this.label7.ForeColor = System.Drawing.Color.Silver;
             this.label7.Location = new System.Drawing.Point(3, 14);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(94, 16);
+            this.label7.Size = new System.Drawing.Size(93, 16);
             this.label7.TabIndex = 0;
             this.label7.Text = "Folyamatban...";
             // 
@@ -1173,8 +1172,8 @@ namespace WindowsFormsApp_autósiskola
         private TanuloAdatok tanuloAdatok1;
         private System.Windows.Forms.Button statNyit;
         private System.Windows.Forms.Button fooldal;
-        private statisztika statisztika1;
-        private loading loading1;
+        private Statisztika statisztika1;
+        private Loading loading1;
         private System.Windows.Forms.TableLayoutPanel staticLoading;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label8;

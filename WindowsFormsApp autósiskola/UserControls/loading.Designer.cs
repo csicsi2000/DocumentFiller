@@ -1,7 +1,7 @@
 ﻿
 namespace WindowsFormsApp_autósiskola
 {
-    partial class loading
+    partial class Loading
     {
         /// <summary> 
         /// Required designer variable.

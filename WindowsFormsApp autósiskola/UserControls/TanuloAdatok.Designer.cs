@@ -135,7 +135,7 @@ namespace WindowsFormsApp_autósiskola
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(474, 562);
             this.dataGridView1.TabIndex = 4;
-            this.dataGridView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseUp);
+            this.dataGridView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DataGridView1_MouseUp);
             // 
             // Adatok
             // 
@@ -174,7 +174,7 @@ namespace WindowsFormsApp_autósiskola
             this.bezaras.TabIndex = 3;
             this.bezaras.Text = "Bezárás";
             this.bezaras.UseVisualStyleBackColor = true;
-            this.bezaras.Click += new System.EventHandler(this.bezaras_Click);
+            this.bezaras.Click += new System.EventHandler(this.Bezaras_Click);
             // 
             // megjegyzesek
             // 
@@ -201,7 +201,7 @@ namespace WindowsFormsApp_autósiskola
             this.mentes.TabIndex = 5;
             this.mentes.Text = "Mentés";
             this.mentes.UseVisualStyleBackColor = true;
-            this.mentes.Click += new System.EventHandler(this.szerkesztes_Click);
+            this.mentes.Click += new System.EventHandler(this.Szerkesztes_Click);
             // 
             // label8
             // 
@@ -228,7 +228,7 @@ namespace WindowsFormsApp_autósiskola
             this.torles.TabIndex = 26;
             this.torles.Text = "Törlés";
             this.torles.UseVisualStyleBackColor = true;
-            this.torles.Click += new System.EventHandler(this.torles_Click);
+            this.torles.Click += new System.EventHandler(this.Torles_Click);
             // 
             // panel6
             // 

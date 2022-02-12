@@ -8,7 +8,7 @@ using WindowsFormsApp_autósiskola.Classes;
 
 namespace WindowsFormsApp_autósiskola
 {
-    class tanulo
+    class Tanulo
     {
         public string Nev;
         public string SzuleteskoriNev;
@@ -35,12 +35,12 @@ namespace WindowsFormsApp_autósiskola
         public string telefonszam;
         public string email;
 
-        public tanulo() { }
-        public tanulo(string Adatsor)
+        public Tanulo() { }
+        public Tanulo(string Adatsor)
         {
             int index = Properties.Settings.Default.comboIndex;
             List<string> sablonok = new List<string>();
-            StreamReader oszlopokOlvas = new StreamReader(documentAccess.oszlopRendezes, Encoding.UTF8);
+            StreamReader oszlopokOlvas = new StreamReader(DocumentAccess.OszlopRendezes, Encoding.UTF8);
             string fejlec = oszlopokOlvas.ReadLine();
             while (!oszlopokOlvas.EndOfStream)
             {

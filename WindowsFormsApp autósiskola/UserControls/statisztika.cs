@@ -12,21 +12,21 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 namespace WindowsFormsApp_autósiskola
 {
-    public partial class statisztika : UserControl
+    public partial class Statisztika : UserControl
     {
         Excel.Workbooks xlWorkbooks;
         string adatTipus;
 
-        public statisztika()
+        public Statisztika()
         {
             InitializeComponent();
             staticLoading.Hide();
         }
-        public void books(Excel.Workbooks books)
+        public void Books(Excel.Workbooks books)
         {
             xlWorkbooks = books;
         }
-        public void adatokListazas(string excelHelye)
+        public void AdatokListazas(string excelHelye)
         {
             if (excelHelye == "" || excelHelye == null)
             {
@@ -40,7 +40,7 @@ namespace WindowsFormsApp_autósiskola
             statisztikak.Refresh();
             bool elso = true;
 
-            fileMethods.FajlOlvasas();
+            FileMethods.FajlOlvasas();
             List<string> adatTipusok = new List<string>();
 
             if (Properties.Settings.Default.ExcelFajlHelye != null)
@@ -81,14 +81,14 @@ namespace WindowsFormsApp_autósiskola
                     }
                 }
 
-                else if (fileMethods.isExcelComptaible(Properties.Settings.Default.ExcelFajlHelye))
+                else if (FileMethods.IsExcelComptaible(Properties.Settings.Default.ExcelFajlHelye))
                 {
-                    fileMethods.FajlOlvasas();
+                    FileMethods.FajlOlvasas();
 
                     var xlWorkbook = xlWorkbooks.Open(Properties.Settings.Default.ExcelFajlMasolata);
                     Excel.Worksheet xlWorksheet = xlWorkbook.Sheets[Properties.Settings.Default.oldalszam + 1];
                     Excel.Range xlRange = xlWorksheet.UsedRange;
-                    int totalRows = excelApp.GetMinimalUsedRangeAddress(xlWorksheet);
+                    int totalRows = ExcelApp.GetMinimalUsedRangeAddress(xlWorksheet);
                     int totalColumns = xlRange.Columns.Count;
 
                     if (elso == true)
@@ -113,7 +113,7 @@ namespace WindowsFormsApp_autósiskola
                             //string test = Sorelemek[j];
                         }
                     }
-                    fileMethods.DisposeExcelInstance(xlWorkbook, xlWorksheet);
+                    FileMethods.DisposeExcelInstance(xlWorkbook, xlWorksheet);
                 }
 
                 for (int i = 0; i < adatTipusok.Count - 2; i++)
@@ -134,7 +134,7 @@ namespace WindowsFormsApp_autósiskola
             return;
         }
 
-        private void statList_Click(object sender, EventArgs e)
+        private void StatList_Click(object sender, EventArgs e)
         {
             if (dataGridView1.CurrentCell == null)
             {
@@ -156,12 +156,12 @@ namespace WindowsFormsApp_autósiskola
             db.Add(0);
             double totalRows = 0;
 
-            if (fileMethods.isExcelComptaible(Properties.Settings.Default.ExcelFajlHelye))
+            if (FileMethods.IsExcelComptaible(Properties.Settings.Default.ExcelFajlHelye))
             {
                 var xlWorkbook = xlWorkbooks.Open(Properties.Settings.Default.ExcelFajlMasolata);
                 Excel.Worksheet xlWorksheet = xlWorkbook.Sheets[Properties.Settings.Default.oldalszam + 1];
                 Excel.Range xlRange = xlWorksheet.UsedRange;
-                totalRows = excelApp.GetMinimalUsedRangeAddress(xlWorksheet);
+                totalRows = ExcelApp.GetMinimalUsedRangeAddress(xlWorksheet);
                 int totalColumns = xlRange.Columns.Count-1;
 
                 for (int i = 2; i < totalRows; i++)
@@ -188,8 +188,8 @@ namespace WindowsFormsApp_autósiskola
                         db.Add(1);
                     }
                 }
-                totalRows = totalRows - 1;
-                fileMethods.DisposeExcelInstance(xlWorkbook,xlWorksheet);
+                totalRows--;
+                FileMethods.DisposeExcelInstance(xlWorkbook,xlWorksheet);
             }
             if (Path.GetExtension(Properties.Settings.Default.ExcelFajlHelye) == ".csv") 
             {
@@ -224,20 +224,20 @@ namespace WindowsFormsApp_autósiskola
                     }
                 }
             }
-            List<adatDB> adatLista = new List<adatDB>();
+            List<AdatDB> adatLista = new List<AdatDB>();
 
             for (int i = 1; i < adatok.Count; i++)
             {
-                adatLista.Add(new adatDB(adatok[i], db[i]));
+                adatLista.Add(new AdatDB(adatok[i], db[i]));
             }
-            adatLista = adatLista.OrderByDescending(item => item.db).ToList();
+            adatLista = adatLista.OrderByDescending(item => item.Db).ToList();
             for(int i = 0; i < adatLista.Count; i++)
             {
                 int row = statisztikak.Rows.Add();
-                statisztikak.Rows[row].Cells[0].Value = adatLista[i].adat;
-                statisztikak.Rows[row].Cells[1].Value = adatLista[i].db;
+                statisztikak.Rows[row].Cells[0].Value = adatLista[i].Adat;
+                statisztikak.Rows[row].Cells[1].Value = adatLista[i].Db;
 
-                double szamitas = (adatLista[i].db / totalRows) * 100d;
+                double szamitas = (adatLista[i].Db / totalRows) * 100d;
                 double szazalek = Math.Round(szamitas, 2);
                 statisztikak.Rows[row].Cells[2].Value = szazalek+ "%";
             }
@@ -257,7 +257,7 @@ namespace WindowsFormsApp_autósiskola
             staticLoading.Hide();
         }
 
-        private void statExport_Click(object sender, EventArgs e)
+        private void StatExport_Click(object sender, EventArgs e)
         {
             if (statisztikak.Rows.Count != 0)
             {

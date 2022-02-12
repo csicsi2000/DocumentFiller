@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
+﻿using System.Globalization;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace WindowsFormsApp_autósiskola
 {
-    class generalMethods
+    class GeneralMethods
     {
-        public static bool isDigitOnly(string str)
+        public static bool IsDigitOnly(string str)
         {
             foreach (char c in str)
             {

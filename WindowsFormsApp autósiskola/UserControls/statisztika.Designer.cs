@@ -1,7 +1,7 @@
 ﻿
 namespace WindowsFormsApp_autósiskola
 {
-    partial class statisztika
+    partial class Statisztika
     {
         /// <summary> 
         /// Required designer variable.
@@ -243,7 +243,7 @@ namespace WindowsFormsApp_autósiskola
             this.statExport.TabIndex = 29;
             this.statExport.Text = "Statisztika Excelbe exportálása";
             this.statExport.UseVisualStyleBackColor = true;
-            this.statExport.Click += new System.EventHandler(this.statExport_Click);
+            this.statExport.Click += new System.EventHandler(this.StatExport_Click);
             // 
             // statList
             // 
@@ -259,7 +259,7 @@ namespace WindowsFormsApp_autósiskola
             this.statList.TabIndex = 28;
             this.statList.Text = "Statisztika Listázása";
             this.statList.UseVisualStyleBackColor = true;
-            this.statList.Click += new System.EventHandler(this.statList_Click);
+            this.statList.Click += new System.EventHandler(this.StatList_Click);
             // 
             // panel1
             // 

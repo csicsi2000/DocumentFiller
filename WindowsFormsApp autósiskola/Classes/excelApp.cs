@@ -1,19 +1,22 @@
 ﻿using System;
 using Excel = Microsoft.Office.Interop.Excel;
-using WindowsFormsApp_autósiskola.Classes;
-
 
 namespace WindowsFormsApp_autósiskola
 {
-    class excelApp
+    class ExcelApp
     {
-        public Excel.Application xlApp;
-        public Excel.Workbooks xlWorkbooks;
-        public excelApp()
+        public Excel.Application XlApp;
+        public Excel.Workbooks XlWorkbooks;
+        public ExcelApp()
         {
-            xlApp = StartExcel();
-            xlWorkbooks = xlApp.Workbooks;
+            XlApp = StartExcel();
+            XlWorkbooks = XlApp.Workbooks;
         }
+
+        /// <summary>
+        /// Starts the excel application
+        /// </summary>
+        /// <returns></returns>
         public Excel.Application StartExcel()
         {
             Excel.Application instance = null;

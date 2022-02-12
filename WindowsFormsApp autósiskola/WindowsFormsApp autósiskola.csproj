@@ -106,38 +106,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\adatDB.cs" />
-    <Compile Include="Classes\documentAccess.cs" />
-    <Compile Include="Classes\excelApp.cs" />
+    <Compile Include="Classes\AdatDB.cs" />
+    <Compile Include="Classes\DocumentAccess.cs" />
+    <Compile Include="Classes\ExcelApp.cs" />
     <Compile Include="Classes\ExcelRead.cs" />
-    <Compile Include="Classes\fileMethods.cs" />
+    <Compile Include="Classes\FileMethods.cs" />
     <Compile Include="Main\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\generalMethods.cs" />
+    <Compile Include="Classes\GeneralMethods.cs" />
     <Compile Include="Main\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControls\statisztika.cs">
+    <Compile Include="UserControls\Statisztika.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\statisztika.Designer.cs">
-      <DependentUpon>statisztika.cs</DependentUpon>
+    <Compile Include="UserControls\Statisztika.Designer.cs">
+      <DependentUpon>Statisztika.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\tanulo.cs" />
+    <Compile Include="Classes\Tanulo.cs" />
     <Compile Include="UserControls\TanuloAdatok.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\TanuloAdatok.Designer.cs">
       <DependentUpon>TanuloAdatok.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\loading.cs">
+    <Compile Include="UserControls\Loading.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\loading.Designer.cs">
-      <DependentUpon>loading.cs</DependentUpon>
+    <Compile Include="UserControls\Loading.Designer.cs">
+      <DependentUpon>Loading.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\WordFile.cs" />
     <Content Include="bin\Debug\app.publish\Dokumentum Kitöltő.exe" />
@@ -201,8 +201,8 @@
     <EmbeddedResource Include="Main\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\loading.resx">
-      <DependentUpon>loading.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\Loading.resx">
+      <DependentUpon>Loading.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -214,8 +214,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UserControls\statisztika.resx">
-      <DependentUpon>statisztika.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\Statisztika.resx">
+      <DependentUpon>Statisztika.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\TanuloAdatok.resx">
       <DependentUpon>TanuloAdatok.cs</DependentUpon>

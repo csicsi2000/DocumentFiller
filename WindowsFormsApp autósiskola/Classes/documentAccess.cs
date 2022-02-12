@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp_autósiskola.Classes
 {
-    class documentAccess
+    class DocumentAccess
     {
-        public static string folder = AppDomain.CurrentDomain.BaseDirectory + "DocumentFiles/";
-        public static string DocBeiratkozas = folder + "adatlapBeiratkozáshozSablon.docx";
-        public static string DocJelentkezesiLap = folder + "jelentkezesiLapSablon.docx";
-        public static string DocKepzesiIgazolas = folder + "kepzesiIgazolasSablon.docx";
-        public static string oszlopRendezes = folder + "oszlopElrendezes.csv";
-        public static string DocFelnottkepzesiSzerzodes = folder + "FelnottkepzesiSzerzodes.docx";
+        public static string Folder = AppDomain.CurrentDomain.BaseDirectory + "DocumentFiles/";
+        public static string DocBeiratkozas = Folder + "adatlapBeiratkozáshozSablon.docx";
+        public static string DocJelentkezesiLap = Folder + "jelentkezesiLapSablon.docx";
+        public static string DocKepzesiIgazolas = Folder + "kepzesiIgazolasSablon.docx";
+        public static string OszlopRendezes = Folder + "oszlopElrendezes.csv";
+        public static string DocFelnottkepzesiSzerzodes = Folder + "FelnottkepzesiSzerzodes.docx";
     }
 }
